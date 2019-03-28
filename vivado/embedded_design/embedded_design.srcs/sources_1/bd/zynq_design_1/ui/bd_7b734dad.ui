@@ -1,0 +1,48 @@
+{
+   guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port sys_clk_n -pg 1 -y 800 -defaultsOSRD
+preplace port DDR -pg 1 -y 50 -defaultsOSRD
+preplace port sys_clk_p -pg 1 -y 620 -defaultsOSRD
+preplace port sys_rst -pg 1 -y 820 -defaultsOSRD
+preplace port DIP_Switches_8Bits -pg 1 -y 250 -defaultsOSRD
+preplace port DDR3 -pg 1 -y 660 -defaultsOSRD
+preplace port LEDs_8Bits -pg 1 -y 510 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 70 -defaultsOSRD
+preplace port Push_Switches_3Bits -pg 1 -y 380 -defaultsOSRD
+preplace inst processing_system7_1 -pg 1 -lvl 1 -y 200 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 110 -defaultsOSRD
+preplace inst processing_system7_1_axi_periph -pg 1 -lvl 2 -y 250 -defaultsOSRD
+preplace inst mig_7series_1 -pg 1 -lvl 3 -y 700 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -y 800 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 3 -y 380 -defaultsOSRD
+preplace inst axi_gpio_2 -pg 1 -lvl 3 -y 250 -defaultsOSRD
+preplace inst axi_gpio_3 -pg 1 -lvl 3 -y 510 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 2 -y 560 -defaultsOSRD
+preplace inst proc_sys_reset -pg 1 -lvl 1 -y 510 -defaultsOSRD
+preplace netloc mig_7series_1_ddr3 1 3 1 N
+preplace netloc processing_system7_1_ddr 1 1 3 540 50 NJ 50 NJ
+preplace netloc sys_rst_1 1 0 3 90J 690 NJ 690 920
+preplace netloc proc_sys_reset_interconnect_aresetn 1 1 1 590
+preplace netloc proc_sys_reset_peripheral_aresetn 1 1 2 580 410 970
+preplace netloc processing_system7_1_fclk_clk0 1 0 3 120 410 560 420 960
+preplace netloc axi_gpio_3_gpio 1 3 1 N
+preplace netloc axi_gpio_1_gpio 1 3 1 N
+preplace netloc axi_mem_intercon_m00_axi 1 2 1 910
+preplace netloc sys_clk_p_1 1 0 3 90J 680 NJ 680 950
+preplace netloc axi_gpio_2_gpio 1 3 1 N
+preplace netloc sys_clk_n_1 1 0 3 100J 710 NJ 710 N
+preplace netloc processing_system7_1_fixed_io 1 1 3 590 60 NJ 60 1280J
+preplace netloc xlconstant_0_const 1 1 3 560 30 NJ 30 1270
+preplace netloc processing_system7_1_fclk_reset0_n 1 0 2 110 600 540
+preplace netloc processing_system7_1_axi_periph_m02_axi 1 2 1 930
+preplace netloc processing_system7_1_m_axi_gp0 1 1 1 560
+preplace netloc processing_system7_1_m_axi_gp1 1 1 1 550
+preplace netloc processing_system7_1_axi_periph_m01_axi 1 2 1 950
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 2 570 750 NJ
+preplace netloc processing_system7_1_axi_periph_m00_axi 1 2 1 940
+preplace netloc mig_7series_1_ui_clk 1 0 4 120 610 570 440 920J 580 1270
+levelinfo -pg 1 70 330 760 1120 1310 -top -10 -bot 890
+",
+}
+0

@@ -1,0 +1,6 @@
+vhdl xil_defaultlib "../../../bd/zynq_design_1/ip/zynq_design_1_axi_gpio_1_0/sim/zynq_design_1_axi_gpio_1_0.vhd" 
+vhdl xil_defaultlib "../../../bd/zynq_design_1/ip/zynq_design_1_axi_gpio_2_1/sim/zynq_design_1_axi_gpio_2_1.vhd" 
+vhdl xil_defaultlib "../../../bd/zynq_design_1/ip/zynq_design_1_axi_gpio_3_2/sim/zynq_design_1_axi_gpio_3_2.vhd" 
+vhdl xil_defaultlib "../../../bd/zynq_design_1/ip/zynq_design_1_proc_sys_reset_0/sim/zynq_design_1_proc_sys_reset_0.vhd" 
+vhdl xil_defaultlib "../../../bd/zynq_design_1/ip/zynq_design_1_proc_sys_reset_0_0/sim/zynq_design_1_proc_sys_reset_0_0.vhd" 
+nosort
