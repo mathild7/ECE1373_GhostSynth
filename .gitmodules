@@ -1,0 +1,3 @@
+[submodule "modules/i2s_core"]
+	path = modules/i2s_core
+	url = https://github.com/mathild7/i2s_core.git
