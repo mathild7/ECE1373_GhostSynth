@@ -1,0 +1,196 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 46704
+
+Current time: 	3/28/19 9:48:33 AM UTC
+Time zone: 	Coordinated Universal Time (Etc/UTC)
+
+OS: DISTRIB_ID=Ubuntu
+Version: 4.15.0-43-generic
+Architecture: amd64
+Available processors (cores): 32
+
+DISPLAY: 10.232.10.62:7
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/opt/Xilinx/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	hildeb47
+User home directory: /home/hildeb47
+User working directory: /home/hildeb47/proj/ECE1373_ghostSynth/petalinux_bsp/mitx_7100_2016_2
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /opt/Xilinx/Vivado
+RDI Data directory: /opt/Xilinx/Vivado/2016.2/data
+RDI Bin directory: /opt/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: /home/hildeb47/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /home/hildeb47/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	158 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 875 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 31 MB (+30334kb) [00:00:05]
+// [Engine Memory]: 875 MB (+765757kb) [00:00:05]
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.xpr", 0); // q:v (JViewport:JComponent, cv:JFrame)
+// [GUI Memory]: 35 MB (+2245kb) [00:00:08]
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.xpr. Version: Vivado v2016.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 915 MB. GUI used memory: 22 MB. Current time: 3/28/19 9:48:35 AM UTC
+// Tcl Message: open_project /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,019 MB (+105823kb) [00:00:13]
+// [GUI Memory]: 52 MB (+16172kb) [00:00:13]
+// [Engine Memory]: 1,071 MB (+294kb) [00:00:14]
+// [GUI Memory]: 61 MB (+6014kb) [00:00:14]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 65 MB (+1422kb) [00:00:15]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: mitx_petalinux; location: /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100; part: xc7z100ffg900-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:07 . Memory (MB): peak = 6047.762 ; gain = 149.789 ; free physical = 35468 ; free virtual = 184671 
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Tcl Message: update_compile_order -fileset sources_1 
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// af:x (cv:JFrame): Export Hardware: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, af:x)
+dismissDialog("Export Hardware"); // af:x (cv:JFrame)
+// Tcl Message: write_hwdef -force  -file /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.sdk/mitx_petalinux_wrapper.hdf 
+// Elapsed time: 132 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_2 -prev_step  
+// TclEventType: RUN_LAUNCH
+// bL:g (cv:JFrame):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 16 
+// Tcl Message: [Thu Mar 28 09:51:01 2019] Launched impl_2... Run output will be captured here: /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.runs/impl_2/runme.log 
+dismissDialog("Generate Bitstream"); // bL:g (cv:JFrame)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cv:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,100 MB. GUI used memory: 30 MB. Current time: 3/28/19 9:51:15 AM UTC
+// TclEventType: RUN_COMPLETED
+// ap:G (cv:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 39 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a:JRadioButton (JPanel:JComponent, ap:G)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ap:G)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ap:G (cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// af:x (cv:JFrame): Export Hardware: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, af:x)
+dismissDialog("Export Hardware"); // af:x (cv:JFrame)
+// Tcl Message: file mkdir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.sdk 
+// Tcl Message: write_hwdef -force  -file /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.sdk/mitx_petalinux_wrapper.hdf 
+// Elapsed time: 84 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+dismissFileChooser();
+// 'a' command handler elapsed time: 9 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 25, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_2 -prev_step  
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 16 
+// Tcl Message: [Thu Mar 28 09:53:34 2019] Launched impl_2... Run output will be captured here: /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.runs/impl_2/runme.log 
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cv:JFrame)
+// TclEventType: RUN_COMPLETED
+// ap:G (cv:JFrame): Bitstream Generation Completed: addNotify
+// Elapsed time: 46 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ap:G)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ap:G (cv:JFrame)
+// Elapsed time: 25 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 379, 62); // dI:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 379, 65); // dI:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 379, 65, false, false, false, false, true); // dI:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 379, 65); // dI:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 379, 68); // dI:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 399, 59); // dI:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 438, 58); // dI:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 438, 58, false, false, false, false, true); // dI:N (JPanel:JComponent, cv:JFrame) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 438, 58); // dI:N (JPanel:JComponent, cv:JFrame)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 453, 80); // dI:N (JPanel:JComponent, cv:JFrame)
+// Elapsed time: 74 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// ai:x (cv:JFrame): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, ai:x)
+dismissDialog("Launch SDK"); // ai:x (cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+dismissFileChooser();
+// 'a' command handler elapsed time: 3 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// af:x (cv:JFrame): Export Hardware: addNotify
+selectCheckBox(PAResourceItoN.NewExportHardwareDialog_INCLUDE_BITSTREAM, "Include bitstream", true); // h:JCheckBox (JPanel:JComponent, af:x): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, af:x)
+// 'n' command handler elapsed time: 3 seconds
+selectButton("PAResourceItoN.NewExportHardwareDialog_EXPORTED_FILE_FOR_THIS_MODULE_WAS_Yes", "Yes"); // JButton:AbstractButton (JPanel:JComponent, U:JDialog)
+dismissDialog("Export Hardware"); // af:x (cv:JFrame)
+// Tcl Message: file copy -force /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.runs/impl_2/mitx_petalinux_wrapper.sysdef /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.sdk/mitx_petalinux_wrapper.hdf  
+// [GUI Memory]: 69 MB (+305kb) [00:10:19]
+// [GUI Memory]: 72 MB (+365kb) [00:20:44]

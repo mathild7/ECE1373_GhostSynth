@@ -1,0 +1,388 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Mar 28 06:23:33 2019
+# Process ID: 26698
+# Current directory: /home/hildeb47/proj/ECE1373_ghostSynth
+# Command line: vivado
+# Log file: /home/hildeb47/proj/ECE1373_ghostSynth/vivado.log
+# Journal file: /home/hildeb47/proj/ECE1373_ghostSynth/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+report_ip_status -name ip_status 
+export_ip_user_files -of_objects [get_ips  {mitx_petalinux_axi_gpio_2_0 mitx_petalinux_processing_system7_0_0 mitx_petalinux_rst_processing_system7_0_50M_0 mitx_petalinux_axi_gpio_0_0 mitx_petalinux_axi_gpio_1_0}] -no_script -reset -quiet
+upgrade_ip [get_ips  {mitx_petalinux_axi_gpio_2_0 mitx_petalinux_processing_system7_0_0 mitx_petalinux_rst_processing_system7_0_50M_0 mitx_petalinux_axi_gpio_0_0 mitx_petalinux_axi_gpio_1_0}] -log ip_upgrade.log
+set_property target_language Verilog [current_project]
+report_ip_status -name ip_status 
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M00_AXI] [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_cells axi_gpio_0]
+delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M01_AXI] [get_bd_intf_nets axi_gpio_1_GPIO] [get_bd_cells axi_gpio_1]
+delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M02_AXI] [get_bd_intf_nets axi_gpio_2_GPIO] [get_bd_cells axi_gpio_2]
+delete_bd_objs [get_bd_intf_ports dip_switches_8bits]
+undo
+undo
+undo
+undo
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+reset_property LEFT [get_bd_pins gpio_io_i]
+startgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {3}] [get_bd_cells axi_gpio_2]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_TRI_DEFAULT {0x7} CONFIG.C_GPIO_WIDTH {3} CONFIG.C_DOUT_DEFAULT {0x0}] [get_bd_cells axi_gpio_2]
+endgroup
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+save_bd_design
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+set_property location {1 224 -351} [get_bd_cells axi_gpio_2]
+undo
+delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M02_AXI] [get_bd_intf_nets axi_gpio_2_GPIO] [get_bd_cells axi_gpio_2]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_2
+endgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {3}] [get_bd_cells axi_gpio_2]
+set_property location {3 777 362} [get_bd_cells axi_gpio_2]
+connect_bd_intf_net [get_bd_intf_ports push_switches_3bits] [get_bd_intf_pins axi_gpio_2/GPIO]
+connect_bd_intf_net [get_bd_intf_pins axi_gpio_2/S_AXI] -boundary_type upper [get_bd_intf_pins processing_system7_0_axi_periph/M02_AXI]
+connect_bd_net [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk]
+connect_bd_net [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn]
+delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M01_AXI] [get_bd_intf_nets axi_gpio_1_GPIO] [get_bd_cells axi_gpio_1]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
+endgroup
+set_property location {3 770 193} [get_bd_cells axi_gpio_1]
+connect_bd_intf_net [get_bd_intf_ports led_8bits] [get_bd_intf_pins axi_gpio_1/GPIO]
+connect_bd_intf_net [get_bd_intf_pins axi_gpio_1/S_AXI] -boundary_type upper [get_bd_intf_pins processing_system7_0_axi_periph/M01_AXI]
+connect_bd_net [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk]
+connect_bd_net [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_gpio_2/s_axi_aresetn]
+delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M00_AXI] [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_cells axi_gpio_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+connect_bd_intf_net [get_bd_intf_ports dip_switches_8bits] [get_bd_intf_pins axi_gpio_0/GPIO]
+connect_bd_intf_net [get_bd_intf_pins axi_gpio_0/S_AXI] -boundary_type upper [get_bd_intf_pins processing_system7_0_axi_periph/M00_AXI]
+connect_bd_net [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk]
+connect_bd_net [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
+startgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {8}] [get_bd_cells axi_gpio_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_GPIO_WIDTH {8}] [get_bd_cells axi_gpio_1]
+endgroup
+save_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+assign_bd_address [get_bd_addr_segs {axi_gpio_2/S_AXI/Reg }]
+assign_bd_address [get_bd_addr_segs {axi_gpio_1/S_AXI/Reg }]
+assign_bd_address [get_bd_addr_segs {axi_gpio_0/S_AXI/Reg }]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_2_Reg]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_2_Reg2]
+assign_bd_address [get_bd_addr_segs {axi_gpio_2/S_AXI/Reg }]
+delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M02_AXI]
+connect_bd_intf_net [get_bd_intf_pins axi_gpio_2/S_AXI] -boundary_type upper [get_bd_intf_pins processing_system7_0_axi_periph/M02_AXI]
+assign_bd_address [get_bd_addr_segs {axi_gpio_2/S_AXI/Reg }]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_2_Reg2]
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_0_Reg}]
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_1_Reg}]
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_2_Reg}]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_1_Reg]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_2_Reg]
+exclude_bd_addr_seg [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_0_Reg]
+undo
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_0_Reg]
+assign_bd_address [get_bd_addr_segs {axi_gpio_0/S_AXI/Reg }]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_0_Reg]
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_0_Reg2}]
+startgroup
+set_property -dict [list CONFIG.C_TRI_DEFAULT {0xFF}] [get_bd_cells axi_gpio_1]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_TRI_DEFAULT {0x7}] [get_bd_cells axi_gpio_2]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_TRI_DEFAULT {0xFF}] [get_bd_cells axi_gpio_0]
+endgroup
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_0_Reg2]
+assign_bd_address [get_bd_addr_segs {axi_gpio_0/S_AXI/Reg }]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_0_Reg2]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_0_Reg]
+startgroup
+set_property -dict [list CONFIG.C_ALL_INPUTS {1} CONFIG.C_ALL_OUTPUTS {0}] [get_bd_cells axi_gpio_2]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_ALL_OUTPUTS {1}] [get_bd_cells axi_gpio_1]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_ALL_INPUTS {1}] [get_bd_cells axi_gpio_0]
+endgroup
+assign_bd_address [get_bd_addr_segs {axi_gpio_0/S_AXI/Reg }]
+delete_bd_objs [get_bd_addr_segs processing_system7_0/Data/SEG_axi_gpio_0_Reg2]
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_0_Reg}]
+set_property offset 0x80000000 [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_0_Reg}]
+assign_bd_address [get_bd_addr_segs {axi_gpio_1/S_AXI/Reg }]
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_1_Reg}]
+set_property offset 0x80001000 [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_1_Reg}]
+assign_bd_address [get_bd_addr_segs {axi_gpio_2/S_AXI/Reg }]
+set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_2_Reg}]
+set_property offset 0x80002000 [get_bd_addr_segs {processing_system7_0/Data/SEG_axi_gpio_2_Reg}]
+save_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+file mkdir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/constrs_1
+file mkdir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/constrs_1/new
+close [ open /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/constrs_1/new/master.xdc w ]
+add_files -fileset constrs_1 /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/constrs_1/new/master.xdc
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+startgroup
+set_property -dict [list CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {1} CONFIG.PCW_PJTAG_PERIPHERAL_ENABLE {1}] [get_bd_cells processing_system7_0]
+endgroup
+startgroup
+create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:jtag_rtl:2.0 PJTAG
+connect_bd_intf_net [get_bd_intf_pins processing_system7_0/PJTAG] [get_bd_intf_ports PJTAG]
+endgroup
+save_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+get_ports PJTAG*
+get_ports PJTAG_tck
+get_ports PJTAG_TCK
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+set_property NAME PJTAG_TCK [get_bd_ports PJTAG_tck]
+delete_bd_objs [get_bd_intf_nets PJTAG_1] [get_bd_intf_ports PJTAG]
+startgroup
+create_bd_port -dir I PJTAG_TCK
+connect_bd_net [get_bd_pins /processing_system7_0/PJTAG_TCK] [get_bd_ports PJTAG_TCK]
+endgroup
+startgroup
+create_bd_port -dir I PJTAG_TMS
+connect_bd_net [get_bd_pins /processing_system7_0/PJTAG_TMS] [get_bd_ports PJTAG_TMS]
+endgroup
+startgroup
+create_bd_port -dir I PJTAG_TDI
+connect_bd_net [get_bd_pins /processing_system7_0/PJTAG_TDI] [get_bd_ports PJTAG_TDI]
+endgroup
+startgroup
+create_bd_port -dir O PJTAG_TDO
+connect_bd_net [get_bd_pins /processing_system7_0/PJTAG_TDO] [get_bd_ports PJTAG_TDO]
+endgroup
+set_property location {-252 154} [get_bd_ports PJTAG_TDO]
+save_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.PCW_USE_DEBUG {0} CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} CONFIG.PCW_PJTAG_PERIPHERAL_ENABLE {1} CONFIG.PCW_PJTAG_PJTAG_IO {EMIO}] [get_bd_cells processing_system7_0]
+endgroup
+report_ip_status -name ip_status 
+regenerate_bd_layout
+save_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+get_clocks *
+get_ports PJTAG*
+get_ports *
+delete_bd_objs [get_bd_nets PJTAG_TCK_1] [get_bd_ports PJTAG_TCK]
+delete_bd_objs [get_bd_nets PJTAG_TMS_1] [get_bd_ports PJTAG_TMS]
+delete_bd_objs [get_bd_nets PJTAG_TDI_1] [get_bd_ports PJTAG_TDI]
+delete_bd_objs [get_bd_nets processing_system7_0_PJTAG_TDO] [get_bd_ports PJTAG_TDO]
+startgroup
+create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:jtag_rtl:2.0 PJTAG
+connect_bd_intf_net [get_bd_intf_pins processing_system7_0/PJTAG] [get_bd_intf_ports PJTAG]
+endgroup
+validate_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+set_property NAME PJTAG_TCK [get_bd_ports PJTAG_tck]
+delete_bd_objs [get_bd_intf_nets PJTAG_1]
+set_property location {-30 451} [get_bd_intf_ports PJTAG]
+connect_bd_intf_net [get_bd_intf_ports PJTAG] [get_bd_intf_pins processing_system7_0/PJTAG]
+set_property name PJTAG [get_bd_intf_nets PJTAG_1]
+set_property name PJTAG_conn [get_bd_intf_nets PJTAG]
+save_bd_design
+delete_bd_objs [get_bd_intf_nets PJTAG_conn] [get_bd_intf_ports PJTAG]
+create_bd_port -dir IO -from 3 -to 0 PJTAG
+set_property location {-44 433} [get_bd_ports PJTAG]
+delete_bd_objs [get_bd_ports PJTAG]
+startgroup
+create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:jtag_rtl:2.0 PJTAG
+connect_bd_intf_net [get_bd_intf_pins processing_system7_0/PJTAG] [get_bd_intf_ports PJTAG]
+endgroup
+save_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+get_ports *
+get_clocks *
+set_property synth_checkpoint_mode Hierarchical [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+launch_run -jobs 16 {mitx_petalinux_processing_system7_0_0_synth_1 mitx_petalinux_rst_processing_system7_0_50M_0_synth_1 mitx_petalinux_xbar_0_synth_1 mitx_petalinux_axi_gpio_2_1_synth_1 mitx_petalinux_axi_gpio_1_1_synth_1 mitx_petalinux_axi_gpio_0_1_synth_1 mitx_petalinux_auto_pc_0_synth_1 mitx_petalinux_auto_pc_1_synth_1}
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+report_ip_status -name ip_status 
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_1
+delete_bd_objs [get_bd_cells processing_system7_1]
+save_bd_design
+set_property part xc7z100ffg900-2 [current_project]
+set_property part xc7z100ffg900-2 [current_project]
+set_property part xc7z100ffg900-1 [current_project]
+set_property part xc7z100ffg900-2 [current_project]
+delete_ip_run [get_files -of_objects [get_fileset sources_1] /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+set_property synth_checkpoint_mode None [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+report_ip_status -name ip_status 
+upgrade_ip [get_ips *]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_1
+endgroup
+delete_bd_objs [get_bd_cells processing_system7_1]
+report_ip_status -name ip_status 
+create_run impl_2 -parent_run synth_1 -flow {Vivado Implementation 2016} -strategy {Vivado Implementation Defaults}
+current_run [get_runs impl_2]
+set_property part xc7z100ffg900-1 [current_project]
+report_ip_status -name ip_status 
+export_ip_user_files -of_objects [get_ips  {mitx_petalinux_processing_system7_0_0 mitx_petalinux_axi_gpio_0_1 mitx_petalinux_rst_processing_system7_0_50M_0 mitx_petalinux_processing_system7_0_axi_periph_0 mitx_petalinux_axi_gpio_1_1 mitx_petalinux_axi_gpio_2_1}] -no_script -reset -quiet
+upgrade_ip [get_ips  {mitx_petalinux_processing_system7_0_0 mitx_petalinux_axi_gpio_0_1 mitx_petalinux_rst_processing_system7_0_50M_0 mitx_petalinux_processing_system7_0_axi_periph_0 mitx_petalinux_axi_gpio_1_1 mitx_petalinux_axi_gpio_2_1}] -log ip_upgrade.log
+startgroup
+endgroup
+report_ip_status -name ip_status 
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+get_ports *
+create_bd_intf_port -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 PJTAG1
+delete_bd_objs [get_bd_intf_ports PJTAG1]
+save_bd_design
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+regenerate_bd_layout
+remove_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+make_wrapper -files [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -top
+add_files -norecurse /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+save_bd_design
+get_ports *
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+get_ports *
+startgroup
+set_property -dict [list CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {1} CONFIG.PCW_PJTAG_PERIPHERAL_ENABLE {1} CONFIG.PCW_PJTAG_PJTAG_IO {MIO 10 .. 13}] [get_bd_cells processing_system7_0]
+delete_bd_objs [get_bd_intf_nets PJTAG_1]
+endgroup
+delete_bd_objs [get_bd_intf_ports PJTAG]
+save_bd_design
+generate_target all [get_files  /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+export_ip_user_files -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -no_script -force -quiet
+export_simulation -of_objects [get_files /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd] -directory /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/sim_scripts -ip_user_files_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files -ipstatic_source_dir /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.ip_user_files/ipstatic -force -quiet
+get_ports *
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+get_ports "MIO[10]"
+get_ports MIO[10]
+get_ports
+get_ports FIXED_IO_mio[12]
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_runs impl_2 -jobs 16
+wait_on_run impl_2
+reset_run synth_1
+launch_runs impl_2 -jobs 16
+wait_on_run impl_2
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+open_bd_design {/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd}
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+launch_runs impl_2 -jobs 16
+wait_on_run impl_2
+launch_runs impl_2 -to_step write_bitstream -jobs 16
+wait_on_run impl_2
+file copy -force /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.runs/impl_2/mitx_petalinux_wrapper.sysdef /home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.sdk/mitx_petalinux_wrapper.hdf
+
