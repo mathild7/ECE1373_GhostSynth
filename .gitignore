@@ -2,6 +2,7 @@
 *.swo
 *.swp
 *.log
+*.jou
 vivado/embedded_design/embedded_design.cache
 vivado/embedded_design/embedded_design.runs
 vivado/embedded_design/embedded_design.sim
