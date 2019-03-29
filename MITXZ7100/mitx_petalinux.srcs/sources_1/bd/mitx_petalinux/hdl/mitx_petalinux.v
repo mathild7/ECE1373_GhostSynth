@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-//Date        : Thu Mar 28 08:43:14 2019
+//Date        : Fri Mar 29 03:38:43 2019
 //Host        : 924a1611251c running 64-bit Ubuntu 16.04.6 LTS
 //Command     : generate_target mitx_petalinux.bd
 //Design      : mitx_petalinux
@@ -405,7 +405,7 @@ module m02_couplers_imp_IAY6NU
   assign m02_couplers_to_m02_couplers_WVALID = S_AXI_wvalid[0];
 endmodule
 
-(* CORE_GENERATION_INFO = "mitx_petalinux,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mitx_petalinux,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=14,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "mitx_petalinux.hwdef" *) 
+(* CORE_GENERATION_INFO = "mitx_petalinux,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mitx_petalinux,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=15,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "mitx_petalinux.hwdef" *) 
 module mitx_petalinux
    (DDR_addr,
     DDR_ba,
@@ -615,6 +615,9 @@ module mitx_petalinux
   assign axi_gpio_0_GPIO_TRI_I = dip_switches_8bits_tri_i[7:0];
   assign axi_gpio_2_GPIO_TRI_I = push_switches_3bits_tri_i[2:0];
   assign led_8bits_tri_o[7:0] = axi_gpio_1_GPIO_TRI_O;
+  mitx_petalinux_clk_wiz_0_1 audio_pll
+       (.clk_in1(processing_system7_0_FCLK_CLK0),
+        .resetn(processing_system7_0_FCLK_RESET0_N));
   mitx_petalinux_axi_gpio_0_1 axi_gpio_0
        (.gpio_io_i(axi_gpio_0_GPIO_TRI_I),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),

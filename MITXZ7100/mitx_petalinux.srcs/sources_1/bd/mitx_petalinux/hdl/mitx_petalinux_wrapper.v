@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-//Date        : Thu Mar 28 08:43:15 2019
+//Date        : Fri Mar 29 03:38:44 2019
 //Host        : 924a1611251c running 64-bit Ubuntu 16.04.6 LTS
 //Command     : generate_target mitx_petalinux_wrapper.bd
 //Design      : mitx_petalinux_wrapper

@@ -125,6 +125,8 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/sim/mitx_petalinux_xbar_0.v" \
   "../../../bd/mitx_petalinux/hdl/mitx_petalinux.v" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_clk_wiz.v" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.v" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_9 \
   "../../../ipstatic/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_a_axi3_conv.v" \

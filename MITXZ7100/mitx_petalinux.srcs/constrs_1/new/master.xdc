@@ -24,12 +24,14 @@
 # ----------------------------------------------------------------------------
  
  
-## 200MHz System Clock
-#set_property LOC G9 [ get_ports CLK_N]
-#set_property IOSTANDARD LVDS [ get_ports CLK_N]
+## INPUT aud clk from LVDS CLK SYNTH
+## NOTE SW10 should be 1->HIGH 2->LOW
+## NOTE SW11 should be 1->HIGH 2->HIGH 3->HIGH 4->LOW
+#set_property LOC U7 [ get_ports aud_clk_clk_n]
+#set_property IOSTANDARD LVDS [ get_ports aud_clk_clk_n]
 
-#set_property LOC H9 [ get_ports CLK_P]
-#set_property IOSTANDARD LVDS [ get_ports CLK_P]
+#set_property LOC U8 [ get_ports aud_clk_clk_p]
+#set_property IOSTANDARD LVDS [ get_ports aud_clk_clk_p]
 
 
 ## User LEDs

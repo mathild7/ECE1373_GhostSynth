@@ -161,6 +161,44 @@ proc create_root_design { parentCell } {
 
   # Create ports
 
+  # Create instance: audio_pll, and set properties
+  set audio_pll [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.3 audio_pll ]
+  set_property -dict [ list \
+CONFIG.CLKIN1_JITTER_PS {100.0} \
+CONFIG.CLKOUT1_DRIVES {BUFG} \
+CONFIG.CLKOUT1_JITTER {360.948} \
+CONFIG.CLKOUT1_PHASE_ERROR {301.601} \
+CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {12.288} \
+CONFIG.CLKOUT2_DRIVES {BUFG} \
+CONFIG.CLKOUT2_JITTER {143.127} \
+CONFIG.CLKOUT2_PHASE_ERROR {134.075} \
+CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {100.000} \
+CONFIG.CLKOUT2_USED {false} \
+CONFIG.CLKOUT3_DRIVES {BUFG} \
+CONFIG.CLKOUT4_DRIVES {BUFG} \
+CONFIG.CLKOUT5_DRIVES {BUFG} \
+CONFIG.CLKOUT6_DRIVES {BUFG} \
+CONFIG.CLKOUT7_DRIVES {BUFG} \
+CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
+CONFIG.MMCM_CLKFBOUT_MULT_F {48.000} \
+CONFIG.MMCM_CLKIN1_PERIOD {10.0} \
+CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
+CONFIG.MMCM_CLKOUT0_DIVIDE_F {78.125} \
+CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
+CONFIG.MMCM_COMPENSATION {ZHOLD} \
+CONFIG.MMCM_DIVCLK_DIVIDE {5} \
+CONFIG.NUM_OUT_CLKS {1} \
+CONFIG.PRIMITIVE {MMCM} \
+CONFIG.PRIM_SOURCE {Single_ended_clock_capable_pin} \
+CONFIG.RESET_PORT {resetn} \
+CONFIG.RESET_TYPE {ACTIVE_LOW} \
+ ] $audio_pll
+
+  # Need to retain value_src of defaults
+  set_property -dict [ list \
+CONFIG.MMCM_CLKIN2_PERIOD.VALUE_SRC {DEFAULT} \
+ ] $audio_pll
+
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
@@ -193,7 +231,7 @@ CONFIG.PCW_ACT_CAN_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.158730} \
 CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {125.000000} \
 CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
-CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {50.000000} \
+CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
 CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {10.000000} \
 CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
@@ -221,6 +259,7 @@ CONFIG.PCW_CAN_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_CAN_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
 CONFIG.PCW_CAN_PERIPHERAL_FREQMHZ {100} \
+CONFIG.PCW_CLK0_FREQ {100000000} \
 CONFIG.PCW_CLK1_FREQ {10000000} \
 CONFIG.PCW_CLK2_FREQ {10000000} \
 CONFIG.PCW_CLK3_FREQ {10000000} \
@@ -289,7 +328,7 @@ CONFIG.PCW_EN_UART1 {1} \
 CONFIG.PCW_EN_USB0 {1} \
 CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {5} \
-CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {4} \
+CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {2} \
 CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {1} \
@@ -300,7 +339,7 @@ CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
 CONFIG.PCW_FCLK_CLK0_BUF {true} \
-CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {50} \
+CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
@@ -863,6 +902,7 @@ CONFIG.PCW_CAN1_PERIPHERAL_ENABLE.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_CAN_PERIPHERAL_CLKSRC.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_CAN_PERIPHERAL_DIVISOR0.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1.VALUE_SRC {DEFAULT} \
+CONFIG.PCW_CLK0_FREQ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_CLK1_FREQ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_CLK2_FREQ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_CLK3_FREQ.VALUE_SRC {DEFAULT} \
@@ -934,7 +974,6 @@ CONFIG.PCW_FCLK3_PERIPHERAL_CLKSRC.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FCLK_CLK0_BUF.VALUE_SRC {DEFAULT} \
-CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ.VALUE_SRC {DEFAULT} \
@@ -1298,8 +1337,8 @@ CONFIG.NUM_SI {2} \
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M02_AXI [get_bd_intf_pins axi_gpio_2/S_AXI] [get_bd_intf_pins processing_system7_0_axi_periph/M02_AXI]
 
   # Create port connections
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/M_AXI_GP1_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/M02_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S01_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins audio_pll/clk_in1] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_gpio_2/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/M_AXI_GP1_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/M02_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S01_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins audio_pll/resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_gpio_2/s_axi_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
 
@@ -1318,26 +1357,27 @@ preplace port FIXED_IO -pg 1 -y 390 -defaultsOSRD
 preplace port push_switches_3bits -pg 1 -y 460 -defaultsOSRD
 preplace port led_8bits -pg 1 -y 590 -defaultsOSRD
 preplace inst axi_gpio_0 -pg 1 -lvl 3 -y 180 -defaultsOSRD
-preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 230 -defaultsOSRD
+preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 270 -defaultsOSRD
 preplace inst axi_gpio_1 -pg 1 -lvl 3 -y 590 -defaultsOSRD
+preplace inst audio_pll -pg 1 -lvl 1 -y 70 -defaultsOSRD
 preplace inst axi_gpio_2 -pg 1 -lvl 3 -y 460 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 180 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y 470 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 510 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 1 3 NJ 370 NJ 370 NJ
 preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 N
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 460
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 440
-preplace netloc processing_system7_0_M_AXI_GP1 1 1 1 450
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 320 430
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 2 480 380 810
-preplace netloc processing_system7_0_axi_periph_M02_AXI 1 2 1 780
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 440
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 460
+preplace netloc processing_system7_0_M_AXI_GP1 1 1 1 480
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 180 430
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 2 470 -10 810
+preplace netloc processing_system7_0_axi_periph_M02_AXI 1 2 1 800
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 390 NJ 390 NJ
 preplace netloc axi_gpio_0_GPIO 1 3 1 NJ
 preplace netloc axi_gpio_2_GPIO 1 3 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 140 470 400 800
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 10 450 -20 830
 preplace netloc axi_gpio_1_GPIO 1 3 1 NJ
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 1 790
-levelinfo -pg 1 0 230 630 910 1030 -top 0 -bot 660
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 1 820
+levelinfo -pg 1 0 230 650 930 1050 -top -70 -bot 660
 ",
 }
 
