@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.xpr">
+<Project Version="7" Minor="14" Path="/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2c33bc56a1584e2e8b3081c657036587"/>
@@ -50,21 +50,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="hdl/mitx_petalinux.hwdef"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="hw_handoff/mitx_petalinux_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="hw_handoff/mitx_petalinux.hwh"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="mitx_petalinux_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_auto_pc_1/mitx_petalinux_auto_pc_1.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_auto_pc_0/mitx_petalinux_auto_pc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="hdl/mitx_petalinux.v"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_axi_gpio_2_1/mitx_petalinux_axi_gpio_2_1.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_processing_system7_0_axi_periph_0/mitx_petalinux_processing_system7_0_axi_periph_0.xci"/>
-        <CompFileExtendedInfo CompFileName="mitx_petalinux.bd" FileRelPathName="ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xci"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v">
         <FileInfo>
