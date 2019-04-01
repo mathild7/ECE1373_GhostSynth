@@ -4,3 +4,6 @@
 [submodule "modules/FMSYNTH"]
 	path = modules/FMSYNTH
 	url = https://github.com/liolliaustin/FMSYNTH.git
+[submodule "modules/latcher"]
+	path = modules/latcher
+	url = https://github.com/esophagus-now/latcher.git
