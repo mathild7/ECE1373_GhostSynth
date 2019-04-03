@@ -13,7 +13,6 @@ vhdl axi_lite_ipif_v3_0_4 "../../../ipstatic/axi_lite_ipif_v3_0/hdl/src/vhdl/axi
 vhdl interrupt_control_v3_1_4 "../../../ipstatic/interrupt_control_v3_1/hdl/src/vhdl/interrupt_control.vhd" 
 vhdl axi_gpio_v2_0_11 "../../../ipstatic/axi_gpio_v2_0/hdl/src/vhdl/gpio_core.vhd" 
 vhdl axi_gpio_v2_0_11 "../../../ipstatic/axi_gpio_v2_0/hdl/src/vhdl/axi_gpio.vhd" 
-vhdl xil_defaultlib "../../../bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_2_1/sim/mitx_petalinux_axi_gpio_2_1.vhd" 
 vhdl xil_defaultlib "../../../bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/sim/mitx_petalinux_axi_gpio_1_1.vhd" 
 vhdl xil_defaultlib "../../../bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/sim/mitx_petalinux_axi_gpio_0_1.vhd" 
 vhdl fifo_generator_v13_1_1 "../../../ipstatic/fifo_generator_v13_1/hdl/fifo_generator_v13_1_rfs.vhd" 

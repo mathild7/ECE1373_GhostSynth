@@ -133,17 +133,17 @@ set_property IOSTANDARD LVCMOS18 [ get_ports push_switches_3bits_tri_i[2]]
 #set_property LOC B12 [ get_ports AUD_ADR1]
 #set_property IOSTANDARD LVCMOS18 [ get_ports AUD_ADR1]
 
-#set_property LOC C17 [ get_ports AUD_GPIO0]
-#set_property IOSTANDARD LVCMOS18 [ get_ports AUD_GPIO0]
+set_property LOC C17 [ get_ports i2s_tx_data_o]
+set_property IOSTANDARD LVCMOS18 [ get_ports i2s_tx_data_o]
 
-#set_property LOC B16 [ get_ports AUD_GPIO1]
-#set_property IOSTANDARD LVCMOS18 [ get_ports AUD_GPIO1]
+set_property LOC B16 [ get_ports i2s_rx_data_i]
+set_property IOSTANDARD LVCMOS18 [ get_ports i2s_rx_data_i]
 
-#set_property LOC B17 [ get_ports AUD_GPIO2]
-#set_property IOSTANDARD LVCMOS18 [ get_ports AUD_GPIO2]
+set_property LOC B17 [ get_ports i2s_sck_o]
+set_property IOSTANDARD LVCMOS18 [ get_ports i2s_sck_o]
 
-#set_property LOC A17 [ get_ports AUD_GPIO3]
-#set_property IOSTANDARD LVCMOS18 [ get_ports AUD_GPIO3]
+set_property LOC A17 [ get_ports i2s_ws_o]
+set_property IOSTANDARD LVCMOS18 [ get_ports i2s_ws_o]
 
-#set_property LOC C14 [ get_ports AUD_MCLK]
-#set_property IOSTANDARD LVCMOS18 [ get_ports AUD_MCLK]
+set_property LOC C14 [ get_ports i2s_mclk_o]
+set_property IOSTANDARD LVCMOS18 [ get_ports i2s_mclk_o]

@@ -1,8 +1,8 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-//Date        : Fri Mar 29 03:38:44 2019
-//Host        : 924a1611251c running 64-bit Ubuntu 16.04.6 LTS
+//Date        : Wed Apr  3 01:58:15 2019
+//Host        : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
 //Command     : generate_target mitx_petalinux_wrapper.bd
 //Design      : mitx_petalinux_wrapper
 //Purpose     : IP block netlist
@@ -32,8 +32,12 @@ module mitx_petalinux_wrapper
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     dip_switches_8bits_tri_i,
-    led_8bits_tri_o,
-    push_switches_3bits_tri_i);
+    i2s_mclk_o,
+    i2s_rx_data_i,
+    i2s_sck_o,
+    i2s_tx_data_o,
+    i2s_ws_o,
+    led_8bits_tri_o);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -56,8 +60,12 @@ module mitx_petalinux_wrapper
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
   input [7:0]dip_switches_8bits_tri_i;
+  output i2s_mclk_o;
+  input i2s_rx_data_i;
+  output i2s_sck_o;
+  output i2s_tx_data_o;
+  output i2s_ws_o;
   output [7:0]led_8bits_tri_o;
-  input [2:0]push_switches_3bits_tri_i;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -81,8 +89,12 @@ module mitx_petalinux_wrapper
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
   wire [7:0]dip_switches_8bits_tri_i;
+  wire i2s_mclk_o;
+  wire i2s_rx_data_i;
+  wire i2s_sck_o;
+  wire i2s_tx_data_o;
+  wire i2s_ws_o;
   wire [7:0]led_8bits_tri_o;
-  wire [2:0]push_switches_3bits_tri_i;
 
   mitx_petalinux mitx_petalinux_i
        (.DDR_addr(DDR_addr),
@@ -107,6 +119,10 @@ module mitx_petalinux_wrapper
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .dip_switches_8bits_tri_i(dip_switches_8bits_tri_i),
-        .led_8bits_tri_o(led_8bits_tri_o),
-        .push_switches_3bits_tri_i(push_switches_3bits_tri_i));
+        .i2s_mclk_o(i2s_mclk_o),
+        .i2s_rx_data_i(i2s_rx_data_i),
+        .i2s_sck_o(i2s_sck_o),
+        .i2s_tx_data_o(i2s_tx_data_o),
+        .i2s_ws_o(i2s_ws_o),
+        .led_8bits_tri_o(led_8bits_tri_o));
 endmodule

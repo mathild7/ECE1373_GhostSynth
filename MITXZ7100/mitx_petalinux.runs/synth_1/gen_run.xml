@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z100ffg900-1" LaunchTime="1553831271">
-  <File Type="RDS-UTIL-PB" Name="mitx_petalinux_wrapper_utilization_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z100ffg900-1" LaunchTime="1554259544">
+  <File Type="VDS-TIMING-PB" Name="mitx_petalinux_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="mitx_petalinux_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="mitx_petalinux_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="mitx_petalinux_wrapper_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="mitx_petalinux_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-PROPCONSTRS" Name="mitx_petalinux_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="mitx_petalinux_wrapper.vds"/>
-  <File Type="VDS-TIMING-PB" Name="mitx_petalinux_wrapper_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="mitx_petalinux_wrapper.tcl"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="mitx_petalinux_wrapper_timing_summary_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../modules/i2s_core/rtl/i2s_core_regmap_regs_pkg.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../modules/i2s_core/rtl/i2s_core_regmap_regs.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../modules/i2s_core/rtl/i2s_codec.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../modules/i2s_core/rtl/i2s_topm.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/mitx_petalinux/mitx_petalinux.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -19,14 +47,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../modules/i2s_core/rtl/i2s.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

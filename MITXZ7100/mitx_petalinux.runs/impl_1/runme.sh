@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/hildeb47/proj/ECE1373_ghostSynth/MITXZ7100/mitx_petalinux.runs/impl_1'
+HD_PWD='/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log mitx_petalinux_wrapper.vdi -applog -m64 -messageDb vivado.pb -mode batch -source mitx_petalinux_wrapper.tcl -notrace
 
 
