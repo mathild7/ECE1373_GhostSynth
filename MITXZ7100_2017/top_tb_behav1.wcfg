@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_vip_v1_0_2_pkg" />
+            <top_module name="glbl" />
+            <top_module name="i2s_core_regmap_regs_pkg" />
+            <top_module name="ipif_pkg" />
+            <top_module name="std" />
+            <top_module name="top_tb" />
+            <top_module name="xil_common_vip_v1_0_0_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="37310000000fs"></ZoomStartTime>
+      <ZoomEndTime time="54860000001fs"></ZoomEndTime>
+      <Cursor1Time time="51935000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="255"></NameColumnWidth>
+      <ValueColumnWidth column_width="337"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="55" />
+   <wave_markers>
+      <marker label="" time="153298005000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i_wclk">
+      <obj_property name="ElementShortName">i_wclk</obj_property>
+      <obj_property name="ObjectShortName">i_wclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i_bclk">
+      <obj_property name="ElementShortName">i_bclk</obj_property>
+      <obj_property name="ObjectShortName">i_bclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i_mclk">
+      <obj_property name="ElementShortName">i_mclk</obj_property>
+      <obj_property name="ObjectShortName">i_mclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i2s_sck_o">
+      <obj_property name="ElementShortName">i2s_sck_o</obj_property>
+      <obj_property name="ObjectShortName">i2s_sck_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i2s_mclk_o">
+      <obj_property name="ElementShortName">i2s_mclk_o</obj_property>
+      <obj_property name="ObjectShortName">i2s_mclk_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i2s_ws_o">
+      <obj_property name="ElementShortName">i2s_ws_o</obj_property>
+      <obj_property name="ObjectShortName">i2s_ws_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i2s_tx_data_o">
+      <obj_property name="ElementShortName">i2s_tx_data_o</obj_property>
+      <obj_property name="ObjectShortName">i2s_tx_data_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/i2s_rx_data_i">
+      <obj_property name="ElementShortName">i2s_rx_data_i</obj_property>
+      <obj_property name="ObjectShortName">i2s_rx_data_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/s_axis_clk">
+      <obj_property name="ElementShortName">s_axis_clk</obj_property>
+      <obj_property name="ObjectShortName">s_axis_clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/s_axis_tdata">
+      <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/s_axis_tvalid">
+      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/s_axis_tready">
+      <obj_property name="ElementShortName">s_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/s_axis_tlast">
+      <obj_property name="ElementShortName">s_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/m_axis_tdata">
+      <obj_property name="ElementShortName">m_axis_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/m_axis_tvalid">
+      <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/m_axis_tready">
+      <obj_property name="ElementShortName">m_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/m_axis_tlast">
+      <obj_property name="ElementShortName">m_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/axi_aclk">
+      <obj_property name="ElementShortName">axi_aclk</obj_property>
+      <obj_property name="ObjectShortName">axi_aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/axi_aresetn">
+      <obj_property name="ElementShortName">axi_aresetn</obj_property>
+      <obj_property name="ObjectShortName">axi_aresetn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_awaddr">
+      <obj_property name="ElementShortName">mms_axi_awaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_awaddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_awprot">
+      <obj_property name="ElementShortName">mms_axi_awprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_awprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_awvalid">
+      <obj_property name="ElementShortName">mms_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_awready">
+      <obj_property name="ElementShortName">mms_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_awready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_wdata">
+      <obj_property name="ElementShortName">mms_axi_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_wstrb">
+      <obj_property name="ElementShortName">mms_axi_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_wvalid">
+      <obj_property name="ElementShortName">mms_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_wready">
+      <obj_property name="ElementShortName">mms_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_wready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_araddr">
+      <obj_property name="ElementShortName">mms_axi_araddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_araddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_arprot">
+      <obj_property name="ElementShortName">mms_axi_arprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_arprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_arvalid">
+      <obj_property name="ElementShortName">mms_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_arready">
+      <obj_property name="ElementShortName">mms_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_arready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_rdata">
+      <obj_property name="ElementShortName">mms_axi_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_rresp">
+      <obj_property name="ElementShortName">mms_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_rvalid">
+      <obj_property name="ElementShortName">mms_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_rready">
+      <obj_property name="ElementShortName">mms_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_rready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_bresp">
+      <obj_property name="ElementShortName">mms_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_bvalid">
+      <obj_property name="ElementShortName">mms_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/mms_axi_bready">
+      <obj_property name="ElementShortName">mms_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">mms_axi_bready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/aresetn">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/data_wr1">
+      <obj_property name="ElementShortName">data_wr1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_wr1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/data_wr2">
+      <obj_property name="ElementShortName">data_wr2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_wr2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/data_rd1">
+      <obj_property name="ElementShortName">data_rd1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_rd1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/data_rd2">
+      <obj_property name="ElementShortName">data_rd2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_rd2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/tvalid">
+      <obj_property name="ElementShortName">tvalid</obj_property>
+      <obj_property name="ObjectShortName">tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/tdata">
+      <obj_property name="ElementShortName">tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/tready">
+      <obj_property name="ElementShortName">tready</obj_property>
+      <obj_property name="ObjectShortName">tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/i2s_ws_dl">
+      <obj_property name="ElementShortName">i2s_ws_dl</obj_property>
+      <obj_property name="ObjectShortName">i2s_ws_dl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/edge_0_0048">
+      <obj_property name="ElementShortName">edge_0_0048</obj_property>
+      <obj_property name="ObjectShortName">edge_0_0048</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/i2s_ws">
+      <obj_property name="ElementShortName">i2s_ws</obj_property>
+      <obj_property name="ObjectShortName">i2s_ws</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/core_clk">
+      <obj_property name="ElementShortName">core_clk</obj_property>
+      <obj_property name="ObjectShortName">core_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/resp">
+      <obj_property name="ElementShortName">resp</obj_property>
+      <obj_property name="ObjectShortName">resp</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/inst/conf_en_bclk">
+      <obj_property name="ElementShortName">conf_en_bclk</obj_property>
+      <obj_property name="ObjectShortName">conf_en_bclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx/inst/conf_en">
+      <obj_property name="ElementShortName">conf_en</obj_property>
+      <obj_property name="ObjectShortName">conf_en</obj_property>
+   </wvobject>
+</wave_config>

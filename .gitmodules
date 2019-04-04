@@ -7,3 +7,6 @@
 [submodule "modules/latcher"]
 	path = modules/latcher
 	url = https://github.com/esophagus-now/latcher.git
+[submodule "modules/common_libs"]
+	path = modules/common_libs
+	url = https://github.com/mathild7/common_libs.git
