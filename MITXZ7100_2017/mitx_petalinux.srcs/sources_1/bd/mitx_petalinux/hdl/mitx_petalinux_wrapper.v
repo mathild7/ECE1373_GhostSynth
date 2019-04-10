@@ -97,13 +97,23 @@ module mitx_petalinux_wrapper
   wire [7:0]dip_switches_8bits_tri_i;
   wire i2s_mclk_ext;
   wire i2s_rx_data_i;
-  wire i2s_sck_ext;
-  wire i2s_tx_data_ext;
-  wire i2s_ws_ext;
+  reg i2s_sck_ext;
+  reg i2s_tx_data_ext;
+  reg i2s_ws_ext;
   wire [6:0]led_8bits_tri_o;
   wire pl_clk_n;
   wire pl_clk_p;
   wire pll_locked;
+  
+  wire i2s_ws;
+  wire i2s_tx_data;
+  wire i2s_sck;
+  always @(posedge i2s_mclk_ext) begin
+      i2s_ws_ext <= i2s_ws;
+      i2s_tx_data_ext <= i2s_tx_data;
+      i2s_sck_ext <= i2s_sck;
+  end
+  
 
   mitx_petalinux mitx_petalinux_i
        (.DDR_addr(DDR_addr),
@@ -130,9 +140,9 @@ module mitx_petalinux_wrapper
         .dip_switches_8bits_tri_i(dip_switches_8bits_tri_i),
         .i2s_mclk_ext(i2s_mclk_ext),
         .i2s_rx_data_i(i2s_rx_data_i),
-        .i2s_sck_ext(i2s_sck_ext),
-        .i2s_tx_data_ext(i2s_tx_data_ext),
-        .i2s_ws_ext(i2s_ws_ext),
+        .i2s_sck_ext(i2s_sck),
+        .i2s_tx_data_ext(i2s_tx_data),
+        .i2s_ws_ext(i2s_ws),
         .led_8bits_tri_o(led_8bits_tri_o),
         .pl_clk_n(pl_clk_n),
         .pl_clk_p(pl_clk_p),
