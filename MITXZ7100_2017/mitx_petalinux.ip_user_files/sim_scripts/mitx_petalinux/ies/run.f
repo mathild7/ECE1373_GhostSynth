@@ -70,6 +70,12 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/sim/mitx_petalinux_i2s_tx_fifo_0.v" \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_0/sim/mitx_petalinux_i2s_tx_0.v" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_atg_module_0_0/sim/mitx_petalinux_atg_module_0_0.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/dd87/hdl/verilog/triangle.v" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_triangle_0_0/sim/mitx_petalinux_triangle_0_0.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2c99/hdl/verilog/Block_codeRepl1_proc.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2c99/hdl/verilog/latcher.v" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_latcher_0_0/sim/mitx_petalinux_latcher_0_0.v" \
 -endlib
 -makelib ies/generic_baseblocks_v2_1_0 \
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f9c1/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
@@ -86,43 +92,6 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/sim/mitx_petalinux_xbar_0.v" \
   "../../../bd/mitx_petalinux/hdl/mitx_petalinux.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_atg_module_0_0/sim/mitx_petalinux_atg_module_0_0.v" \
--endlib
--makelib ies/xbip_utils_v3_0_7 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/3d01/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies/c_reg_fd_v12_0_3 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/e1e2/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
--endlib
--makelib ies/xbip_dsp48_wrapper_v3_0_4 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1e87/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies/xbip_pipe_v3_0_3 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7db8/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies/xbip_dsp48_addsub_v3_0_3 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/c9c4/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies/xbip_addsub_v3_0_3 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2957/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies/c_addsub_v12_0_10 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a394/hdl/c_addsub_v12_0_vh_rfs.vhd" \
--endlib
--makelib ies/xbip_bram18k_v3_0_3 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/403d/hdl/xbip_bram18k_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies/mult_gen_v12_0_12 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f0ab/hdl/mult_gen_v12_0_vh_rfs.vhd" \
--endlib
--makelib ies/axi_utils_v2_0_3 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/43f5/hdl/axi_utils_v2_0_vh_rfs.vhd" \
--endlib
--makelib ies/cordic_v6_0_11 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5255/hdl/cordic_v6_0_vh_rfs.vhd" \
--endlib
--makelib ies/xil_defaultlib \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_cordic_0_0/sim/mitx_petalinux_cordic_0_0.vhd" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_13 \
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f0ae/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

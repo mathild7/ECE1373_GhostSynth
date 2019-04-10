@@ -1,31 +1,37 @@
 {
-   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+   guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
 preplace port i2s_ws_o -pg 1 -y 110 -defaultsOSRD
 preplace port aud_rstn -pg 1 -y 20 -defaultsOSRD
 preplace port i2s_rx_data_i -pg 1 -y 160 -defaultsOSRD -right
 preplace port i2s_mclk_o -pg 1 -y 90 -defaultsOSRD
 preplace port i2s_sck_o -pg 1 -y 70 -defaultsOSRD
+preplace port clk_0_0048 -pg 1 -y -100 -defaultsOSRD
 preplace port aud_clk -pg 1 -y -20 -defaultsOSRD
 preplace port mms_axi -pg 1 -y 100 -defaultsOSRD
 preplace port core_aclk -pg 1 -y 120 -defaultsOSRD
 preplace port i2s_tx_data_o -pg 1 -y 130 -defaultsOSRD
 preplace port i2s_tx_fifo_axis -pg 1 -y 40 -defaultsOSRD
 preplace portBus core_aresetn -pg 1 -y 140 -defaultsOSRD
+preplace inst atg_module_0 -pg 1 -lvl 1 -y -80 -defaultsOSRD
 preplace inst i2s_tx -pg 1 -lvl 2 -y 90 -defaultsOSRD
 preplace inst i2s_tx_fifo -pg 1 -lvl 1 -y 80 -defaultsOSRD
 preplace netloc Conn1 1 0 1 N
-preplace netloc Conn2 1 0 2 NJ -10 NJ
-preplace netloc s_axis_aclk_1 1 0 2 -520 -30 NJ
-preplace netloc i2s_rx_data_i_1 1 1 2 NJ -30 270
+preplace netloc Conn2 1 0 2 -550J -10 -150J
+preplace netloc atg_module_0_clk_12_288 1 1 1 -160
+preplace netloc aud_rstn_1 1 0 1 -510
+preplace netloc atg_module_0_clk_0_0048 1 1 2 -130 -100 NJ
+preplace netloc i2s_rx_data_i_1 1 1 2 -130J 220 310
+preplace netloc core_aclk_1 1 0 2 -540 180 -160J
 preplace netloc i2s_tx_i2s_sck_o 1 2 1 NJ
-preplace netloc m_axis_aclk_1 1 0 2 -530 170 -180
-preplace netloc m_axis_aresetn_1 1 0 2 -510 180 -160
 preplace netloc i2s_tx_i2s_tx_data_o 1 2 1 NJ
-preplace netloc i2s_tx_fifo_M_AXIS 1 1 1 -180
+preplace netloc i2s_tx_fifo_M_AXIS 1 1 1 -170
+preplace netloc core_aresetn_1 1 0 2 -520 190 -140J
 preplace netloc i2s_tx_i2s_mclk_o 1 2 1 NJ
 preplace netloc i2s_tx_i2s_ws_o 1 2 1 NJ
-preplace netloc s_axis_aresetn_1 1 0 1 -530
-levelinfo -pg 1 -560 -340 140 310 -top -40 -bot 410
+preplace netloc atg_module_0_clk_3_072 1 1 1 -140
+preplace netloc aud_clk_1 1 0 2 -530 170 -170J
+levelinfo -pg 1 -570 -340 140 330 -top -150 -bot 410
 ",
 }
+0

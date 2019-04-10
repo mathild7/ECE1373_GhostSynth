@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr  4 06:01:26 2019" VIVADOVERSION="2017.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 10 09:02:54 2019" VIVADOVERSION="2017.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z100" NAME="mitx_petalinux" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
@@ -25,32 +25,26 @@
     <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
-    <PORT DIR="O" LEFT="7" NAME="led_8bits_tri_o" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="I" LEFT="7" NAME="dip_switches_8bits_tri_i" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="I" LEFT="15" NAME="S_AXIS_PHASE_tdata" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" NAME="S_AXIS_PHASE_tready" SIGIS="undef"/>
-    <PORT DIR="I" NAME="S_AXIS_PHASE_tvalid" SIGIS="undef"/>
-    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="core_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="i2s_sck_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_sck_o">
+    <PORT DIR="O" LEFT="6" NAME="led_8bits_tri_o" RIGHT="0" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="pl_clk_n" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="pl_clk_p" SIGIS="clk"/>
+    <PORT DIR="O" NAME="i2s_sck_ext" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_sck_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i2s_sck_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="i2s_ws_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_ws_o">
+    <PORT DIR="O" NAME="i2s_ws_ext" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_ws_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i2s_ws_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="i2s_mclk_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_mclk_o">
+    <PORT DIR="O" NAME="i2s_mclk_ext" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_mclk_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i2s_mclk_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="i2s_tx_data_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_tx_data_o">
+    <PORT DIR="O" NAME="i2s_tx_data_ext" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_tx_data_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i2s_tx_data_o"/>
       </CONNECTIONS>
@@ -58,6 +52,11 @@
     <PORT DIR="I" NAME="i2s_rx_data_i" SIGIS="undef" SIGNAME="External_Ports_i2s_rx_data_i">
       <CONNECTIONS>
         <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i2s_rx_data_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="pll_locked" SIGIS="undef" SIGNAME="audio_pll_locked">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="audio_pll" PORT="locked"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -107,33 +106,22 @@
         <PORTMAP LOGICAL="PS_PORB" PHYSICAL="FIXED_IO_ps_porb"/>
       </PORTMAPS>
     </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="axi_gpio_1_GPIO" NAME="led_8bits" TYPE="INITIATOR">
-      <PORTMAPS>
-        <PORTMAP LOGICAL="TRI_O" PHYSICAL="led_8bits_tri_o"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="axi_gpio_0_GPIO" NAME="dip_switches_8bits" TYPE="INITIATOR">
       <PORTMAPS>
         <PORTMAP LOGICAL="TRI_I" PHYSICAL="dip_switches_8bits_tri_i"/>
       </PORTMAPS>
     </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="External_Interface_S_AXIS_PHASE" NAME="S_AXIS_PHASE" TYPE="TARGET">
-      <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-      <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-      <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-      <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-      <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-      <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-      <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-      <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-      <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-      <PARAMETER NAME="PHASE" VALUE="0.000"/>
-      <PARAMETER NAME="CLK_DOMAIN"/>
-      <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+    <BUSINTERFACE BUSNAME="axi_gpio_1_GPIO" NAME="led_8bits" TYPE="INITIATOR">
       <PORTMAPS>
-        <PORTMAP LOGICAL="TDATA" PHYSICAL="S_AXIS_PHASE_tdata"/>
-        <PORTMAP LOGICAL="TREADY" PHYSICAL="S_AXIS_PHASE_tready"/>
-        <PORTMAP LOGICAL="TVALID" PHYSICAL="S_AXIS_PHASE_tvalid"/>
+        <PORTMAP LOGICAL="TRI_O" PHYSICAL="led_8bits_tri_o"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_pl" NAME="pl" TYPE="TARGET">
+      <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
+      <PARAMETER NAME="FREQ_HZ" VALUE="200000000"/>
+      <PORTMAPS>
+        <PORTMAP LOGICAL="CLK_N" PHYSICAL="pl_clk_n"/>
+        <PORTMAP LOGICAL="CLK_P" PHYSICAL="pl_clk_p"/>
       </PORTMAPS>
     </BUSINTERFACE>
   </EXTERNALINTERFACES>
@@ -157,7 +145,7 @@
         <PARAMETER NAME="C_ENABLE_USER_CLOCK3" VALUE="0"/>
         <PARAMETER NAME="C_Enable_PLL0" VALUE="0"/>
         <PARAMETER NAME="C_Enable_PLL1" VALUE="0"/>
-        <PARAMETER NAME="C_REF_CLK_FREQ" VALUE="100.0"/>
+        <PARAMETER NAME="C_REF_CLK_FREQ" VALUE="200"/>
         <PARAMETER NAME="C_PRECISION" VALUE="1"/>
         <PARAMETER NAME="C_CLKOUT3_USED" VALUE="0"/>
         <PARAMETER NAME="C_CLKOUT4_USED" VALUE="0"/>
@@ -185,13 +173,13 @@
         <PARAMETER NAME="C_USE_FAST_SIMULATION" VALUE="0"/>
         <PARAMETER NAME="C_PRIMTYPE_SEL" VALUE="AUTO"/>
         <PARAMETER NAME="C_USE_CLK_VALID" VALUE="0"/>
-        <PARAMETER NAME="C_PRIM_IN_FREQ" VALUE="100"/>
+        <PARAMETER NAME="C_PRIM_IN_FREQ" VALUE="200"/>
         <PARAMETER NAME="C_PRIM_IN_TIMEPERIOD" VALUE="10.000"/>
         <PARAMETER NAME="C_IN_FREQ_UNITS" VALUE="Units_MHz"/>
         <PARAMETER NAME="C_SECONDARY_IN_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_SECONDARY_IN_TIMEPERIOD" VALUE="10.000"/>
         <PARAMETER NAME="C_FEEDBACK_SOURCE" VALUE="FDBK_AUTO"/>
-        <PARAMETER NAME="C_PRIM_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
+        <PARAMETER NAME="C_PRIM_SOURCE" VALUE="Differential_clock_capable_pin"/>
         <PARAMETER NAME="C_PHASESHIFT_MODE" VALUE="WAVEFORM"/>
         <PARAMETER NAME="C_SECONDARY_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
         <PARAMETER NAME="C_CLKFB_IN_SIGNALING" VALUE="SINGLE"/>
@@ -212,11 +200,11 @@
         <PARAMETER NAME="C_CLKOUT6_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="C_CLKOUT7_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="C_INCLK_SUM_ROW0" VALUE="Input Clock   Freq (MHz)    Input Jitter (UI)"/>
-        <PARAMETER NAME="C_INCLK_SUM_ROW1" VALUE="__primary_____________100____________0.010"/>
+        <PARAMETER NAME="C_INCLK_SUM_ROW1" VALUE="__primary_____________200____________0.050"/>
         <PARAMETER NAME="C_INCLK_SUM_ROW2" VALUE="no_secondary_input_clock"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0A" VALUE="Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0B" VALUE="Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out1____12.288______0.000______50.0______360.948____301.601"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out1____12.288______0.000______50.0______569.507____264.435"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="no_CLK_OUT2_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW3" VALUE="no_CLK_OUT3_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW4" VALUE="no_CLK_OUT4_output"/>
@@ -276,17 +264,17 @@
         <PARAMETER NAME="C_CLKOUT7_SEQUENCE_NUMBER" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_NOTES" VALUE="None"/>
         <PARAMETER NAME="C_MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="48.000"/>
-        <PARAMETER NAME="C_MMCM_CLKIN1_PERIOD" VALUE="10.000"/>
-        <PARAMETER NAME="C_MMCM_CLKIN2_PERIOD" VALUE="10.000"/>
+        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="44.375"/>
+        <PARAMETER NAME="C_MMCM_CLKIN1_PERIOD" VALUE="5.000"/>
+        <PARAMETER NAME="C_MMCM_CLKIN2_PERIOD" VALUE="10.0"/>
         <PARAMETER NAME="C_MMCM_CLKOUT4_CASCADE" VALUE="FALSE"/>
         <PARAMETER NAME="C_MMCM_CLOCK_HOLD" VALUE="FALSE"/>
         <PARAMETER NAME="C_MMCM_COMPENSATION" VALUE="ZHOLD"/>
-        <PARAMETER NAME="C_MMCM_DIVCLK_DIVIDE" VALUE="5"/>
-        <PARAMETER NAME="C_MMCM_REF_JITTER1" VALUE="0.010"/>
+        <PARAMETER NAME="C_MMCM_DIVCLK_DIVIDE" VALUE="9"/>
+        <PARAMETER NAME="C_MMCM_REF_JITTER1" VALUE="0.050"/>
         <PARAMETER NAME="C_MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="C_MMCM_STARTUP_WAIT" VALUE="FALSE"/>
-        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="78.125"/>
+        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="80.250"/>
         <PARAMETER NAME="C_MMCM_CLKOUT1_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT2_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT3_DIVIDE" VALUE="1"/>
@@ -380,7 +368,7 @@
         <PARAMETER NAME="C_CLK_IN_SEL_PORT" VALUE="clk_in_sel"/>
         <PARAMETER NAME="C_INPUT_CLK_STOPPED_PORT" VALUE="input_clk_stopped"/>
         <PARAMETER NAME="C_CLKFB_STOPPED_PORT" VALUE="clkfb_stopped"/>
-        <PARAMETER NAME="C_CLKIN1_JITTER_PS" VALUE="100.0"/>
+        <PARAMETER NAME="C_CLKIN1_JITTER_PS" VALUE="250.0"/>
         <PARAMETER NAME="C_CLKIN2_JITTER_PS" VALUE="100.0"/>
         <PARAMETER NAME="C_PRIMITIVE" VALUE="MMCM"/>
         <PARAMETER NAME="C_SS_MODE" VALUE="CENTER_HIGH"/>
@@ -463,7 +451,7 @@
         <PARAMETER NAME="ENABLE_USER_CLOCK3" VALUE="false"/>
         <PARAMETER NAME="Enable_PLL0" VALUE="false"/>
         <PARAMETER NAME="Enable_PLL1" VALUE="false"/>
-        <PARAMETER NAME="REF_CLK_FREQ" VALUE="100.0"/>
+        <PARAMETER NAME="REF_CLK_FREQ" VALUE="200"/>
         <PARAMETER NAME="PRECISION" VALUE="1"/>
         <PARAMETER NAME="PRIMITIVE" VALUE="MMCM"/>
         <PARAMETER NAME="PRIMTYPE_SEL" VALUE="mmcm_adv"/>
@@ -475,7 +463,7 @@
         <PARAMETER NAME="USE_DYN_PHASE_SHIFT" VALUE="false"/>
         <PARAMETER NAME="USE_DYN_RECONFIG" VALUE="false"/>
         <PARAMETER NAME="JITTER_SEL" VALUE="No_Jitter"/>
-        <PARAMETER NAME="PRIM_IN_FREQ" VALUE="100"/>
+        <PARAMETER NAME="PRIM_IN_FREQ" VALUE="200"/>
         <PARAMETER NAME="PRIM_IN_TIMEPERIOD" VALUE="10.000"/>
         <PARAMETER NAME="IN_FREQ_UNITS" VALUE="Units_MHz"/>
         <PARAMETER NAME="PHASESHIFT_MODE" VALUE="WAVEFORM"/>
@@ -487,11 +475,11 @@
         <PARAMETER NAME="SECONDARY_PORT" VALUE="clk_in2"/>
         <PARAMETER NAME="SECONDARY_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
         <PARAMETER NAME="JITTER_OPTIONS" VALUE="UI"/>
-        <PARAMETER NAME="CLKIN1_UI_JITTER" VALUE="0.010"/>
+        <PARAMETER NAME="CLKIN1_UI_JITTER" VALUE="0.050"/>
         <PARAMETER NAME="CLKIN2_UI_JITTER" VALUE="0.010"/>
         <PARAMETER NAME="PRIM_IN_JITTER" VALUE="0.010"/>
         <PARAMETER NAME="SECONDARY_IN_JITTER" VALUE="0.010"/>
-        <PARAMETER NAME="CLKIN1_JITTER_PS" VALUE="100.0"/>
+        <PARAMETER NAME="CLKIN1_JITTER_PS" VALUE="250.0"/>
         <PARAMETER NAME="CLKIN2_JITTER_PS" VALUE="100.0"/>
         <PARAMETER NAME="CLKOUT1_USED" VALUE="true"/>
         <PARAMETER NAME="CLKOUT2_USED" VALUE="false"/>
@@ -557,7 +545,7 @@
         <PARAMETER NAME="CLKOUT5_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="CLKOUT6_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="CLKOUT7_MATCHED_ROUTING" VALUE="false"/>
-        <PARAMETER NAME="PRIM_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
+        <PARAMETER NAME="PRIM_SOURCE" VALUE="Differential_clock_capable_pin"/>
         <PARAMETER NAME="CLKOUT1_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="CLKOUT2_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="CLKOUT3_DRIVES" VALUE="BUFG"/>
@@ -597,20 +585,20 @@
         <PARAMETER NAME="SS_MOD_TIME" VALUE="0.004"/>
         <PARAMETER NAME="OVERRIDE_MMCM" VALUE="false"/>
         <PARAMETER NAME="MMCM_NOTES" VALUE="None"/>
-        <PARAMETER NAME="MMCM_DIVCLK_DIVIDE" VALUE="5"/>
+        <PARAMETER NAME="MMCM_DIVCLK_DIVIDE" VALUE="9"/>
         <PARAMETER NAME="MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="48.000"/>
+        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="44.375"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_USE_FINE_PS" VALUE="false"/>
-        <PARAMETER NAME="MMCM_CLKIN1_PERIOD" VALUE="10.000"/>
-        <PARAMETER NAME="MMCM_CLKIN2_PERIOD" VALUE="10.000"/>
+        <PARAMETER NAME="MMCM_CLKIN1_PERIOD" VALUE="5.000"/>
+        <PARAMETER NAME="MMCM_CLKIN2_PERIOD" VALUE="10.0"/>
         <PARAMETER NAME="MMCM_CLKOUT4_CASCADE" VALUE="false"/>
         <PARAMETER NAME="MMCM_CLOCK_HOLD" VALUE="false"/>
         <PARAMETER NAME="MMCM_COMPENSATION" VALUE="ZHOLD"/>
-        <PARAMETER NAME="MMCM_REF_JITTER1" VALUE="0.010"/>
+        <PARAMETER NAME="MMCM_REF_JITTER1" VALUE="0.050"/>
         <PARAMETER NAME="MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="MMCM_STARTUP_WAIT" VALUE="false"/>
-        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="78.125"/>
+        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="80.250"/>
         <PARAMETER NAME="MMCM_CLKOUT0_DUTY_CYCLE" VALUE="0.500"/>
         <PARAMETER NAME="MMCM_CLKOUT0_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKOUT0_USE_FINE_PS" VALUE="false"/>
@@ -688,8 +676,8 @@
         <PARAMETER NAME="CDDCREQ_PORT" VALUE="cddcreq"/>
         <PARAMETER NAME="ENABLE_CLKOUTPHY" VALUE="false"/>
         <PARAMETER NAME="CLKOUTPHY_REQUESTED_FREQ" VALUE="600.000"/>
-        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="360.948"/>
-        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="301.601"/>
+        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="569.507"/>
+        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="264.435"/>
         <PARAMETER NAME="CLKOUT2_JITTER" VALUE="143.127"/>
         <PARAMETER NAME="CLKOUT2_PHASE_ERROR" VALUE="134.075"/>
         <PARAMETER NAME="CLKOUT3_JITTER" VALUE="0.0"/>
@@ -709,31 +697,35 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
+        <PORT DIR="I" NAME="clk_in1_p" SIGIS="clk"/>
+        <PORT DIR="I" NAME="clk_in1_n" SIGIS="clk"/>
+        <PORT DIR="I" NAME="resetn" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
+            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk_in1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="12287988" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="audio_pll_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="12288000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="audio_pll_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="m_axis_aclk"/>
             <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clock_in"/>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="s_axis_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="audio_pll_locked">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="m_axis_aresetn"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="pll_locked"/>
             <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="reset_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
-      <BUSINTERFACES/>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_pl" NAME="CLK_IN1_D" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
+          <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="200000000"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="CLK_N" PHYSICAL="clk_in1_n"/>
+            <PORTMAP LOGICAL="CLK_P" PHYSICAL="clk_in1_p"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
     </MODULE>
     <MODULE FULLNAME="/axi_gpio_0" HWVERSION="2.0" INSTANCE="axi_gpio_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_gpio" VLNV="xilinx.com:ip:axi_gpio:2.0">
       <DOCUMENTS>
@@ -1096,7 +1088,7 @@
             <REGISTER NAME="GPIO_DATA">
               <PROPERTY NAME="DESCRIPTION" VALUE="Channel-1 AXI GPIO Data register"/>
               <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0x0"/>
-              <PROPERTY NAME="SIZE" VALUE="8"/>
+              <PROPERTY NAME="SIZE" VALUE="7"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0x0"/>
@@ -1109,14 +1101,14 @@
                   <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
                   <PROPERTY NAME="READ_ACTION" VALUE=""/>
                   <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="8"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="7"/>
                 </FIELD>
               </FIELDS>
             </REGISTER>
             <REGISTER NAME="GPIO_TRI">
               <PROPERTY NAME="DESCRIPTION" VALUE="Channel-1 AXI GPIO 3-State Control register"/>
               <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0x4"/>
-              <PROPERTY NAME="SIZE" VALUE="8"/>
+              <PROPERTY NAME="SIZE" VALUE="7"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0x0"/>
@@ -1129,7 +1121,7 @@
                   <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
                   <PROPERTY NAME="READ_ACTION" VALUE=""/>
                   <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="8"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="7"/>
                 </FIELD>
               </FIELDS>
             </REGISTER>
@@ -1260,7 +1252,7 @@
         <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
         <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="9"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_GPIO_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="C_GPIO_WIDTH" VALUE="7"/>
         <PARAMETER NAME="C_GPIO2_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_ALL_INPUTS" VALUE="0"/>
         <PARAMETER NAME="C_ALL_INPUTS_2" VALUE="0"/>
@@ -1376,7 +1368,7 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="gpio_io_o" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="6" NAME="gpio_io_o" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="processing_system7_0_axi_periph_M01_AXI" DATAWIDTH="32" NAME="S_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -1437,128 +1429,6 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/cordic_0" HWVERSION="6.0" INSTANCE="cordic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cordic" VLNV="xilinx.com:ip:cordic:6.0">
-      <DOCUMENTS>
-        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=cordic;v=v6_0;d=pg105-cordic.pdf"/>
-      </DOCUMENTS>
-      <PARAMETERS>
-        <PARAMETER NAME="C_ARCHITECTURE" VALUE="1"/>
-        <PARAMETER NAME="C_CORDIC_FUNCTION" VALUE="2"/>
-        <PARAMETER NAME="C_COARSE_ROTATE" VALUE="1"/>
-        <PARAMETER NAME="C_DATA_FORMAT" VALUE="0"/>
-        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="C_HAS_ACLKEN" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_ACLK" VALUE="1"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_CARTESIAN" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_PHASE" VALUE="1"/>
-        <PARAMETER NAME="C_HAS_ARESETN" VALUE="0"/>
-        <PARAMETER NAME="C_INPUT_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_ITERATIONS" VALUE="0"/>
-        <PARAMETER NAME="C_OUTPUT_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_PHASE_FORMAT" VALUE="0"/>
-        <PARAMETER NAME="C_PIPELINE_MODE" VALUE="-2"/>
-        <PARAMETER NAME="C_PRECISION" VALUE="0"/>
-        <PARAMETER NAME="C_ROUND_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_SCALE_COMP" VALUE="0"/>
-        <PARAMETER NAME="C_THROTTLE_SCHEME" VALUE="3"/>
-        <PARAMETER NAME="C_TLAST_RESOLUTION" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_PHASE_TUSER" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_PHASE_TLAST" VALUE="0"/>
-        <PARAMETER NAME="C_S_AXIS_PHASE_TDATA_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_S_AXIS_PHASE_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_CARTESIAN_TUSER" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_S_AXIS_CARTESIAN_TLAST" VALUE="0"/>
-        <PARAMETER NAME="C_S_AXIS_CARTESIAN_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_S_AXIS_CARTESIAN_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_M_AXIS_DOUT_TDATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_M_AXIS_DOUT_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="mitx_petalinux_cordic_0_0"/>
-        <PARAMETER NAME="Functional_Selection" VALUE="Sin_and_Cos"/>
-        <PARAMETER NAME="Architectural_Configuration" VALUE="Word_Serial"/>
-        <PARAMETER NAME="Pipelining_Mode" VALUE="Maximum"/>
-        <PARAMETER NAME="Data_Format" VALUE="SignedFraction"/>
-        <PARAMETER NAME="Phase_Format" VALUE="Radians"/>
-        <PARAMETER NAME="Input_Width" VALUE="16"/>
-        <PARAMETER NAME="Output_Width" VALUE="16"/>
-        <PARAMETER NAME="Round_Mode" VALUE="Truncate"/>
-        <PARAMETER NAME="Iterations" VALUE="0"/>
-        <PARAMETER NAME="Precision" VALUE="0"/>
-        <PARAMETER NAME="Coarse_Rotation" VALUE="true"/>
-        <PARAMETER NAME="Compensation_Scaling" VALUE="No_Scale_Compensation"/>
-        <PARAMETER NAME="cartesian_has_tuser" VALUE="false"/>
-        <PARAMETER NAME="cartesian_tuser_width" VALUE="1"/>
-        <PARAMETER NAME="cartesian_has_tlast" VALUE="false"/>
-        <PARAMETER NAME="phase_has_tuser" VALUE="false"/>
-        <PARAMETER NAME="phase_tuser_width" VALUE="1"/>
-        <PARAMETER NAME="phase_has_tlast" VALUE="false"/>
-        <PARAMETER NAME="flow_control" VALUE="NonBlocking"/>
-        <PARAMETER NAME="optimize_goal" VALUE="Performance"/>
-        <PARAMETER NAME="out_tready" VALUE="false"/>
-        <PARAMETER NAME="out_tlast_behv" VALUE="Null"/>
-        <PARAMETER NAME="ACLKEN" VALUE="false"/>
-        <PARAMETER NAME="ARESETN" VALUE="false"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_phase_tvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="s_axis_phase_tready" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="15" NAME="s_axis_phase_tdata" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="m_axis_dout_tvalid" SIGIS="undef" SIGNAME="cordic_0_m_axis_dout_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="m_axis_dout_tdata" RIGHT="0" SIGIS="undef" SIGNAME="cordic_0_m_axis_dout_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="External_Interface_S_AXIS_PHASE" NAME="S_AXIS_PHASE" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="2"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_phase_tdata"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_phase_tready"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_phase_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="cordic_0_M_AXIS_DOUT" NAME="M_AXIS_DOUT" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="0"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} complex {bitwidth {attribs {resolve_type generated dependency complex_width format long minimum {} maximum {}} value 16} stride {attribs {resolve_type generated dependency complex_stride format long minimum {} maximum {}} value 16} realfirst {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} real {fixed {fractwidth {attribs {resolve_type generated dependency complex_fractwidth format long minimum {} maximum {}} value 14} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}} TDATA_WIDTH 32 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_cartesian_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cartesian_tuser} enabled {attribs {resolve_type generated dependency cart_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency cart_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_phase_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value phase_tuser} enabled {attribs {resolve_type generated dependency phase_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency phase_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency phase_offset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}} TUSER_WIDTH 0}"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_dout_tdata"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_dout_tvalid"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
     <MODULE FULLNAME="/i2s_block/atg_module_0" HWVERSION="1.0" INSTANCE="i2s_block_atg_module_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="atg_module" VLNV="user.org:module_ref:atg_module:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -1566,7 +1436,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="12288000" DIR="I" NAME="clock_in" SIGIS="clk" SIGNAME="audio_pll_clk_out1">
+        <PORT CLKFREQUENCY="12287988" DIR="I" NAME="clock_in" SIGIS="clk" SIGNAME="audio_pll_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="audio_pll" PORT="clk_out1"/>
           </CONNECTIONS>
@@ -1576,19 +1446,36 @@
             <CONNECTION INSTANCE="audio_pll" PORT="locked"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="clk_0_0048" SIGIS="undef" SIGNAME="i2s_block_atg_module_0_clk_0_0048">
+        <PORT DIR="I" NAME="core_clk_in" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i_wclk"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="clk_3_072" SIGIS="undef" SIGNAME="i2s_block_atg_module_0_clk_3_072">
+        <PORT DIR="I" NAME="core_rst_n" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i_bclk"/>
+            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="clk_12_288" SIGIS="undef" SIGNAME="i2s_block_atg_module_0_clk_12_288">
+        <PORT CLKFREQUENCY="48000" DIR="O" NAME="clock_0_0048" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_0_0048">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="i_mclk"/>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="clock_0_0048"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="3072000" DIR="O" NAME="clock_3_072" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_3_072">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="m_axis_aclk"/>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="s_axis_clk"/>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="clock_3_072"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="12288000" DIR="O" NAME="clock_12_288" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_12_288">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="clock_12_288"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="latcher_pulse" SIGIS="undef" SIGNAME="i2s_block_atg_module_0_latcher_pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="latch_V"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1609,39 +1496,39 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x80002FFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="i_wclk" SIGIS="undef" SIGNAME="i2s_block_atg_module_0_clk_0_0048">
+        <PORT CLKFREQUENCY="48000" DIR="I" NAME="clock_0_0048" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_0_0048">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clk_0_0048"/>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clock_0_0048"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="i_bclk" SIGIS="undef" SIGNAME="i2s_block_atg_module_0_clk_3_072">
+        <PORT CLKFREQUENCY="3072000" DIR="I" NAME="clock_3_072" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_3_072">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clk_3_072"/>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clock_3_072"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="i_mclk" SIGIS="undef" SIGNAME="i2s_block_atg_module_0_clk_12_288">
+        <PORT CLKFREQUENCY="12288000" DIR="I" NAME="clock_12_288" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_12_288">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clk_12_288"/>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clock_12_288"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="i2s_sck_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_sck_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="i2s_sck_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="i2s_sck_ext"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="i2s_mclk_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_mclk_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="i2s_mclk_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="i2s_mclk_ext"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="i2s_ws_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_ws_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="i2s_ws_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="i2s_ws_ext"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="i2s_tx_data_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_i2s_tx_data_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="i2s_tx_data_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="i2s_tx_data_ext"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="i2s_rx_data_i" SIGIS="undef" SIGNAME="External_Ports_i2s_rx_data_i">
@@ -1649,9 +1536,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="i2s_rx_data_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="12288000" DIR="I" NAME="s_axis_clk" SIGIS="clk" SIGNAME="audio_pll_clk_out1">
+        <PORT CLKFREQUENCY="3072000" DIR="I" NAME="s_axis_clk" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_3_072">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="audio_pll" PORT="clk_out1"/>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clock_3_072"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_s_axis_tdata">
@@ -1674,12 +1561,17 @@
         <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef"/>
         <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef"/>
         <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="axi_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT DIR="O" NAME="conf_en_o" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_conf_en_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="m_axis_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="mms_axi_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="axi_aresetn" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
+        <PORT DIR="I" NAME="mms_axi_aresetn" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
@@ -1810,10 +1702,10 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="12288000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/audio_pll_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} complex {bitwidth {attribs {resolve_type generated dependency complex_width format long minimum {} maximum {}} value 16} stride {attribs {resolve_type generated dependency complex_stride format long minimum {} maximum {}} value 16} realfirst {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} real {fixed {fractwidth {attribs {resolve_type generated dependency complex_fractwidth format long minimum {} maximum {}} value 14} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}} TDATA_WIDTH 32 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_cartesian_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cartesian_tuser} enabled {attribs {resolve_type generated dependency cart_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency cart_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_phase_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value phase_tuser} enabled {attribs {resolve_type generated dependency phase_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency phase_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency phase_offset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}} TUSER_WIDTH 0}"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="3072000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_atg_module_0_0_clock_3_072"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 32}"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
             <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
@@ -1847,7 +1739,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -1914,9 +1806,9 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="m_axis_aresetn" SIGIS="rst" SIGNAME="audio_pll_locked">
+        <PORT DIR="I" NAME="m_axis_aresetn" SIGIS="rst" SIGNAME="i2s_block_i2s_tx_conf_en_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="audio_pll" PORT="locked"/>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="conf_en_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -1924,20 +1816,24 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="cordic_0_m_axis_dout_tvalid">
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_fifo_s_axis_tvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cordic_0" PORT="m_axis_dout_tvalid"/>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="out_V_V_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="cordic_0_m_axis_dout_tdata">
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_fifo_s_axis_tready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="cordic_0" PORT="m_axis_dout_tdata"/>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="out_V_V_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="12288000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="audio_pll_clk_out1">
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_fifo_s_axis_tdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="audio_pll" PORT="clk_out1"/>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="out_V_V_TDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="3072000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="i2s_block_atg_module_0_clock_3_072">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="clock_3_072"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_s_axis_tvalid">
@@ -1960,7 +1856,7 @@
         <PORT DIR="O" LEFT="31" NAME="axis_rd_data_count" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="cordic_0_M_AXIS_DOUT" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="saw_gen_latcher_0_out_V_V" NAME="S_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
@@ -1972,7 +1868,7 @@
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} complex {bitwidth {attribs {resolve_type generated dependency complex_width format long minimum {} maximum {}} value 16} stride {attribs {resolve_type generated dependency complex_stride format long minimum {} maximum {}} value 16} realfirst {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} real {fixed {fractwidth {attribs {resolve_type generated dependency complex_fractwidth format long minimum {} maximum {}} value 14} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}} TDATA_WIDTH 32 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_cartesian_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cartesian_tuser} enabled {attribs {resolve_type generated dependency cart_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency cart_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_phase_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value phase_tuser} enabled {attribs {resolve_type generated dependency phase_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency phase_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency phase_offset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}} TUSER_WIDTH 0}"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 32}"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
@@ -1988,10 +1884,10 @@
           <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
           <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="12288000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/audio_pll_clk_out1"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} complex {bitwidth {attribs {resolve_type generated dependency complex_width format long minimum {} maximum {}} value 16} stride {attribs {resolve_type generated dependency complex_stride format long minimum {} maximum {}} value 16} realfirst {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} real {fixed {fractwidth {attribs {resolve_type generated dependency complex_fractwidth format long minimum {} maximum {}} value 14} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}} TDATA_WIDTH 32 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_cartesian_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cartesian_tuser} enabled {attribs {resolve_type generated dependency cart_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency cart_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_phase_tuser {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value phase_tuser} enabled {attribs {resolve_type generated dependency phase_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency phase_width format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency phase_offset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}} TUSER_WIDTH 0}"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="3072000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_atg_module_0_0_clock_3_072"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 32}"/>
           <PORTMAPS>
             <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
             <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
@@ -3337,16 +3233,16 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="core_clk"/>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_gpio_1" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="audio_pll" PORT="clk_in1"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP1_ACLK"/>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="cordic_0" PORT="aclk"/>
             <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_aclk"/>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="axi_aclk"/>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="core_clk_in"/>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_aclk"/>
+            <CONNECTION INSTANCE="saw_gen_triangle_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S01_ACLK"/>
@@ -3357,7 +3253,6 @@
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="audio_pll" PORT="resetn"/>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="ext_reset_in"/>
           </CONNECTIONS>
         </PORT>
@@ -3586,9 +3481,9 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
       <MEMORYMAP>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80000FFF" INSTANCE="axi_gpio_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80001000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80001FFF" INSTANCE="axi_gpio_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x80002000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80002FFF" INSTANCE="i2s_block_i2s_tx" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="mms_axi"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80000FFF" INSTANCE="axi_gpio_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80001000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80001FFF" INSTANCE="axi_gpio_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x80002000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80002FFF" INSTANCE="i2s_block_i2s_tx" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="mms_axi"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="axi_gpio_0"/>
@@ -4529,16 +4424,24 @@
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M02_AXI_awid" SIGIS="undef"/>
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M02_AXI_awlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" LEFT="2" NAME="M02_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M02_AXI_awregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="M02_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_awvalid"/>
@@ -4559,6 +4462,7 @@
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M02_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="M02_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_wvalid"/>
@@ -4569,6 +4473,7 @@
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_wready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M02_AXI_bid" SIGIS="undef"/>
         <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_bresp"/>
@@ -4584,16 +4489,24 @@
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_bready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M02_AXI_arid" SIGIS="undef"/>
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M02_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" LEFT="2" NAME="M02_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_arprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M02_AXI_arregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="M02_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_arvalid"/>
@@ -4604,6 +4517,7 @@
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_arready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M02_AXI_rid" SIGIS="undef"/>
         <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_rdata"/>
@@ -4614,6 +4528,7 @@
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M02_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" LEFT="0" NAME="M02_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_mms_axi_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_rvalid"/>
@@ -4754,23 +4669,43 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="processing_system7_0_axi_periph_M02_AXI" DATAWIDTH="32" NAME="M02_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
+            <PORTMAP LOGICAL="AWID" PHYSICAL="M02_AXI_awid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M02_AXI_awaddr"/>
+            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M02_AXI_awlen"/>
+            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M02_AXI_awsize"/>
+            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M02_AXI_awburst"/>
+            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M02_AXI_awlock"/>
+            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M02_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M02_AXI_awprot"/>
+            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M02_AXI_awregion"/>
+            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M02_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M02_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M02_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M02_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M02_AXI_wstrb"/>
+            <PORTMAP LOGICAL="WLAST" PHYSICAL="M02_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M02_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M02_AXI_wready"/>
+            <PORTMAP LOGICAL="BID" PHYSICAL="M02_AXI_bid"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M02_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M02_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M02_AXI_bready"/>
+            <PORTMAP LOGICAL="ARID" PHYSICAL="M02_AXI_arid"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M02_AXI_araddr"/>
+            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M02_AXI_arlen"/>
+            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M02_AXI_arsize"/>
+            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M02_AXI_arburst"/>
+            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M02_AXI_arlock"/>
+            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M02_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M02_AXI_arprot"/>
+            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M02_AXI_arregion"/>
+            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M02_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M02_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M02_AXI_arready"/>
+            <PORTMAP LOGICAL="RID" PHYSICAL="M02_AXI_rid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M02_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M02_AXI_rresp"/>
+            <PORTMAP LOGICAL="RLAST" PHYSICAL="M02_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M02_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M02_AXI_rready"/>
           </PORTMAPS>
@@ -4822,8 +4757,12 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_gpio_1" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="audio_pll" PORT="resetn"/>
             <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_aresetn"/>
-            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="axi_aresetn"/>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="core_rst_n"/>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_aresetn"/>
+            <CONNECTION INSTANCE="saw_gen_triangle_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S01_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ARESETN"/>
@@ -4833,6 +4772,168 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/saw_gen/latcher_0" HWVERSION="1.0" INSTANCE="saw_gen_latcher_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="latcher" VLNV="xilinx.com:hls:latcher:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="mitx_petalinux_latcher_0_0"/>
+        <PARAMETER NAME="clk_period" VALUE="10.000000"/>
+        <PARAMETER NAME="machine" VALUE="64"/>
+        <PARAMETER NAME="combinational" VALUE="0"/>
+        <PARAMETER NAME="latency" VALUE="0"/>
+        <PARAMETER NAME="II" VALUE="x"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="in_V_V_TVALID" SIGIS="undef" SIGNAME="saw_gen_latcher_0_in_V_V_TVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_triangle_0" PORT="out_V_TVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="in_V_V_TREADY" SIGIS="undef" SIGNAME="saw_gen_latcher_0_in_V_V_TREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_triangle_0" PORT="out_V_TREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="in_V_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_latcher_0_in_V_V_TDATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_triangle_0" PORT="out_V_TDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="out_V_V_TVALID" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_fifo_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="out_V_V_TREADY" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_fifo_s_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="out_V_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="i2s_block_i2s_tx_fifo_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="latch_V" RIGHT="0" SIGIS="data" SIGNAME="i2s_block_atg_module_0_latcher_pulse">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="latcher_pulse"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ap_rst_n" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="saw_gen_triangle_0_out_V" NAME="in_V_V" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 56} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_padding {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value padding} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_data {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}} TDATA_WIDTH 32}"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="in_V_V_TVALID"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="in_V_V_TREADY"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="in_V_V_TDATA"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="saw_gen_latcher_0_out_V_V" NAME="out_V_V" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} TDATA_WIDTH 32}"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="out_V_V_TVALID"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="out_V_V_TREADY"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="out_V_V_TDATA"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/saw_gen/triangle_0" HWVERSION="1.0" INSTANCE="saw_gen_triangle_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="triangle" VLNV="xilinx.com:hls:triangle:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="mitx_petalinux_triangle_0_0"/>
+        <PARAMETER NAME="clk_period" VALUE="10.000000"/>
+        <PARAMETER NAME="machine" VALUE="64"/>
+        <PARAMETER NAME="combinational" VALUE="0"/>
+        <PARAMETER NAME="latency" VALUE="1"/>
+        <PARAMETER NAME="II" VALUE="x"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ap_rst_n" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="out_V_TVALID" SIGIS="undef" SIGNAME="saw_gen_latcher_0_in_V_V_TVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="in_V_V_TVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="out_V_TREADY" SIGIS="undef" SIGNAME="saw_gen_latcher_0_in_V_V_TREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="in_V_V_TREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="out_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_latcher_0_in_V_V_TDATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_latcher_0" PORT="in_V_V_TDATA"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="saw_gen_triangle_0_out_V" NAME="out_V" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 56} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_padding {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value padding} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_data {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}} TDATA_WIDTH 32}"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="out_V_TVALID"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="out_V_TREADY"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="out_V_TDATA"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
     </MODULE>
   </MODULES>
 

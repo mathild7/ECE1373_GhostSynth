@@ -56,12 +56,12 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// clk_out1____12.288______0.000______50.0______360.948____301.601
+// clk_out1____12.288______0.000______50.0______569.507____264.435
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary_____________100____________0.010
+// __primary_____________200____________0.050
 
 `timescale 1ps/1ps
 
@@ -73,15 +73,17 @@ module mitx_petalinux_clk_wiz_0_1_clk_wiz
   // Status and control signals
   input         resetn,
   output        locked,
-  input         clk_in1
+  input         clk_in1_p,
+  input         clk_in1_n
  );
   // Input buffering
   //------------------------------------
 wire clk_in1_mitx_petalinux_clk_wiz_0_1;
 wire clk_in2_mitx_petalinux_clk_wiz_0_1;
-  IBUF clkin1_ibufg
-   (.O (clk_in1_mitx_petalinux_clk_wiz_0_1),
-    .I (clk_in1));
+  IBUFDS clkin1_ibufgds
+   (.O  (clk_in1_mitx_petalinux_clk_wiz_0_1),
+    .I  (clk_in1_p),
+    .IB (clk_in1_n));
 
 
   // Clocking PRIMITIVE
@@ -125,15 +127,15 @@ wire clk_in2_mitx_petalinux_clk_wiz_0_1;
     .CLKOUT4_CASCADE      ("FALSE"),
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
-    .DIVCLK_DIVIDE        (5),
-    .CLKFBOUT_MULT_F      (48.000),
+    .DIVCLK_DIVIDE        (9),
+    .CLKFBOUT_MULT_F      (44.375),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (78.125),
+    .CLKOUT0_DIVIDE_F     (80.250),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKIN1_PERIOD        (10.000))
+    .CLKIN1_PERIOD        (5.000))
   mmcm_adv_inst
     // Output clocks
    (

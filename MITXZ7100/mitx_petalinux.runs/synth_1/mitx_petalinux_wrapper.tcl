@@ -16,6 +16,7 @@ set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 add_files /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd
+set_property is_enabled false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/xilinx.com/processing_system7_bfm_v2_0/hdl/processing_system7_bfm_v2_0_processing_system7_bfm.v]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xdc]
@@ -30,23 +31,12 @@ set_property used_in_implementation false [get_files -all /home/hildeb47/proj/EC
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_board.xdc]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_0/mitx_petalinux_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_1/mitx_petalinux_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux_ooc.xdc]
 set_property is_locked true [get_files /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
 
-read_verilog -library xil_defaultlib -sv {
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_core_regmap_regs_pkg.sv
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_core_regmap_regs.sv
-}
-read_verilog -library xil_defaultlib {
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_topm.v
-  /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v
-}
+read_verilog -library xil_defaultlib /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }

@@ -1,14 +1,16 @@
-Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-| Date         : Wed Apr  3 02:50:42 2019
-| Host         : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
-| Command      : report_io -file mitx_petalinux_wrapper_io_placed.rpt
-| Design       : mitx_petalinux_wrapper
-| Device       : xc7z100
-| Speed File   : -1
-| Package      : ffg900
-------------------------------------------------------------------------------------
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------
+| Tool Version              : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
+| Date                      : Wed Apr 10 10:53:29 2019
+| Host                      : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
+| Command                   : report_io -file mitx_petalinux_wrapper_io_placed.rpt
+| Design                    : mitx_petalinux_wrapper
+| Device                    : xc7z100
+| Speed File                : -1
+| Package                   : ffg900
+| Package Version           : FINAL 2013-04-09
+| Package Pin Delay Version : VERS. 2.0 2013-04-09
+-------------------------------------------------------------------------------------------------
 
 IO Information
 
@@ -23,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           151 |
+|           153 |
 +---------------+
 
 
@@ -49,12 +51,12 @@ Table of Contents
 | A14        |                             | High Performance | IO_L23N_T3_35           | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
 | A15        |                             | High Performance | IO_L21N_T3_DQS_AD14N_35 | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
 | A16        |                             | High Performance | VCCO_35                 | VCCO          |                   |      35 |            |      |                     |                      |      1.80 |            |           |          |      |                  |
-| A17        | i2s_ws_o                    | High Performance | IO_L18N_T2_AD13N_35     | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| A17        | i2s_ws_ext                  | High Performance | IO_L18N_T2_AD13N_35     | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | A18        | FIXED_IO_mio[47]            |                  | PS_MIO47_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      | PULLUP    |          |      | NONE             |
 | A19        | FIXED_IO_mio[50]            |                  | PS_MIO50_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      | PULLUP    |          |      | NONE             |
 | A20        | FIXED_IO_mio[38]            |                  | PS_MIO38_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | A21        |                             |                  | GND                     | GND           |                   |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
-| A22        | FIXED_IO_ps_clk             |                  | PS_CLK_500              | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
+| A22        | FIXED_IO_ps_clk             |                  | PS_CLK_500              | BIDIR         | LVCMOS18          |         |         12 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | A23        | FIXED_IO_mio[11]            |                  | PS_MIO11_500            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      | PULLUP    |          |      | NONE             |
 | A24        | FIXED_IO_mio[9]             |                  | PS_MIO9_500             | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      | PULLUP    |          |      | NONE             |
 | A25        | DDR_dq[0]                   |                  | PS_DDR_DQ0_502          | BIDIR         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |           | FIXED      |           |          |      | SPLIT            |
@@ -379,9 +381,9 @@ Table of Contents
 | B14        |                             | High Performance | IO_L23P_T3_35           | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
 | B15        |                             | High Performance | IO_L21P_T3_DQS_AD14P_35 | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
 | B16        | i2s_rx_data_i               | High Performance | IO_L17N_T2_AD5N_35      | INPUT         | LVCMOS18          |      35 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
-| B17        | i2s_sck_o                   | High Performance | IO_L18P_T2_AD13P_35     | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| B17        | i2s_sck_ext                 | High Performance | IO_L18P_T2_AD13P_35     | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | B18        |                             |                  | GND                     | GND           |                   |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
-| B19        | FIXED_IO_ps_srstb           |                  | PS_SRST_B_501           | BIDIR         | HSTL_I_18         |         |            | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| B19        | FIXED_IO_ps_srstb           |                  | PS_SRST_B_501           | BIDIR         | LVCMOS18          |         |         12 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | B20        | FIXED_IO_mio[40]            |                  | PS_MIO40_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | B21        | FIXED_IO_mio[37]            |                  | PS_MIO37_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | B22        | FIXED_IO_mio[14]            |                  | PS_MIO14_500            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      | PULLUP    |          |      | NONE             |
@@ -406,10 +408,10 @@ Table of Contents
 | C11        |                             | High Performance | IO_L22P_T3_AD7P_35      | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
 | C12        |                             | High Performance | IO_L20P_T3_AD6P_35      | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
 | C13        |                             | High Performance | IO_L19N_T3_VREF_35      | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
-| C14        | i2s_mclk_o                  | High Performance | IO_L19P_T3_35           | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| C14        | i2s_mclk_ext                | High Performance | IO_L19P_T3_35           | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | C15        |                             |                  | GND                     | GND           |                   |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | C16        |                             | High Performance | IO_L16N_T2_35           | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
-| C17        | i2s_tx_data_o               | High Performance | IO_L17P_T2_AD5P_35      | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| C17        | i2s_tx_data_ext             | High Performance | IO_L17P_T2_AD5P_35      | OUTPUT        | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | C18        | FIXED_IO_mio[53]            |                  | PS_MIO53_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | C19        | FIXED_IO_mio[48]            |                  | PS_MIO48_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | C20        |                             |                  | VCCO_MIO1_501           | VCCO          |                   |         |            |      |                     |                      |     any** |            |           |          |      |                  |
@@ -443,7 +445,7 @@ Table of Contents
 | D18        | FIXED_IO_mio[49]            |                  | PS_MIO49_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | D19        | FIXED_IO_mio[52]            |                  | PS_MIO52_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | D20        | FIXED_IO_mio[42]            |                  | PS_MIO42_501            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
-| D21        | FIXED_IO_ps_porb            |                  | PS_POR_B_500            | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
+| D21        | FIXED_IO_ps_porb            |                  | PS_POR_B_500            | BIDIR         | LVCMOS18          |         |         12 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | D22        |                             |                  | GND                     | GND           |                   |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | D23        | FIXED_IO_mio[1]             |                  | PS_MIO1_500             | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      | PULLUP    |          |      | NONE             |
 | D24        | FIXED_IO_mio[6]             |                  | PS_MIO6_500             | BIDIR         | LVCMOS18          |         |          8 | SLOW |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
@@ -521,7 +523,7 @@ Table of Contents
 | G6         |                             | High Performance | IO_L8N_T1_33            | User IO       |                   |      33 |            |      |                     |                      |           |            |           |          |      |                  |
 | G7         |                             | High Performance | IO_L18N_T2_34           | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
 | G8         |                             | High Performance | VCCO_34                 | VCCO          |                   |      34 |            |      |                     |                      |      1.50 |            |           |          |      |                  |
-| G9         |                             | High Performance | IO_L13N_T2_MRCC_34      | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
+| G9         | pl_clk_n                    | High Performance | IO_L13N_T2_MRCC_34      | INPUT         | LVDS              |      34 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | G10        |                             | High Performance | IO_L11P_T1_SRCC_34      | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
 | G11        |                             | High Performance | IO_L9N_T1_DQS_34        | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
 | G12        |                             | High Performance | IO_L9P_T1_DQS_AD3P_35   | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
@@ -551,7 +553,7 @@ Table of Contents
 | H6         |                             | High Performance | IO_L8P_T1_33            | User IO       |                   |      33 |            |      |                     |                      |           |            |           |          |      |                  |
 | H7         |                             | High Performance | IO_L18P_T2_34           | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
 | H8         |                             | High Performance | IO_L15N_T2_DQS_34       | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
-| H9         |                             | High Performance | IO_L13P_T2_MRCC_34      | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
+| H9         | pl_clk_p                    | High Performance | IO_L13P_T2_MRCC_34      | INPUT         | LVDS              |      34 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |
 | H10        |                             |                  | GND                     | GND           |                   |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | H11        |                             | High Performance | IO_L7N_T1_34            | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
 | H12        |                             | High Performance | IO_L9P_T1_DQS_34        | User IO       |                   |      34 |            |      |                     |                      |           |            |           |          |      |                  |
@@ -614,7 +616,7 @@ Table of Contents
 | K9         |                             | High Performance | VCCO_34                 | VCCO          |                   |      34 |            |      |                     |                      |      1.50 |            |           |          |      |                  |
 | K10        | led_8bits_tri_o[4]          | High Performance | IO_L22N_T3_34           | OUTPUT        | LVCMOS15          |      34 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | K11        | led_8bits_tri_o[5]          | High Performance | IO_L22P_T3_34           | OUTPUT        | LVCMOS15          |      34 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
-| K12        | led_8bits_tri_o[7]          | High Performance | IO_L24N_T3_34           | OUTPUT        | LVCMOS15          |      34 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
+| K12        | pll_locked                  | High Performance | IO_L24N_T3_34           | OUTPUT        | LVCMOS15          |      34 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |
 | K13        |                             | High Performance | IO_L3N_T0_DQS_AD1N_35   | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |
 | K14        |                             |                  | GND                     | GND           |                   |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |
 | K15        |                             | High Performance | IO_L5P_T0_AD9P_35       | User IO       |                   |      35 |            |      |                     |                      |           |            |           |          |      |                  |

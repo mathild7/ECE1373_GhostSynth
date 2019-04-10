@@ -1,191 +1,13 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
-//Date        : Wed Apr  3 01:58:15 2019
+//Date        : Tue Apr  9 20:42:00 2019
 //Host        : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
 //Command     : generate_target mitx_petalinux.bd
 //Design      : mitx_petalinux
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
-
-module i2s_block_imp_WAM4XK
-   (aud_clk,
-    aud_rstn,
-    core_aclk,
-    core_aresetn,
-    i2s_mclk_o,
-    i2s_rx_data_i,
-    i2s_sck_o,
-    i2s_tx_data_o,
-    i2s_tx_fifo_axis_tdata,
-    i2s_tx_fifo_axis_tready,
-    i2s_tx_fifo_axis_tvalid,
-    i2s_ws_o,
-    mms_axi_araddr,
-    mms_axi_arprot,
-    mms_axi_arready,
-    mms_axi_arvalid,
-    mms_axi_awaddr,
-    mms_axi_awprot,
-    mms_axi_awready,
-    mms_axi_awvalid,
-    mms_axi_bready,
-    mms_axi_bresp,
-    mms_axi_bvalid,
-    mms_axi_rdata,
-    mms_axi_rready,
-    mms_axi_rresp,
-    mms_axi_rvalid,
-    mms_axi_wdata,
-    mms_axi_wready,
-    mms_axi_wstrb,
-    mms_axi_wvalid);
-  input aud_clk;
-  input aud_rstn;
-  input core_aclk;
-  input [0:0]core_aresetn;
-  output i2s_mclk_o;
-  input i2s_rx_data_i;
-  output i2s_sck_o;
-  output i2s_tx_data_o;
-  input i2s_tx_fifo_axis_tdata;
-  output i2s_tx_fifo_axis_tready;
-  input i2s_tx_fifo_axis_tvalid;
-  output i2s_ws_o;
-  input [31:0]mms_axi_araddr;
-  input [2:0]mms_axi_arprot;
-  output mms_axi_arready;
-  input mms_axi_arvalid;
-  input [31:0]mms_axi_awaddr;
-  input [2:0]mms_axi_awprot;
-  output mms_axi_awready;
-  input mms_axi_awvalid;
-  input mms_axi_bready;
-  output [1:0]mms_axi_bresp;
-  output mms_axi_bvalid;
-  output [31:0]mms_axi_rdata;
-  input mms_axi_rready;
-  output [1:0]mms_axi_rresp;
-  output mms_axi_rvalid;
-  input [31:0]mms_axi_wdata;
-  output mms_axi_wready;
-  input [3:0]mms_axi_wstrb;
-  input mms_axi_wvalid;
-
-  wire Conn1_TDATA;
-  wire Conn1_TREADY;
-  wire Conn1_TVALID;
-  wire [31:0]Conn2_ARADDR;
-  wire [2:0]Conn2_ARPROT;
-  wire Conn2_ARREADY;
-  wire Conn2_ARVALID;
-  wire [31:0]Conn2_AWADDR;
-  wire [2:0]Conn2_AWPROT;
-  wire Conn2_AWREADY;
-  wire Conn2_AWVALID;
-  wire Conn2_BREADY;
-  wire [1:0]Conn2_BRESP;
-  wire Conn2_BVALID;
-  wire [31:0]Conn2_RDATA;
-  wire Conn2_RREADY;
-  wire [1:0]Conn2_RRESP;
-  wire Conn2_RVALID;
-  wire [31:0]Conn2_WDATA;
-  wire Conn2_WREADY;
-  wire [3:0]Conn2_WSTRB;
-  wire Conn2_WVALID;
-  wire i2s_rx_data_i_1;
-  wire [31:0]i2s_tx_fifo_M_AXIS_TDATA;
-  wire i2s_tx_fifo_M_AXIS_TREADY;
-  wire i2s_tx_fifo_M_AXIS_TVALID;
-  wire i2s_tx_i2s_mclk_o;
-  wire i2s_tx_i2s_sck_o;
-  wire i2s_tx_i2s_tx_data_o;
-  wire i2s_tx_i2s_ws_o;
-  wire m_axis_aclk_1;
-  wire [0:0]m_axis_aresetn_1;
-  wire s_axis_aclk_1;
-  wire s_axis_aresetn_1;
-
-  assign Conn1_TDATA = i2s_tx_fifo_axis_tdata;
-  assign Conn1_TVALID = i2s_tx_fifo_axis_tvalid;
-  assign Conn2_ARADDR = mms_axi_araddr[31:0];
-  assign Conn2_ARPROT = mms_axi_arprot[2:0];
-  assign Conn2_ARVALID = mms_axi_arvalid;
-  assign Conn2_AWADDR = mms_axi_awaddr[31:0];
-  assign Conn2_AWPROT = mms_axi_awprot[2:0];
-  assign Conn2_AWVALID = mms_axi_awvalid;
-  assign Conn2_BREADY = mms_axi_bready;
-  assign Conn2_RREADY = mms_axi_rready;
-  assign Conn2_WDATA = mms_axi_wdata[31:0];
-  assign Conn2_WSTRB = mms_axi_wstrb[3:0];
-  assign Conn2_WVALID = mms_axi_wvalid;
-  assign i2s_mclk_o = i2s_tx_i2s_mclk_o;
-  assign i2s_rx_data_i_1 = i2s_rx_data_i;
-  assign i2s_sck_o = i2s_tx_i2s_sck_o;
-  assign i2s_tx_data_o = i2s_tx_i2s_tx_data_o;
-  assign i2s_tx_fifo_axis_tready = Conn1_TREADY;
-  assign i2s_ws_o = i2s_tx_i2s_ws_o;
-  assign m_axis_aclk_1 = core_aclk;
-  assign m_axis_aresetn_1 = core_aresetn[0];
-  assign mms_axi_arready = Conn2_ARREADY;
-  assign mms_axi_awready = Conn2_AWREADY;
-  assign mms_axi_bresp[1:0] = Conn2_BRESP;
-  assign mms_axi_bvalid = Conn2_BVALID;
-  assign mms_axi_rdata[31:0] = Conn2_RDATA;
-  assign mms_axi_rresp[1:0] = Conn2_RRESP;
-  assign mms_axi_rvalid = Conn2_RVALID;
-  assign mms_axi_wready = Conn2_WREADY;
-  assign s_axis_aclk_1 = aud_clk;
-  assign s_axis_aresetn_1 = aud_rstn;
-  mitx_petalinux_i2s_tx_0 i2s_tx
-       (.axi_aclk(m_axis_aclk_1),
-        .axi_aresetn(m_axis_aresetn_1),
-        .i2s_mclk_o(i2s_tx_i2s_mclk_o),
-        .i2s_rx_data_i(i2s_rx_data_i_1),
-        .i2s_sck_o(i2s_tx_i2s_sck_o),
-        .i2s_tx_data_o(i2s_tx_i2s_tx_data_o),
-        .i2s_ws_o(i2s_tx_i2s_ws_o),
-        .i_bclk(s_axis_aclk_1),
-        .i_mclk(1'b0),
-        .i_wclk(1'b0),
-        .m_axis_tready(1'b0),
-        .mms_axi_araddr(Conn2_ARADDR),
-        .mms_axi_arprot(Conn2_ARPROT),
-        .mms_axi_arready(Conn2_ARREADY),
-        .mms_axi_arvalid(Conn2_ARVALID),
-        .mms_axi_awaddr(Conn2_AWADDR),
-        .mms_axi_awprot(Conn2_AWPROT),
-        .mms_axi_awready(Conn2_AWREADY),
-        .mms_axi_awvalid(Conn2_AWVALID),
-        .mms_axi_bready(Conn2_BREADY),
-        .mms_axi_bresp(Conn2_BRESP),
-        .mms_axi_bvalid(Conn2_BVALID),
-        .mms_axi_rdata(Conn2_RDATA),
-        .mms_axi_rready(Conn2_RREADY),
-        .mms_axi_rresp(Conn2_RRESP),
-        .mms_axi_rvalid(Conn2_RVALID),
-        .mms_axi_wdata(Conn2_WDATA),
-        .mms_axi_wready(Conn2_WREADY),
-        .mms_axi_wstrb(Conn2_WSTRB),
-        .mms_axi_wvalid(Conn2_WVALID),
-        .s_axis_tdata(i2s_tx_fifo_M_AXIS_TDATA),
-        .s_axis_tlast(1'b0),
-        .s_axis_tready(i2s_tx_fifo_M_AXIS_TREADY),
-        .s_axis_tvalid(i2s_tx_fifo_M_AXIS_TVALID));
-  mitx_petalinux_i2s_tx_fifo_0 i2s_tx_fifo
-       (.m_axis_aclk(m_axis_aclk_1),
-        .m_axis_aresetn(m_axis_aresetn_1),
-        .m_axis_tdata(i2s_tx_fifo_M_AXIS_TDATA),
-        .m_axis_tready(i2s_tx_fifo_M_AXIS_TREADY),
-        .m_axis_tvalid(i2s_tx_fifo_M_AXIS_TVALID),
-        .s_axis_aclk(s_axis_aclk_1),
-        .s_axis_aresetn(s_axis_aresetn_1),
-        .s_axis_tdata({Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA,Conn1_TDATA}),
-        .s_axis_tready(Conn1_TREADY),
-        .s_axis_tvalid(Conn1_TVALID));
-endmodule
 
 module m00_couplers_imp_16DXFZP
    (M_ACLK,
@@ -496,108 +318,108 @@ module m02_couplers_imp_IAY6NU
     S_AXI_wvalid);
   input M_ACLK;
   input [0:0]M_ARESETN;
-  output [31:0]M_AXI_araddr;
-  output [2:0]M_AXI_arprot;
+  output M_AXI_araddr;
+  output M_AXI_arprot;
   input M_AXI_arready;
   output M_AXI_arvalid;
-  output [31:0]M_AXI_awaddr;
-  output [2:0]M_AXI_awprot;
+  output M_AXI_awaddr;
+  output M_AXI_awprot;
   input M_AXI_awready;
   output M_AXI_awvalid;
   output M_AXI_bready;
-  input [1:0]M_AXI_bresp;
+  input M_AXI_bresp;
   input M_AXI_bvalid;
-  input [31:0]M_AXI_rdata;
+  input M_AXI_rdata;
   output M_AXI_rready;
-  input [1:0]M_AXI_rresp;
+  input M_AXI_rresp;
   input M_AXI_rvalid;
-  output [31:0]M_AXI_wdata;
+  output M_AXI_wdata;
   input M_AXI_wready;
-  output [3:0]M_AXI_wstrb;
+  output M_AXI_wstrb;
   output M_AXI_wvalid;
   input S_ACLK;
   input [0:0]S_ARESETN;
-  input [31:0]S_AXI_araddr;
-  input [2:0]S_AXI_arprot;
+  input S_AXI_araddr;
+  input S_AXI_arprot;
   output S_AXI_arready;
   input S_AXI_arvalid;
-  input [31:0]S_AXI_awaddr;
-  input [2:0]S_AXI_awprot;
+  input S_AXI_awaddr;
+  input S_AXI_awprot;
   output S_AXI_awready;
   input S_AXI_awvalid;
   input S_AXI_bready;
-  output [1:0]S_AXI_bresp;
+  output S_AXI_bresp;
   output S_AXI_bvalid;
-  output [31:0]S_AXI_rdata;
+  output S_AXI_rdata;
   input S_AXI_rready;
-  output [1:0]S_AXI_rresp;
+  output S_AXI_rresp;
   output S_AXI_rvalid;
-  input [31:0]S_AXI_wdata;
+  input S_AXI_wdata;
   output S_AXI_wready;
-  input [3:0]S_AXI_wstrb;
+  input S_AXI_wstrb;
   input S_AXI_wvalid;
 
-  wire [31:0]m02_couplers_to_m02_couplers_ARADDR;
-  wire [2:0]m02_couplers_to_m02_couplers_ARPROT;
+  wire m02_couplers_to_m02_couplers_ARADDR;
+  wire m02_couplers_to_m02_couplers_ARPROT;
   wire m02_couplers_to_m02_couplers_ARREADY;
   wire m02_couplers_to_m02_couplers_ARVALID;
-  wire [31:0]m02_couplers_to_m02_couplers_AWADDR;
-  wire [2:0]m02_couplers_to_m02_couplers_AWPROT;
+  wire m02_couplers_to_m02_couplers_AWADDR;
+  wire m02_couplers_to_m02_couplers_AWPROT;
   wire m02_couplers_to_m02_couplers_AWREADY;
   wire m02_couplers_to_m02_couplers_AWVALID;
   wire m02_couplers_to_m02_couplers_BREADY;
-  wire [1:0]m02_couplers_to_m02_couplers_BRESP;
+  wire m02_couplers_to_m02_couplers_BRESP;
   wire m02_couplers_to_m02_couplers_BVALID;
-  wire [31:0]m02_couplers_to_m02_couplers_RDATA;
+  wire m02_couplers_to_m02_couplers_RDATA;
   wire m02_couplers_to_m02_couplers_RREADY;
-  wire [1:0]m02_couplers_to_m02_couplers_RRESP;
+  wire m02_couplers_to_m02_couplers_RRESP;
   wire m02_couplers_to_m02_couplers_RVALID;
-  wire [31:0]m02_couplers_to_m02_couplers_WDATA;
+  wire m02_couplers_to_m02_couplers_WDATA;
   wire m02_couplers_to_m02_couplers_WREADY;
-  wire [3:0]m02_couplers_to_m02_couplers_WSTRB;
+  wire m02_couplers_to_m02_couplers_WSTRB;
   wire m02_couplers_to_m02_couplers_WVALID;
 
-  assign M_AXI_araddr[31:0] = m02_couplers_to_m02_couplers_ARADDR;
-  assign M_AXI_arprot[2:0] = m02_couplers_to_m02_couplers_ARPROT;
+  assign M_AXI_araddr = m02_couplers_to_m02_couplers_ARADDR;
+  assign M_AXI_arprot = m02_couplers_to_m02_couplers_ARPROT;
   assign M_AXI_arvalid = m02_couplers_to_m02_couplers_ARVALID;
-  assign M_AXI_awaddr[31:0] = m02_couplers_to_m02_couplers_AWADDR;
-  assign M_AXI_awprot[2:0] = m02_couplers_to_m02_couplers_AWPROT;
+  assign M_AXI_awaddr = m02_couplers_to_m02_couplers_AWADDR;
+  assign M_AXI_awprot = m02_couplers_to_m02_couplers_AWPROT;
   assign M_AXI_awvalid = m02_couplers_to_m02_couplers_AWVALID;
   assign M_AXI_bready = m02_couplers_to_m02_couplers_BREADY;
   assign M_AXI_rready = m02_couplers_to_m02_couplers_RREADY;
-  assign M_AXI_wdata[31:0] = m02_couplers_to_m02_couplers_WDATA;
-  assign M_AXI_wstrb[3:0] = m02_couplers_to_m02_couplers_WSTRB;
+  assign M_AXI_wdata = m02_couplers_to_m02_couplers_WDATA;
+  assign M_AXI_wstrb = m02_couplers_to_m02_couplers_WSTRB;
   assign M_AXI_wvalid = m02_couplers_to_m02_couplers_WVALID;
   assign S_AXI_arready = m02_couplers_to_m02_couplers_ARREADY;
   assign S_AXI_awready = m02_couplers_to_m02_couplers_AWREADY;
-  assign S_AXI_bresp[1:0] = m02_couplers_to_m02_couplers_BRESP;
+  assign S_AXI_bresp = m02_couplers_to_m02_couplers_BRESP;
   assign S_AXI_bvalid = m02_couplers_to_m02_couplers_BVALID;
-  assign S_AXI_rdata[31:0] = m02_couplers_to_m02_couplers_RDATA;
-  assign S_AXI_rresp[1:0] = m02_couplers_to_m02_couplers_RRESP;
+  assign S_AXI_rdata = m02_couplers_to_m02_couplers_RDATA;
+  assign S_AXI_rresp = m02_couplers_to_m02_couplers_RRESP;
   assign S_AXI_rvalid = m02_couplers_to_m02_couplers_RVALID;
   assign S_AXI_wready = m02_couplers_to_m02_couplers_WREADY;
-  assign m02_couplers_to_m02_couplers_ARADDR = S_AXI_araddr[31:0];
-  assign m02_couplers_to_m02_couplers_ARPROT = S_AXI_arprot[2:0];
+  assign m02_couplers_to_m02_couplers_ARADDR = S_AXI_araddr;
+  assign m02_couplers_to_m02_couplers_ARPROT = S_AXI_arprot;
   assign m02_couplers_to_m02_couplers_ARREADY = M_AXI_arready;
   assign m02_couplers_to_m02_couplers_ARVALID = S_AXI_arvalid;
-  assign m02_couplers_to_m02_couplers_AWADDR = S_AXI_awaddr[31:0];
-  assign m02_couplers_to_m02_couplers_AWPROT = S_AXI_awprot[2:0];
+  assign m02_couplers_to_m02_couplers_AWADDR = S_AXI_awaddr;
+  assign m02_couplers_to_m02_couplers_AWPROT = S_AXI_awprot;
   assign m02_couplers_to_m02_couplers_AWREADY = M_AXI_awready;
   assign m02_couplers_to_m02_couplers_AWVALID = S_AXI_awvalid;
   assign m02_couplers_to_m02_couplers_BREADY = S_AXI_bready;
-  assign m02_couplers_to_m02_couplers_BRESP = M_AXI_bresp[1:0];
+  assign m02_couplers_to_m02_couplers_BRESP = M_AXI_bresp;
   assign m02_couplers_to_m02_couplers_BVALID = M_AXI_bvalid;
-  assign m02_couplers_to_m02_couplers_RDATA = M_AXI_rdata[31:0];
+  assign m02_couplers_to_m02_couplers_RDATA = M_AXI_rdata;
   assign m02_couplers_to_m02_couplers_RREADY = S_AXI_rready;
-  assign m02_couplers_to_m02_couplers_RRESP = M_AXI_rresp[1:0];
+  assign m02_couplers_to_m02_couplers_RRESP = M_AXI_rresp;
   assign m02_couplers_to_m02_couplers_RVALID = M_AXI_rvalid;
-  assign m02_couplers_to_m02_couplers_WDATA = S_AXI_wdata[31:0];
+  assign m02_couplers_to_m02_couplers_WDATA = S_AXI_wdata;
   assign m02_couplers_to_m02_couplers_WREADY = M_AXI_wready;
-  assign m02_couplers_to_m02_couplers_WSTRB = S_AXI_wstrb[3:0];
+  assign m02_couplers_to_m02_couplers_WSTRB = S_AXI_wstrb;
   assign m02_couplers_to_m02_couplers_WVALID = S_AXI_wvalid;
 endmodule
 
-(* CORE_GENERATION_INFO = "mitx_petalinux,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mitx_petalinux,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=17,numReposBlks=10,numNonXlnxBlks=1,numHierBlks=7,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "mitx_petalinux.hwdef" *) 
+(* CORE_GENERATION_INFO = "mitx_petalinux,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mitx_petalinux,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=14,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=6,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "mitx_petalinux.hwdef" *) 
 module mitx_petalinux
    (DDR_addr,
     DDR_ba,
@@ -621,11 +443,7 @@ module mitx_petalinux
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     dip_switches_8bits_tri_i,
-    i2s_mclk_o,
     i2s_rx_data_i,
-    i2s_sck_o,
-    i2s_tx_data_o,
-    i2s_ws_o,
     led_8bits_tri_o);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -649,41 +467,11 @@ module mitx_petalinux
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
   input [7:0]dip_switches_8bits_tri_i;
-  output i2s_mclk_o;
   input i2s_rx_data_i;
-  output i2s_sck_o;
-  output i2s_tx_data_o;
-  output i2s_ws_o;
   output [7:0]led_8bits_tri_o;
 
-  wire aud_clk_1;
-  wire aud_rstn_1;
   wire [7:0]axi_gpio_0_GPIO_TRI_I;
   wire [7:0]axi_gpio_1_GPIO_TRI_O;
-  wire i2s_block_i2s_mclk_o;
-  wire i2s_block_i2s_sck_o;
-  wire i2s_block_i2s_tx_data_o;
-  wire i2s_block_i2s_ws_o;
-  wire i2s_rx_data_i_1;
-  wire [31:0]mms_axi_1_ARADDR;
-  wire [2:0]mms_axi_1_ARPROT;
-  wire mms_axi_1_ARREADY;
-  wire [0:0]mms_axi_1_ARVALID;
-  wire [31:0]mms_axi_1_AWADDR;
-  wire [2:0]mms_axi_1_AWPROT;
-  wire mms_axi_1_AWREADY;
-  wire [0:0]mms_axi_1_AWVALID;
-  wire [0:0]mms_axi_1_BREADY;
-  wire [1:0]mms_axi_1_BRESP;
-  wire mms_axi_1_BVALID;
-  wire [31:0]mms_axi_1_RDATA;
-  wire [0:0]mms_axi_1_RREADY;
-  wire [1:0]mms_axi_1_RRESP;
-  wire mms_axi_1_RVALID;
-  wire [31:0]mms_axi_1_WDATA;
-  wire mms_axi_1_WREADY;
-  wire [3:0]mms_axi_1_WSTRB;
-  wire [0:0]mms_axi_1_WVALID;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -821,16 +609,9 @@ module mitx_petalinux
   wire [0:0]rst_processing_system7_0_50M_peripheral_aresetn;
 
   assign axi_gpio_0_GPIO_TRI_I = dip_switches_8bits_tri_i[7:0];
-  assign i2s_mclk_o = i2s_block_i2s_mclk_o;
-  assign i2s_rx_data_i_1 = i2s_rx_data_i;
-  assign i2s_sck_o = i2s_block_i2s_sck_o;
-  assign i2s_tx_data_o = i2s_block_i2s_tx_data_o;
-  assign i2s_ws_o = i2s_block_i2s_ws_o;
   assign led_8bits_tri_o[7:0] = axi_gpio_1_GPIO_TRI_O;
   mitx_petalinux_clk_wiz_0_1 audio_pll
        (.clk_in1(processing_system7_0_FCLK_CLK0),
-        .clk_out1(aud_clk_1),
-        .locked(aud_rstn_1),
         .resetn(processing_system7_0_FCLK_RESET0_N));
   mitx_petalinux_axi_gpio_0_1 axi_gpio_0
        (.gpio_io_i(axi_gpio_0_GPIO_TRI_I),
@@ -874,37 +655,6 @@ module mitx_petalinux
         .s_axi_wready(processing_system7_0_axi_periph_M01_AXI_WREADY),
         .s_axi_wstrb(processing_system7_0_axi_periph_M01_AXI_WSTRB),
         .s_axi_wvalid(processing_system7_0_axi_periph_M01_AXI_WVALID));
-  i2s_block_imp_WAM4XK i2s_block
-       (.aud_clk(aud_clk_1),
-        .aud_rstn(aud_rstn_1),
-        .core_aclk(processing_system7_0_FCLK_CLK0),
-        .core_aresetn(rst_processing_system7_0_50M_peripheral_aresetn),
-        .i2s_mclk_o(i2s_block_i2s_mclk_o),
-        .i2s_rx_data_i(i2s_rx_data_i_1),
-        .i2s_sck_o(i2s_block_i2s_sck_o),
-        .i2s_tx_data_o(i2s_block_i2s_tx_data_o),
-        .i2s_tx_fifo_axis_tdata(1'b0),
-        .i2s_tx_fifo_axis_tvalid(1'b0),
-        .i2s_ws_o(i2s_block_i2s_ws_o),
-        .mms_axi_araddr(mms_axi_1_ARADDR),
-        .mms_axi_arprot(mms_axi_1_ARPROT),
-        .mms_axi_arready(mms_axi_1_ARREADY),
-        .mms_axi_arvalid(mms_axi_1_ARVALID),
-        .mms_axi_awaddr(mms_axi_1_AWADDR),
-        .mms_axi_awprot(mms_axi_1_AWPROT),
-        .mms_axi_awready(mms_axi_1_AWREADY),
-        .mms_axi_awvalid(mms_axi_1_AWVALID),
-        .mms_axi_bready(mms_axi_1_BREADY),
-        .mms_axi_bresp(mms_axi_1_BRESP),
-        .mms_axi_bvalid(mms_axi_1_BVALID),
-        .mms_axi_rdata(mms_axi_1_RDATA),
-        .mms_axi_rready(mms_axi_1_RREADY),
-        .mms_axi_rresp(mms_axi_1_RRESP),
-        .mms_axi_rvalid(mms_axi_1_RVALID),
-        .mms_axi_wdata(mms_axi_1_WDATA),
-        .mms_axi_wready(mms_axi_1_WREADY),
-        .mms_axi_wstrb(mms_axi_1_WSTRB),
-        .mms_axi_wvalid(mms_axi_1_WVALID));
   mitx_petalinux_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),
@@ -1052,25 +802,14 @@ module mitx_petalinux
         .M01_AXI_wvalid(processing_system7_0_axi_periph_M01_AXI_WVALID),
         .M02_ACLK(processing_system7_0_FCLK_CLK0),
         .M02_ARESETN(rst_processing_system7_0_50M_peripheral_aresetn),
-        .M02_AXI_araddr(mms_axi_1_ARADDR),
-        .M02_AXI_arprot(mms_axi_1_ARPROT),
-        .M02_AXI_arready(mms_axi_1_ARREADY),
-        .M02_AXI_arvalid(mms_axi_1_ARVALID),
-        .M02_AXI_awaddr(mms_axi_1_AWADDR),
-        .M02_AXI_awprot(mms_axi_1_AWPROT),
-        .M02_AXI_awready(mms_axi_1_AWREADY),
-        .M02_AXI_awvalid(mms_axi_1_AWVALID),
-        .M02_AXI_bready(mms_axi_1_BREADY),
-        .M02_AXI_bresp(mms_axi_1_BRESP),
-        .M02_AXI_bvalid(mms_axi_1_BVALID),
-        .M02_AXI_rdata(mms_axi_1_RDATA),
-        .M02_AXI_rready(mms_axi_1_RREADY),
-        .M02_AXI_rresp(mms_axi_1_RRESP),
-        .M02_AXI_rvalid(mms_axi_1_RVALID),
-        .M02_AXI_wdata(mms_axi_1_WDATA),
-        .M02_AXI_wready(mms_axi_1_WREADY),
-        .M02_AXI_wstrb(mms_axi_1_WSTRB),
-        .M02_AXI_wvalid(mms_axi_1_WVALID),
+        .M02_AXI_arready(1'b0),
+        .M02_AXI_awready(1'b0),
+        .M02_AXI_bresp(1'b0),
+        .M02_AXI_bvalid(1'b0),
+        .M02_AXI_rdata(1'b0),
+        .M02_AXI_rresp(1'b0),
+        .M02_AXI_rvalid(1'b0),
+        .M02_AXI_wready(1'b0),
         .S00_ACLK(processing_system7_0_FCLK_CLK0),
         .S00_ARESETN(rst_processing_system7_0_50M_peripheral_aresetn),
         .S00_AXI_araddr(processing_system7_0_M_AXI_GP0_ARADDR),
@@ -1345,25 +1084,25 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
   output [0:0]M01_AXI_wvalid;
   input M02_ACLK;
   input [0:0]M02_ARESETN;
-  output [31:0]M02_AXI_araddr;
-  output [2:0]M02_AXI_arprot;
-  input [0:0]M02_AXI_arready;
-  output [0:0]M02_AXI_arvalid;
-  output [31:0]M02_AXI_awaddr;
-  output [2:0]M02_AXI_awprot;
-  input [0:0]M02_AXI_awready;
-  output [0:0]M02_AXI_awvalid;
-  output [0:0]M02_AXI_bready;
-  input [1:0]M02_AXI_bresp;
-  input [0:0]M02_AXI_bvalid;
-  input [31:0]M02_AXI_rdata;
-  output [0:0]M02_AXI_rready;
-  input [1:0]M02_AXI_rresp;
-  input [0:0]M02_AXI_rvalid;
-  output [31:0]M02_AXI_wdata;
-  input [0:0]M02_AXI_wready;
-  output [3:0]M02_AXI_wstrb;
-  output [0:0]M02_AXI_wvalid;
+  output M02_AXI_araddr;
+  output M02_AXI_arprot;
+  input M02_AXI_arready;
+  output M02_AXI_arvalid;
+  output M02_AXI_awaddr;
+  output M02_AXI_awprot;
+  input M02_AXI_awready;
+  output M02_AXI_awvalid;
+  output M02_AXI_bready;
+  input M02_AXI_bresp;
+  input M02_AXI_bvalid;
+  input M02_AXI_rdata;
+  output M02_AXI_rready;
+  input M02_AXI_rresp;
+  input M02_AXI_rvalid;
+  output M02_AXI_wdata;
+  input M02_AXI_wready;
+  output M02_AXI_wstrb;
+  output M02_AXI_wvalid;
   input S00_ACLK;
   input [0:0]S00_ARESETN;
   input [31:0]S00_AXI_araddr;
@@ -1489,24 +1228,24 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
   wire [0:0]m01_couplers_to_processing_system7_0_axi_periph_WREADY;
   wire [3:0]m01_couplers_to_processing_system7_0_axi_periph_WSTRB;
   wire [0:0]m01_couplers_to_processing_system7_0_axi_periph_WVALID;
-  wire [31:0]m02_couplers_to_processing_system7_0_axi_periph_ARADDR;
-  wire [2:0]m02_couplers_to_processing_system7_0_axi_periph_ARPROT;
-  wire [0:0]m02_couplers_to_processing_system7_0_axi_periph_ARREADY;
+  wire m02_couplers_to_processing_system7_0_axi_periph_ARADDR;
+  wire m02_couplers_to_processing_system7_0_axi_periph_ARPROT;
+  wire m02_couplers_to_processing_system7_0_axi_periph_ARREADY;
   wire m02_couplers_to_processing_system7_0_axi_periph_ARVALID;
-  wire [31:0]m02_couplers_to_processing_system7_0_axi_periph_AWADDR;
-  wire [2:0]m02_couplers_to_processing_system7_0_axi_periph_AWPROT;
-  wire [0:0]m02_couplers_to_processing_system7_0_axi_periph_AWREADY;
+  wire m02_couplers_to_processing_system7_0_axi_periph_AWADDR;
+  wire m02_couplers_to_processing_system7_0_axi_periph_AWPROT;
+  wire m02_couplers_to_processing_system7_0_axi_periph_AWREADY;
   wire m02_couplers_to_processing_system7_0_axi_periph_AWVALID;
   wire m02_couplers_to_processing_system7_0_axi_periph_BREADY;
-  wire [1:0]m02_couplers_to_processing_system7_0_axi_periph_BRESP;
-  wire [0:0]m02_couplers_to_processing_system7_0_axi_periph_BVALID;
-  wire [31:0]m02_couplers_to_processing_system7_0_axi_periph_RDATA;
+  wire m02_couplers_to_processing_system7_0_axi_periph_BRESP;
+  wire m02_couplers_to_processing_system7_0_axi_periph_BVALID;
+  wire m02_couplers_to_processing_system7_0_axi_periph_RDATA;
   wire m02_couplers_to_processing_system7_0_axi_periph_RREADY;
-  wire [1:0]m02_couplers_to_processing_system7_0_axi_periph_RRESP;
-  wire [0:0]m02_couplers_to_processing_system7_0_axi_periph_RVALID;
-  wire [31:0]m02_couplers_to_processing_system7_0_axi_periph_WDATA;
-  wire [0:0]m02_couplers_to_processing_system7_0_axi_periph_WREADY;
-  wire [3:0]m02_couplers_to_processing_system7_0_axi_periph_WSTRB;
+  wire m02_couplers_to_processing_system7_0_axi_periph_RRESP;
+  wire m02_couplers_to_processing_system7_0_axi_periph_RVALID;
+  wire m02_couplers_to_processing_system7_0_axi_periph_WDATA;
+  wire m02_couplers_to_processing_system7_0_axi_periph_WREADY;
+  wire m02_couplers_to_processing_system7_0_axi_periph_WSTRB;
   wire m02_couplers_to_processing_system7_0_axi_periph_WVALID;
   wire processing_system7_0_axi_periph_ACLK_net;
   wire [0:0]processing_system7_0_axi_periph_ARESETN_net;
@@ -1667,11 +1406,11 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
   wire xbar_to_m02_couplers_AWREADY;
   wire [2:2]xbar_to_m02_couplers_AWVALID;
   wire [2:2]xbar_to_m02_couplers_BREADY;
-  wire [1:0]xbar_to_m02_couplers_BRESP;
+  wire xbar_to_m02_couplers_BRESP;
   wire xbar_to_m02_couplers_BVALID;
-  wire [31:0]xbar_to_m02_couplers_RDATA;
+  wire xbar_to_m02_couplers_RDATA;
   wire [2:2]xbar_to_m02_couplers_RREADY;
-  wire [1:0]xbar_to_m02_couplers_RRESP;
+  wire xbar_to_m02_couplers_RRESP;
   wire xbar_to_m02_couplers_RVALID;
   wire [95:64]xbar_to_m02_couplers_WDATA;
   wire xbar_to_m02_couplers_WREADY;
@@ -1704,17 +1443,17 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
   assign M01_AXI_wvalid[0] = m01_couplers_to_processing_system7_0_axi_periph_WVALID;
   assign M02_ACLK_1 = M02_ACLK;
   assign M02_ARESETN_1 = M02_ARESETN[0];
-  assign M02_AXI_araddr[31:0] = m02_couplers_to_processing_system7_0_axi_periph_ARADDR;
-  assign M02_AXI_arprot[2:0] = m02_couplers_to_processing_system7_0_axi_periph_ARPROT;
-  assign M02_AXI_arvalid[0] = m02_couplers_to_processing_system7_0_axi_periph_ARVALID;
-  assign M02_AXI_awaddr[31:0] = m02_couplers_to_processing_system7_0_axi_periph_AWADDR;
-  assign M02_AXI_awprot[2:0] = m02_couplers_to_processing_system7_0_axi_periph_AWPROT;
-  assign M02_AXI_awvalid[0] = m02_couplers_to_processing_system7_0_axi_periph_AWVALID;
-  assign M02_AXI_bready[0] = m02_couplers_to_processing_system7_0_axi_periph_BREADY;
-  assign M02_AXI_rready[0] = m02_couplers_to_processing_system7_0_axi_periph_RREADY;
-  assign M02_AXI_wdata[31:0] = m02_couplers_to_processing_system7_0_axi_periph_WDATA;
-  assign M02_AXI_wstrb[3:0] = m02_couplers_to_processing_system7_0_axi_periph_WSTRB;
-  assign M02_AXI_wvalid[0] = m02_couplers_to_processing_system7_0_axi_periph_WVALID;
+  assign M02_AXI_araddr = m02_couplers_to_processing_system7_0_axi_periph_ARADDR;
+  assign M02_AXI_arprot = m02_couplers_to_processing_system7_0_axi_periph_ARPROT;
+  assign M02_AXI_arvalid = m02_couplers_to_processing_system7_0_axi_periph_ARVALID;
+  assign M02_AXI_awaddr = m02_couplers_to_processing_system7_0_axi_periph_AWADDR;
+  assign M02_AXI_awprot = m02_couplers_to_processing_system7_0_axi_periph_AWPROT;
+  assign M02_AXI_awvalid = m02_couplers_to_processing_system7_0_axi_periph_AWVALID;
+  assign M02_AXI_bready = m02_couplers_to_processing_system7_0_axi_periph_BREADY;
+  assign M02_AXI_rready = m02_couplers_to_processing_system7_0_axi_periph_RREADY;
+  assign M02_AXI_wdata = m02_couplers_to_processing_system7_0_axi_periph_WDATA;
+  assign M02_AXI_wstrb = m02_couplers_to_processing_system7_0_axi_periph_WSTRB;
+  assign M02_AXI_wvalid = m02_couplers_to_processing_system7_0_axi_periph_WVALID;
   assign S00_ACLK_1 = S00_ACLK;
   assign S00_ARESETN_1 = S00_ARESETN[0];
   assign S00_AXI_arready = processing_system7_0_axi_periph_to_s00_couplers_ARREADY;
@@ -1757,14 +1496,14 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
   assign m01_couplers_to_processing_system7_0_axi_periph_RRESP = M01_AXI_rresp[1:0];
   assign m01_couplers_to_processing_system7_0_axi_periph_RVALID = M01_AXI_rvalid[0];
   assign m01_couplers_to_processing_system7_0_axi_periph_WREADY = M01_AXI_wready[0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_ARREADY = M02_AXI_arready[0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_AWREADY = M02_AXI_awready[0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_BRESP = M02_AXI_bresp[1:0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_BVALID = M02_AXI_bvalid[0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_RDATA = M02_AXI_rdata[31:0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_RRESP = M02_AXI_rresp[1:0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_RVALID = M02_AXI_rvalid[0];
-  assign m02_couplers_to_processing_system7_0_axi_periph_WREADY = M02_AXI_wready[0];
+  assign m02_couplers_to_processing_system7_0_axi_periph_ARREADY = M02_AXI_arready;
+  assign m02_couplers_to_processing_system7_0_axi_periph_AWREADY = M02_AXI_awready;
+  assign m02_couplers_to_processing_system7_0_axi_periph_BRESP = M02_AXI_bresp;
+  assign m02_couplers_to_processing_system7_0_axi_periph_BVALID = M02_AXI_bvalid;
+  assign m02_couplers_to_processing_system7_0_axi_periph_RDATA = M02_AXI_rdata;
+  assign m02_couplers_to_processing_system7_0_axi_periph_RRESP = M02_AXI_rresp;
+  assign m02_couplers_to_processing_system7_0_axi_periph_RVALID = M02_AXI_rvalid;
+  assign m02_couplers_to_processing_system7_0_axi_periph_WREADY = M02_AXI_wready;
   assign processing_system7_0_axi_periph_ACLK_net = ACLK;
   assign processing_system7_0_axi_periph_ARESETN_net = ARESETN[0];
   assign processing_system7_0_axi_periph_to_s00_couplers_ARADDR = S00_AXI_araddr[31:0];
@@ -1923,12 +1662,12 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
         .M_AXI_wvalid(m02_couplers_to_processing_system7_0_axi_periph_WVALID),
         .S_ACLK(processing_system7_0_axi_periph_ACLK_net),
         .S_ARESETN(processing_system7_0_axi_periph_ARESETN_net),
-        .S_AXI_araddr(xbar_to_m02_couplers_ARADDR),
-        .S_AXI_arprot(xbar_to_m02_couplers_ARPROT),
+        .S_AXI_araddr(xbar_to_m02_couplers_ARADDR[64]),
+        .S_AXI_arprot(xbar_to_m02_couplers_ARPROT[6]),
         .S_AXI_arready(xbar_to_m02_couplers_ARREADY),
         .S_AXI_arvalid(xbar_to_m02_couplers_ARVALID),
-        .S_AXI_awaddr(xbar_to_m02_couplers_AWADDR),
-        .S_AXI_awprot(xbar_to_m02_couplers_AWPROT),
+        .S_AXI_awaddr(xbar_to_m02_couplers_AWADDR[64]),
+        .S_AXI_awprot(xbar_to_m02_couplers_AWPROT[6]),
         .S_AXI_awready(xbar_to_m02_couplers_AWREADY),
         .S_AXI_awvalid(xbar_to_m02_couplers_AWVALID),
         .S_AXI_bready(xbar_to_m02_couplers_BREADY),
@@ -1938,9 +1677,9 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
         .S_AXI_rready(xbar_to_m02_couplers_RREADY),
         .S_AXI_rresp(xbar_to_m02_couplers_RRESP),
         .S_AXI_rvalid(xbar_to_m02_couplers_RVALID),
-        .S_AXI_wdata(xbar_to_m02_couplers_WDATA),
+        .S_AXI_wdata(xbar_to_m02_couplers_WDATA[64]),
         .S_AXI_wready(xbar_to_m02_couplers_WREADY),
-        .S_AXI_wstrb(xbar_to_m02_couplers_WSTRB),
+        .S_AXI_wstrb(xbar_to_m02_couplers_WSTRB[8]),
         .S_AXI_wvalid(xbar_to_m02_couplers_WVALID));
   s00_couplers_imp_OIZZ9C s00_couplers
        (.M_ACLK(processing_system7_0_axi_periph_ACLK_net),
@@ -2078,11 +1817,11 @@ module mitx_petalinux_processing_system7_0_axi_periph_0
         .m_axi_awready({xbar_to_m02_couplers_AWREADY,xbar_to_m01_couplers_AWREADY,xbar_to_m00_couplers_AWREADY}),
         .m_axi_awvalid({xbar_to_m02_couplers_AWVALID,xbar_to_m01_couplers_AWVALID,xbar_to_m00_couplers_AWVALID}),
         .m_axi_bready({xbar_to_m02_couplers_BREADY,xbar_to_m01_couplers_BREADY,xbar_to_m00_couplers_BREADY}),
-        .m_axi_bresp({xbar_to_m02_couplers_BRESP,xbar_to_m01_couplers_BRESP,xbar_to_m00_couplers_BRESP}),
+        .m_axi_bresp({xbar_to_m02_couplers_BRESP,xbar_to_m02_couplers_BRESP,xbar_to_m01_couplers_BRESP,xbar_to_m00_couplers_BRESP}),
         .m_axi_bvalid({xbar_to_m02_couplers_BVALID,xbar_to_m01_couplers_BVALID,xbar_to_m00_couplers_BVALID}),
-        .m_axi_rdata({xbar_to_m02_couplers_RDATA,xbar_to_m01_couplers_RDATA,xbar_to_m00_couplers_RDATA}),
+        .m_axi_rdata({xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m02_couplers_RDATA,xbar_to_m01_couplers_RDATA,xbar_to_m00_couplers_RDATA}),
         .m_axi_rready({xbar_to_m02_couplers_RREADY,xbar_to_m01_couplers_RREADY,xbar_to_m00_couplers_RREADY}),
-        .m_axi_rresp({xbar_to_m02_couplers_RRESP,xbar_to_m01_couplers_RRESP,xbar_to_m00_couplers_RRESP}),
+        .m_axi_rresp({xbar_to_m02_couplers_RRESP,xbar_to_m02_couplers_RRESP,xbar_to_m01_couplers_RRESP,xbar_to_m00_couplers_RRESP}),
         .m_axi_rvalid({xbar_to_m02_couplers_RVALID,xbar_to_m01_couplers_RVALID,xbar_to_m00_couplers_RVALID}),
         .m_axi_wdata({xbar_to_m02_couplers_WDATA,xbar_to_m01_couplers_WDATA,xbar_to_m00_couplers_WDATA}),
         .m_axi_wready({xbar_to_m02_couplers_WREADY,xbar_to_m01_couplers_WREADY,xbar_to_m00_couplers_WREADY}),

@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="mitx_petalinux" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1554357687"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1554357687"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1554357687"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1554886974"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1554886974"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1554886974"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -70,6 +70,30 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip/mitx_petalinux_atg_module_0_0/mitx_petalinux_atg_module_0_0.xci" Type="IP">
+        <Instance HierarchyPath="i2s_block/atg_module_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/mitx_petalinux_triangle_0_0/mitx_petalinux_triangle_0_0.xci" Type="IP">
+        <Instance HierarchyPath="saw_gen/triangle_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/mitx_petalinux_latcher_0_0/mitx_petalinux_latcher_0_0.xci" Type="IP">
+        <Instance HierarchyPath="saw_gen/latcher_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0_axi_periph/xbar"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -80,22 +104,6 @@
       </File>
       <File Name="hdl/mitx_petalinux.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/mitx_petalinux_atg_module_0_0/mitx_petalinux_atg_module_0_0.xci" Type="IP">
-        <Instance HierarchyPath="i2s_block/atg_module_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/mitx_petalinux_cordic_0_0/mitx_petalinux_cordic_0_0.xci" Type="IP">
-        <Instance HierarchyPath="cordic_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>

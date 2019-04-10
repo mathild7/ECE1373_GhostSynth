@@ -56,24 +56,37 @@
 module mitx_petalinux_atg_module_0_0 (
   clock_in,
   reset_n,
-  clk_0_0048,
-  clk_3_072,
-  clk_12_288
+  core_clk_in,
+  core_rst_n,
+  clock_0_0048,
+  clock_3_072,
+  clock_12_288,
+  latcher_pulse
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_in CLK" *)
 input wire clock_in;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *)
 input wire reset_n;
-output wire clk_0_0048;
-output wire clk_3_072;
-output wire clk_12_288;
+input wire core_clk_in;
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 core_rst_n RST" *)
+input wire core_rst_n;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_0_0048 CLK" *)
+output wire clock_0_0048;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_3_072 CLK" *)
+output wire clock_3_072;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_12_288 CLK" *)
+output wire clock_12_288;
+output wire latcher_pulse;
 
   atg_module inst (
     .clock_in(clock_in),
     .reset_n(reset_n),
-    .clk_0_0048(clk_0_0048),
-    .clk_3_072(clk_3_072),
-    .clk_12_288(clk_12_288)
+    .core_clk_in(core_clk_in),
+    .core_rst_n(core_rst_n),
+    .clock_0_0048(clock_0_0048),
+    .clock_3_072(clock_3_072),
+    .clock_12_288(clock_12_288),
+    .latcher_pulse(latcher_pulse)
   );
 endmodule

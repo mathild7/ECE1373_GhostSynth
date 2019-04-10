@@ -1,7 +1,7 @@
 //
 // Vivado(TM)
 // rundef.js: a Vivado-generated Runs Script for WSH 5.1/5.6
-// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //
 
 echo "This script was generated under a different operating system."
@@ -12,9 +12,9 @@ var WshShell = new ActiveXObject( "WScript.Shell" );
 var ProcEnv = WshShell.Environment( "Process" );
 var PathVal = ProcEnv("PATH");
 if ( PathVal.length == 0 ) {
-  PathVal = "/opt/Xilinx/SDK/2016.2/bin:/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/lin64;/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/lin64;/opt/Xilinx/Vivado/2016.2/bin;";
+  PathVal = "/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/bin/lin64;/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/lib/lin64;/opt/Xilinx_2017_2/Vivado/2017.2/bin;";
 } else {
-  PathVal = "/opt/Xilinx/SDK/2016.2/bin:/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/lin64;/opt/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/lin64;/opt/Xilinx/Vivado/2016.2/bin;" + PathVal;
+  PathVal = "/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/bin/lin64;/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/lib/lin64;/opt/Xilinx_2017_2/Vivado/2017.2/bin;" + PathVal;
 }
 
 ProcEnv("PATH") = PathVal;
@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log mitx_petalinux_wrapper.vds -m64 -mode batch -messageDb vivado.pb -notrace -source mitx_petalinux_wrapper.tcl" );
+         "-log mitx_petalinux_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mitx_petalinux_wrapper.tcl" );
 
 
 

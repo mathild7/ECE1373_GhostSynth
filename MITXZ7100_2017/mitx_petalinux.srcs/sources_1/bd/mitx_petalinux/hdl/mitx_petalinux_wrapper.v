@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Thu Apr  4 06:01:25 2019
+//Date        : Wed Apr 10 09:02:52 2019
 //Host        : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
 //Command     : generate_target mitx_petalinux_wrapper.bd
 //Design      : mitx_petalinux_wrapper
@@ -31,17 +31,16 @@ module mitx_petalinux_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    S_AXIS_PHASE_tdata,
-    S_AXIS_PHASE_tready,
-    S_AXIS_PHASE_tvalid,
-    core_clk,
     dip_switches_8bits_tri_i,
-    i2s_mclk_o,
+    i2s_mclk_ext,
     i2s_rx_data_i,
-    i2s_sck_o,
-    i2s_tx_data_o,
-    i2s_ws_o,
-    led_8bits_tri_o);
+    i2s_sck_ext,
+    i2s_tx_data_ext,
+    i2s_ws_ext,
+    led_8bits_tri_o,
+    pl_clk_n,
+    pl_clk_p,
+    pll_locked);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -63,17 +62,16 @@ module mitx_petalinux_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input [15:0]S_AXIS_PHASE_tdata;
-  output S_AXIS_PHASE_tready;
-  input S_AXIS_PHASE_tvalid;
-  output core_clk;
   input [7:0]dip_switches_8bits_tri_i;
-  output i2s_mclk_o;
+  output i2s_mclk_ext;
   input i2s_rx_data_i;
-  output i2s_sck_o;
-  output i2s_tx_data_o;
-  output i2s_ws_o;
-  output [7:0]led_8bits_tri_o;
+  output i2s_sck_ext;
+  output i2s_tx_data_ext;
+  output i2s_ws_ext;
+  output [6:0]led_8bits_tri_o;
+  input pl_clk_n;
+  input pl_clk_p;
+  output pll_locked;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -96,17 +94,16 @@ module mitx_petalinux_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [15:0]S_AXIS_PHASE_tdata;
-  wire S_AXIS_PHASE_tready;
-  wire S_AXIS_PHASE_tvalid;
-  wire core_clk;
   wire [7:0]dip_switches_8bits_tri_i;
-  wire i2s_mclk_o;
+  wire i2s_mclk_ext;
   wire i2s_rx_data_i;
-  wire i2s_sck_o;
-  wire i2s_tx_data_o;
-  wire i2s_ws_o;
-  wire [7:0]led_8bits_tri_o;
+  wire i2s_sck_ext;
+  wire i2s_tx_data_ext;
+  wire i2s_ws_ext;
+  wire [6:0]led_8bits_tri_o;
+  wire pl_clk_n;
+  wire pl_clk_p;
+  wire pll_locked;
 
   mitx_petalinux mitx_petalinux_i
        (.DDR_addr(DDR_addr),
@@ -130,15 +127,14 @@ module mitx_petalinux_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .S_AXIS_PHASE_tdata(S_AXIS_PHASE_tdata),
-        .S_AXIS_PHASE_tready(S_AXIS_PHASE_tready),
-        .S_AXIS_PHASE_tvalid(S_AXIS_PHASE_tvalid),
-        .core_clk(core_clk),
         .dip_switches_8bits_tri_i(dip_switches_8bits_tri_i),
-        .i2s_mclk_o(i2s_mclk_o),
+        .i2s_mclk_ext(i2s_mclk_ext),
         .i2s_rx_data_i(i2s_rx_data_i),
-        .i2s_sck_o(i2s_sck_o),
-        .i2s_tx_data_o(i2s_tx_data_o),
-        .i2s_ws_o(i2s_ws_o),
-        .led_8bits_tri_o(led_8bits_tri_o));
+        .i2s_sck_ext(i2s_sck_ext),
+        .i2s_tx_data_ext(i2s_tx_data_ext),
+        .i2s_ws_ext(i2s_ws_ext),
+        .led_8bits_tri_o(led_8bits_tri_o),
+        .pl_clk_n(pl_clk_n),
+        .pl_clk_p(pl_clk_p),
+        .pll_locked(pll_locked));
 endmodule

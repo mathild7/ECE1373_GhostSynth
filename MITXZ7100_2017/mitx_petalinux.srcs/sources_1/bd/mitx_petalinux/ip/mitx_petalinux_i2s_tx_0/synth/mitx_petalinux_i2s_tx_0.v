@@ -54,9 +54,9 @@
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_i2s_tx_0,i2s_topm,{}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_i2s_tx_0 (
-  i_wclk,
-  i_bclk,
-  i_mclk,
+  clock_0_0048,
+  clock_3_072,
+  clock_12_288,
   i2s_sck_o,
   i2s_mclk_o,
   i2s_ws_o,
@@ -71,8 +71,9 @@ module mitx_petalinux_i2s_tx_0 (
   m_axis_tvalid,
   m_axis_tready,
   m_axis_tlast,
-  axi_aclk,
-  axi_aresetn,
+  conf_en_o,
+  mms_axi_aclk,
+  mms_axi_aresetn,
   mms_axi_awaddr,
   mms_axi_awprot,
   mms_axi_awvalid,
@@ -94,9 +95,12 @@ module mitx_petalinux_i2s_tx_0 (
   mms_axi_bready
 );
 
-input wire i_wclk;
-input wire i_bclk;
-input wire i_mclk;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_0_0048 CLK" *)
+input wire clock_0_0048;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_3_072 CLK" *)
+input wire clock_3_072;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_12_288 CLK" *)
+input wire clock_12_288;
 output wire i2s_sck_o;
 output wire i2s_mclk_o;
 output wire i2s_ws_o;
@@ -120,10 +124,11 @@ output wire m_axis_tvalid;
 input wire m_axis_tready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TLAST" *)
 output wire m_axis_tlast;
-(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 axi_aclk CLK" *)
-input wire axi_aclk;
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 axi_aresetn RST" *)
-input wire axi_aresetn;
+output wire conf_en_o;
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 mms_axi_aclk CLK" *)
+input wire mms_axi_aclk;
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 mms_axi_aresetn RST" *)
+input wire mms_axi_aresetn;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 mms_axi AWADDR" *)
 input wire [31 : 0] mms_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 mms_axi AWPROT" *)
@@ -168,9 +173,9 @@ input wire mms_axi_bready;
     .ADDR_WIDTH(6),
     .IS_RECEIVER(0)
   ) inst (
-    .i_wclk(i_wclk),
-    .i_bclk(i_bclk),
-    .i_mclk(i_mclk),
+    .clock_0_0048(clock_0_0048),
+    .clock_3_072(clock_3_072),
+    .clock_12_288(clock_12_288),
     .i2s_sck_o(i2s_sck_o),
     .i2s_mclk_o(i2s_mclk_o),
     .i2s_ws_o(i2s_ws_o),
@@ -185,8 +190,9 @@ input wire mms_axi_bready;
     .m_axis_tvalid(m_axis_tvalid),
     .m_axis_tready(m_axis_tready),
     .m_axis_tlast(m_axis_tlast),
-    .axi_aclk(axi_aclk),
-    .axi_aresetn(axi_aresetn),
+    .conf_en_o(conf_en_o),
+    .mms_axi_aclk(mms_axi_aclk),
+    .mms_axi_aresetn(mms_axi_aresetn),
     .mms_axi_awaddr(mms_axi_awaddr),
     .mms_axi_awprot(mms_axi_awprot),
     .mms_axi_awvalid(mms_axi_awvalid),

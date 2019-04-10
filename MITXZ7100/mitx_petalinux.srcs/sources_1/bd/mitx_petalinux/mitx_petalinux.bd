@@ -149,30 +149,6 @@
       </spirit:views>
       <spirit:ports>
         <spirit:port>
-          <spirit:name>i2s_sck_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>i2s_ws_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>i2s_mclk_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>i2s_tx_data_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
           <spirit:name>i2s_rx_data_i</spirit:name>
           <spirit:wire>
             <spirit:direction>in</spirit:direction>
@@ -455,10 +431,6 @@
           <spirit:configurableElementValue spirit:referenceId="CLKOUT2_PHASE_ERROR">134.075</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>i2s_block</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="i2s_block" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -481,11 +453,6 @@
         <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="axi_gpio_0"/>
         <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="processing_system7_0_axi_periph"/>
       </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>mms_axi_1</spirit:name>
-        <spirit:activeInterface spirit:busRef="mms_axi" spirit:componentRef="i2s_block"/>
-        <spirit:activeInterface spirit:busRef="M02_AXI" spirit:componentRef="processing_system7_0_axi_periph"/>
-      </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -503,7 +470,6 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M02_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S01_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="core_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -521,47 +487,11 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M02_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S01_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="core_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_processing_system7_0_50M_interconnect_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_50M" spirit:portRef="interconnect_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ARESETN"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_block_i2s_sck_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="i2s_sck_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_sck_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_block_i2s_ws_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="i2s_ws_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_ws_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_block_i2s_mclk_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="i2s_mclk_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_mclk_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_block_i2s_tx_data_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="i2s_tx_data_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_tx_data_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_rx_data_i_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="i2s_rx_data_i"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="i2s_rx_data_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>aud_clk_1</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="audio_pll" spirit:portRef="clk_out1"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="aud_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>aud_rstn_1</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="audio_pll" spirit:portRef="locked"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="aud_rstn"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -576,263 +506,6 @@
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="dip_switches_8bits/axi_gpio_0_GPIO">
         <spirit:activeInterface spirit:busRef="GPIO" spirit:componentRef="axi_gpio_0"/>
-      </spirit:hierConnection>
-    </spirit:hierConnections>
-  </spirit:design>
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp</spirit:library>
-    <spirit:name>i2s_block</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>i2s_tx_fifo_axis</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>mms_axi</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>RST.AUD_RSTN</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>aud_rstn</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>RST.CORE_ARESETN</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>core_aresetn</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>CLK.AUD_CLK</spirit:name>
-        <spirit:displayName>Clk</spirit:displayName>
-        <spirit:description>Clock</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>CLK</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>aud_clk</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>CLK.CORE_ACLK</spirit:name>
-        <spirit:displayName>Clk</spirit:displayName>
-        <spirit:description>Clock</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>CLK</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>core_aclk</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:model>
-      <spirit:views>
-        <spirit:view>
-          <spirit:name>BlockDiagram</spirit:name>
-          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="i2s_block_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-        </spirit:view>
-      </spirit:views>
-      <spirit:ports>
-        <spirit:port>
-          <spirit:name>i2s_sck_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>i2s_ws_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>i2s_mclk_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>i2s_tx_data_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>i2s_rx_data_i</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>aud_rstn</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>core_aresetn</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-            <spirit:vector>
-              <spirit:left>0</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>aud_clk</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>core_aclk</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-      </spirit:ports>
-    </spirit:model>
-  </spirit:component>
-
-  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp</spirit:library>
-    <spirit:name>i2s_block_imp</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>i2s_tx_fifo</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="axis_data_fifo" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_i2s_tx_fifo_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="TDATA_NUM_BYTES">4</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="FIFO_DEPTH">64</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="FIFO_MODE">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="IS_ACLK_ASYNC">1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>i2s_tx</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="i2s_topm" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_i2s_tx_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">i2s_topm</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
-    <spirit:interconnections>
-      <spirit:interconnection>
-        <spirit:name>i2s_tx_fifo_M_AXIS</spirit:name>
-        <spirit:activeInterface spirit:busRef="s_axis" spirit:componentRef="i2s_tx"/>
-        <spirit:activeInterface spirit:busRef="M_AXIS" spirit:componentRef="i2s_tx_fifo"/>
-      </spirit:interconnection>
-    </spirit:interconnections>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_tx_i2s_sck_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="i2s_sck_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_sck_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_tx_i2s_ws_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="i2s_ws_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_ws_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_tx_i2s_mclk_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="i2s_mclk_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_mclk_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_tx_i2s_tx_data_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="i2s_tx_data_o"/>
-        <spirit:externalPortReference spirit:portRef="i2s_tx_data_o"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>i2s_rx_data_i_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="i2s_rx_data_i"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="i2s_rx_data_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>s_axis_aresetn_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="aud_rstn"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx_fifo" spirit:portRef="s_axis_aresetn"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>m_axis_aresetn_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="core_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx_fifo" spirit:portRef="m_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="axi_aresetn"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>s_axis_aclk_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="aud_clk"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx_fifo" spirit:portRef="s_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="i_bclk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>m_axis_aclk_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="core_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx_fifo" spirit:portRef="m_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="i2s_tx" spirit:portRef="axi_aclk"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
-    <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="i2s_tx_fifo_axis/Conn1">
-        <spirit:activeInterface spirit:busRef="S_AXIS" spirit:componentRef="i2s_tx_fifo"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="mms_axi/Conn2">
-        <spirit:activeInterface spirit:busRef="mms_axi" spirit:componentRef="i2s_tx"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -2475,12 +2148,6 @@
             <spirit:name>SEG_axi_gpio_1_Reg</spirit:name>
             <spirit:displayName>/axi_gpio_1/S_AXI/Reg</spirit:displayName>
             <spirit:addressOffset>0x80001000</spirit:addressOffset>
-            <spirit:range>4K</spirit:range>
-          </spirit:segment>
-          <spirit:segment>
-            <spirit:name>SEG_i2s_tx_reg0</spirit:name>
-            <spirit:displayName>/i2s_block/i2s_tx/mms_axi/reg0</spirit:displayName>
-            <spirit:addressOffset>0x80002000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
         </spirit:segments>

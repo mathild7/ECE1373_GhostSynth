@@ -16,65 +16,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="88106288460fs"></ZoomStartTime>
-      <ZoomEndTime time="122806288461fs"></ZoomEndTime>
-      <Cursor1Time time="176429500000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="541266851533fs"></ZoomEndTime>
+      <Cursor1Time time="113495000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="255"></NameColumnWidth>
-      <ValueColumnWidth column_width="341"></ValueColumnWidth>
+      <ValueColumnWidth column_width="321"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/s_axis_aresetn">
-      <obj_property name="ElementShortName">s_axis_aresetn</obj_property>
-      <obj_property name="ObjectShortName">s_axis_aresetn</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/m_axis_aresetn">
-      <obj_property name="ElementShortName">m_axis_aresetn</obj_property>
-      <obj_property name="ObjectShortName">m_axis_aresetn</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/s_axis_aclk">
-      <obj_property name="ElementShortName">s_axis_aclk</obj_property>
-      <obj_property name="ObjectShortName">s_axis_aclk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/s_axis_tvalid">
-      <obj_property name="ElementShortName">s_axis_tvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tvalid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/s_axis_tready">
-      <obj_property name="ElementShortName">s_axis_tready</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/s_axis_tdata">
-      <obj_property name="ElementShortName">s_axis_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_axis_tdata[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/m_axis_aclk">
-      <obj_property name="ElementShortName">m_axis_aclk</obj_property>
-      <obj_property name="ObjectShortName">m_axis_aclk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/m_axis_tvalid">
-      <obj_property name="ElementShortName">m_axis_tvalid</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tvalid</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/m_axis_tready">
-      <obj_property name="ElementShortName">m_axis_tready</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tready</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/m_axis_tdata">
-      <obj_property name="ElementShortName">m_axis_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">m_axis_tdata[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/axis_data_count">
-      <obj_property name="ElementShortName">axis_data_count[31:0]</obj_property>
-      <obj_property name="ObjectShortName">axis_data_count[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/axis_wr_data_count">
-      <obj_property name="ElementShortName">axis_wr_data_count[31:0]</obj_property>
-      <obj_property name="ObjectShortName">axis_wr_data_count[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/i2s_tx_fifo/axis_rd_data_count">
-      <obj_property name="ElementShortName">axis_rd_data_count[31:0]</obj_property>
-      <obj_property name="ObjectShortName">axis_rd_data_count[31:0]</obj_property>
-   </wvobject>
+   <WVObjectSize size="0" />
 </wave_config>

@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Thu Apr  4 06:01:25 2019
+//Date        : Wed Apr 10 09:02:52 2019
 //Host        : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
 //Command     : generate_target mitx_petalinux.bd
 //Design      : mitx_petalinux
@@ -20,8 +20,10 @@ module i2s_block_imp_WAM4XK
     i2s_sck_o,
     i2s_tx_data_o,
     i2s_tx_fifo_axis_tdata,
+    i2s_tx_fifo_axis_tready,
     i2s_tx_fifo_axis_tvalid,
     i2s_ws_o,
+    latcher_pulse,
     mms_axi_araddr,
     mms_axi_arprot,
     mms_axi_arready,
@@ -51,8 +53,10 @@ module i2s_block_imp_WAM4XK
   output i2s_sck_o;
   output i2s_tx_data_o;
   input [31:0]i2s_tx_fifo_axis_tdata;
+  output i2s_tx_fifo_axis_tready;
   input i2s_tx_fifo_axis_tvalid;
   output i2s_ws_o;
+  output latcher_pulse;
   input [31:0]mms_axi_araddr;
   input [2:0]mms_axi_arprot;
   output [0:0]mms_axi_arready;
@@ -74,6 +78,7 @@ module i2s_block_imp_WAM4XK
   input [0:0]mms_axi_wvalid;
 
   wire [31:0]Conn1_TDATA;
+  wire Conn1_TREADY;
   wire Conn1_TVALID;
   wire [31:0]Conn2_ARADDR;
   wire [2:0]Conn2_ARPROT;
@@ -95,13 +100,14 @@ module i2s_block_imp_WAM4XK
   wire [3:0]Conn2_WSTRB;
   wire [0:0]Conn2_WVALID;
   wire atg_module_0_clk_0_0048;
-  wire atg_module_0_clk_12_288;
   wire atg_module_0_clk_3_072;
-  wire aud_clk_1;
+  wire atg_module_0_clock_12_288;
+  wire atg_module_0_latcher_pulse;
   wire aud_rstn_1;
   wire core_aclk_1;
   wire [0:0]core_aresetn_1;
   wire i2s_rx_data_i_1;
+  wire i2s_tx_conf_en_o;
   wire [31:0]i2s_tx_fifo_M_AXIS_TDATA;
   wire i2s_tx_fifo_M_AXIS_TREADY;
   wire i2s_tx_fifo_M_AXIS_TVALID;
@@ -109,6 +115,7 @@ module i2s_block_imp_WAM4XK
   wire i2s_tx_i2s_sck_o;
   wire i2s_tx_i2s_tx_data_o;
   wire i2s_tx_i2s_ws_o;
+  wire m_axis_aclk_1;
 
   assign Conn1_TDATA = i2s_tx_fifo_axis_tdata[31:0];
   assign Conn1_TVALID = i2s_tx_fifo_axis_tvalid;
@@ -123,7 +130,6 @@ module i2s_block_imp_WAM4XK
   assign Conn2_WDATA = mms_axi_wdata[31:0];
   assign Conn2_WSTRB = mms_axi_wstrb[3:0];
   assign Conn2_WVALID = mms_axi_wvalid[0];
-  assign aud_clk_1 = aud_clk;
   assign aud_rstn_1 = aud_rstn;
   assign clk_0_0048 = atg_module_0_clk_0_0048;
   assign core_aclk_1 = core_aclk;
@@ -132,7 +138,10 @@ module i2s_block_imp_WAM4XK
   assign i2s_rx_data_i_1 = i2s_rx_data_i;
   assign i2s_sck_o = i2s_tx_i2s_sck_o;
   assign i2s_tx_data_o = i2s_tx_i2s_tx_data_o;
+  assign i2s_tx_fifo_axis_tready = Conn1_TREADY;
   assign i2s_ws_o = i2s_tx_i2s_ws_o;
+  assign latcher_pulse = atg_module_0_latcher_pulse;
+  assign m_axis_aclk_1 = aud_clk;
   assign mms_axi_arready[0] = Conn2_ARREADY;
   assign mms_axi_awready[0] = Conn2_AWREADY;
   assign mms_axi_bresp[1:0] = Conn2_BRESP;
@@ -142,24 +151,28 @@ module i2s_block_imp_WAM4XK
   assign mms_axi_rvalid[0] = Conn2_RVALID;
   assign mms_axi_wready[0] = Conn2_WREADY;
   mitx_petalinux_atg_module_0_0 atg_module_0
-       (.clk_0_0048(atg_module_0_clk_0_0048),
-        .clk_12_288(atg_module_0_clk_12_288),
-        .clk_3_072(atg_module_0_clk_3_072),
-        .clock_in(aud_clk_1),
+       (.clock_0_0048(atg_module_0_clk_0_0048),
+        .clock_12_288(atg_module_0_clock_12_288),
+        .clock_3_072(atg_module_0_clk_3_072),
+        .clock_in(m_axis_aclk_1),
+        .core_clk_in(core_aclk_1),
+        .core_rst_n(core_aresetn_1),
+        .latcher_pulse(atg_module_0_latcher_pulse),
         .reset_n(aud_rstn_1));
   mitx_petalinux_i2s_tx_0 i2s_tx
-       (.axi_aclk(core_aclk_1),
-        .axi_aresetn(core_aresetn_1),
+       (.clock_0_0048(atg_module_0_clk_0_0048),
+        .clock_12_288(atg_module_0_clock_12_288),
+        .clock_3_072(atg_module_0_clk_3_072),
+        .conf_en_o(i2s_tx_conf_en_o),
         .i2s_mclk_o(i2s_tx_i2s_mclk_o),
         .i2s_rx_data_i(i2s_rx_data_i_1),
         .i2s_sck_o(i2s_tx_i2s_sck_o),
         .i2s_tx_data_o(i2s_tx_i2s_tx_data_o),
         .i2s_ws_o(i2s_tx_i2s_ws_o),
-        .i_bclk(atg_module_0_clk_3_072),
-        .i_mclk(atg_module_0_clk_12_288),
-        .i_wclk(atg_module_0_clk_0_0048),
         .m_axis_tready(1'b0),
+        .mms_axi_aclk(core_aclk_1),
         .mms_axi_araddr(Conn2_ARADDR),
+        .mms_axi_aresetn(core_aresetn_1),
         .mms_axi_arprot(Conn2_ARPROT),
         .mms_axi_arready(Conn2_ARREADY),
         .mms_axi_arvalid(Conn2_ARVALID),
@@ -178,20 +191,21 @@ module i2s_block_imp_WAM4XK
         .mms_axi_wready(Conn2_WREADY),
         .mms_axi_wstrb(Conn2_WSTRB),
         .mms_axi_wvalid(Conn2_WVALID),
-        .s_axis_clk(aud_clk_1),
+        .s_axis_clk(atg_module_0_clk_3_072),
         .s_axis_tdata(i2s_tx_fifo_M_AXIS_TDATA),
         .s_axis_tlast(1'b0),
         .s_axis_tready(i2s_tx_fifo_M_AXIS_TREADY),
         .s_axis_tvalid(i2s_tx_fifo_M_AXIS_TVALID));
   mitx_petalinux_i2s_tx_fifo_0 i2s_tx_fifo
-       (.m_axis_aclk(aud_clk_1),
-        .m_axis_aresetn(aud_rstn_1),
+       (.m_axis_aclk(atg_module_0_clk_3_072),
+        .m_axis_aresetn(i2s_tx_conf_en_o),
         .m_axis_tdata(i2s_tx_fifo_M_AXIS_TDATA),
         .m_axis_tready(i2s_tx_fifo_M_AXIS_TREADY),
         .m_axis_tvalid(i2s_tx_fifo_M_AXIS_TVALID),
         .s_axis_aclk(core_aclk_1),
         .s_axis_aresetn(core_aresetn_1),
         .s_axis_tdata(Conn1_TDATA),
+        .s_axis_tready(Conn1_TREADY),
         .s_axis_tvalid(Conn1_TVALID));
 endmodule
 
@@ -605,7 +619,7 @@ module m02_couplers_imp_IAY6NU
   assign m02_couplers_to_m02_couplers_WVALID = S_AXI_wvalid[0];
 endmodule
 
-(* CORE_GENERATION_INFO = "mitx_petalinux,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mitx_petalinux,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=12,numNonXlnxBlks=2,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "mitx_petalinux.hwdef" *) 
+(* CORE_GENERATION_INFO = "mitx_petalinux,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=mitx_petalinux,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=21,numReposBlks=13,numNonXlnxBlks=2,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=2,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}" *) (* HW_HANDOFF = "mitx_petalinux.hwdef" *) 
 module mitx_petalinux
    (DDR_addr,
     DDR_ba,
@@ -628,17 +642,16 @@ module mitx_petalinux
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    S_AXIS_PHASE_tdata,
-    S_AXIS_PHASE_tready,
-    S_AXIS_PHASE_tvalid,
-    core_clk,
     dip_switches_8bits_tri_i,
-    i2s_mclk_o,
+    i2s_mclk_ext,
     i2s_rx_data_i,
-    i2s_sck_o,
-    i2s_tx_data_o,
-    i2s_ws_o,
-    led_8bits_tri_o);
+    i2s_sck_ext,
+    i2s_tx_data_ext,
+    i2s_ws_ext,
+    led_8bits_tri_o,
+    pl_clk_n,
+    pl_clk_p,
+    pll_locked);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -660,32 +673,32 @@ module mitx_petalinux
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input [15:0]S_AXIS_PHASE_tdata;
-  output S_AXIS_PHASE_tready;
-  input S_AXIS_PHASE_tvalid;
-  output core_clk;
   input [7:0]dip_switches_8bits_tri_i;
-  output i2s_mclk_o;
+  output i2s_mclk_ext;
   input i2s_rx_data_i;
-  output i2s_sck_o;
-  output i2s_tx_data_o;
-  output i2s_ws_o;
-  output [7:0]led_8bits_tri_o;
+  output i2s_sck_ext;
+  output i2s_tx_data_ext;
+  output i2s_ws_ext;
+  output [6:0]led_8bits_tri_o;
+  input pl_clk_n;
+  input pl_clk_p;
+  output pll_locked;
 
-  wire [15:0]S_AXIS_PHASE_1_TDATA;
-  wire S_AXIS_PHASE_1_TREADY;
-  wire S_AXIS_PHASE_1_TVALID;
-  wire aud_clk_1;
+  wire CLK_IN1_D_1_CLK_N;
+  wire CLK_IN1_D_1_CLK_P;
   wire aud_rstn_1;
+  wire audio_pll_clk_out1;
   wire [7:0]axi_gpio_0_GPIO_TRI_I;
-  wire [7:0]axi_gpio_1_GPIO_TRI_O;
-  wire [31:0]cordic_0_M_AXIS_DOUT_TDATA;
-  wire cordic_0_M_AXIS_DOUT_TVALID;
+  wire [6:0]axi_gpio_1_GPIO_TRI_O;
   wire i2s_block_i2s_mclk_o;
   wire i2s_block_i2s_sck_o;
   wire i2s_block_i2s_tx_data_o;
   wire i2s_block_i2s_ws_o;
   wire i2s_rx_data_i_1;
+  wire [31:0]i2s_tx_fifo_axis_1_TDATA;
+  wire i2s_tx_fifo_axis_1_TREADY;
+  wire i2s_tx_fifo_axis_1_TVALID;
+  wire latch_V_1;
   wire [31:0]mms_axi_1_ARADDR;
   wire [2:0]mms_axi_1_ARPROT;
   wire [0:0]mms_axi_1_ARREADY;
@@ -841,22 +854,22 @@ module mitx_petalinux
   wire [0:0]rst_processing_system7_0_50M_interconnect_aresetn;
   wire [0:0]rst_processing_system7_0_50M_peripheral_aresetn;
 
-  assign S_AXIS_PHASE_1_TDATA = S_AXIS_PHASE_tdata[15:0];
-  assign S_AXIS_PHASE_1_TVALID = S_AXIS_PHASE_tvalid;
-  assign S_AXIS_PHASE_tready = S_AXIS_PHASE_1_TREADY;
+  assign CLK_IN1_D_1_CLK_N = pl_clk_n;
+  assign CLK_IN1_D_1_CLK_P = pl_clk_p;
   assign axi_gpio_0_GPIO_TRI_I = dip_switches_8bits_tri_i[7:0];
-  assign core_clk = processing_system7_0_FCLK_CLK0;
-  assign i2s_mclk_o = i2s_block_i2s_mclk_o;
+  assign i2s_mclk_ext = i2s_block_i2s_mclk_o;
   assign i2s_rx_data_i_1 = i2s_rx_data_i;
-  assign i2s_sck_o = i2s_block_i2s_sck_o;
-  assign i2s_tx_data_o = i2s_block_i2s_tx_data_o;
-  assign i2s_ws_o = i2s_block_i2s_ws_o;
-  assign led_8bits_tri_o[7:0] = axi_gpio_1_GPIO_TRI_O;
+  assign i2s_sck_ext = i2s_block_i2s_sck_o;
+  assign i2s_tx_data_ext = i2s_block_i2s_tx_data_o;
+  assign i2s_ws_ext = i2s_block_i2s_ws_o;
+  assign led_8bits_tri_o[6:0] = axi_gpio_1_GPIO_TRI_O;
+  assign pll_locked = aud_rstn_1;
   mitx_petalinux_clk_wiz_0_1 audio_pll
-       (.clk_in1(processing_system7_0_FCLK_CLK0),
-        .clk_out1(aud_clk_1),
+       (.clk_in1_n(CLK_IN1_D_1_CLK_N),
+        .clk_in1_p(CLK_IN1_D_1_CLK_P),
+        .clk_out1(audio_pll_clk_out1),
         .locked(aud_rstn_1),
-        .resetn(processing_system7_0_FCLK_RESET0_N));
+        .resetn(rst_processing_system7_0_50M_peripheral_aresetn));
   mitx_petalinux_axi_gpio_0_1 axi_gpio_0
        (.gpio_io_i(axi_gpio_0_GPIO_TRI_I),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
@@ -899,15 +912,8 @@ module mitx_petalinux
         .s_axi_wready(processing_system7_0_axi_periph_M01_AXI_WREADY),
         .s_axi_wstrb(processing_system7_0_axi_periph_M01_AXI_WSTRB),
         .s_axi_wvalid(processing_system7_0_axi_periph_M01_AXI_WVALID));
-  mitx_petalinux_cordic_0_0 cordic_0
-       (.aclk(processing_system7_0_FCLK_CLK0),
-        .m_axis_dout_tdata(cordic_0_M_AXIS_DOUT_TDATA),
-        .m_axis_dout_tvalid(cordic_0_M_AXIS_DOUT_TVALID),
-        .s_axis_phase_tdata(S_AXIS_PHASE_1_TDATA),
-        .s_axis_phase_tready(S_AXIS_PHASE_1_TREADY),
-        .s_axis_phase_tvalid(S_AXIS_PHASE_1_TVALID));
   i2s_block_imp_WAM4XK i2s_block
-       (.aud_clk(aud_clk_1),
+       (.aud_clk(audio_pll_clk_out1),
         .aud_rstn(aud_rstn_1),
         .core_aclk(processing_system7_0_FCLK_CLK0),
         .core_aresetn(rst_processing_system7_0_50M_peripheral_aresetn),
@@ -915,9 +921,11 @@ module mitx_petalinux
         .i2s_rx_data_i(i2s_rx_data_i_1),
         .i2s_sck_o(i2s_block_i2s_sck_o),
         .i2s_tx_data_o(i2s_block_i2s_tx_data_o),
-        .i2s_tx_fifo_axis_tdata(cordic_0_M_AXIS_DOUT_TDATA),
-        .i2s_tx_fifo_axis_tvalid(cordic_0_M_AXIS_DOUT_TVALID),
+        .i2s_tx_fifo_axis_tdata(i2s_tx_fifo_axis_1_TDATA),
+        .i2s_tx_fifo_axis_tready(i2s_tx_fifo_axis_1_TREADY),
+        .i2s_tx_fifo_axis_tvalid(i2s_tx_fifo_axis_1_TVALID),
         .i2s_ws_o(i2s_block_i2s_ws_o),
+        .latcher_pulse(latch_V_1),
         .mms_axi_araddr(mms_axi_1_ARADDR),
         .mms_axi_arprot(mms_axi_1_ARPROT),
         .mms_axi_arready(mms_axi_1_ARREADY),
@@ -1191,6 +1199,13 @@ module mitx_petalinux
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_processing_system7_0_50M_peripheral_aresetn),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
+  saw_gen_imp_WGDZ0Y saw_gen
+       (.ap_clk(processing_system7_0_FCLK_CLK0),
+        .ap_rst_n(rst_processing_system7_0_50M_peripheral_aresetn),
+        .latch_V(latch_V_1),
+        .out_V_V_tdata(i2s_tx_fifo_axis_1_TDATA),
+        .out_V_V_tready(i2s_tx_fifo_axis_1_TREADY),
+        .out_V_V_tvalid(i2s_tx_fifo_axis_1_TVALID));
 endmodule
 
 module mitx_petalinux_processing_system7_0_axi_periph_0
@@ -2749,4 +2764,52 @@ module s01_couplers_imp_1OA68H3
         .s_axi_wready(s01_couplers_to_auto_pc_WREADY),
         .s_axi_wstrb(s01_couplers_to_auto_pc_WSTRB),
         .s_axi_wvalid(s01_couplers_to_auto_pc_WVALID));
+endmodule
+
+module saw_gen_imp_WGDZ0Y
+   (ap_clk,
+    ap_rst_n,
+    latch_V,
+    out_V_V_tdata,
+    out_V_V_tready,
+    out_V_V_tvalid);
+  input ap_clk;
+  input ap_rst_n;
+  input [0:0]latch_V;
+  output [31:0]out_V_V_tdata;
+  input out_V_V_tready;
+  output out_V_V_tvalid;
+
+  wire [31:0]Conn1_TDATA;
+  wire Conn1_TREADY;
+  wire Conn1_TVALID;
+  wire ap_clk_1;
+  wire ap_rst_n_1;
+  wire [0:0]latch_V_1;
+  wire [31:0]triangle_0_out_V_TDATA;
+  wire triangle_0_out_V_TREADY;
+  wire triangle_0_out_V_TVALID;
+
+  assign Conn1_TREADY = out_V_V_tready;
+  assign ap_clk_1 = ap_clk;
+  assign ap_rst_n_1 = ap_rst_n;
+  assign latch_V_1 = latch_V[0];
+  assign out_V_V_tdata[31:0] = Conn1_TDATA;
+  assign out_V_V_tvalid = Conn1_TVALID;
+  mitx_petalinux_latcher_0_0 latcher_0
+       (.ap_clk(ap_clk_1),
+        .ap_rst_n(ap_rst_n_1),
+        .in_V_V_TDATA(triangle_0_out_V_TDATA),
+        .in_V_V_TREADY(triangle_0_out_V_TREADY),
+        .in_V_V_TVALID(triangle_0_out_V_TVALID),
+        .latch_V(latch_V_1),
+        .out_V_V_TDATA(Conn1_TDATA),
+        .out_V_V_TREADY(Conn1_TREADY),
+        .out_V_V_TVALID(Conn1_TVALID));
+  mitx_petalinux_triangle_0_0 triangle_0
+       (.ap_clk(ap_clk_1),
+        .ap_rst_n(ap_rst_n_1),
+        .out_V_TDATA(triangle_0_out_V_TDATA),
+        .out_V_TREADY(triangle_0_out_V_TREADY),
+        .out_V_TVALID(triangle_0_out_V_TVALID));
 endmodule
