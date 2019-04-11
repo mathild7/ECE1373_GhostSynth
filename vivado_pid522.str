@@ -1,0 +1,125 @@
+/*
+
+Vivado v2017.2 (64-bit)
+SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+
+Process ID: 522
+License: Customer
+
+Current time: 	4/11/19 9:42:31 PM UTC
+Time zone: 	Coordinated Universal Time (Etc/UTC)
+
+OS: DISTRIB_ID=Ubuntu
+OS Version: 4.14.109-1-MANJARO
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0.0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 12 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/opt/Xilinx/Vivado/2017.2/tps/lnx64/jre
+JVM executable location: 	/opt/Xilinx/Vivado/2017.2/tps/lnx64/jre/bin/java
+Java library paths: /opt/Xilinx/Vivado/2017.2/tps/lnx64/libxslt/lib:/opt/Xilinx/Vivado/2017.2/lib/lnx64.o:/opt/Xilinx/Vivado/2017.2/tps/lnx64/jre/lib/amd64:/opt/Xilinx/Vivado/2017.2/tps/lnx64/jre/lib/amd64/server:/opt/Xilinx/Vivado/2017.2/lnx64/tools/dot/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+
+User name: 	root
+User home directory: /root
+User working directory: /root/repo/ECE1373_GhostSynth
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2017.2
+RDI_DATADIR: /opt/Xilinx/Vivado/2017.2/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2017.2/bin
+
+User preferences location: /root/.Xilinx/Vivado
+Vivado preferences directory: /root/.Xilinx/Vivado/2017.2/vivado.xml
+Vivado layouts directory: /root/.Xilinx/Vivado/2017.2/layouts
+PlanAhead jar location: 	/opt/Xilinx/Vivado/2017.2/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	./.Xil/Vivado-522-0027fb2bf205
+
+GUI allocated memory:	161 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 892 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/root/repo/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr", 0); // q:k (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 54 MB (+54528kb) [00:00:06]
+// [Engine Memory]: 845 MB (+734571kb) [00:00:06]
+// bs:g (cg:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /root/repo/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr. Version: Vivado v2017.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /root/repo/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 61 MB (+3672kb) [00:00:08]
+// [Engine Memory]: 896 MB (+8788kb) [00:00:08]
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 925 MB. GUI used memory: 26 MB. Current time: 4/11/19 9:42:34 PM UTC
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 945 MB (+4453kb) [00:00:10]
+// [Engine Memory]: 993 MB (+1520kb) [00:00:11]
+// [GUI Memory]: 64 MB (+516kb) [00:00:12]
+// Tcl Message: open_project /root/repo/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/root/repo/ECE1373_GhostSynth/modules/latcher/hls_latcher32/latcher32/solution1/impl/ip'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/root/repo/ECE1373_GhostSynth/modules/latcher/hls_triangle/triangle/solution1/impl/ip'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2017.2/data/ip'. 
+// Project name: mitx_petalinux; location: /root/repo/ECE1373_GhostSynth/MITXZ7100_2017; part: xc7z100ffg900-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 6100.539 ; gain = 160.301 ; free physical = 5241 ; free virtual = 28976 
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,059 MB (+16133kb) [00:00:16]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // u:M (JViewport:JComponent, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bs:g (cg:JFrame):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {/root/repo/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd} 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0 Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1 Adding cell -- xilinx.com:ip:clk_wiz:5.4 - audio_pll Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_50M 
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Adding cell -- xilinx.com:hls:triangle:1.0 - triangle_0 Adding cell -- xilinx.com:hls:latcher:1.0 - latcher_0 Adding cell -- xilinx.com:ip:axis_data_fifo:1.1 - i2s_tx_fifo Adding cell -- user.org:module_ref:atg_module:1.0 - atg_module_0 Adding cell -- user.org:module_ref:i2s_topm:1.0 - i2s_tx 
+// Tcl Message: Successfully read diagram <mitx_petalinux> from BD file </root/repo/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd> 
+// TclEventType: RSB_OPEN_DIAGRAM
+// [GUI Memory]: 70 MB (+2951kb) [00:00:24]
+// TclEventType: RSB_CONNECTION_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,097 MB. GUI used memory: 38 MB. Current time: 4/11/19 9:42:50 PM UTC
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 6181.035 ; gain = 41.469 ; free physical = 5158 ; free virtual = 28925 
+// 'bv' command handler elapsed time: 7 seconds
+dismissDialog("Open Block Design"); // bs:g (cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,115 MB (+3517kb) [00:00:28]
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,120 MB. GUI used memory: 38 MB. Current time: 4/11/19 9:43:09 PM UTC

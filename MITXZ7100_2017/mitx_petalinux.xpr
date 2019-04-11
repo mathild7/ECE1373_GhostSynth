@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr">
+<Project Version="7" Minor="20" Path="/root/repo/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2c33bc56a1584e2e8b3081c657036587"/>

@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Apr 10 22:05:53 2019">
+<application name="pa" timeStamp="Thu Apr 11 21:37:16 2019">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="4afc236238434f1dac9e2b71c7b45067" type="ProjectID"/>
 <property name="ProjectIteration" value="76" type="ProjectIteration"/>
@@ -49,7 +49,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OpenBlockDesign" value="68" type="JavaHandler"/>
 <property name="OpenExample" value="3" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="2" type="JavaHandler"/>
-<property name="OpenProject" value="1" type="JavaHandler"/>
+<property name="OpenProject" value="2" type="JavaHandler"/>
 <property name="OpenRSBHierarchyBlock" value="3" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="20" type="JavaHandler"/>
 <property name="RecustomizeCore" value="13" type="JavaHandler"/>
@@ -113,7 +113,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ClockPairTablePanel_CLOCK_PAIR_TABLE" value="12" type="GuiResourceData"/>
 <property name="ClockPairTablePanel_REPORT_TIMING" value="2" type="GuiResourceData"/>
 <property name="ClosePlanner_YES" value="1" type="GuiResourceData"/>
-<property name="CmdMsgDialog_OK" value="45" type="GuiResourceData"/>
+<property name="CmdMsgDialog_OK" value="46" type="GuiResourceData"/>
 <property name="CmdMsgTreeDialog_CMD_MSG_TREE" value="1" type="GuiResourceData"/>
 <property name="CmdMsgTreeDialog_OK" value="2" type="GuiResourceData"/>
 <property name="CommandsInput_TYPE_TCL_COMMAND_HERE" value="56" type="GuiResourceData"/>
@@ -153,6 +153,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="FromTargetSpecifierPanel_SPECIFY_START_POINTS" value="44" type="GuiResourceData"/>
 <property name="GenSettingTreeTablePanel_GEN_SETTING_TREE_TABLE" value="3" type="GuiResourceData"/>
 <property name="GeneratedClockTablePanel_TABLE" value="8" type="GuiResourceData"/>
+<property name="GettingStartedView_OPEN_PROJECT" value="1" type="GuiResourceData"/>
 <property name="GraphicalView_ZOOM_FIT" value="2" type="GuiResourceData"/>
 <property name="GraphicalView_ZOOM_IN" value="22" type="GuiResourceData"/>
 <property name="GraphicalView_ZOOM_OUT" value="4" type="GuiResourceData"/>
@@ -330,9 +331,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="top_tb.sv, 48, 500" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="44" type="GuiMode"/>
+<property name="GuiMode" value="5" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="30" type="TclMode"/>
+<property name="TclMode" value="4" type="TclMode"/>
 </item>
 </section>
 </application>
