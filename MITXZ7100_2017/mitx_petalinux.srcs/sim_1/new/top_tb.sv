@@ -78,7 +78,24 @@ mitx_petalinux_wrapper DUT
         #10ns
             DUT.mitx_petalinux_i.processing_system7_0.inst.fpga_soft_reset(32'h0000_0000);
         #15us
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_0010,4,32'h43dc_0000,resp); //Set to 440 Hz
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_2000,4,32'h0000_0402,resp);
+
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5010,4,32'h0000_0001,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5018,4,32'h0000_0003,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5020,4,32'h0000_0000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5028,4,32'h0000_0000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5030,4,32'h0000_0000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5038,4,32'h0000_0000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5040,4,32'h0000_0001,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5048,4,32'h0000_0002,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5050,4,32'h0000_0050,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5058,4,32'h0000_0070,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5060,4,32'h0000_0001,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5068,4,32'h0000_2000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5070,4,32'h0000_2020,resp);
+            
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_4010,4,32'h0000_0002,resp);
         #500ns
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_2000,4,32'h0000_0403,resp);
     end

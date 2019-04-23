@@ -1,8 +1,8 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Wed Apr 10 09:02:52 2019
-//Host        : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
+//Date        : Tue Apr 23 18:57:35 2019
+//Host        : 0027fb2bf205 running 64-bit unknown
 //Command     : generate_target mitx_petalinux_wrapper.bd
 //Design      : mitx_petalinux_wrapper
 //Purpose     : IP block netlist
@@ -97,23 +97,13 @@ module mitx_petalinux_wrapper
   wire [7:0]dip_switches_8bits_tri_i;
   wire i2s_mclk_ext;
   wire i2s_rx_data_i;
-  reg i2s_sck_ext;
-  reg i2s_tx_data_ext;
-  reg i2s_ws_ext;
+  wire i2s_sck_ext;
+  wire i2s_tx_data_ext;
+  wire i2s_ws_ext;
   wire [6:0]led_8bits_tri_o;
   wire pl_clk_n;
   wire pl_clk_p;
   wire pll_locked;
-  
-  wire i2s_ws;
-  wire i2s_tx_data;
-  wire i2s_sck;
-  always @(posedge i2s_mclk_ext) begin
-      i2s_ws_ext <= i2s_ws;
-      i2s_tx_data_ext <= i2s_tx_data;
-      i2s_sck_ext <= i2s_sck;
-  end
-  
 
   mitx_petalinux mitx_petalinux_i
        (.DDR_addr(DDR_addr),
@@ -140,9 +130,9 @@ module mitx_petalinux_wrapper
         .dip_switches_8bits_tri_i(dip_switches_8bits_tri_i),
         .i2s_mclk_ext(i2s_mclk_ext),
         .i2s_rx_data_i(i2s_rx_data_i),
-        .i2s_sck_ext(i2s_sck),
-        .i2s_tx_data_ext(i2s_tx_data),
-        .i2s_ws_ext(i2s_ws),
+        .i2s_sck_ext(i2s_sck_ext),
+        .i2s_tx_data_ext(i2s_tx_data_ext),
+        .i2s_ws_ext(i2s_ws_ext),
         .led_8bits_tri_o(led_8bits_tri_o),
         .pl_clk_n(pl_clk_n),
         .pl_clk_p(pl_clk_p),

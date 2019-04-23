@@ -17,17 +17,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="74200000001fs"></ZoomEndTime>
-      <Cursor1Time time="16899309000fs"></Cursor1Time>
+      <ZoomEndTime time="32191780822fs"></ZoomEndTime>
+      <Cursor1Time time="26369863000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="135"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="206"></NameColumnWidth>
+      <ValueColumnWidth column_width="137"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wave_markers>
-      <marker label="" time="37732661000" />
-   </wave_markers>
+   <WVObjectSize size="48" />
    <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/audio_pll/clk_out1">
       <obj_property name="ElementShortName">clk_out1</obj_property>
       <obj_property name="ObjectShortName">clk_out1</obj_property>
@@ -64,20 +61,280 @@
       <obj_property name="ElementShortName">core_rst_n</obj_property>
       <obj_property name="ObjectShortName">core_rst_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/atg_module_0/clk_0_0048">
-      <obj_property name="ElementShortName">clk_0_0048</obj_property>
-      <obj_property name="ObjectShortName">clk_0_0048</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/atg_module_0/clk_3_072">
-      <obj_property name="ElementShortName">clk_3_072</obj_property>
-      <obj_property name="ObjectShortName">clk_3_072</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/atg_module_0/clk_12_288">
-      <obj_property name="ElementShortName">clk_12_288</obj_property>
-      <obj_property name="ObjectShortName">clk_12_288</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/i2s_block/atg_module_0/latcher_pulse">
       <obj_property name="ElementShortName">latcher_pulse</obj_property>
       <obj_property name="ObjectShortName">latcher_pulse</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider509" type="divider">
+      <obj_property name="label">CONVERTER</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA">
+      <obj_property name="ElementShortName">out_V_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out_V_TDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="vbus" fp_name="vbus482">
+      <obj_property name="label">upper24</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[31]">
+         <obj_property name="ElementShortName">[31]</obj_property>
+         <obj_property name="ObjectShortName">[31]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[30]">
+         <obj_property name="ElementShortName">[30]</obj_property>
+         <obj_property name="ObjectShortName">[30]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[29]">
+         <obj_property name="ElementShortName">[29]</obj_property>
+         <obj_property name="ObjectShortName">[29]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[28]">
+         <obj_property name="ElementShortName">[28]</obj_property>
+         <obj_property name="ObjectShortName">[28]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[27]">
+         <obj_property name="ElementShortName">[27]</obj_property>
+         <obj_property name="ObjectShortName">[27]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[26]">
+         <obj_property name="ElementShortName">[26]</obj_property>
+         <obj_property name="ObjectShortName">[26]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[25]">
+         <obj_property name="ElementShortName">[25]</obj_property>
+         <obj_property name="ObjectShortName">[25]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[24]">
+         <obj_property name="ElementShortName">[24]</obj_property>
+         <obj_property name="ObjectShortName">[24]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[23]">
+         <obj_property name="ElementShortName">[23]</obj_property>
+         <obj_property name="ObjectShortName">[23]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[22]">
+         <obj_property name="ElementShortName">[22]</obj_property>
+         <obj_property name="ObjectShortName">[22]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[21]">
+         <obj_property name="ElementShortName">[21]</obj_property>
+         <obj_property name="ObjectShortName">[21]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[20]">
+         <obj_property name="ElementShortName">[20]</obj_property>
+         <obj_property name="ObjectShortName">[20]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[19]">
+         <obj_property name="ElementShortName">[19]</obj_property>
+         <obj_property name="ObjectShortName">[19]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[18]">
+         <obj_property name="ElementShortName">[18]</obj_property>
+         <obj_property name="ObjectShortName">[18]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[17]">
+         <obj_property name="ElementShortName">[17]</obj_property>
+         <obj_property name="ObjectShortName">[17]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[16]">
+         <obj_property name="ElementShortName">[16]</obj_property>
+         <obj_property name="ObjectShortName">[16]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[15]">
+         <obj_property name="ElementShortName">[15]</obj_property>
+         <obj_property name="ObjectShortName">[15]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[14]">
+         <obj_property name="ElementShortName">[14]</obj_property>
+         <obj_property name="ObjectShortName">[14]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[13]">
+         <obj_property name="ElementShortName">[13]</obj_property>
+         <obj_property name="ObjectShortName">[13]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[12]">
+         <obj_property name="ElementShortName">[12]</obj_property>
+         <obj_property name="ObjectShortName">[12]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[11]">
+         <obj_property name="ElementShortName">[11]</obj_property>
+         <obj_property name="ObjectShortName">[11]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[10]">
+         <obj_property name="ElementShortName">[10]</obj_property>
+         <obj_property name="ObjectShortName">[10]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[9]">
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">[9]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TDATA[8]">
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">[8]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TVALID">
+      <obj_property name="ElementShortName">out_V_TVALID</obj_property>
+      <obj_property name="ObjectShortName">out_V_TVALID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/out_V_TREADY">
+      <obj_property name="ElementShortName">out_V_TREADY</obj_property>
+      <obj_property name="ObjectShortName">out_V_TREADY</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/in_V_TDATA">
+      <obj_property name="ElementShortName">in_V_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in_V_TDATA[31:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/in_V_TVALID">
+      <obj_property name="ElementShortName">in_V_TVALID</obj_property>
+      <obj_property name="ObjectShortName">in_V_TVALID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/converter_0/in_V_TREADY">
+      <obj_property name="ElementShortName">in_V_TREADY</obj_property>
+      <obj_property name="ObjectShortName">in_V_TREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider510" type="divider">
+      <obj_property name="label">SAW</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/saw_0/out_V_TDATA">
+      <obj_property name="ElementShortName">out_V_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out_V_TDATA[31:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/saw_0/out_V_TVALID">
+      <obj_property name="ElementShortName">out_V_TVALID</obj_property>
+      <obj_property name="ObjectShortName">out_V_TVALID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/saw_0/out_V_TREADY">
+      <obj_property name="ElementShortName">out_V_TREADY</obj_property>
+      <obj_property name="ObjectShortName">out_V_TREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider612" type="divider">
+      <obj_property name="label">XBAR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/xbarfloat_0/in2_V_TDATA">
+      <obj_property name="ElementShortName">in2_V_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in2_V_TDATA[31:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/xbarfloat_0/in2_V_TVALID">
+      <obj_property name="ElementShortName">in2_V_TVALID</obj_property>
+      <obj_property name="ObjectShortName">in2_V_TVALID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/xbarfloat_0/in2_V_TREADY">
+      <obj_property name="ElementShortName">in2_V_TREADY</obj_property>
+      <obj_property name="ObjectShortName">in2_V_TREADY</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/xbarfloat_0/out0_V_TDATA">
+      <obj_property name="ElementShortName">out0_V_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out0_V_TDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/xbarfloat_0/out0_V_TVALID">
+      <obj_property name="ElementShortName">out0_V_TVALID</obj_property>
+      <obj_property name="ObjectShortName">out0_V_TVALID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/xbarfloat_0/out0_V_TREADY">
+      <obj_property name="ElementShortName">out0_V_TREADY</obj_property>
+      <obj_property name="ObjectShortName">out0_V_TREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider1166" type="divider">
+      <obj_property name="label">FMSynth</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/press">
+      <obj_property name="ElementShortName">press[31:0]</obj_property>
+      <obj_property name="ObjectShortName">press[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/modulator_wave">
+      <obj_property name="ElementShortName">modulator_wave[31:0]</obj_property>
+      <obj_property name="ObjectShortName">modulator_wave[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/modulator_phase">
+      <obj_property name="ElementShortName">modulator_phase[31:0]</obj_property>
+      <obj_property name="ObjectShortName">modulator_phase[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/scale_factor">
+      <obj_property name="ElementShortName">scale_factor[31:0]</obj_property>
+      <obj_property name="ObjectShortName">scale_factor[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/carrier_wave">
+      <obj_property name="ElementShortName">carrier_wave[31:0]</obj_property>
+      <obj_property name="ObjectShortName">carrier_wave[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/carrier_phase">
+      <obj_property name="ElementShortName">carrier_phase[31:0]</obj_property>
+      <obj_property name="ObjectShortName">carrier_phase[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/sync">
+      <obj_property name="ElementShortName">sync[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sync[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/attackMaximum">
+      <obj_property name="ElementShortName">attackMaximum[31:0]</obj_property>
+      <obj_property name="ObjectShortName">attackMaximum[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/attackDuration">
+      <obj_property name="ElementShortName">attackDuration[31:0]</obj_property>
+      <obj_property name="ObjectShortName">attackDuration[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/decayDuration">
+      <obj_property name="ElementShortName">decayDuration[31:0]</obj_property>
+      <obj_property name="ObjectShortName">decayDuration[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/sustainAmplitude">
+      <obj_property name="ElementShortName">sustainAmplitude[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sustainAmplitude[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/sustainDuration">
+      <obj_property name="ElementShortName">sustainDuration[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sustainDuration[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/releaseDuration">
+      <obj_property name="ElementShortName">releaseDuration[31:0]</obj_property>
+      <obj_property name="ObjectShortName">releaseDuration[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/position">
+      <obj_property name="ElementShortName">position[31:0]</obj_property>
+      <obj_property name="ObjectShortName">position[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/result_V_TDATA">
+      <obj_property name="ElementShortName">result_V_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result_V_TDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/result_V_TVALID">
+      <obj_property name="ElementShortName">result_V_TVALID</obj_property>
+      <obj_property name="ObjectShortName">result_V_TVALID</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/result_V_TREADY">
+      <obj_property name="ElementShortName">result_V_TREADY</obj_property>
+      <obj_property name="ObjectShortName">result_V_TREADY</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/DUT/mitx_petalinux_i/saw_gen/FM_Synth_0/U0/change">
+      <obj_property name="ElementShortName">change[31:0]</obj_property>
+      <obj_property name="ObjectShortName">change[31:0]</obj_property>
    </wvobject>
 </wave_config>
