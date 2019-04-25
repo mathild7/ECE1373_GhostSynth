@@ -1,6 +1,0 @@
-saw_faddfsub_32nsbkb
-saw_fmul_32ns_32ncud
-saw_fdiv_32ns_32ndEe
-saw_sitofp_32s_32_6
-saw_CTRL_BUS_s_axi
-saw
