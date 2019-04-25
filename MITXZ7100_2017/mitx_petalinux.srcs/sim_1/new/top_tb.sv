@@ -78,26 +78,41 @@ mitx_petalinux_wrapper DUT
         #10ns
             DUT.mitx_petalinux_i.processing_system7_0.inst.fpga_soft_reset(32'h0000_0000);
         #15us
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_0010,4,32'h43dc_0000,resp); //Set to 440 Hz
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_2000,4,32'h0000_0402,resp);
-
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5010,4,32'h0000_0001,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5018,4,32'h0000_0003,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5020,4,32'h0000_0000,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5028,4,32'h0000_0000,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5030,4,32'h0000_0000,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5038,4,32'h0000_0000,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5040,4,32'h0000_0001,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5048,4,32'h0000_0002,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5050,4,32'h0000_0050,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5058,4,32'h0000_0070,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5060,4,32'h0000_0001,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5068,4,32'h0000_2000,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_5070,4,32'h0000_2020,resp);
-            
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_4010,4,32'h0000_0002,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_2000,4,32'h0000_0402,resp); // I2S
         #500ns
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_2000,4,32'h0000_0403,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_2000,4,32'h0000_0403,resp); // I2S
+            //Old FM synth stuff
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8040,4,32'h0000_0001,resp); //Disable
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8010,4,32'h0000_0001,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8018,4,32'h0000_0003,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8020,4,32'h0000_0000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8028,4,32'h3f80_0000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8030,4,32'h0000_0010,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8038,4,32'h0000_0000,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8040,4,32'h0000_0000,resp); //Re-enable
+            
+            //Set up a single saw wave
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_0010,4,32'h43dc_0000,resp); //Set to 440 Hz
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_0018,4,32'h3f80_0000,resp); //Volume
+            
+            //Turn up volume on in0 of mixer (fed by that last saw wave)
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_3010,4,32'h3f80_0000,resp); //Set to 440 Hz
+            
+            //Confiugre biquad for a LPF
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9010,4,32'hbfe9078a,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9018,4,32'h3f55dac8,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9020,4,32'h3580aea5,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9028,4,32'hbfe8e9e5,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9030,4,32'h3f54b8c5,resp);
+            
+            //Hook up in0 to out3 of xbar (effectively wiring saw output to biquad input)
+            //DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7028,4,32'h0000_0000,resp);
+            //Hook up in2 to out0 of xbar (which sends biquad's output to final converter)
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7040,4,32'h0000_0001,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7000,4,32'h0000_0002,resp);
+            
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_3010,4,32'h0000_0002,resp);
+
     end
     always begin
         clk =1; #2.5 clk = 0; #2.5;

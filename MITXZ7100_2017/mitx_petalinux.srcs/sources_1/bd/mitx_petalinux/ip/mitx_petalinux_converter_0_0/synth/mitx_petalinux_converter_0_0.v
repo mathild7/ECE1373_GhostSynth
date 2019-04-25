@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:converter:1.0
-// IP Revision: 1904161930
+// IP Revision: 1904250232
 
 (* X_CORE_INFO = "converter,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_converter_0_0,converter,{}" *)
-(* CORE_GENERATION_INFO = "mitx_petalinux_converter_0_0,converter,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=converter,x_ipVersion=1.0,x_ipCoreRevision=1904161930,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "mitx_petalinux_converter_0_0,converter,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=converter,x_ipVersion=1.0,x_ipCoreRevision=1904250232,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_converter_0_0 (
   ap_clk,

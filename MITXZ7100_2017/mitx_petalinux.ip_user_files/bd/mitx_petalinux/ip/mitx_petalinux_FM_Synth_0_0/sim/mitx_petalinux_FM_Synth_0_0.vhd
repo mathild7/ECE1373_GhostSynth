@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:FM_Synth:1.0
--- IP Revision: 1904231438
+-- IP Revision: 1904241618
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

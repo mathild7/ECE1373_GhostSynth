@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="saw.cpp" path="/home/hildeb47/proj/ECE1373_GhostSynth/mods/saw/saw.cpp"/>
+    <originFiles name="saw.h" path="/home/hildeb47/proj/ECE1373_GhostSynth/mods/saw/saw.h"/>
+  </source>
+  <testbench>
+    <originFiles name="saw_test.cpp" path="/home/hildeb47/proj/ECE1373_GhostSynth/mods/saw/saw_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

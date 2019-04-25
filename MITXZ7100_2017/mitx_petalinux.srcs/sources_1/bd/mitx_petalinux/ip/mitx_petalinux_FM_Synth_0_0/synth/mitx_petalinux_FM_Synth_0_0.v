@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:FM_Synth:1.0
-// IP Revision: 1904231438
+// IP Revision: 1904241618
 
 (* X_CORE_INFO = "FM_Synth,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_FM_Synth_0_0,FM_Synth,{}" *)
-(* CORE_GENERATION_INFO = "mitx_petalinux_FM_Synth_0_0,FM_Synth,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=FM_Synth,x_ipVersion=1.0,x_ipCoreRevision=1904231438,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_BUS_ADDR_WIDTH=7,C_S_AXI_CTRL_BUS_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "mitx_petalinux_FM_Synth_0_0,FM_Synth,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=FM_Synth,x_ipVersion=1.0,x_ipCoreRevision=1904241618,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_BUS_ADDR_WIDTH=7,C_S_AXI_CTRL_BUS_DATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_FM_Synth_0_0 (
   s_axi_CTRL_BUS_AWADDR,

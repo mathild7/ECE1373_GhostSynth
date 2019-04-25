@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:latcherfloat:1.0
-// IP Revision: 1904121840
+// IP Revision: 1904241909
 
 `timescale 1ns/1ps
 

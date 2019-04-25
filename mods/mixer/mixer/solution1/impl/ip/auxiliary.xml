@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="mixer" xd:componentRef="mixer" xd:initiationInterval="23" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:arg xd:name="in0" xd:originalName="in0" xd:direction="in" xd:interfaceRef="in0_V" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="in1" xd:originalName="in1" xd:direction="in" xd:interfaceRef="in1_V" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="in2" xd:originalName="in2" xd:direction="in" xd:interfaceRef="in2_V" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="in3" xd:originalName="in3" xd:direction="in" xd:interfaceRef="in3_V" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="out" xd:originalName="out" xd:direction="out" xd:interfaceRef="out_V" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="lev0" xd:originalName="lev0" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="lev1" xd:originalName="lev1" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="lev2" xd:originalName="lev2" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="lev3" xd:originalName="lev3" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="22" xd:worst-case="22" xd:average-case="22"/>
+  <xd:resourceEstimates xd:LUT="3381" xd:FF="1992" xd:BRAM="0" xd:DSP="16"/>
+</xd:acceleratorMap>

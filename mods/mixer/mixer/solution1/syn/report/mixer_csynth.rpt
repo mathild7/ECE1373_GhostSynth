@@ -1,0 +1,144 @@
+
+
+================================================================
+== Vivado HLS Report for 'mixer'
+================================================================
+* Date:           Tue Apr 23 23:53:37 2019
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        mixer
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z100ffg900-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.79|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |   22|   22|   23|   23| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                         |                      |  Latency  |  Interval | Pipeline|
+        |         Instance        |        Module        | min | max | min | max |   Type  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+        |Block_codeRepl1_proc_U0  |Block_codeRepl1_proc  |   22|   22|   22|   22|   none  |
+        +-------------------------+----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       -|       -|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        0|     16|    1992|    3381|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|       -|
+|Register         |        -|      -|       -|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|     16|    1992|    3381|
++-----------------+---------+-------+--------+--------+
+|Available        |     1510|   2020|  554800|  277400|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|   ~0  |   ~0   |       1|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+------+------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Block_codeRepl1_proc_U0  |Block_codeRepl1_proc  |        0|     16|  1810|  3085|
+    |mixer_CTRL_BUS_s_axi_U   |mixer_CTRL_BUS_s_axi  |        0|      0|   182|   296|
+    +-------------------------+----------------------+---------+-------+------+------+
+    |Total                    |                      |        0|     16|  1992|  3381|
+    +-------------------------+----------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+--------------+--------------+--------------+
+|        RTL Ports       | Dir | Bits|   Protocol   | Source Object|    C Type    |
++------------------------+-----+-----+--------------+--------------+--------------+
+|s_axi_CTRL_BUS_AWVALID  |  in |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_AWREADY  | out |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_AWADDR   |  in |    6|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_WVALID   |  in |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_WREADY   | out |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_WDATA    |  in |   32|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_WSTRB    |  in |    4|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_ARVALID  |  in |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_ARREADY  | out |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_ARADDR   |  in |    6|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_RVALID   | out |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_RREADY   |  in |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_RDATA    | out |   32|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_RRESP    | out |    2|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_BVALID   | out |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_BREADY   |  in |    1|     s_axi    |   CTRL_BUS   |    scalar    |
+|s_axi_CTRL_BUS_BRESP    | out |    2|     s_axi    |   CTRL_BUS   |    scalar    |
+|ap_clk                  |  in |    1| ap_ctrl_none |     mixer    | return value |
+|ap_rst_n                |  in |    1| ap_ctrl_none |     mixer    | return value |
+|in0_V_TDATA             |  in |   32|     axis     |     in0_V    |    pointer   |
+|in0_V_TVALID            |  in |    1|     axis     |     in0_V    |    pointer   |
+|in0_V_TREADY            | out |    1|     axis     |     in0_V    |    pointer   |
+|in1_V_TDATA             |  in |   32|     axis     |     in1_V    |    pointer   |
+|in1_V_TVALID            |  in |    1|     axis     |     in1_V    |    pointer   |
+|in1_V_TREADY            | out |    1|     axis     |     in1_V    |    pointer   |
+|in2_V_TDATA             |  in |   32|     axis     |     in2_V    |    pointer   |
+|in2_V_TVALID            |  in |    1|     axis     |     in2_V    |    pointer   |
+|in2_V_TREADY            | out |    1|     axis     |     in2_V    |    pointer   |
+|in3_V_TDATA             |  in |   32|     axis     |     in3_V    |    pointer   |
+|in3_V_TVALID            |  in |    1|     axis     |     in3_V    |    pointer   |
+|in3_V_TREADY            | out |    1|     axis     |     in3_V    |    pointer   |
+|out_V_TDATA             | out |   32|     axis     |     out_V    |    pointer   |
+|out_V_TVALID            | out |    1|     axis     |     out_V    |    pointer   |
+|out_V_TREADY            |  in |    1|     axis     |     out_V    |    pointer   |
++------------------------+-----+-----+--------------+--------------+--------------+
+

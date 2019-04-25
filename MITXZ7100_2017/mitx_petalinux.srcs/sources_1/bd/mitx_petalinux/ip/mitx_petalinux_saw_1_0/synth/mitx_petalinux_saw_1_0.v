@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:saw:1.0
-// IP Revision: 1904182308
+// IP Revision: 1904250237
 
 (* X_CORE_INFO = "saw,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_saw_1_0,saw,{}" *)
-(* CORE_GENERATION_INFO = "mitx_petalinux_saw_1_0,saw,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=saw,x_ipVersion=1.0,x_ipCoreRevision=1904182308,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_BUS_ADDR_WIDTH=6,C_S_AXI_CTRL_BUS_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "mitx_petalinux_saw_1_0,saw,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=saw,x_ipVersion=1.0,x_ipCoreRevision=1904250237,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_BUS_ADDR_WIDTH=6,C_S_AXI_CTRL_BUS_DATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_saw_1_0 (
   s_axi_CTRL_BUS_AWADDR,

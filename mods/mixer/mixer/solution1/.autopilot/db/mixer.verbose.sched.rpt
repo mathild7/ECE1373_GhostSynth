@@ -1,0 +1,213 @@
+
+
+================================================================
+== Vivado HLS Report for 'mixer'
+================================================================
+* Date:           Tue Apr 23 23:53:36 2019
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        mixer
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z100ffg900-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      7.79|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |   22|   22|   23|   23| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 4
+* Pipeline: 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 4, States = { 1 2 3 4 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+
+ <State 2>: 7.79ns
+ST_2: lev3_read (31)  [1/1] 1.00ns
+codeRepl:21  %lev3_read = call float @_ssdm_op_Read.s_axilite.float(float %lev3)
+
+ST_2: lev2_read (32)  [1/1] 1.00ns
+codeRepl:22  %lev2_read = call float @_ssdm_op_Read.s_axilite.float(float %lev2)
+
+ST_2: lev1_read (33)  [1/1] 1.00ns
+codeRepl:23  %lev1_read = call float @_ssdm_op_Read.s_axilite.float(float %lev1)
+
+ST_2: lev0_read (34)  [1/1] 1.00ns
+codeRepl:24  %lev0_read = call float @_ssdm_op_Read.s_axilite.float(float %lev0)
+
+ST_2: StgValue_9 (35)  [2/2] 6.79ns
+codeRepl:25  call fastcc void @Block_codeRepl1_proc(float %lev0_read, float* %in0_V, float %lev1_read, float* %in1_V, float %lev2_read, float* %in2_V, float %lev3_read, float* %in3_V, float* %out_V)
+
+
+ <State 3>: 0.00ns
+ST_3: StgValue_10 (35)  [1/2] 0.00ns
+codeRepl:25  call fastcc void @Block_codeRepl1_proc(float %lev0_read, float* %in0_V, float %lev1_read, float* %in1_V, float %lev2_read, float* %in2_V, float %lev3_read, float* %in3_V, float* %out_V)
+
+
+ <State 4>: 0.00ns
+ST_4: StgValue_11 (10)  [1/1] 0.00ns  loc: mixer.cpp:25
+codeRepl:0  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_12 (11)  [1/1] 0.00ns
+codeRepl:1  call void (...)* @_ssdm_op_SpecBitsMap(float* %in0_V), !map !20
+
+ST_4: StgValue_13 (12)  [1/1] 0.00ns
+codeRepl:2  call void (...)* @_ssdm_op_SpecBitsMap(float* %in1_V), !map !26
+
+ST_4: StgValue_14 (13)  [1/1] 0.00ns
+codeRepl:3  call void (...)* @_ssdm_op_SpecBitsMap(float* %in2_V), !map !30
+
+ST_4: StgValue_15 (14)  [1/1] 0.00ns
+codeRepl:4  call void (...)* @_ssdm_op_SpecBitsMap(float* %in3_V), !map !34
+
+ST_4: StgValue_16 (15)  [1/1] 0.00ns
+codeRepl:5  call void (...)* @_ssdm_op_SpecBitsMap(float* %out_V), !map !38
+
+ST_4: StgValue_17 (16)  [1/1] 0.00ns
+codeRepl:6  call void (...)* @_ssdm_op_SpecBitsMap(float %lev0), !map !42
+
+ST_4: StgValue_18 (17)  [1/1] 0.00ns
+codeRepl:7  call void (...)* @_ssdm_op_SpecBitsMap(float %lev1), !map !48
+
+ST_4: StgValue_19 (18)  [1/1] 0.00ns
+codeRepl:8  call void (...)* @_ssdm_op_SpecBitsMap(float %lev2), !map !52
+
+ST_4: StgValue_20 (19)  [1/1] 0.00ns
+codeRepl:9  call void (...)* @_ssdm_op_SpecBitsMap(float %lev3), !map !56
+
+ST_4: StgValue_21 (20)  [1/1] 0.00ns
+codeRepl:10  call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @mixer_str) nounwind
+
+ST_4: StgValue_22 (21)  [1/1] 0.00ns  loc: mixer.cpp:16
+codeRepl:11  call void (...)* @_ssdm_op_SpecInterface(float %lev3, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_23 (22)  [1/1] 0.00ns  loc: mixer.cpp:17
+codeRepl:12  call void (...)* @_ssdm_op_SpecInterface(float %lev2, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_24 (23)  [1/1] 0.00ns  loc: mixer.cpp:18
+codeRepl:13  call void (...)* @_ssdm_op_SpecInterface(float %lev1, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_25 (24)  [1/1] 0.00ns  loc: mixer.cpp:19
+codeRepl:14  call void (...)* @_ssdm_op_SpecInterface(float %lev0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str2, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_26 (25)  [1/1] 0.00ns  loc: mixer.cpp:20
+codeRepl:15  call void (...)* @_ssdm_op_SpecInterface(float* %out_V, [5 x i8]* @p_str3, i32 1, i32 1, [5 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_27 (26)  [1/1] 0.00ns  loc: mixer.cpp:21
+codeRepl:16  call void (...)* @_ssdm_op_SpecInterface(float* %in3_V, [5 x i8]* @p_str3, i32 1, i32 1, [5 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_28 (27)  [1/1] 0.00ns  loc: mixer.cpp:22
+codeRepl:17  call void (...)* @_ssdm_op_SpecInterface(float* %in2_V, [5 x i8]* @p_str3, i32 1, i32 1, [5 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_29 (28)  [1/1] 0.00ns  loc: mixer.cpp:23
+codeRepl:18  call void (...)* @_ssdm_op_SpecInterface(float* %in1_V, [5 x i8]* @p_str3, i32 1, i32 1, [5 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_30 (29)  [1/1] 0.00ns  loc: mixer.cpp:24
+codeRepl:19  call void (...)* @_ssdm_op_SpecInterface(float* %in0_V, [5 x i8]* @p_str3, i32 1, i32 1, [5 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_31 (30)  [1/1] 0.00ns  loc: mixer.cpp:26
+codeRepl:20  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_4: StgValue_32 (36)  [1/1] 0.00ns  loc: mixer.cpp:43
+codeRepl:26  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 7.79ns
+The critical path consists of the following:
+	s_axi read on port 'lev3' [31]  (1 ns)
+	'call' operation to 'Block_codeRepl1_proc' [35]  (6.79 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

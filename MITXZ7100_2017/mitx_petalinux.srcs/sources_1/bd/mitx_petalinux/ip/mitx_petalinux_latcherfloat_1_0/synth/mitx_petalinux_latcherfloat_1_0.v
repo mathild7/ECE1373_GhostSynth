@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:latcherfloat:1.0
-// IP Revision: 1904121840
+// IP Revision: 1904241909
 
 (* X_CORE_INFO = "latcherfloat,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_latcherfloat_1_0,latcherfloat,{}" *)
-(* CORE_GENERATION_INFO = "mitx_petalinux_latcherfloat_1_0,latcherfloat,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=latcherfloat,x_ipVersion=1.0,x_ipCoreRevision=1904121840,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "mitx_petalinux_latcherfloat_1_0,latcherfloat,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=latcherfloat,x_ipVersion=1.0,x_ipCoreRevision=1904241909,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_latcherfloat_1_0 (
   in_V_TVALID,
