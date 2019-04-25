@@ -4,9 +4,27 @@
 [submodule "modules/FMSYNTH"]
 	path = modules/FMSYNTH
 	url = https://github.com/liolliaustin/FMSYNTH.git
-[submodule "modules/latcher"]
-	path = modules/latcher
-	url = https://github.com/esophagus-now/latcher.git
 [submodule "modules/common_libs"]
 	path = modules/common_libs
 	url = https://github.com/mathild7/common_libs.git
+[submodule "modules/mixer"]
+	path = modules/mixer
+	url = https://github.com/mathild7/mixer.git
+[submodule "modules/saw"]
+	path = modules/saw
+	url = https://github.com/mathild7/saw.git
+[submodule "modules/converter"]
+	path = modules/converter
+	url = https://github.com/mathild7/converter.git
+[submodule "modules/biquad"]
+	path = modules/biquad
+	url = https://github.com/mathild7/biquad.git
+[submodule "modules/latcherfloat"]
+	path = modules/latcherfloat
+	url = https://github.com/mathild7/latcherfloat.git
+[submodule "modules/Envelope"]
+	path = modules/Envelope
+	url = https://github.com/liolliaustin/Envelope.git
+[submodule "modules/Echo"]
+	path = modules/Echo
+	url = https://github.com/liolliaustin/Echo.git
