@@ -12,74 +12,74 @@ preplace port i2s_tx_data_ext -pg 1 -y 470 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 70 -defaultsOSRD
 preplace port pl -pg 1 -y 620 -defaultsOSRD
 preplace port led_8bits -pg 1 -y 140 -defaultsOSRD
-preplace inst saw_gen|latcherfloat_1 -pg 1 -lvl 4 -y 932 -defaultsOSRD
-preplace inst saw_gen|axi_interconnect_0 -pg 1 -lvl 1 -y 712 -defaultsOSRD
-preplace inst saw_gen|axis_interconnect_0 -pg 1 -lvl 5 -y 820 -defaultsOSRD
+preplace inst saw_gen|latcherfloat_1 -pg 1 -lvl 4 -y 592 -defaultsOSRD
+preplace inst saw_gen|axi_interconnect_0 -pg 1 -lvl 1 -y 852 -defaultsOSRD
+preplace inst saw_gen|axis_interconnect_0 -pg 1 -lvl 5 -y 1022 -defaultsOSRD
 preplace inst axi_gpio_0 -pg 1 -lvl 5 -y 270 -defaultsOSRD
-preplace inst saw_gen|FM_Synth_0 -pg 1 -lvl 3 -y 922 -defaultsOSRD
+preplace inst saw_gen|FM_Synth_0 -pg 1 -lvl 3 -y 562 -defaultsOSRD
 preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 720 -defaultsOSRD
 preplace inst axi_gpio_1 -pg 1 -lvl 5 -y 140 -defaultsOSRD
 preplace inst converter_0 -pg 1 -lvl 4 -y 410 -defaultsOSRD
 preplace inst saw_gen -pg 1 -lvl 3 -y 392 -defaultsOSRD
 preplace inst audio_pll -pg 1 -lvl 4 -y 630 -defaultsOSRD
-preplace inst saw_gen|saw_1 -pg 1 -lvl 2 -y 372 -defaultsOSRD
-preplace inst saw_gen|mixer_0 -pg 1 -lvl 3 -y 732 -defaultsOSRD
-preplace inst saw_gen|xlconstant_0 -pg 1 -lvl 5 -y 1492 -defaultsOSRD
+preplace inst saw_gen|saw_1 -pg 1 -lvl 2 -y 392 -defaultsOSRD
+preplace inst saw_gen|mixer_0 -pg 1 -lvl 3 -y 752 -defaultsOSRD
+preplace inst saw_gen|xlconstant_0 -pg 1 -lvl 4 -y 922 -defaultsOSRD
 preplace inst i2s_block -pg 1 -lvl 5 -y 460 -defaultsOSRD
-preplace inst saw_gen|saw_2 -pg 1 -lvl 2 -y 502 -defaultsOSRD
-preplace inst saw_gen|saw_3 -pg 1 -lvl 2 -y 632 -defaultsOSRD
-preplace inst saw_gen|saw_4 -pg 1 -lvl 2 -y 792 -defaultsOSRD
-preplace inst saw_gen|latcherfloat_0 -pg 1 -lvl 4 -y 762 -defaultsOSRD
+preplace inst saw_gen|saw_2 -pg 1 -lvl 2 -y 532 -defaultsOSRD
+preplace inst saw_gen|saw_3 -pg 1 -lvl 2 -y 662 -defaultsOSRD
+preplace inst saw_gen|saw_4 -pg 1 -lvl 2 -y 802 -defaultsOSRD
+preplace inst saw_gen|latcherfloat_0 -pg 1 -lvl 4 -y 782 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 280 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 150 -defaultsOSRD
-preplace netloc saw_gen|axi_interconnect_0_M04_AXI 1 1 2 1260 712 1600J
-preplace netloc processing_system7_0_DDR 1 1 5 330J 40 NJ 40 NJ 40 NJ 40 3480J
-preplace netloc saw_gen|S01_AXIS_1 1 4 1 2310
+preplace netloc saw_gen|axi_interconnect_0_M04_AXI 1 1 2 1290J 872 1680
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 50 830J 60 NJ 60 NJ 60 3430J
+preplace netloc saw_gen|S01_AXIS_1 1 4 1 2380
 preplace netloc i2s_block_i2s_tx_data_o 1 5 1 NJ
-preplace netloc saw_gen|axi_interconnect_0_M06_AXI 1 1 4 1190J 862 1620J 622 NJ 622 2330
-preplace netloc saw_gen|S00_AXIS_1 1 4 1 2300
-preplace netloc saw_gen|saw_3_out_V 1 2 1 1610
+preplace netloc saw_gen|axi_interconnect_0_M06_AXI 1 1 4 NJ 902 1710J 862 NJ 862 N
+preplace netloc saw_gen|S00_AXIS_1 1 4 1 N
+preplace netloc saw_gen|saw_3_out_V 1 2 1 1650
 preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 3 N 250 NJ 250 NJ
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 2 360 550 690
-preplace netloc saw_gen|saw_4_out_V 1 2 1 1630
-preplace netloc saw_gen|FM_Synth_0_result_V 1 3 1 1990
-preplace netloc saw_gen|ARESETN_1 1 0 1 880
-preplace netloc converter_0_out_V 1 4 1 3150
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 2 490 740 790
+preplace netloc saw_gen|saw_4_out_V 1 2 1 1690
+preplace netloc saw_gen|FM_Synth_0_result_V 1 3 1 N
+preplace netloc saw_gen|ARESETN_1 1 0 1 990
+preplace netloc converter_0_out_V 1 4 1 3090
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N
-preplace netloc saw_gen|ap_clk_1 1 0 5 890 412 1220 882 1640 842 2010 842 2320J
+preplace netloc saw_gen|ap_clk_1 1 0 5 980 592 1320 462 1670 632 2070 692 2370
 preplace netloc processing_system7_0_M_AXI_GP1 1 1 1 N
-preplace netloc aud_rstn_1 1 4 2 3180 580 NJ
-preplace netloc i2s_rx_data_i_1 1 4 2 3190 340 NJ
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -90 300 330
-preplace netloc saw_gen|axi_interconnect_0_M05_AXI 1 1 2 1270 722 1590J
-preplace netloc saw_gen|saw_1_out_V 1 2 1 1650
-preplace netloc saw_gen|latch_V_1 1 0 4 NJ 452 1240J 702 1590J 612 2000
-preplace netloc latch_V_1 1 2 4 710 60 NJ 60 NJ 60 3480
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 4 350 60 680 270 2820 270 3160
-preplace netloc saw_gen|axi_interconnect_0_M03_AXI 1 1 1 1230
-preplace netloc CLK_IN1_D_1 1 0 4 -110J -20 NJ -20 NJ -20 2810J
+preplace netloc aud_rstn_1 1 4 2 3130 580 NJ
+preplace netloc i2s_rx_data_i_1 1 4 2 3130 340 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 320 450
+preplace netloc saw_gen|axi_interconnect_0_M05_AXI 1 1 2 NJ 882 1660
+preplace netloc saw_gen|saw_1_out_V 1 2 1 1720
+preplace netloc saw_gen|latch_V_1 1 0 4 NJ 1132 NJ 1132 NJ 1132 2060
+preplace netloc latch_V_1 1 2 4 840 50 NJ 50 NJ 50 3420
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 4 480 60 800 280 2810 280 3120
+preplace netloc saw_gen|axi_interconnect_0_M03_AXI 1 1 1 1330
+preplace netloc CLK_IN1_D_1 1 0 4 10J 300 460J 10 NJ 10 2800J
 preplace netloc i2s_block_i2s_mclk_o 1 5 1 NJ
-preplace netloc mms_axi_1 1 2 3 690 230 NJ 230 3180J
-preplace netloc saw_gen|axi_interconnect_0_M01_AXI 1 1 1 1190
-preplace netloc S00_AXI_1 1 2 1 690
+preplace netloc mms_axi_1 1 2 3 N 290 NJ 290 3110J
+preplace netloc saw_gen|axi_interconnect_0_M01_AXI 1 1 1 1290
 preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 70 NJ 70 NJ 70 NJ 70 NJ
+preplace netloc S00_AXI_1 1 2 1 810
 preplace netloc axi_gpio_0_GPIO 1 5 1 NJ
-preplace netloc saw_gen_out_V_V 1 3 1 2830
+preplace netloc saw_gen_out_V_V 1 3 1 2820
 preplace netloc i2s_block_i2s_ws_o 1 5 1 NJ
-preplace netloc saw_gen|saw_2_out_V 1 2 1 1640
+preplace netloc saw_gen|saw_2_out_V 1 2 1 1700
 preplace netloc saw_gen|mixer_0_out_V 1 3 1 N
-preplace netloc saw_gen|ap_rst_n_1 1 0 5 NJ 432 1250 872 1650 852 2020 852 2330J
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 -100 0 340 30 700 260 2840 260 3170
+preplace netloc saw_gen|ap_rst_n_1 1 0 5 NJ 1112 1310 732 1710 642 2080 702 2360
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 310 470 30 820 260 2830 260 3100
+preplace netloc saw_gen|Conn1 1 0 1 N
 preplace netloc saw_gen|axis_interconnect_0_M00_AXIS 1 5 1 N
-preplace netloc saw_gen|Conn1 1 0 1 880
 preplace netloc axi_gpio_1_GPIO 1 5 1 NJ
-preplace netloc saw_gen|axi_interconnect_0_M00_AXI 1 1 1 1210
-preplace netloc saw_gen|axi_interconnect_0_M02_AXI 1 1 1 1200
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 3 670 120 NJ 120 NJ
-preplace netloc audio_pll_clk_out1 1 4 1 3190
+preplace netloc saw_gen|axi_interconnect_0_M00_AXI 1 1 1 N
+preplace netloc saw_gen|axi_interconnect_0_M02_AXI 1 1 1 1300
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 3 810 120 NJ 120 NJ
+preplace netloc audio_pll_clk_out1 1 4 1 3140
 preplace netloc i2s_block_i2s_sck_o 1 5 1 NJ
-levelinfo -pg 1 -130 120 520 940 3020 3340 3500 -top -70 -bot 1940
-levelinfo -hier saw_gen * 1040 1430 1820 2160 2540 *
+levelinfo -pg 1 -10 240 640 1040 2960 3280 3450 -top 0 -bot 1510
+levelinfo -hier saw_gen * 1140 1490 1890 2220 2530 *
 ",
 }
 0

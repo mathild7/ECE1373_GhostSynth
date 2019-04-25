@@ -19,8 +19,7 @@
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../mods"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../modules/FMSYNTH/HLS_Proj/Synth_IP"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../modules"/>
     <Option Name="IPCachePermission" Val="disable"/>
     <Option Name="EnableCoreContainer" Val="TRUE"/>
     <Option Name="XPMLibraries" Val="XPM_CDC"/>
@@ -37,13 +36,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="85"/>
-    <Option Name="WTModelSimExportSim" Val="85"/>
-    <Option Name="WTQuestaExportSim" Val="85"/>
-    <Option Name="WTIesExportSim" Val="85"/>
-    <Option Name="WTVcsExportSim" Val="85"/>
-    <Option Name="WTRivieraExportSim" Val="85"/>
-    <Option Name="WTActivehdlExportSim" Val="85"/>
+    <Option Name="WTXSimExportSim" Val="86"/>
+    <Option Name="WTModelSimExportSim" Val="86"/>
+    <Option Name="WTQuestaExportSim" Val="86"/>
+    <Option Name="WTIesExportSim" Val="86"/>
+    <Option Name="WTVcsExportSim" Val="86"/>
+    <Option Name="WTRivieraExportSim" Val="86"/>
+    <Option Name="WTActivehdlExportSim" Val="86"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>

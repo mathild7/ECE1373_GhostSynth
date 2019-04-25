@@ -315,15 +315,6 @@ proc create_hier_cell_i2s_block { parentCell nameHier } {
      return 1
    }
   
-  set_property -dict [ list \
-CONFIG.TDATA_NUM_BYTES {4} \
- ] [get_bd_intf_pins /i2s_block/i2s_tx/m_axis]
-
-  set_property -dict [ list \
-CONFIG.NUM_READ_OUTSTANDING {1} \
-CONFIG.NUM_WRITE_OUTSTANDING {1} \
- ] [get_bd_intf_pins /i2s_block/i2s_tx/mms_axi]
-
   # Create instance: i2s_tx_fifo, and set properties
   set i2s_tx_fifo [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_data_fifo:1.1 i2s_tx_fifo ]
   set_property -dict [ list \

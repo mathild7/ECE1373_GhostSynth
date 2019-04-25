@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 25 04:38:36 2019" VIVADOVERSION="2017.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 25 21:47:25 2019" VIVADOVERSION="2017.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z100" NAME="mitx_petalinux" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
@@ -3335,6 +3335,7 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP1_ACLK"/>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="converter_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_aclk"/>
             <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="core_clk_in"/>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_aclk"/>
@@ -3342,6 +3343,9 @@
             <CONNECTION INSTANCE="saw_gen_latcherfloat_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="saw_gen_latcherfloat_1" PORT="ap_clk"/>
             <CONNECTION INSTANCE="saw_gen_FM_Synth_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="saw_gen_saw_1" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="saw_gen_saw_3" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="saw_gen_saw_4" PORT="ap_clk"/>
             <CONNECTION INSTANCE="saw_gen_axi_interconnect_0" PORT="ACLK"/>
             <CONNECTION INSTANCE="saw_gen_axi_interconnect_0" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="saw_gen_axi_interconnect_0" PORT="M00_ACLK"/>
@@ -3352,15 +3356,12 @@
             <CONNECTION INSTANCE="saw_gen_axi_interconnect_0" PORT="M05_ACLK"/>
             <CONNECTION INSTANCE="saw_gen_axi_interconnect_0" PORT="M06_ACLK"/>
             <CONNECTION INSTANCE="saw_gen_axi_interconnect_0" PORT="M07_ACLK"/>
-            <CONNECTION INSTANCE="saw_gen_saw_1" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="saw_gen_saw_2" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="saw_gen_saw_3" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="saw_gen_saw_4" PORT="ap_clk"/>
             <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="aclk"/>
             <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_s00_couplers_auto_ss_slid" PORT="aclk"/>
             <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_s01_couplers_auto_ss_slid" PORT="aclk"/>
             <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_m00_couplers_auto_ss_slidr" PORT="aclk"/>
+            <CONNECTION INSTANCE="saw_gen_saw_2" PORT="ap_clk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S01_ACLK"/>
@@ -3368,7 +3369,6 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ACLK"/>
-            <CONNECTION INSTANCE="converter_0" PORT="ap_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -5110,6 +5110,7 @@
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_gpio_1" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="audio_pll" PORT="resetn"/>
+            <CONNECTION INSTANCE="converter_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="i2s_block_i2s_tx_fifo" PORT="s_axis_aresetn"/>
             <CONNECTION INSTANCE="i2s_block_atg_module_0" PORT="core_rst_n"/>
             <CONNECTION INSTANCE="i2s_block_i2s_tx" PORT="mms_axi_aresetn"/>
@@ -5132,7 +5133,6 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ARESETN"/>
-            <CONNECTION INSTANCE="converter_0" PORT="ap_rst_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -6334,87 +6334,6 @@
             <CONNECTION INSTANCE="saw_gen_saw_4" PORT="s_axi_CTRL_BUS_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_FM_Synth_0_s_axi_CTRL_BUS_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="saw_gen_FM_Synth_0" PORT="s_axi_CTRL_BUS_AWADDR"/>
@@ -6695,6 +6614,86 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="saw_gen_axi_interconnect_0_M06_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="saw_gen_axis_interconnect_0_xbar" PORT="s_axi_ctrl_rresp"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="M07_AXI_awid" SIGIS="undef"/>
         <PORT DIR="O" NAME="M07_AXI_awaddr" SIGIS="undef"/>
         <PORT DIR="O" NAME="M07_AXI_awlen" SIGIS="undef"/>
@@ -6907,23 +6906,22 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="saw_gen_axi_interconnect_0_M06_AXI" DATAWIDTH="32" NAME="M06_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
-            <PORTMAP LOGICAL="AWADDR" PHYSICAL="M06_AXI_awaddr"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M06_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M06_AXI_awready"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="M06_AXI_wdata"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M06_AXI_wstrb"/>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="M06_AXI_awaddr"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M06_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M06_AXI_wready"/>
-            <PORTMAP LOGICAL="BRESP" PHYSICAL="M06_AXI_bresp"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="M06_AXI_wdata"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M06_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M06_AXI_bready"/>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M06_AXI_araddr"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="M06_AXI_bresp"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M06_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M06_AXI_arready"/>
-            <PORTMAP LOGICAL="RDATA" PHYSICAL="M06_AXI_rdata"/>
-            <PORTMAP LOGICAL="RRESP" PHYSICAL="M06_AXI_rresp"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M06_AXI_araddr"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M06_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M06_AXI_rready"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="M06_AXI_rdata"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="M06_AXI_rresp"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="M07_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
