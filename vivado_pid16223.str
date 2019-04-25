@@ -24849,3 +24849,16 @@ selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, S01_AXIS_tre
 // ah:x (cg:JFrame): Bitstream Generation Completed: addNotify
 // Elapsed time: 1387 seconds
 dismissDialog("Bitstream Generation Completed"); // ah:x (cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,427 MB. GUI used memory: 206 MB. Current time: 4/25/19 5:08:37 AM UTC
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 3,451 MB. GUI used memory: 207 MB. Current time: 4/25/19 5:11:42 AM UTC
+// TclEventType: DG_GRAPH_GENERATED
