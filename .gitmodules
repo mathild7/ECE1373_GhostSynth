@@ -28,3 +28,9 @@
 [submodule "modules/Echo"]
 	path = modules/Echo
 	url = https://github.com/liolliaustin/Echo.git
+[submodule "modules/trem"]
+	path = modules/trem
+	url = https://github.com/esophagus-now/trem.git
+[submodule "modules/noisy"]
+	path = modules/noisy
+	url = https://github.com/mathild7/noisy
