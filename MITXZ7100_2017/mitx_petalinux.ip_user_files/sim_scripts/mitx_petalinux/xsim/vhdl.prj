@@ -20,4 +20,7 @@ vhdl xil_defaultlib "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux
 vhdl xil_defaultlib "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/ip/FM_Synth_ap_sitofp_4_no_dsp_32.vhd" 
 vhdl xil_defaultlib "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/ip/FM_Synth_ap_fmul_2_max_dsp_32.vhd" 
 vhdl xil_defaultlib "../../../bd/mitx_petalinux/ip/mitx_petalinux_FM_Synth_0_0/sim/mitx_petalinux_FM_Synth_0_0.vhd" 
+vhdl xil_defaultlib "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/ip/Echo_ap_fmul_2_max_dsp_32.vhd" 
+vhdl xil_defaultlib "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/ip/Echo_ap_fadd_3_full_dsp_32.vhd" 
+vhdl xil_defaultlib "../../../bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/sim/mitx_petalinux_Echo_0_0.vhd" 
 nosort

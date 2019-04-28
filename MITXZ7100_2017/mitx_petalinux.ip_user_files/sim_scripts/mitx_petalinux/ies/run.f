@@ -1,9 +1,9 @@
 -makelib ies/xil_defaultlib -sv \
-  "/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-  "/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+  "/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+  "/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib ies/xpm \
-  "/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_VCOMP.vhd" \
+  "/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies/axi_infrastructure_v1_1_0 \
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
@@ -148,12 +148,6 @@
 -endlib
 -makelib ies/xil_defaultlib \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_0/sim/mitx_petalinux_latcherfloat_1_0.v" \
--endlib
--makelib ies/xlconstant_v1_1_3 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/45df/hdl/xlconstant_v1_1_vl_rfs.v" \
--endlib
--makelib ies/xil_defaultlib \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_xlconstant_0_0/sim/mitx_petalinux_xlconstant_0_0.v" \
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/verilog/FM_Synth_sizes.v" \
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/verilog/FM_Synth_srem_32nibs.v" \
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/verilog/FM_Synth_fadd_32ncud.v" \
@@ -200,54 +194,26 @@
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v" \
 -endlib
 -makelib ies/xil_defaultlib \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_xbar_2/sim/mitx_petalinux_xbar_2.v" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/sim/mitx_petalinux_axis_switch_0_0.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_fmul_32ns_32cud.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_buffer_r.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_CTRL_BUS_s_axi.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_fadd_32ns_32bkb.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo.v" \
+-endlib
+-makelib ies/xil_defaultlib \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/ip/Echo_ap_fmul_2_max_dsp_32.vhd" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/ip/Echo_ap_fadd_3_full_dsp_32.vhd" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/sim/mitx_petalinux_Echo_0_0.vhd" \
+-endlib
+-makelib ies/xil_defaultlib \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_2_0/sim/mitx_petalinux_latcherfloat_2_0.v" \
+  "../../../bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_0/sim/mitx_petalinux_axis_switch_1_0.v" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_13 \
   "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f0ae/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies/xil_defaultlib \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_9/sim/mitx_petalinux_auto_pc_9.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_8/sim/mitx_petalinux_auto_pc_8.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/sim/mitx_petalinux_auto_pc_7.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_11/sim/mitx_petalinux_auto_pc_11.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_10/sim/mitx_petalinux_auto_pc_10.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tdata_mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tuser_mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tstrb_mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tkeep_mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tid_mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tdest_mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tlast_mitx_petalinux_auto_ss_slidr_0.v" \
--endlib
--makelib ies/axis_subset_converter_v1_1_13 \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/bd78/hdl/axis_subset_converter_v1_1_vl_rfs.v" \
--endlib
--makelib ies/xil_defaultlib \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/top_mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/sim/mitx_petalinux_auto_ss_slidr_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tdata_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tuser_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tstrb_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tkeep_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tid_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tdest_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tlast_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/top_mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/sim/mitx_petalinux_auto_ss_slid_1.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tdata_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tuser_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tstrb_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tkeep_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tid_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tdest_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tlast_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/top_mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/sim/mitx_petalinux_auto_ss_slid_0.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_6/sim/mitx_petalinux_auto_pc_6.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_5/sim/mitx_petalinux_auto_pc_5.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_4/sim/mitx_petalinux_auto_pc_4.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/sim/mitx_petalinux_auto_pc_3.v" \
-  "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/sim/mitx_petalinux_auto_pc_2.v" \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_1/sim/mitx_petalinux_auto_pc_1.v" \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_0/sim/mitx_petalinux_auto_pc_0.v" \
 -endlib

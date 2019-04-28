@@ -96,26 +96,18 @@ mitx_petalinux_wrapper DUT
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_0018,4,32'h3f80_0000,resp); //Volume
             
             //Turn up volume on in0 of mixer (fed by that last saw wave)
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_3010,4,32'h3f80_0000,resp); //Set to 440 Hz
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_3010,4,32'h3f80_0000,resp);
             
-            //Confiugre biquad for a LPF
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9010,4,32'hbfe9078a,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9018,4,32'h3f55dac8,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9020,4,32'h3580aea5,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9028,4,32'hbfe8e9e5,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_9030,4,32'h3f54b8c5,resp);
+            //Hook up in0 to out1 of xbar1 (which sends saw's output to echo)
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7040,4,32'h8000_0000,resp); //Disable out0
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7044,4,32'h0000_0000,resp); 
             
-            //Hook up in0 to out3 of xbar (effectively wiring saw output to biquad input)
-            //DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7028,4,32'h0000_0000,resp);
-            //Hook up in2 to out0 of xbar (which sends biquad's output to final converter)
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7040,4,32'h0000_0001,resp);
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7000,4,32'h0000_0002,resp);
-            
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_3010,4,32'h0000_0002,resp);
+            //Hook up in1 to out0 of xbar2 (which sends echo's output to converter)
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_A040,4,32'h0000_0001,resp);
 
     end
     always begin
-        clk =1; #2.5 clk = 0; #2.5;
+        clk = 1; #2.5 clk = 0; #2.5;
     end
     initial begin
         #50000 $finish;

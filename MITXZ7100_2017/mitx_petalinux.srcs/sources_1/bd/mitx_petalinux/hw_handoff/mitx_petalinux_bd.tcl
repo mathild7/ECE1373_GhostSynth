@@ -171,29 +171,42 @@ proc create_hier_cell_saw_gen { parentCell nameHier } {
   create_bd_pin -dir I -type rst ap_rst_n
   create_bd_pin -dir I -from 0 -to 0 -type data latch_V
 
+  # Create instance: Echo_0, and set properties
+  set Echo_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:Echo:1.0 Echo_0 ]
+
   # Create instance: FM_Synth_0, and set properties
   set FM_Synth_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:FM_Synth:1.0 FM_Synth_0 ]
 
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
-CONFIG.NUM_MI {8} \
+CONFIG.NUM_MI {9} \
  ] $axi_interconnect_0
 
-  # Create instance: axis_interconnect_0, and set properties
-  set axis_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_interconnect:2.1 axis_interconnect_0 ]
+  # Create instance: axis_switch_0, and set properties
+  set axis_switch_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 axis_switch_0 ]
   set_property -dict [ list \
-CONFIG.ENABLE_ADVANCED_OPTIONS {0} \
-CONFIG.NUM_MI {4} \
-CONFIG.NUM_SI {4} \
+CONFIG.DECODER_REG {1} \
+CONFIG.NUM_MI {2} \
 CONFIG.ROUTING_MODE {1} \
- ] $axis_interconnect_0
+ ] $axis_switch_0
+
+  # Create instance: axis_switch_1, and set properties
+  set axis_switch_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 axis_switch_1 ]
+  set_property -dict [ list \
+CONFIG.DECODER_REG {0} \
+CONFIG.NUM_MI {1} \
+CONFIG.ROUTING_MODE {1} \
+ ] $axis_switch_1
 
   # Create instance: latcherfloat_0, and set properties
   set latcherfloat_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_0 ]
 
   # Create instance: latcherfloat_1, and set properties
   set latcherfloat_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_1 ]
+
+  # Create instance: latcherfloat_2, and set properties
+  set latcherfloat_2 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_2 ]
 
   # Create instance: mixer_0, and set properties
   set mixer_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:mixer:1.0 mixer_0 ]
@@ -210,22 +223,25 @@ CONFIG.ROUTING_MODE {1} \
   # Create instance: saw_4, and set properties
   set saw_4 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_4 ]
 
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
-
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins S00_AXI] [get_bd_intf_pins axi_interconnect_0/S00_AXI]
+  connect_bd_intf_net -intf_net Echo_0_value_out_V [get_bd_intf_pins Echo_0/value_out_V] [get_bd_intf_pins latcherfloat_2/in_V]
   connect_bd_intf_net -intf_net FM_Synth_0_result_V [get_bd_intf_pins FM_Synth_0/result_V] [get_bd_intf_pins latcherfloat_1/in_V]
-  connect_bd_intf_net -intf_net S00_AXIS_1 [get_bd_intf_pins axis_interconnect_0/S00_AXIS] [get_bd_intf_pins latcherfloat_0/out_V]
-  connect_bd_intf_net -intf_net S01_AXIS_1 [get_bd_intf_pins axis_interconnect_0/S01_AXIS] [get_bd_intf_pins latcherfloat_1/out_V]
   connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins saw_4/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins saw_1/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_interconnect_0/M02_AXI] [get_bd_intf_pins saw_2/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins axi_interconnect_0/M03_AXI] [get_bd_intf_pins saw_3/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins axi_interconnect_0/M04_AXI] [get_bd_intf_pins mixer_0/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins FM_Synth_0/s_axi_CTRL_BUS] [get_bd_intf_pins axi_interconnect_0/M05_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins axi_interconnect_0/M06_AXI] [get_bd_intf_pins axis_interconnect_0/S_AXI_CTRL]
-  connect_bd_intf_net -intf_net axis_interconnect_0_M00_AXIS [get_bd_intf_pins out_V_V] [get_bd_intf_pins axis_interconnect_0/M00_AXIS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins axi_interconnect_0/M06_AXI] [get_bd_intf_pins axis_switch_0/S_AXI_CTRL]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins Echo_0/s_axi_CTRL_BUS] [get_bd_intf_pins axi_interconnect_0/M07_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M08_AXI [get_bd_intf_pins axi_interconnect_0/M08_AXI] [get_bd_intf_pins axis_switch_1/S_AXI_CTRL]
+  connect_bd_intf_net -intf_net axis_switch_0_M00_AXIS [get_bd_intf_pins axis_switch_0/M00_AXIS] [get_bd_intf_pins axis_switch_1/S00_AXIS]
+  connect_bd_intf_net -intf_net axis_switch_0_M01_AXIS [get_bd_intf_pins Echo_0/value_in_V] [get_bd_intf_pins axis_switch_0/M01_AXIS]
+  connect_bd_intf_net -intf_net axis_switch_1_M00_AXIS [get_bd_intf_pins out_V_V] [get_bd_intf_pins axis_switch_1/M00_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_0_out_V [get_bd_intf_pins axis_switch_0/S01_AXIS] [get_bd_intf_pins latcherfloat_0/out_V]
+  connect_bd_intf_net -intf_net latcherfloat_1_out_V [get_bd_intf_pins axis_switch_0/S00_AXIS] [get_bd_intf_pins latcherfloat_1/out_V]
+  connect_bd_intf_net -intf_net latcherfloat_2_out_V [get_bd_intf_pins axis_switch_1/S01_AXIS] [get_bd_intf_pins latcherfloat_2/out_V]
   connect_bd_intf_net -intf_net mixer_0_out_V [get_bd_intf_pins latcherfloat_0/in_V] [get_bd_intf_pins mixer_0/out_V]
   connect_bd_intf_net -intf_net saw_1_out_V [get_bd_intf_pins mixer_0/in1_V] [get_bd_intf_pins saw_1/out_V]
   connect_bd_intf_net -intf_net saw_2_out_V [get_bd_intf_pins mixer_0/in2_V] [get_bd_intf_pins saw_2/out_V]
@@ -233,10 +249,10 @@ CONFIG.ROUTING_MODE {1} \
   connect_bd_intf_net -intf_net saw_4_out_V [get_bd_intf_pins mixer_0/in0_V] [get_bd_intf_pins saw_4/out_V]
 
   # Create port connections
-  connect_bd_net -net ARESETN_1 [get_bd_pins ARESETN] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN]
-  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins FM_Synth_0/ap_clk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axis_interconnect_0/ACLK] [get_bd_pins axis_interconnect_0/M00_AXIS_ACLK] [get_bd_pins axis_interconnect_0/M01_AXIS_ACLK] [get_bd_pins axis_interconnect_0/M02_AXIS_ACLK] [get_bd_pins axis_interconnect_0/M03_AXIS_ACLK] [get_bd_pins axis_interconnect_0/S00_AXIS_ACLK] [get_bd_pins axis_interconnect_0/S01_AXIS_ACLK] [get_bd_pins axis_interconnect_0/S02_AXIS_ACLK] [get_bd_pins axis_interconnect_0/S03_AXIS_ACLK] [get_bd_pins axis_interconnect_0/S_AXI_CTRL_ACLK] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins latcherfloat_1/ap_clk] [get_bd_pins mixer_0/ap_clk] [get_bd_pins saw_1/ap_clk] [get_bd_pins saw_2/ap_clk] [get_bd_pins saw_3/ap_clk] [get_bd_pins saw_4/ap_clk]
-  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins FM_Synth_0/ap_rst_n] [get_bd_pins axis_interconnect_0/ARESETN] [get_bd_pins axis_interconnect_0/M00_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/M01_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/M02_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/M03_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/S00_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/S01_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/S02_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/S03_AXIS_ARESETN] [get_bd_pins axis_interconnect_0/S_AXI_CTRL_ARESETN] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins latcherfloat_1/ap_rst_n] [get_bd_pins mixer_0/ap_rst_n] [get_bd_pins saw_1/ap_rst_n] [get_bd_pins saw_2/ap_rst_n] [get_bd_pins saw_3/ap_rst_n] [get_bd_pins saw_4/ap_rst_n]
-  connect_bd_net -net latch_V_1 [get_bd_pins latch_V] [get_bd_pins latcherfloat_0/latch_V] [get_bd_pins latcherfloat_1/latch_V]
+  connect_bd_net -net ARESETN_1 [get_bd_pins ARESETN] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN]
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins Echo_0/ap_clk] [get_bd_pins FM_Synth_0/ap_clk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axis_switch_0/aclk] [get_bd_pins axis_switch_0/s_axi_ctrl_aclk] [get_bd_pins axis_switch_1/aclk] [get_bd_pins axis_switch_1/s_axi_ctrl_aclk] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins latcherfloat_1/ap_clk] [get_bd_pins latcherfloat_2/ap_clk] [get_bd_pins mixer_0/ap_clk] [get_bd_pins saw_1/ap_clk] [get_bd_pins saw_2/ap_clk] [get_bd_pins saw_3/ap_clk] [get_bd_pins saw_4/ap_clk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Echo_0/ap_rst_n] [get_bd_pins FM_Synth_0/ap_rst_n] [get_bd_pins axis_switch_0/aresetn] [get_bd_pins axis_switch_0/s_axi_ctrl_aresetn] [get_bd_pins axis_switch_1/aresetn] [get_bd_pins axis_switch_1/s_axi_ctrl_aresetn] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins latcherfloat_1/ap_rst_n] [get_bd_pins latcherfloat_2/ap_rst_n] [get_bd_pins mixer_0/ap_rst_n] [get_bd_pins saw_1/ap_rst_n] [get_bd_pins saw_2/ap_rst_n] [get_bd_pins saw_3/ap_rst_n] [get_bd_pins saw_4/ap_rst_n]
+  connect_bd_net -net latch_V_1 [get_bd_pins latch_V] [get_bd_pins latcherfloat_0/latch_V] [get_bd_pins latcherfloat_1/latch_V] [get_bd_pins latcherfloat_2/latch_V]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -858,16 +874,18 @@ CONFIG.NUM_SI {2} \
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins audio_pll/resetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins converter_0/ap_rst_n] [get_bd_pins i2s_block/core_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M03_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn] [get_bd_pins saw_gen/ap_rst_n]
 
   # Create address segments
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000B000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/Echo_0/s_axi_CTRL_BUS/Reg] SEG_Echo_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80008000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/FM_Synth_0/s_axi_CTRL_BUS/Reg] SEG_FM_Synth_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x8000B000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x8000A000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] SEG_axi_gpio_1_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000F000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000E000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] SEG_axi_gpio_1_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80007000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/axis_switch_0/S_AXI_CTRL/Reg] SEG_axis_switch_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000A000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/axis_switch_1/S_AXI_CTRL/Reg] SEG_axis_switch_1_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80002000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs i2s_block/i2s_tx/mms_axi/reg0] SEG_i2s_tx_reg0
   create_bd_addr_seg -range 0x00001000 -offset 0x80003000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/mixer_0/s_axi_CTRL_BUS/Reg] SEG_mixer_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80004000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/saw_1/s_axi_CTRL_BUS/Reg] SEG_saw_1_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80005000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/saw_2/s_axi_CTRL_BUS/Reg] SEG_saw_2_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80006000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/saw_3/s_axi_CTRL_BUS/Reg] SEG_saw_3_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80001000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/saw_4/s_axi_CTRL_BUS/Reg] SEG_saw_4_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80007000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs saw_gen/axis_interconnect_0/xbar/S_AXI_CTRL/Reg] SEG_xbar_Reg
 
 
   # Restore current instance

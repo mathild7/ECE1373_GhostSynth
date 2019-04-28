@@ -26,7 +26,6 @@ vlib activehdl/xbip_dsp48_multadd_v3_0_3
 vlib activehdl/xbip_bram18k_v3_0_3
 vlib activehdl/mult_gen_v12_0_12
 vlib activehdl/floating_point_v7_1_4
-vlib activehdl/xlconstant_v1_1_3
 vlib activehdl/generic_baseblocks_v2_1_0
 vlib activehdl/axi_register_slice_v2_1_13
 vlib activehdl/axi_data_fifo_v2_1_12
@@ -34,7 +33,6 @@ vlib activehdl/axi_crossbar_v2_1_14
 vlib activehdl/axis_register_slice_v1_1_13
 vlib activehdl/axis_switch_v1_1_13
 vlib activehdl/axi_protocol_converter_v2_1_13
-vlib activehdl/axis_subset_converter_v1_1_13
 
 vmap xil_defaultlib activehdl/xil_defaultlib
 vmap xpm activehdl/xpm
@@ -61,7 +59,6 @@ vmap xbip_dsp48_multadd_v3_0_3 activehdl/xbip_dsp48_multadd_v3_0_3
 vmap xbip_bram18k_v3_0_3 activehdl/xbip_bram18k_v3_0_3
 vmap mult_gen_v12_0_12 activehdl/mult_gen_v12_0_12
 vmap floating_point_v7_1_4 activehdl/floating_point_v7_1_4
-vmap xlconstant_v1_1_3 activehdl/xlconstant_v1_1_3
 vmap generic_baseblocks_v2_1_0 activehdl/generic_baseblocks_v2_1_0
 vmap axi_register_slice_v2_1_13 activehdl/axi_register_slice_v2_1_13
 vmap axi_data_fifo_v2_1_12 activehdl/axi_data_fifo_v2_1_12
@@ -69,14 +66,13 @@ vmap axi_crossbar_v2_1_14 activehdl/axi_crossbar_v2_1_14
 vmap axis_register_slice_v1_1_13 activehdl/axis_register_slice_v1_1_13
 vmap axis_switch_v1_1_13 activehdl/axis_switch_v1_1_13
 vmap axi_protocol_converter_v2_1_13 activehdl/axi_protocol_converter_v2_1_13
-vmap axis_subset_converter_v1_1_13 activehdl/axis_subset_converter_v1_1_13
 
 vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
-"/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-"/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+"/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93 \
-"/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_VCOMP.vhd" \
+"/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work axi_infrastructure_v1_1_0  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
 "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
@@ -221,12 +217,6 @@ vcom -work xil_defaultlib -93 \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
 "../../../bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_0/sim/mitx_petalinux_latcherfloat_1_0.v" \
-
-vlog -work xlconstant_v1_1_3  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
-"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/45df/hdl/xlconstant_v1_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_xlconstant_0_0/sim/mitx_petalinux_xlconstant_0_0.v" \
 "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/verilog/FM_Synth_sizes.v" \
 "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/verilog/FM_Synth_srem_32nibs.v" \
 "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/5baa/hdl/verilog/FM_Synth_fadd_32ncud.v" \
@@ -273,54 +263,26 @@ vlog -work axis_switch_v1_1_13  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/s
 "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_xbar_2/sim/mitx_petalinux_xbar_2.v" \
+"../../../bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/sim/mitx_petalinux_axis_switch_0_0.v" \
+"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_fmul_32ns_32cud.v" \
+"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_buffer_r.v" \
+"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_CTRL_BUS_s_axi.v" \
+"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo_fadd_32ns_32bkb.v" \
+"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/verilog/Echo.v" \
+
+vcom -work xil_defaultlib -93 \
+"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/ip/Echo_ap_fmul_2_max_dsp_32.vhd" \
+"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6762/hdl/ip/Echo_ap_fadd_3_full_dsp_32.vhd" \
+"../../../bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/sim/mitx_petalinux_Echo_0_0.vhd" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
+"../../../bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_2_0/sim/mitx_petalinux_latcherfloat_2_0.v" \
+"../../../bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_0/sim/mitx_petalinux_axis_switch_1_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_13  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
 "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f0ae/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_9/sim/mitx_petalinux_auto_pc_9.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_8/sim/mitx_petalinux_auto_pc_8.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/sim/mitx_petalinux_auto_pc_7.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_11/sim/mitx_petalinux_auto_pc_11.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_10/sim/mitx_petalinux_auto_pc_10.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tdata_mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tuser_mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tstrb_mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tkeep_mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tid_mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tdest_mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/tlast_mitx_petalinux_auto_ss_slidr_0.v" \
-
-vlog -work axis_subset_converter_v1_1_13  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
-"../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/bd78/hdl/axis_subset_converter_v1_1_vl_rfs.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/7e3a/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/2ad9/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/39ca/hdl/verilog" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6eb1/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/1d61/hdl" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/9c7f" "+incdir+../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/hdl/top_mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slidr_0/sim/mitx_petalinux_auto_ss_slidr_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tdata_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tuser_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tstrb_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tkeep_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tid_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tdest_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/tlast_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/hdl/top_mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_1/sim/mitx_petalinux_auto_ss_slid_1.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tdata_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tuser_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tstrb_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tkeep_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tid_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tdest_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/tlast_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/hdl/top_mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_ss_slid_0/sim/mitx_petalinux_auto_ss_slid_0.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_6/sim/mitx_petalinux_auto_pc_6.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_5/sim/mitx_petalinux_auto_pc_5.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_4/sim/mitx_petalinux_auto_pc_4.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/sim/mitx_petalinux_auto_pc_3.v" \
-"../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/sim/mitx_petalinux_auto_pc_2.v" \
 "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_1/sim/mitx_petalinux_auto_pc_1.v" \
 "../../../bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_0/sim/mitx_petalinux_auto_pc_0.v" \
 
