@@ -92,8 +92,8 @@ mitx_petalinux_wrapper DUT
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_8040,4,32'h0000_0000,resp); //Re-enable
             
             //Set up a single saw wave
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_0010,4,32'h43dc_0000,resp); //Set to 440 Hz
-            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_0018,4,32'h3f80_0000,resp); //Volume
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_1010,4,32'h43dc_0000,resp); //Set to 440 Hz
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_1018,4,32'h3f80_0000,resp); //Volume
             
             //Turn up volume on in0 of mixer (fed by that last saw wave)
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_3010,4,32'h3f80_0000,resp);
@@ -101,9 +101,14 @@ mitx_petalinux_wrapper DUT
             //Hook up in0 to out1 of xbar1 (which sends saw's output to echo)
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7040,4,32'h8000_0000,resp); //Disable out0
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7044,4,32'h0000_0000,resp); 
-            
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_7000,4,32'h0000_0002,resp);            
             //Hook up in1 to out0 of xbar2 (which sends echo's output to converter)
             DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_A040,4,32'h0000_0001,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_A000,4,32'h0000_0002,resp);
+            //Set echo config            
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_B010,4,32'h0000_000A,resp);
+            DUT.mitx_petalinux_i.processing_system7_0.inst.write_data(32'h8000_B018,4,32'h3F00_0000,resp);           
+
 
     end
     always begin

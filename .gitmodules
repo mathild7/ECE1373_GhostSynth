@@ -34,3 +34,6 @@
 [submodule "modules/noisy"]
 	path = modules/noisy
 	url = https://github.com/mathild7/noisy
+[submodule "modules/compressor"]
+	path = modules/compressor
+	url = https://github.com/esophagus-now/compressor

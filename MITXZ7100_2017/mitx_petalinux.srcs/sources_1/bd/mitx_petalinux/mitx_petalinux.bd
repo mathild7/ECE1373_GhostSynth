@@ -583,8 +583,8 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>saw_gen</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="saw_gen" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:instanceName>synth_mods</spirit:instanceName>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="synth_mods" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>processing_system7_0_axi_periph</spirit:instanceName>
@@ -632,7 +632,7 @@
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>saw_gen_out_V_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_V_V" spirit:componentRef="saw_gen"/>
+        <spirit:activeInterface spirit:busRef="out_V_V" spirit:componentRef="synth_mods"/>
         <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="converter_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
@@ -642,7 +642,7 @@
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>S00_AXI_1</spirit:name>
-        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="saw_gen"/>
+        <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="synth_mods"/>
         <spirit:activeInterface spirit:busRef="M03_AXI" spirit:componentRef="processing_system7_0_axi_periph"/>
       </spirit:interconnection>
     </spirit:interconnections>
@@ -657,7 +657,7 @@
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_50M" spirit:portRef="slowest_sync_clk"/>
         <spirit:internalPortReference spirit:componentRef="converter_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="core_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="saw_gen" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="synth_mods" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S01_ACLK"/>
@@ -679,7 +679,7 @@
         <spirit:internalPortReference spirit:componentRef="audio_pll" spirit:portRef="resetn"/>
         <spirit:internalPortReference spirit:componentRef="converter_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="core_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="saw_gen" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="synth_mods" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
@@ -690,7 +690,7 @@
       <spirit:adHocConnection>
         <spirit:name>rst_processing_system7_0_50M_interconnect_aresetn</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_50M" spirit:portRef="interconnect_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="saw_gen" spirit:portRef="ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="synth_mods" spirit:portRef="ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ARESETN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -727,7 +727,7 @@
       <spirit:adHocConnection>
         <spirit:name>latch_V_1</spirit:name>
         <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="latcher_pulse"/>
-        <spirit:internalPortReference spirit:componentRef="saw_gen" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="synth_mods" spirit:portRef="latch_V"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>audio_pll_clk_out1</spirit:name>
@@ -2601,7 +2601,7 @@
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
     <spirit:library>BlockDiagram/mitx_petalinux_imp</spirit:library>
-    <spirit:name>saw_gen</spirit:name>
+    <spirit:name>synth_mods</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
       <spirit:busInterface>
@@ -2694,7 +2694,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="saw_gen_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="synth_mods_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -2733,7 +2733,7 @@
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
     <spirit:library>BlockDiagram/mitx_petalinux_imp</spirit:library>
-    <spirit:name>saw_gen_imp</spirit:name>
+    <spirit:name>synth_mods_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:componentInstances>
       <spirit:componentInstance>
@@ -2766,7 +2766,7 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>axi_interconnect_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp" spirit:name="axi_interconnect_0" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="axi_interconnect_0" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_axi_interconnect_0_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_MI">9</spirit:configurableElementValue>
@@ -2802,7 +2802,7 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>axis_switch_0</spirit:instanceName>
+        <spirit:instanceName>source_xbar</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axis_switch" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_axis_switch_0_0</spirit:configurableElementValue>
@@ -2826,7 +2826,7 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>axis_switch_1</spirit:instanceName>
+        <spirit:instanceName>xbar_s1</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axis_switch" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_axis_switch_1_0</spirit:configurableElementValue>
@@ -2899,12 +2899,12 @@
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>latcherfloat_1_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="axis_switch_0"/>
+        <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="source_xbar"/>
         <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_1"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>latcherfloat_0_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="S01_AXIS" spirit:componentRef="axis_switch_0"/>
+        <spirit:activeInterface spirit:busRef="S01_AXIS" spirit:componentRef="source_xbar"/>
         <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
@@ -2915,11 +2915,11 @@
       <spirit:interconnection>
         <spirit:name>axis_switch_0_M01_AXIS</spirit:name>
         <spirit:activeInterface spirit:busRef="value_in_V" spirit:componentRef="Echo_0"/>
-        <spirit:activeInterface spirit:busRef="M01_AXIS" spirit:componentRef="axis_switch_0"/>
+        <spirit:activeInterface spirit:busRef="M01_AXIS" spirit:componentRef="source_xbar"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_interconnect_0_M06_AXI</spirit:name>
-        <spirit:activeInterface spirit:busRef="S_AXI_CTRL" spirit:componentRef="axis_switch_0"/>
+        <spirit:activeInterface spirit:busRef="S_AXI_CTRL" spirit:componentRef="source_xbar"/>
         <spirit:activeInterface spirit:busRef="M06_AXI" spirit:componentRef="axi_interconnect_0"/>
       </spirit:interconnection>
       <spirit:interconnection>
@@ -2929,17 +2929,17 @@
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>latcherfloat_2_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="S01_AXIS" spirit:componentRef="axis_switch_1"/>
+        <spirit:activeInterface spirit:busRef="S01_AXIS" spirit:componentRef="xbar_s1"/>
         <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_2"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axis_switch_0_M00_AXIS</spirit:name>
-        <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="axis_switch_1"/>
-        <spirit:activeInterface spirit:busRef="M00_AXIS" spirit:componentRef="axis_switch_0"/>
+        <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="xbar_s1"/>
+        <spirit:activeInterface spirit:busRef="M00_AXIS" spirit:componentRef="source_xbar"/>
       </spirit:interconnection>
       <spirit:interconnection>
         <spirit:name>axi_interconnect_0_M08_AXI</spirit:name>
-        <spirit:activeInterface spirit:busRef="S_AXI_CTRL" spirit:componentRef="axis_switch_1"/>
+        <spirit:activeInterface spirit:busRef="S_AXI_CTRL" spirit:componentRef="xbar_s1"/>
         <spirit:activeInterface spirit:busRef="M08_AXI" spirit:componentRef="axi_interconnect_0"/>
       </spirit:interconnection>
     </spirit:interconnections>
@@ -2955,12 +2955,12 @@
         <spirit:internalPortReference spirit:componentRef="saw_2" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="saw_3" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="saw_4" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_0" spirit:portRef="aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_0" spirit:portRef="s_axi_ctrl_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="source_xbar" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="source_xbar" spirit:portRef="s_axi_ctrl_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="Echo_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_1" spirit:portRef="aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_1" spirit:portRef="s_axi_ctrl_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="xbar_s1" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="xbar_s1" spirit:portRef="s_axi_ctrl_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>ap_clk_1</spirit:name>
@@ -2973,6 +2973,12 @@
         <spirit:internalPortReference spirit:componentRef="saw_3" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="saw_4" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="saw_2" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="source_xbar" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="source_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="Echo_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="xbar_s1" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="xbar_s1" spirit:portRef="s_axi_ctrl_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ACLK"/>
@@ -2983,12 +2989,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M05_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M06_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M07_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_0" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_0" spirit:portRef="s_axi_ctrl_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="Echo_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_1" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="axis_switch_1" spirit:portRef="s_axi_ctrl_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M08_ACLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -3016,7 +3016,7 @@
     </spirit:adHocConnections>
     <spirit:hierConnections>
       <spirit:hierConnection spirit:interfaceRef="out_V_V/axis_switch_1_M00_AXIS">
-        <spirit:activeInterface spirit:busRef="M00_AXIS" spirit:componentRef="axis_switch_1"/>
+        <spirit:activeInterface spirit:busRef="M00_AXIS" spirit:componentRef="xbar_s1"/>
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="S00_AXI/Conn1">
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_interconnect_0"/>
@@ -3026,7 +3026,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
     <spirit:name>axi_interconnect_0</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -3703,7 +3703,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp" spirit:name="axi_interconnect_0_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="axi_interconnect_0_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -3845,7 +3845,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
     <spirit:name>axi_interconnect_0_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:componentInstances>
@@ -3861,43 +3861,43 @@
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>s00_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="s00_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="s00_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m00_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m00_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m00_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m01_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m01_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m01_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m02_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m02_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m02_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m03_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m03_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m03_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m04_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m04_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m04_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m05_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m05_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m05_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m06_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m06_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m06_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m07_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m07_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m07_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
         <spirit:instanceName>m08_couplers</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m08_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m08_couplers" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
@@ -4040,7 +4040,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m08_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -4174,7 +4174,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m08_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m08_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -4208,7 +4208,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m08_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -4222,7 +4222,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m07_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -4356,7 +4356,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m07_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m07_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -4390,7 +4390,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m07_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -4404,7 +4404,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m06_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -4538,7 +4538,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m06_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m06_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -4572,7 +4572,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m06_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -4586,7 +4586,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m05_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -4720,7 +4720,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m05_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m05_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -4754,7 +4754,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m05_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -4768,7 +4768,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m04_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -4902,7 +4902,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m04_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m04_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -4936,7 +4936,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m04_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -4950,7 +4950,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m03_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -5084,7 +5084,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m03_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m03_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -5118,7 +5118,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m03_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -5132,7 +5132,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m02_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -5266,7 +5266,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m02_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m02_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -5300,7 +5300,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m02_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -5314,7 +5314,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m01_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -5448,7 +5448,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m01_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m01_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -5482,7 +5482,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m01_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -5496,7 +5496,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m00_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -5630,7 +5630,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="m00_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="m00_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -5664,7 +5664,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m00_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -5678,7 +5678,7 @@
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>s00_couplers</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:busInterfaces>
@@ -5812,7 +5812,7 @@
         <spirit:view>
           <spirit:name>BlockDiagram</spirit:name>
           <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp" spirit:name="s00_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp" spirit:name="s00_couplers_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
       <spirit:ports>
@@ -5846,7 +5846,7 @@
 
   <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/saw_gen_imp/axi_interconnect_0_imp</spirit:library>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>s00_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
     <spirit:interconnections/>
@@ -6181,13 +6181,13 @@
         <spirit:segments>
           <spirit:segment>
             <spirit:name>SEG_Echo_0_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/Echo_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/Echo_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x8000B000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_FM_Synth_0_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/FM_Synth_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/FM_Synth_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x80008000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
@@ -6205,13 +6205,13 @@
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_axis_switch_0_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/axis_switch_0/S_AXI_CTRL/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/source_xbar/S_AXI_CTRL/Reg</spirit:displayName>
             <spirit:addressOffset>0x80007000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_axis_switch_1_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/axis_switch_1/S_AXI_CTRL/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/xbar_s1/S_AXI_CTRL/Reg</spirit:displayName>
             <spirit:addressOffset>0x8000A000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
@@ -6223,31 +6223,31 @@
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_mixer_0_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/mixer_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/mixer_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x80003000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_saw_1_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/saw_1/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/saw_1/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x80004000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_saw_2_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/saw_2/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/saw_2/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x80005000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_saw_3_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/saw_3/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/saw_3/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x80006000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment>
             <spirit:name>SEG_saw_4_Reg</spirit:name>
-            <spirit:displayName>/saw_gen/saw_4/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:displayName>/synth_mods/saw_4/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x80001000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
