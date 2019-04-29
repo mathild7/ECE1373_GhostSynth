@@ -587,6 +587,13 @@
         <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="synth_mods" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
       <spirit:componentInstance>
+        <spirit:instanceName>converter_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="converter" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_converter_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
         <spirit:instanceName>processing_system7_0_axi_periph</spirit:instanceName>
         <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp" spirit:name="processing_system7_0_axi_periph" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         <spirit:configurableElementValues>
@@ -594,13 +601,6 @@
           <spirit:configurableElementValue spirit:referenceId="NUM_SI">2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="NUM_MI">4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="appcore">xilinx.com:ip:axi_interconnect:2.1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>converter_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="converter" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_converter_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -651,11 +651,11 @@
         <spirit:name>processing_system7_0_FCLK_CLK0</spirit:name>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK0"/>
         <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_1" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP1_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_50M" spirit:portRef="slowest_sync_clk"/>
         <spirit:internalPortReference spirit:componentRef="converter_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_1" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="i2s_block" spirit:portRef="core_aclk"/>
         <spirit:internalPortReference spirit:componentRef="synth_mods" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ACLK"/>
@@ -1811,11 +1811,36 @@
     <spirit:library>BlockDiagram/mitx_petalinux_imp/processing_system7_0_axi_periph_imp</spirit:library>
     <spirit:name>m02_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>auto_pc</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_6</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections/>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>S_ACLK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>S_ARESETN_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/m02_couplers_to_m02_couplers">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./m02_couplers_to_m02_couplers"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_m02_couplers">
+        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="S_AXI/m02_couplers_to_auto_pc">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -1993,11 +2018,36 @@
     <spirit:library>BlockDiagram/mitx_petalinux_imp/processing_system7_0_axi_periph_imp</spirit:library>
     <spirit:name>m01_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>auto_pc</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_5</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections/>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>S_ACLK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>S_ARESETN_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/m01_couplers_to_m01_couplers">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./m01_couplers_to_m01_couplers"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_m01_couplers">
+        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="S_AXI/m01_couplers_to_auto_pc">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -2175,11 +2225,36 @@
     <spirit:library>BlockDiagram/mitx_petalinux_imp/processing_system7_0_axi_periph_imp</spirit:library>
     <spirit:name>m00_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>auto_pc</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections/>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>S_ACLK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>S_ARESETN_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/m00_couplers_to_m00_couplers">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./m00_couplers_to_m00_couplers"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_m00_couplers">
+        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="S_AXI/m00_couplers_to_auto_pc">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -2362,9 +2437,9 @@
         <spirit:instanceName>auto_pc</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_3</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_8</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI3</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -2569,9 +2644,9 @@
         <spirit:instanceName>auto_pc</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_7</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI3</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -2737,15 +2812,6 @@
     <spirit:version>1.00.a</spirit:version>
     <spirit:componentInstances>
       <spirit:componentInstance>
-        <spirit:instanceName>axi_interconnect_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="axi_interconnect_0" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_axi_interconnect_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="NUM_MI">20</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="appcore">xilinx.com:ip:axi_interconnect:2.1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>generators_xbar</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axis_switch" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
@@ -2810,6 +2876,29 @@
         <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>axi_interconnect_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="axi_interconnect_0" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_axi_interconnect_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="NUM_MI">20</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="appcore">xilinx.com:ip:axi_interconnect:2.1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>compressor_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="compressor" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_compressor_0_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -3004,6 +3093,21 @@
         <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_0"/>
         <spirit:activeInterface spirit:busRef="S01_AXIS" spirit:componentRef="output_xbar"/>
       </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>compressor_0_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_1"/>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="compressor_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>axi_interconnect_0_M17_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="M17_AXI" spirit:componentRef="axi_interconnect_0"/>
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="compressor_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>output_xbar_M00_AXIS</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="compressor_0"/>
+        <spirit:activeInterface spirit:busRef="M00_AXIS" spirit:componentRef="output_xbar"/>
+      </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -3018,10 +3122,12 @@
         <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="aresetn"/>
         <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="s_axi_ctrl_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>ap_clk_1</spirit:name>
@@ -3030,6 +3136,16 @@
         <spirit:internalPortReference spirit:componentRef="generators_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
         <spirit:internalPortReference spirit:componentRef="fx1_xbar" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="fx1_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M00_ACLK"/>
@@ -3044,23 +3160,15 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M09_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M10_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M11_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M17_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M12_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M13_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M14_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M15_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M16_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M17_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M18_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M19_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>ARESETN_1</spirit:name>
@@ -3091,1081 +3199,19 @@
       <spirit:adHocConnection>
         <spirit:name>latch_V_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="latch_V"/>
         <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="gen_latch_V"/>
         <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="fx1_latch_V"/>
         <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="fx2_latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="latch_V"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="out_V_V/axis_switch_1_M00_AXIS">
-        <spirit:activeInterface spirit:busRef="M00_AXIS" spirit:componentRef="output_xbar"/>
+      <spirit:hierConnection spirit:interfaceRef="out_V_V/latcherfloat_1_out_V1">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_1"/>
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="S00_AXI/Conn1">
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_interconnect_0"/>
-      </spirit:hierConnection>
-    </spirit:hierConnections>
-  </spirit:design>
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
-    <spirit:name>fx2</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>in_V</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>in_V1</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>in2_V</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>in3_V</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>DATA.FX2_LATCH_V</spirit:name>
-        <spirit:displayName>Data</spirit:displayName>
-        <spirit:description>Data</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>DATA</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>fx2_latch_V</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>CLK.AP_CLK</spirit:name>
-        <spirit:displayName>Clk</spirit:displayName>
-        <spirit:description>Clock</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>CLK</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_clk</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>RST.AP_RST_N</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_rst_n</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:model>
-      <spirit:views>
-        <spirit:view>
-          <spirit:name>BlockDiagram</spirit:name>
-          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="fx2_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-        </spirit:view>
-      </spirit:views>
-      <spirit:ports>
-        <spirit:port>
-          <spirit:name>fx2_latch_V</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-            <spirit:vector>
-              <spirit:left>0</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>ap_clk</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>ap_rst_n</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-      </spirit:ports>
-    </spirit:model>
-  </spirit:component>
-
-  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
-    <spirit:name>fx2_imp</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>trem_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="trem" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_trem_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>compressor_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="compressor" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_compressor_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>mixer_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="mixer" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_mixer_1_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_7</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_7_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_8</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_8_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
-    <spirit:interconnections>
-      <spirit:interconnection>
-        <spirit:name>compressor_0_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_8"/>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="compressor_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>latcherfloat_8_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_8"/>
-        <spirit:activeInterface spirit:busRef="in1_V" spirit:componentRef="mixer_1"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>trem_0_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_7"/>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="trem_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>latcherfloat_7_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_7"/>
-        <spirit:activeInterface spirit:busRef="in0_V" spirit:componentRef="mixer_1"/>
-      </spirit:interconnection>
-    </spirit:interconnections>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>latch_V_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="fx2_latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="latch_V"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>ap_clk_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_1" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="ap_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>ap_rst_n_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_1" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="ap_rst_n"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
-    <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="in_V/xbar_s1_M00_AXIS">
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="trem_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M12_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="compressor_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="in_V1/xbar_s1_M01_AXIS">
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="compressor_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M13_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="mixer_1"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="in2_V/xbar_s1_M02_AXIS">
-        <spirit:activeInterface spirit:busRef="in2_V" spirit:componentRef="mixer_1"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="in3_V/xbar_s1_M03_AXIS">
-        <spirit:activeInterface spirit:busRef="in3_V" spirit:componentRef="mixer_1"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V/mixer_1_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="mixer_1"/>
-      </spirit:hierConnection>
-    </spirit:hierConnections>
-  </spirit:design>
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
-    <spirit:name>fx1</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>in_V</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>value_in_V</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V1</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS2</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>in0_V</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>in1_V</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V2</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>CLK.AP_CLK</spirit:name>
-        <spirit:displayName>Clk</spirit:displayName>
-        <spirit:description>Clock</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>CLK</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_clk</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>RST.AP_RST_N</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_rst_n</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>DATA.FX1_LATCH_V</spirit:name>
-        <spirit:displayName>Data</spirit:displayName>
-        <spirit:description>Data</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>DATA</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>fx1_latch_V</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:model>
-      <spirit:views>
-        <spirit:view>
-          <spirit:name>BlockDiagram</spirit:name>
-          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="fx1_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-        </spirit:view>
-      </spirit:views>
-      <spirit:ports>
-        <spirit:port>
-          <spirit:name>ap_clk</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>ap_rst_n</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>fx1_latch_V</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-            <spirit:vector>
-              <spirit:left>0</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-      </spirit:ports>
-    </spirit:model>
-  </spirit:component>
-
-  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
-    <spirit:name>fx1_imp</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>biquad_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="biquad" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_biquad_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>mixer_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="mixer" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_mixer_0_1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_4</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_5</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_2</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_1_2</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>Echo_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="Echo" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_Echo_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
-    <spirit:interconnections>
-      <spirit:interconnection>
-        <spirit:name>biquad_0_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_0"/>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="biquad_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>mixer_0_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_1"/>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="mixer_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>Echo_0_value_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_2"/>
-        <spirit:activeInterface spirit:busRef="value_out_V" spirit:componentRef="Echo_0"/>
-      </spirit:interconnection>
-    </spirit:interconnections>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>ap_clk_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="Echo_0" spirit:portRef="ap_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>ap_rst_n_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="Echo_0" spirit:portRef="ap_rst_n"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>fx1_latch_V_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="fx1_latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="latch_V"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
-    <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M09_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="biquad_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="in_V/source_xbar_M02_AXIS">
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="biquad_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V/latcherfloat_2_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_2"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M07_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="Echo_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="value_in_V/axis_switch_0_M01_AXIS">
-        <spirit:activeInterface spirit:busRef="value_in_V" spirit:componentRef="Echo_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V1/latcherfloat_0_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS2/axi_interconnect_0_M10_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="mixer_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="in0_V/source_xbar_M03_AXIS">
-        <spirit:activeInterface spirit:busRef="in0_V" spirit:componentRef="mixer_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="in1_V/source_xbar_M04_AXIS">
-        <spirit:activeInterface spirit:busRef="in1_V" spirit:componentRef="mixer_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V2/latcherfloat_1_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_1"/>
-      </spirit:hierConnection>
-    </spirit:hierConnections>
-  </spirit:design>
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
-    <spirit:name>Generators</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>out_V</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V1</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V2</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V3</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS2</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS3</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS4</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS5</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS6</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>CLK.AP_CLK</spirit:name>
-        <spirit:displayName>Clk</spirit:displayName>
-        <spirit:description>Clock</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>CLK</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_clk</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>RST.AP_RST_N</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_rst_n</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>DATA.GEN_LATCH_V</spirit:name>
-        <spirit:displayName>Data</spirit:displayName>
-        <spirit:description>Data</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>DATA</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>gen_latch_V</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:model>
-      <spirit:views>
-        <spirit:view>
-          <spirit:name>BlockDiagram</spirit:name>
-          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="Generators_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-        </spirit:view>
-      </spirit:views>
-      <spirit:ports>
-        <spirit:port>
-          <spirit:name>ap_clk</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>ap_rst_n</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>gen_latch_V</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-            <spirit:vector>
-              <spirit:left>0</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-      </spirit:ports>
-    </spirit:model>
-  </spirit:component>
-
-  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
-    <spirit:name>Generators_imp</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>noisy_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="noisy" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_noisy_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>FM_Synth_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="FM_Synth" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_FM_Synth_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>FM_Synth_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="FM_Synth" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_FM_Synth_1_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>saw_tree</spirit:instanceName>
-        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp" spirit:name="saw_tree" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_2</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_2_1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_2</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_3</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>latcherfloat_3</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_1_1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
-    <spirit:interconnections>
-      <spirit:interconnection>
-        <spirit:name>FM_Synth_1_result_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_2"/>
-        <spirit:activeInterface spirit:busRef="result_V" spirit:componentRef="FM_Synth_1"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>FM_Synth_0_result_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_0"/>
-        <spirit:activeInterface spirit:busRef="result_V" spirit:componentRef="FM_Synth_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>noisy_0_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_1"/>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="noisy_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>saw_tree_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_3"/>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_tree"/>
-      </spirit:interconnection>
-    </spirit:interconnections>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>ap_clk_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="FM_Synth_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="saw_tree" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="FM_Synth_1" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="noisy_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_3" spirit:portRef="ap_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>ap_rst_n_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="FM_Synth_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="saw_tree" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="FM_Synth_1" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="noisy_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_3" spirit:portRef="ap_rst_n"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>latch_V_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="gen_latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="latch_V"/>
-        <spirit:internalPortReference spirit:componentRef="latcherfloat_3" spirit:portRef="latch_V"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
-    <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="out_V/latcherfloat_3_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_3"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V1/latcherfloat_0_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V2/latcherfloat_1_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_1"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M05_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="FM_Synth_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M11_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="FM_Synth_1"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V3/latcherfloat_2_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_2"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS2/axi_interconnect_0_M01_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_tree"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS3/axi_interconnect_0_M02_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS1" spirit:componentRef="saw_tree"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS4/axi_interconnect_0_M03_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS2" spirit:componentRef="saw_tree"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS5/axi_interconnect_0_M00_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS3" spirit:componentRef="saw_tree"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS6/axi_interconnect_0_M04_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS4" spirit:componentRef="saw_tree"/>
-      </spirit:hierConnection>
-    </spirit:hierConnections>
-  </spirit:design>
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp</spirit:library>
-    <spirit:name>saw_tree</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS2</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS3</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>s_axi_CTRL_BUS4</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>out_V</spirit:name>
-        <spirit:master/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>CLK.AP_CLK</spirit:name>
-        <spirit:displayName>Clk</spirit:displayName>
-        <spirit:description>Clock</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>CLK</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_clk</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>RST.AP_RST_N</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>ap_rst_n</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:model>
-      <spirit:views>
-        <spirit:view>
-          <spirit:name>BlockDiagram</spirit:name>
-          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp" spirit:name="saw_tree_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-        </spirit:view>
-      </spirit:views>
-      <spirit:ports>
-        <spirit:port>
-          <spirit:name>ap_clk</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>ap_rst_n</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-      </spirit:ports>
-    </spirit:model>
-  </spirit:component>
-
-  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp</spirit:library>
-    <spirit:name>saw_tree_imp</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>saw_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_1_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>saw_2</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_2_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>saw_3</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_3_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>saw_4</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_4_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>mixer_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="mixer" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_mixer_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
-    <spirit:interconnections>
-      <spirit:interconnection>
-        <spirit:name>saw_1_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_1"/>
-        <spirit:activeInterface spirit:busRef="in1_V" spirit:componentRef="mixer_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>saw_2_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_2"/>
-        <spirit:activeInterface spirit:busRef="in2_V" spirit:componentRef="mixer_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>saw_3_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_3"/>
-        <spirit:activeInterface spirit:busRef="in3_V" spirit:componentRef="mixer_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>saw_4_out_V</spirit:name>
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_4"/>
-        <spirit:activeInterface spirit:busRef="in0_V" spirit:componentRef="mixer_0"/>
-      </spirit:interconnection>
-    </spirit:interconnections>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>ap_clk_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="saw_3" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="saw_4" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="saw_2" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="saw_1" spirit:portRef="ap_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>ap_rst_n_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="saw_2" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="saw_3" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="saw_4" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="saw_1" spirit:portRef="ap_rst_n"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
-    <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M01_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_1"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M02_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_2"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS2/axi_interconnect_0_M03_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_3"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS3/axi_interconnect_0_M00_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_4"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS4/axi_interconnect_0_M04_AXI">
-        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="mixer_0"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="out_V/mixer_0_out_V">
-        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="mixer_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -6798,11 +5844,36 @@
     <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>m17_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>auto_pc</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_3</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections/>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>S_ACLK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>S_ARESETN_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/m17_couplers_to_m17_couplers">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./m17_couplers_to_m17_couplers"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_m17_couplers">
+        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="S_AXI/m17_couplers_to_auto_pc">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -6985,7 +6056,7 @@
         <spirit:instanceName>auto_pc</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_2</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -10281,36 +9352,11 @@
     <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>i02_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>auto_pc</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>S_ACLK_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>S_ARESETN_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
+    <spirit:adHocConnections/>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_i02_couplers">
-        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
-      </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="S_AXI/i02_couplers_to_auto_pc">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/i02_couplers_to_i02_couplers">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./i02_couplers_to_i02_couplers"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -10488,11 +9534,36 @@
     <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>i01_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>auto_pc</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections/>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>S_ACLK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>S_ARESETN_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/i01_couplers_to_i01_couplers">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./i01_couplers_to_i01_couplers"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_i01_couplers">
+        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="S_AXI/i01_couplers_to_auto_pc">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -10670,11 +9741,1099 @@
     <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/axi_interconnect_0_imp</spirit:library>
     <spirit:name>i00_couplers_imp</spirit:name>
     <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>auto_pc</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_protocol_converter" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_auto_pc_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SI_PROTOCOL">AXI4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MI_PROTOCOL">AXI4LITE</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
     <spirit:interconnections/>
-    <spirit:adHocConnections/>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>S_ACLK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aclk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>S_ARESETN_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="S_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="auto_pc" spirit:portRef="aresetn"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
     <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="M_AXI/i00_couplers_to_i00_couplers">
-        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="./i00_couplers_to_i00_couplers"/>
+      <spirit:hierConnection spirit:interfaceRef="M_AXI/auto_pc_to_i00_couplers">
+        <spirit:activeInterface spirit:busRef="M_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="S_AXI/i00_couplers_to_auto_pc">
+        <spirit:activeInterface spirit:busRef="S_AXI" spirit:componentRef="auto_pc"/>
+      </spirit:hierConnection>
+    </spirit:hierConnections>
+  </spirit:design>
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
+    <spirit:name>fx2</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>in_V</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>in_V1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>in2_V</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>in3_V</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>DATA.FX2_LATCH_V</spirit:name>
+        <spirit:displayName>Data</spirit:displayName>
+        <spirit:description>Data</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>DATA</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>fx2_latch_V</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.AP_CLK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_clk</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.AP_RST_N</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_rst_n</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+      <spirit:views>
+        <spirit:view>
+          <spirit:name>BlockDiagram</spirit:name>
+          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="fx2_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        </spirit:view>
+      </spirit:views>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>fx2_latch_V</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>ap_clk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>ap_rst_n</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
+    </spirit:model>
+  </spirit:component>
+
+  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
+    <spirit:name>fx2_imp</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>compressor_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="compressor" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_compressor_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>mixer_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="mixer" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_mixer_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_7</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_7_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_8</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_8_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>trem_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="trem" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_trem_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
+    <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>compressor_0_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_8"/>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="compressor_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>latcherfloat_8_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_8"/>
+        <spirit:activeInterface spirit:busRef="in1_V" spirit:componentRef="mixer_1"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>latcherfloat_7_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_7"/>
+        <spirit:activeInterface spirit:busRef="in0_V" spirit:componentRef="mixer_1"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>trem_0_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="trem_0"/>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_7"/>
+      </spirit:interconnection>
+    </spirit:interconnections>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>latch_V_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="fx2_latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="latch_V"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ap_clk_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ap_rst_n_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_1" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_rst_n"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
+    <spirit:hierConnections>
+      <spirit:hierConnection spirit:interfaceRef="in_V/in_V_1">
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="trem_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M12_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="compressor_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="in_V1/xbar_s1_M01_AXIS">
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="compressor_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M13_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="mixer_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="in2_V/xbar_s1_M02_AXIS">
+        <spirit:activeInterface spirit:busRef="in2_V" spirit:componentRef="mixer_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="in3_V/xbar_s1_M03_AXIS">
+        <spirit:activeInterface spirit:busRef="in3_V" spirit:componentRef="mixer_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V/mixer_1_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="mixer_1"/>
+      </spirit:hierConnection>
+    </spirit:hierConnections>
+  </spirit:design>
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
+    <spirit:name>fx1</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>in_V</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>value_in_V</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V1</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS2</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>in0_V</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>in1_V</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V2</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.AP_CLK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_clk</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.AP_RST_N</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_rst_n</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>DATA.FX1_LATCH_V</spirit:name>
+        <spirit:displayName>Data</spirit:displayName>
+        <spirit:description>Data</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>DATA</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>fx1_latch_V</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+      <spirit:views>
+        <spirit:view>
+          <spirit:name>BlockDiagram</spirit:name>
+          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="fx1_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        </spirit:view>
+      </spirit:views>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>ap_clk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>ap_rst_n</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>fx1_latch_V</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
+    </spirit:model>
+  </spirit:component>
+
+  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
+    <spirit:name>fx1_imp</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>biquad_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="biquad" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_biquad_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>mixer_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="mixer" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_mixer_0_1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_4</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_5</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_1_2</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>Echo_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="Echo" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_Echo_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
+    <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>biquad_0_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_0"/>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="biquad_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>mixer_0_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_1"/>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="mixer_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>Echo_0_value_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_2"/>
+        <spirit:activeInterface spirit:busRef="value_out_V" spirit:componentRef="Echo_0"/>
+      </spirit:interconnection>
+    </spirit:interconnections>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>ap_clk_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="Echo_0" spirit:portRef="ap_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ap_rst_n_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="Echo_0" spirit:portRef="ap_rst_n"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fx1_latch_V_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="fx1_latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="latch_V"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
+    <spirit:hierConnections>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M09_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="biquad_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="in_V/source_xbar_M02_AXIS">
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="biquad_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V/latcherfloat_2_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_2"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M07_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="Echo_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="value_in_V/axis_switch_0_M01_AXIS">
+        <spirit:activeInterface spirit:busRef="value_in_V" spirit:componentRef="Echo_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V1/latcherfloat_0_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS2/axi_interconnect_0_M10_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="mixer_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="in0_V/source_xbar_M03_AXIS">
+        <spirit:activeInterface spirit:busRef="in0_V" spirit:componentRef="mixer_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="in1_V/source_xbar_M04_AXIS">
+        <spirit:activeInterface spirit:busRef="in1_V" spirit:componentRef="mixer_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V2/latcherfloat_1_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_1"/>
+      </spirit:hierConnection>
+    </spirit:hierConnections>
+  </spirit:design>
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
+    <spirit:name>Generators</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>out_V</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V1</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V2</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V3</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS2</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS3</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS4</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS5</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS6</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.AP_CLK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_clk</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.AP_RST_N</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_rst_n</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>DATA.GEN_LATCH_V</spirit:name>
+        <spirit:displayName>Data</spirit:displayName>
+        <spirit:description>Data</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>DATA</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>gen_latch_V</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+      <spirit:views>
+        <spirit:view>
+          <spirit:name>BlockDiagram</spirit:name>
+          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="Generators_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        </spirit:view>
+      </spirit:views>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>ap_clk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>ap_rst_n</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>gen_latch_V</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
+    </spirit:model>
+  </spirit:component>
+
+  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp</spirit:library>
+    <spirit:name>Generators_imp</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>noisy_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="noisy" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_noisy_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>FM_Synth_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="FM_Synth" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_FM_Synth_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>FM_Synth_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="FM_Synth" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_FM_Synth_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>saw_tree</spirit:instanceName>
+        <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp" spirit:name="saw_tree" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_2_1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_2</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_0_3</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>latcherfloat_3</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="latcherfloat" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_latcherfloat_1_1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
+    <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>FM_Synth_1_result_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_2"/>
+        <spirit:activeInterface spirit:busRef="result_V" spirit:componentRef="FM_Synth_1"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>FM_Synth_0_result_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_0"/>
+        <spirit:activeInterface spirit:busRef="result_V" spirit:componentRef="FM_Synth_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>noisy_0_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_1"/>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="noisy_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>saw_tree_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="in_V" spirit:componentRef="latcherfloat_3"/>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_tree"/>
+      </spirit:interconnection>
+    </spirit:interconnections>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>ap_clk_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="FM_Synth_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="FM_Synth_1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="noisy_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_3" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="saw_tree" spirit:portRef="ap_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ap_rst_n_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="FM_Synth_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="FM_Synth_1" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="noisy_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_3" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="saw_tree" spirit:portRef="ap_rst_n"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>latch_V_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="gen_latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_2" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="latch_V"/>
+        <spirit:internalPortReference spirit:componentRef="latcherfloat_3" spirit:portRef="latch_V"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
+    <spirit:hierConnections>
+      <spirit:hierConnection spirit:interfaceRef="out_V/latcherfloat_3_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_3"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V1/latcherfloat_0_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V2/latcherfloat_1_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M05_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="FM_Synth_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M11_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="FM_Synth_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V3/latcherfloat_2_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="latcherfloat_2"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS2/axi_interconnect_0_M01_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_tree"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS3/axi_interconnect_0_M02_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS1" spirit:componentRef="saw_tree"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS4/axi_interconnect_0_M03_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS2" spirit:componentRef="saw_tree"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS5/axi_interconnect_0_M00_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS3" spirit:componentRef="saw_tree"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS6/axi_interconnect_0_M04_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS4" spirit:componentRef="saw_tree"/>
+      </spirit:hierConnection>
+    </spirit:hierConnections>
+  </spirit:design>
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp</spirit:library>
+    <spirit:name>saw_tree</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS2</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS3</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>s_axi_CTRL_BUS4</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="aximm" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="aximm_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>out_V</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.AP_CLK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_clk</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.AP_RST_N</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>ap_rst_n</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+      <spirit:views>
+        <spirit:view>
+          <spirit:name>BlockDiagram</spirit:name>
+          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
+          <spirit:hierarchyRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp" spirit:name="saw_tree_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        </spirit:view>
+      </spirit:views>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>ap_clk</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>ap_rst_n</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
+    </spirit:model>
+  </spirit:component>
+
+  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram/mitx_petalinux_imp/synth_mods_imp/Generators_imp</spirit:library>
+    <spirit:name>saw_tree_imp</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>saw_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>saw_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_2_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>saw_3</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_3_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>saw_4</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="saw" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_saw_4_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>mixer_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="mixer" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_mixer_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
+    <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>saw_1_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_1"/>
+        <spirit:activeInterface spirit:busRef="in1_V" spirit:componentRef="mixer_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>saw_2_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_2"/>
+        <spirit:activeInterface spirit:busRef="in2_V" spirit:componentRef="mixer_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>saw_3_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_3"/>
+        <spirit:activeInterface spirit:busRef="in3_V" spirit:componentRef="mixer_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>saw_4_out_V</spirit:name>
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="saw_4"/>
+        <spirit:activeInterface spirit:busRef="in0_V" spirit:componentRef="mixer_0"/>
+      </spirit:interconnection>
+    </spirit:interconnections>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>ap_clk_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="saw_3" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="saw_4" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="saw_2" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="saw_1" spirit:portRef="ap_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>ap_rst_n_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="mixer_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="saw_2" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="saw_3" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="saw_4" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="saw_1" spirit:portRef="ap_rst_n"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
+    <spirit:hierConnections>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS/axi_interconnect_0_M01_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS1/axi_interconnect_0_M02_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_2"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS2/axi_interconnect_0_M03_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_3"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS3/axi_interconnect_0_M00_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="saw_4"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="s_axi_CTRL_BUS4/axi_interconnect_0_M04_AXI">
+        <spirit:activeInterface spirit:busRef="s_axi_CTRL_BUS" spirit:componentRef="mixer_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="out_V/mixer_0_out_V">
+        <spirit:activeInterface spirit:busRef="out_V" spirit:componentRef="mixer_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>
@@ -11040,6 +11199,12 @@
             <spirit:name>SEG_compressor_0_Reg</spirit:name>
             <spirit:displayName>/synth_mods/fx2/compressor_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
             <spirit:addressOffset>0x80010000</spirit:addressOffset>
+            <spirit:range>4K</spirit:range>
+          </spirit:segment>
+          <spirit:segment>
+            <spirit:name>SEG_compressor_0_Reg1</spirit:name>
+            <spirit:displayName>/synth_mods/compressor_0/s_axi_CTRL_BUS/Reg</spirit:displayName>
+            <spirit:addressOffset>0x80020000</spirit:addressOffset>
             <spirit:range>4K</spirit:range>
           </spirit:segment>
           <spirit:segment>

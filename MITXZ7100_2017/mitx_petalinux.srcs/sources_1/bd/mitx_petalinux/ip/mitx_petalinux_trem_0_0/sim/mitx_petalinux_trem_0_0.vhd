@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:trem:1.0
--- IP Revision: 1904282151
+-- IP Revision: 1904290358
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

@@ -57,12 +57,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_FM_Synth_0_0/mitx_petalinux_FM_Synth_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_FM_Synth_0_0 || ORIG_REF_NAME==mitx_petalinux_FM_Synth_0_0}]
 
-# IP: bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_xbar_0 || ORIG_REF_NAME==mitx_petalinux_xbar_0}]
-
-# IP: bd/mitx_petalinux/ip/mitx_petalinux_xbar_1/mitx_petalinux_xbar_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_xbar_1 || ORIG_REF_NAME==mitx_petalinux_xbar_1}]
-
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/mitx_petalinux_axis_switch_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_axis_switch_0_0 || ORIG_REF_NAME==mitx_petalinux_axis_switch_0_0}]
 
@@ -99,9 +93,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/mitx_petalinux_latcherfloat_8_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_latcherfloat_8_0 || ORIG_REF_NAME==mitx_petalinux_latcherfloat_8_0}]
 
-# IP: bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/mitx_petalinux_trem_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_trem_0_0 || ORIG_REF_NAME==mitx_petalinux_trem_0_0}]
-
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/mitx_petalinux_compressor_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_compressor_0_0 || ORIG_REF_NAME==mitx_petalinux_compressor_0_0}]
 
@@ -132,11 +123,35 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_2/mitx_petalinux_latcherfloat_1_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_latcherfloat_1_2 || ORIG_REF_NAME==mitx_petalinux_latcherfloat_1_2}]
 
-# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/mitx_petalinux_auto_pc_3.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_3 || ORIG_REF_NAME==mitx_petalinux_auto_pc_3}]
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_1/mitx_petalinux_compressor_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_compressor_0_1 || ORIG_REF_NAME==mitx_petalinux_compressor_0_1}]
 
-# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/mitx_petalinux_auto_pc_2.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_2 || ORIG_REF_NAME==mitx_petalinux_auto_pc_2}]
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_1/mitx_petalinux_latcherfloat_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_latcherfloat_0_1 || ORIG_REF_NAME==mitx_petalinux_latcherfloat_0_1}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_xbar_0 || ORIG_REF_NAME==mitx_petalinux_xbar_0}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_xbar_1/mitx_petalinux_xbar_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_xbar_1 || ORIG_REF_NAME==mitx_petalinux_xbar_1}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/mitx_petalinux_trem_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_trem_0_0 || ORIG_REF_NAME==mitx_petalinux_trem_0_0}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_6/mitx_petalinux_auto_pc_6.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_6 || ORIG_REF_NAME==mitx_petalinux_auto_pc_6}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_5/mitx_petalinux_auto_pc_5.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_5 || ORIG_REF_NAME==mitx_petalinux_auto_pc_5}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_4/mitx_petalinux_auto_pc_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_4 || ORIG_REF_NAME==mitx_petalinux_auto_pc_4}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_8/mitx_petalinux_auto_pc_8.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_8 || ORIG_REF_NAME==mitx_petalinux_auto_pc_8}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/mitx_petalinux_auto_pc_7.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_7 || ORIG_REF_NAME==mitx_petalinux_auto_pc_7}]
 
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_0_0/mitx_petalinux_tier2_xbar_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_tier2_xbar_0_0 || ORIG_REF_NAME==mitx_petalinux_tier2_xbar_0_0}]
@@ -146,6 +161,12 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_
 
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_2_0/mitx_petalinux_tier2_xbar_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_tier2_xbar_2_0 || ORIG_REF_NAME==mitx_petalinux_tier2_xbar_2_0}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/mitx_petalinux_auto_pc_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_3 || ORIG_REF_NAME==mitx_petalinux_auto_pc_3}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/mitx_petalinux_auto_pc_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_2 || ORIG_REF_NAME==mitx_petalinux_auto_pc_2}]
 
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_1/mitx_petalinux_auto_pc_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_1 || ORIG_REF_NAME==mitx_petalinux_auto_pc_1}]
@@ -210,10 +231,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_FM_Synth_0_0/constraints/FM_Synth_ooc.xdc
 
-# XDC: bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0_ooc.xdc
-
-# XDC: bd/mitx_petalinux/ip/mitx_petalinux_xbar_1/mitx_petalinux_xbar_1_ooc.xdc
-
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/mitx_petalinux_axis_switch_0_0_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/constraints/Echo_ooc.xdc
@@ -238,8 +255,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/constraints/latcherfloatlatcherfloat_ooc.xdc
 
-# XDC: bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/constraints/trem_ooc.xdc
-
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/constraints/compressor_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/constraints/latcherfloatlatcherfloat_ooc.xdc
@@ -260,15 +275,35 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_2/constraints/latcherfloatlatcherfloat_ooc.xdc
 
-# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/mitx_petalinux_auto_pc_3_ooc.xdc
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_1/constraints/compressor_ooc.xdc
 
-# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/mitx_petalinux_auto_pc_2_ooc.xdc
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_1/constraints/latcherfloatlatcherfloat_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_xbar_1/mitx_petalinux_xbar_1_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/constraints/trem_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_6/mitx_petalinux_auto_pc_6_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_5/mitx_petalinux_auto_pc_5_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_4/mitx_petalinux_auto_pc_4_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_8/mitx_petalinux_auto_pc_8_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/mitx_petalinux_auto_pc_7_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_0_0/mitx_petalinux_tier2_xbar_0_0_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_1_0/mitx_petalinux_tier2_xbar_1_0_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_2_0/mitx_petalinux_tier2_xbar_2_0_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/mitx_petalinux_auto_pc_3_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/mitx_petalinux_auto_pc_2_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_1/mitx_petalinux_auto_pc_1_ooc.xdc
 
