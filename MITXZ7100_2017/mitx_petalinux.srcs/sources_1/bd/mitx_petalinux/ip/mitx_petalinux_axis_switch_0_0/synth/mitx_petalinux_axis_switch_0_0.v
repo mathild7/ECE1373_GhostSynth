@@ -52,8 +52,8 @@
 
 (* X_CORE_INFO = "axis_switch_v1_1_13_axis_switch,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_axis_switch_0_0,axis_switch_v1_1_13_axis_switch,{}" *)
-(* CORE_GENERATION_INFO = "mitx_petalinux_axis_switch_0_0,axis_switch_v1_1_13_axis_switch,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_switch,x_ipVersion=1.1,x_ipCoreRevision=13,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_NUM_SI_SLOTS=2,C_LOG_SI_SLOTS=1,C_NUM_MI_SLOTS=2,C_AXIS_TDATA_WIDTH=32,C_AXIS_TID_WIDTH=1,C_AXIS_TDEST_WIDTH=1,C_AXIS_TUSER_WIDTH=1,C_AXIS_SIGNAL_SET=0b00000000000000000000000000000011,C_ARB_ON_MAX_XFERS=1,C_ARB_ON_NUM_CYCLES=0,C_ARB_ON_TLAST=0,C_INCLUDE_AR\
-BITER=1,C_ARB_ALGORITHM=0,C_OUTPUT_REG=0,C_DECODER_REG=1,C_M_AXIS_CONNECTIVITY_ARRAY=0b1111,C_M_AXIS_BASETDEST_ARRAY=0b10,C_M_AXIS_HIGHTDEST_ARRAY=0b10,C_ROUTING_MODE=1,C_S_AXI_CTRL_ADDR_WIDTH=7,C_S_AXI_CTRL_DATA_WIDTH=32,C_COMMON_CLOCK=0}" *)
+(* CORE_GENERATION_INFO = "mitx_petalinux_axis_switch_0_0,axis_switch_v1_1_13_axis_switch,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_switch,x_ipVersion=1.1,x_ipCoreRevision=13,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_NUM_SI_SLOTS=4,C_LOG_SI_SLOTS=2,C_NUM_MI_SLOTS=5,C_AXIS_TDATA_WIDTH=32,C_AXIS_TID_WIDTH=1,C_AXIS_TDEST_WIDTH=1,C_AXIS_TUSER_WIDTH=1,C_AXIS_SIGNAL_SET=0b00000000000000000000000000000011,C_ARB_ON_MAX_XFERS=1,C_ARB_ON_NUM_CYCLES=0,C_ARB_ON_TLAST=0,C_INCLUDE_AR\
+BITER=1,C_ARB_ALGORITHM=0,C_OUTPUT_REG=0,C_DECODER_REG=1,C_M_AXIS_CONNECTIVITY_ARRAY=0b11111111111111111111,C_M_AXIS_BASETDEST_ARRAY=0b01010,C_M_AXIS_HIGHTDEST_ARRAY=0b01010,C_ROUTING_MODE=1,C_S_AXI_CTRL_ADDR_WIDTH=7,C_S_AXI_CTRL_DATA_WIDTH=32,C_COMMON_CLOCK=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_axis_switch_0_0 (
   aclk,
@@ -88,18 +88,18 @@ module mitx_petalinux_axis_switch_0_0 (
 input wire aclk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RSTIF RST" *)
 input wire aresetn;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TVALID [0:0] [0:0], xilinx.com:interface:axis:1.0 S01_AXIS TVALID [0:0] [1:1]" *)
-input wire [1 : 0] s_axis_tvalid;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TREADY [0:0] [0:0], xilinx.com:interface:axis:1.0 S01_AXIS TREADY [0:0] [1:1]" *)
-output wire [1 : 0] s_axis_tready;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TDATA [31:0] [31:0], xilinx.com:interface:axis:1.0 S01_AXIS TDATA [31:0] [63:32]" *)
-input wire [63 : 0] s_axis_tdata;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M00_AXIS TVALID [0:0] [0:0], xilinx.com:interface:axis:1.0 M01_AXIS TVALID [0:0] [1:1]" *)
-output wire [1 : 0] m_axis_tvalid;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M00_AXIS TREADY [0:0] [0:0], xilinx.com:interface:axis:1.0 M01_AXIS TREADY [0:0] [1:1]" *)
-input wire [1 : 0] m_axis_tready;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M00_AXIS TDATA [31:0] [31:0], xilinx.com:interface:axis:1.0 M01_AXIS TDATA [31:0] [63:32]" *)
-output wire [63 : 0] m_axis_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TVALID [0:0] [0:0], xilinx.com:interface:axis:1.0 S01_AXIS TVALID [0:0] [1:1], xilinx.com:interface:axis:1.0 S02_AXIS TVALID [0:0] [2:2], xilinx.com:interface:axis:1.0 S03_AXIS TVALID [0:0] [3:3]" *)
+input wire [3 : 0] s_axis_tvalid;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TREADY [0:0] [0:0], xilinx.com:interface:axis:1.0 S01_AXIS TREADY [0:0] [1:1], xilinx.com:interface:axis:1.0 S02_AXIS TREADY [0:0] [2:2], xilinx.com:interface:axis:1.0 S03_AXIS TREADY [0:0] [3:3]" *)
+output wire [3 : 0] s_axis_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TDATA [31:0] [31:0], xilinx.com:interface:axis:1.0 S01_AXIS TDATA [31:0] [63:32], xilinx.com:interface:axis:1.0 S02_AXIS TDATA [31:0] [95:64], xilinx.com:interface:axis:1.0 S03_AXIS TDATA [31:0] [127:96]" *)
+input wire [127 : 0] s_axis_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M00_AXIS TVALID [0:0] [0:0], xilinx.com:interface:axis:1.0 M01_AXIS TVALID [0:0] [1:1], xilinx.com:interface:axis:1.0 M02_AXIS TVALID [0:0] [2:2], xilinx.com:interface:axis:1.0 M03_AXIS TVALID [0:0] [3:3], xilinx.com:interface:axis:1.0 M04_AXIS TVALID [0:0] [4:4]" *)
+output wire [4 : 0] m_axis_tvalid;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M00_AXIS TREADY [0:0] [0:0], xilinx.com:interface:axis:1.0 M01_AXIS TREADY [0:0] [1:1], xilinx.com:interface:axis:1.0 M02_AXIS TREADY [0:0] [2:2], xilinx.com:interface:axis:1.0 M03_AXIS TREADY [0:0] [3:3], xilinx.com:interface:axis:1.0 M04_AXIS TREADY [0:0] [4:4]" *)
+input wire [4 : 0] m_axis_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M00_AXIS TDATA [31:0] [31:0], xilinx.com:interface:axis:1.0 M01_AXIS TDATA [31:0] [63:32], xilinx.com:interface:axis:1.0 M02_AXIS TDATA [31:0] [95:64], xilinx.com:interface:axis:1.0 M03_AXIS TDATA [31:0] [127:96], xilinx.com:interface:axis:1.0 M04_AXIS TDATA [31:0] [159:128]" *)
+output wire [159 : 0] m_axis_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S_AXI_CTRL_ACLK CLK" *)
 input wire s_axi_ctrl_aclk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S_AXI_CTRL_ARESETN RST" *)
@@ -139,9 +139,9 @@ output wire [1 : 0] s_axi_ctrl_rresp;
 
   axis_switch_v1_1_13_axis_switch #(
     .C_FAMILY("zynq"),
-    .C_NUM_SI_SLOTS(2),
-    .C_LOG_SI_SLOTS(1),
-    .C_NUM_MI_SLOTS(2),
+    .C_NUM_SI_SLOTS(4),
+    .C_LOG_SI_SLOTS(2),
+    .C_NUM_MI_SLOTS(5),
     .C_AXIS_TDATA_WIDTH(32),
     .C_AXIS_TID_WIDTH(1),
     .C_AXIS_TDEST_WIDTH(1),
@@ -154,9 +154,9 @@ output wire [1 : 0] s_axi_ctrl_rresp;
     .C_ARB_ALGORITHM(0),
     .C_OUTPUT_REG(0),
     .C_DECODER_REG(1),
-    .C_M_AXIS_CONNECTIVITY_ARRAY(4'B1111),
-    .C_M_AXIS_BASETDEST_ARRAY(2'B10),
-    .C_M_AXIS_HIGHTDEST_ARRAY(2'B10),
+    .C_M_AXIS_CONNECTIVITY_ARRAY(20'B11111111111111111111),
+    .C_M_AXIS_BASETDEST_ARRAY(5'B01010),
+    .C_M_AXIS_HIGHTDEST_ARRAY(5'B01010),
     .C_ROUTING_MODE(1),
     .C_S_AXI_CTRL_ADDR_WIDTH(7),
     .C_S_AXI_CTRL_DATA_WIDTH(32),
@@ -168,12 +168,12 @@ output wire [1 : 0] s_axi_ctrl_rresp;
     .s_axis_tvalid(s_axis_tvalid),
     .s_axis_tready(s_axis_tready),
     .s_axis_tdata(s_axis_tdata),
-    .s_axis_tstrb(8'HFF),
-    .s_axis_tkeep(8'HFF),
-    .s_axis_tlast(2'H3),
-    .s_axis_tid(2'H0),
-    .s_axis_tdest(2'H0),
-    .s_axis_tuser(2'H0),
+    .s_axis_tstrb(16'HFFFF),
+    .s_axis_tkeep(16'HFFFF),
+    .s_axis_tlast(4'HF),
+    .s_axis_tid(4'H0),
+    .s_axis_tdest(4'H0),
+    .s_axis_tuser(4'H0),
     .m_axis_tvalid(m_axis_tvalid),
     .m_axis_tready(m_axis_tready),
     .m_axis_tdata(m_axis_tdata),
@@ -185,13 +185,13 @@ output wire [1 : 0] s_axi_ctrl_rresp;
     .m_axis_tuser(),
     .arb_req(),
     .arb_done(),
-    .arb_gnt(4'H0),
-    .arb_sel(2'H0),
+    .arb_gnt(20'H00000),
+    .arb_sel(10'H000),
     .arb_last(),
     .arb_id(),
     .arb_dest(),
     .arb_user(),
-    .s_req_suppress(2'H0),
+    .s_req_suppress(4'H0),
     .s_axi_ctrl_aclk(s_axi_ctrl_aclk),
     .s_axi_ctrl_aresetn(s_axi_ctrl_aresetn),
     .s_axi_ctrl_awvalid(s_axi_ctrl_awvalid),

@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr">
+<Project Version="7" Minor="20" Path="/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2c33bc56a1584e2e8b3081c657036587"/>
@@ -36,13 +36,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="88"/>
-    <Option Name="WTModelSimExportSim" Val="88"/>
-    <Option Name="WTQuestaExportSim" Val="88"/>
-    <Option Name="WTIesExportSim" Val="88"/>
-    <Option Name="WTVcsExportSim" Val="88"/>
-    <Option Name="WTRivieraExportSim" Val="88"/>
-    <Option Name="WTActivehdlExportSim" Val="88"/>
+    <Option Name="WTXSimExportSim" Val="92"/>
+    <Option Name="WTModelSimExportSim" Val="92"/>
+    <Option Name="WTQuestaExportSim" Val="92"/>
+    <Option Name="WTIesExportSim" Val="92"/>
+    <Option Name="WTVcsExportSim" Val="92"/>
+    <Option Name="WTRivieraExportSim" Val="92"/>
+    <Option Name="WTActivehdlExportSim" Val="92"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>

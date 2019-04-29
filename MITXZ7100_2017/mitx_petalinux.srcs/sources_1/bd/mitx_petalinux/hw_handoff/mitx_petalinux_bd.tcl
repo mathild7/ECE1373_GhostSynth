@@ -127,6 +127,367 @@ if { $nRet != 0 } {
 ##################################################################
 
 
+# Hierarchical cell: saw_tree
+proc create_hier_cell_saw_tree { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_saw_tree() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS1
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS2
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS3
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS4
+
+  # Create pins
+  create_bd_pin -dir I -type clk ap_clk
+  create_bd_pin -dir I -type rst ap_rst_n
+
+  # Create instance: mixer_0, and set properties
+  set mixer_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:mixer:1.0 mixer_0 ]
+
+  # Create instance: saw_1, and set properties
+  set saw_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_1 ]
+
+  # Create instance: saw_2, and set properties
+  set saw_2 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_2 ]
+
+  # Create instance: saw_3, and set properties
+  set saw_3 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_3 ]
+
+  # Create instance: saw_4, and set properties
+  set saw_4 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_4 ]
+
+  # Create interface connections
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins s_axi_CTRL_BUS3] [get_bd_intf_pins saw_4/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins s_axi_CTRL_BUS] [get_bd_intf_pins saw_1/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins s_axi_CTRL_BUS1] [get_bd_intf_pins saw_2/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins s_axi_CTRL_BUS2] [get_bd_intf_pins saw_3/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins s_axi_CTRL_BUS4] [get_bd_intf_pins mixer_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net mixer_0_out_V [get_bd_intf_pins out_V] [get_bd_intf_pins mixer_0/out_V]
+  connect_bd_intf_net -intf_net saw_1_out_V [get_bd_intf_pins mixer_0/in1_V] [get_bd_intf_pins saw_1/out_V]
+  connect_bd_intf_net -intf_net saw_2_out_V [get_bd_intf_pins mixer_0/in2_V] [get_bd_intf_pins saw_2/out_V]
+  connect_bd_intf_net -intf_net saw_3_out_V [get_bd_intf_pins mixer_0/in3_V] [get_bd_intf_pins saw_3/out_V]
+  connect_bd_intf_net -intf_net saw_4_out_V [get_bd_intf_pins mixer_0/in0_V] [get_bd_intf_pins saw_4/out_V]
+
+  # Create port connections
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins mixer_0/ap_clk] [get_bd_pins saw_1/ap_clk] [get_bd_pins saw_2/ap_clk] [get_bd_pins saw_3/ap_clk] [get_bd_pins saw_4/ap_clk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins mixer_0/ap_rst_n] [get_bd_pins saw_1/ap_rst_n] [get_bd_pins saw_2/ap_rst_n] [get_bd_pins saw_3/ap_rst_n] [get_bd_pins saw_4/ap_rst_n]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: fx2
+proc create_hier_cell_fx2 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_fx2() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 in2_V
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 in3_V
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 in_V
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 in_V1
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS1
+
+  # Create pins
+  create_bd_pin -dir I -type clk ap_clk
+  create_bd_pin -dir I -type rst ap_rst_n
+  create_bd_pin -dir I -from 0 -to 0 -type data fx2_latch_V
+
+  # Create instance: compressor_0, and set properties
+  set compressor_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:compressor:1.0 compressor_0 ]
+
+  # Create instance: latcherfloat_7, and set properties
+  set latcherfloat_7 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_7 ]
+
+  # Create instance: latcherfloat_8, and set properties
+  set latcherfloat_8 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_8 ]
+
+  # Create instance: mixer_1, and set properties
+  set mixer_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:mixer:1.0 mixer_1 ]
+
+  # Create instance: trem_0, and set properties
+  set trem_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:trem:1.0 trem_0 ]
+
+  # Create interface connections
+  connect_bd_intf_net -intf_net axi_interconnect_0_M12_AXI [get_bd_intf_pins s_axi_CTRL_BUS] [get_bd_intf_pins compressor_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M13_AXI [get_bd_intf_pins s_axi_CTRL_BUS1] [get_bd_intf_pins mixer_1/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net compressor_0_out_V [get_bd_intf_pins compressor_0/out_V] [get_bd_intf_pins latcherfloat_8/in_V]
+  connect_bd_intf_net -intf_net latcherfloat_7_out_V [get_bd_intf_pins latcherfloat_7/out_V] [get_bd_intf_pins mixer_1/in0_V]
+  connect_bd_intf_net -intf_net latcherfloat_8_out_V [get_bd_intf_pins latcherfloat_8/out_V] [get_bd_intf_pins mixer_1/in1_V]
+  connect_bd_intf_net -intf_net mixer_1_out_V [get_bd_intf_pins out_V] [get_bd_intf_pins mixer_1/out_V]
+  connect_bd_intf_net -intf_net trem_0_out_V [get_bd_intf_pins latcherfloat_7/in_V] [get_bd_intf_pins trem_0/out_V]
+  connect_bd_intf_net -intf_net xbar_s1_M00_AXIS [get_bd_intf_pins in_V] [get_bd_intf_pins trem_0/in_V]
+  connect_bd_intf_net -intf_net xbar_s1_M01_AXIS [get_bd_intf_pins in_V1] [get_bd_intf_pins compressor_0/in_V]
+  connect_bd_intf_net -intf_net xbar_s1_M02_AXIS [get_bd_intf_pins in2_V] [get_bd_intf_pins mixer_1/in2_V]
+  connect_bd_intf_net -intf_net xbar_s1_M03_AXIS [get_bd_intf_pins in3_V] [get_bd_intf_pins mixer_1/in3_V]
+
+  # Create port connections
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins compressor_0/ap_clk] [get_bd_pins latcherfloat_7/ap_clk] [get_bd_pins latcherfloat_8/ap_clk] [get_bd_pins mixer_1/ap_clk] [get_bd_pins trem_0/ap_clk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins compressor_0/ap_rst_n] [get_bd_pins latcherfloat_7/ap_rst_n] [get_bd_pins latcherfloat_8/ap_rst_n] [get_bd_pins mixer_1/ap_rst_n] [get_bd_pins trem_0/ap_rst_n]
+  connect_bd_net -net latch_V_1 [get_bd_pins fx2_latch_V] [get_bd_pins latcherfloat_7/latch_V] [get_bd_pins latcherfloat_8/latch_V]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: fx1
+proc create_hier_cell_fx1 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_fx1() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 in0_V
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 in1_V
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 in_V
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V1
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V2
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS1
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS2
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 value_in_V
+
+  # Create pins
+  create_bd_pin -dir I -type clk ap_clk
+  create_bd_pin -dir I -type rst ap_rst_n
+  create_bd_pin -dir I -from 0 -to 0 -type data fx1_latch_V
+
+  # Create instance: Echo_0, and set properties
+  set Echo_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:Echo:1.0 Echo_0 ]
+
+  # Create instance: biquad_0, and set properties
+  set biquad_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquad:1.0 biquad_0 ]
+
+  # Create instance: latcherfloat_0, and set properties
+  set latcherfloat_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_0 ]
+
+  # Create instance: latcherfloat_1, and set properties
+  set latcherfloat_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_1 ]
+
+  # Create instance: latcherfloat_2, and set properties
+  set latcherfloat_2 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_2 ]
+
+  # Create instance: mixer_0, and set properties
+  set mixer_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:mixer:1.0 mixer_0 ]
+
+  # Create interface connections
+  connect_bd_intf_net -intf_net Echo_0_value_out_V [get_bd_intf_pins Echo_0/value_out_V] [get_bd_intf_pins latcherfloat_2/in_V]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins s_axi_CTRL_BUS1] [get_bd_intf_pins Echo_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M09_AXI [get_bd_intf_pins s_axi_CTRL_BUS] [get_bd_intf_pins biquad_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M10_AXI [get_bd_intf_pins s_axi_CTRL_BUS2] [get_bd_intf_pins mixer_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axis_switch_0_M01_AXIS [get_bd_intf_pins value_in_V] [get_bd_intf_pins Echo_0/value_in_V]
+  connect_bd_intf_net -intf_net biquad_0_out_V [get_bd_intf_pins biquad_0/out_V] [get_bd_intf_pins latcherfloat_0/in_V]
+  connect_bd_intf_net -intf_net latcherfloat_0_out_V [get_bd_intf_pins out_V1] [get_bd_intf_pins latcherfloat_0/out_V]
+  connect_bd_intf_net -intf_net latcherfloat_1_out_V [get_bd_intf_pins out_V2] [get_bd_intf_pins latcherfloat_1/out_V]
+  connect_bd_intf_net -intf_net latcherfloat_2_out_V [get_bd_intf_pins out_V] [get_bd_intf_pins latcherfloat_2/out_V]
+  connect_bd_intf_net -intf_net mixer_0_out_V [get_bd_intf_pins latcherfloat_1/in_V] [get_bd_intf_pins mixer_0/out_V]
+  connect_bd_intf_net -intf_net source_xbar_M02_AXIS [get_bd_intf_pins in_V] [get_bd_intf_pins biquad_0/in_V]
+  connect_bd_intf_net -intf_net source_xbar_M03_AXIS [get_bd_intf_pins in0_V] [get_bd_intf_pins mixer_0/in0_V]
+  connect_bd_intf_net -intf_net source_xbar_M04_AXIS [get_bd_intf_pins in1_V] [get_bd_intf_pins mixer_0/in1_V]
+
+  # Create port connections
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins Echo_0/ap_clk] [get_bd_pins biquad_0/ap_clk] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins latcherfloat_1/ap_clk] [get_bd_pins latcherfloat_2/ap_clk] [get_bd_pins mixer_0/ap_clk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Echo_0/ap_rst_n] [get_bd_pins biquad_0/ap_rst_n] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins latcherfloat_1/ap_rst_n] [get_bd_pins latcherfloat_2/ap_rst_n] [get_bd_pins mixer_0/ap_rst_n]
+  connect_bd_net -net fx1_latch_V_1 [get_bd_pins fx1_latch_V] [get_bd_pins latcherfloat_0/latch_V] [get_bd_pins latcherfloat_1/latch_V] [get_bd_pins latcherfloat_2/latch_V]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: Generators
+proc create_hier_cell_Generators { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_Generators() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V1
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V2
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 out_V3
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS1
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS2
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS3
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS4
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS5
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_CTRL_BUS6
+
+  # Create pins
+  create_bd_pin -dir I -type clk ap_clk
+  create_bd_pin -dir I -type rst ap_rst_n
+  create_bd_pin -dir I -from 0 -to 0 -type data gen_latch_V
+
+  # Create instance: FM_Synth_0, and set properties
+  set FM_Synth_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:FM_Synth:1.0 FM_Synth_0 ]
+
+  # Create instance: FM_Synth_1, and set properties
+  set FM_Synth_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:FM_Synth:1.0 FM_Synth_1 ]
+
+  # Create instance: latcherfloat_0, and set properties
+  set latcherfloat_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_0 ]
+
+  # Create instance: latcherfloat_1, and set properties
+  set latcherfloat_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_1 ]
+
+  # Create instance: latcherfloat_2, and set properties
+  set latcherfloat_2 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_2 ]
+
+  # Create instance: latcherfloat_3, and set properties
+  set latcherfloat_3 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_3 ]
+
+  # Create instance: noisy_0, and set properties
+  set noisy_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:noisy:1.0 noisy_0 ]
+
+  # Create instance: saw_tree
+  create_hier_cell_saw_tree $hier_obj saw_tree
+
+  # Create interface connections
+  connect_bd_intf_net -intf_net FM_Synth_0_result_V [get_bd_intf_pins FM_Synth_0/result_V] [get_bd_intf_pins latcherfloat_0/in_V]
+  connect_bd_intf_net -intf_net FM_Synth_1_result_V [get_bd_intf_pins FM_Synth_1/result_V] [get_bd_intf_pins latcherfloat_2/in_V]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins s_axi_CTRL_BUS5] [get_bd_intf_pins saw_tree/s_axi_CTRL_BUS3]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins s_axi_CTRL_BUS2] [get_bd_intf_pins saw_tree/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins s_axi_CTRL_BUS3] [get_bd_intf_pins saw_tree/s_axi_CTRL_BUS1]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins s_axi_CTRL_BUS4] [get_bd_intf_pins saw_tree/s_axi_CTRL_BUS2]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins s_axi_CTRL_BUS6] [get_bd_intf_pins saw_tree/s_axi_CTRL_BUS4]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins s_axi_CTRL_BUS] [get_bd_intf_pins FM_Synth_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M11_AXI [get_bd_intf_pins s_axi_CTRL_BUS1] [get_bd_intf_pins FM_Synth_1/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net latcherfloat_0_out_V [get_bd_intf_pins out_V1] [get_bd_intf_pins latcherfloat_0/out_V]
+  connect_bd_intf_net -intf_net latcherfloat_1_out_V [get_bd_intf_pins out_V2] [get_bd_intf_pins latcherfloat_1/out_V]
+  connect_bd_intf_net -intf_net latcherfloat_2_out_V [get_bd_intf_pins out_V3] [get_bd_intf_pins latcherfloat_2/out_V]
+  connect_bd_intf_net -intf_net latcherfloat_3_out_V [get_bd_intf_pins out_V] [get_bd_intf_pins latcherfloat_3/out_V]
+  connect_bd_intf_net -intf_net noisy_0_out_V [get_bd_intf_pins latcherfloat_1/in_V] [get_bd_intf_pins noisy_0/out_V]
+  connect_bd_intf_net -intf_net saw_tree_out_V [get_bd_intf_pins latcherfloat_3/in_V] [get_bd_intf_pins saw_tree/out_V]
+
+  # Create port connections
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins FM_Synth_0/ap_clk] [get_bd_pins FM_Synth_1/ap_clk] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins latcherfloat_1/ap_clk] [get_bd_pins latcherfloat_2/ap_clk] [get_bd_pins latcherfloat_3/ap_clk] [get_bd_pins noisy_0/ap_clk] [get_bd_pins saw_tree/ap_clk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins FM_Synth_0/ap_rst_n] [get_bd_pins FM_Synth_1/ap_rst_n] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins latcherfloat_1/ap_rst_n] [get_bd_pins latcherfloat_2/ap_rst_n] [get_bd_pins latcherfloat_3/ap_rst_n] [get_bd_pins noisy_0/ap_rst_n] [get_bd_pins saw_tree/ap_rst_n]
+  connect_bd_net -net latch_V_1 [get_bd_pins gen_latch_V] [get_bd_pins latcherfloat_0/latch_V] [get_bd_pins latcherfloat_1/latch_V] [get_bd_pins latcherfloat_2/latch_V] [get_bd_pins latcherfloat_3/latch_V]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
 # Hierarchical cell: synth_mods
 proc create_hier_cell_synth_mods { parentCell nameHier } {
 
@@ -171,88 +532,107 @@ proc create_hier_cell_synth_mods { parentCell nameHier } {
   create_bd_pin -dir I -type rst ap_rst_n
   create_bd_pin -dir I -from 0 -to 0 -type data latch_V
 
-  # Create instance: Echo_0, and set properties
-  set Echo_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:Echo:1.0 Echo_0 ]
-
-  # Create instance: FM_Synth_0, and set properties
-  set FM_Synth_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:FM_Synth:1.0 FM_Synth_0 ]
+  # Create instance: Generators
+  create_hier_cell_Generators $hier_obj Generators
 
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
-CONFIG.NUM_MI {9} \
+CONFIG.NUM_MI {20} \
  ] $axi_interconnect_0
+
+  # Create instance: envelope_0, and set properties
+  set envelope_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:envelope:1.0 envelope_0 ]
+
+  # Create instance: fx1
+  create_hier_cell_fx1 $hier_obj fx1
+
+  # Create instance: fx1_xbar, and set properties
+  set fx1_xbar [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 fx1_xbar ]
+  set_property -dict [ list \
+CONFIG.DECODER_REG {1} \
+CONFIG.NUM_MI {4} \
+CONFIG.NUM_SI {4} \
+CONFIG.ROUTING_MODE {1} \
+ ] $fx1_xbar
+
+  # Create instance: fx2
+  create_hier_cell_fx2 $hier_obj fx2
+
+  # Create instance: fx2_xbar, and set properties
+  set fx2_xbar [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 fx2_xbar ]
+  set_property -dict [ list \
+CONFIG.DECODER_REG {1} \
+CONFIG.NUM_MI {2} \
+CONFIG.NUM_SI {1} \
+CONFIG.ROUTING_MODE {1} \
+ ] $fx2_xbar
+
+  # Create instance: generators_xbar, and set properties
+  set generators_xbar [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 generators_xbar ]
+  set_property -dict [ list \
+CONFIG.DECODER_REG {1} \
+CONFIG.NUM_MI {5} \
+CONFIG.NUM_SI {4} \
+CONFIG.ROUTING_MODE {1} \
+ ] $generators_xbar
 
   # Create instance: latcherfloat_0, and set properties
   set latcherfloat_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_0 ]
 
-  # Create instance: latcherfloat_1, and set properties
-  set latcherfloat_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_1 ]
-
-  # Create instance: latcherfloat_2, and set properties
-  set latcherfloat_2 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_2 ]
-
-  # Create instance: mixer_0, and set properties
-  set mixer_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:mixer:1.0 mixer_0 ]
-
-  # Create instance: saw_1, and set properties
-  set saw_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_1 ]
-
-  # Create instance: saw_2, and set properties
-  set saw_2 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_2 ]
-
-  # Create instance: saw_3, and set properties
-  set saw_3 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_3 ]
-
-  # Create instance: saw_4, and set properties
-  set saw_4 [ create_bd_cell -type ip -vlnv xilinx.com:hls:saw:1.0 saw_4 ]
-
-  # Create instance: source_xbar, and set properties
-  set source_xbar [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 source_xbar ]
+  # Create instance: output_xbar, and set properties
+  set output_xbar [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 output_xbar ]
   set_property -dict [ list \
-CONFIG.DECODER_REG {1} \
-CONFIG.NUM_MI {2} \
 CONFIG.ROUTING_MODE {1} \
- ] $source_xbar
-
-  # Create instance: xbar_s1, and set properties
-  set xbar_s1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 xbar_s1 ]
-  set_property -dict [ list \
-CONFIG.DECODER_REG {0} \
-CONFIG.NUM_MI {1} \
-CONFIG.ROUTING_MODE {1} \
- ] $xbar_s1
+ ] $output_xbar
 
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins S00_AXI] [get_bd_intf_pins axi_interconnect_0/S00_AXI]
-  connect_bd_intf_net -intf_net Echo_0_value_out_V [get_bd_intf_pins Echo_0/value_out_V] [get_bd_intf_pins latcherfloat_2/in_V]
-  connect_bd_intf_net -intf_net FM_Synth_0_result_V [get_bd_intf_pins FM_Synth_0/result_V] [get_bd_intf_pins latcherfloat_1/in_V]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins saw_4/s_axi_CTRL_BUS]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins saw_1/s_axi_CTRL_BUS]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_interconnect_0/M02_AXI] [get_bd_intf_pins saw_2/s_axi_CTRL_BUS]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins axi_interconnect_0/M03_AXI] [get_bd_intf_pins saw_3/s_axi_CTRL_BUS]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins axi_interconnect_0/M04_AXI] [get_bd_intf_pins mixer_0/s_axi_CTRL_BUS]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins FM_Synth_0/s_axi_CTRL_BUS] [get_bd_intf_pins axi_interconnect_0/M05_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins axi_interconnect_0/M06_AXI] [get_bd_intf_pins source_xbar/S_AXI_CTRL]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins Echo_0/s_axi_CTRL_BUS] [get_bd_intf_pins axi_interconnect_0/M07_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M08_AXI [get_bd_intf_pins axi_interconnect_0/M08_AXI] [get_bd_intf_pins xbar_s1/S_AXI_CTRL]
-  connect_bd_intf_net -intf_net axis_switch_0_M00_AXIS [get_bd_intf_pins source_xbar/M00_AXIS] [get_bd_intf_pins xbar_s1/S00_AXIS]
-  connect_bd_intf_net -intf_net axis_switch_0_M01_AXIS [get_bd_intf_pins Echo_0/value_in_V] [get_bd_intf_pins source_xbar/M01_AXIS]
-  connect_bd_intf_net -intf_net axis_switch_1_M00_AXIS [get_bd_intf_pins out_V_V] [get_bd_intf_pins xbar_s1/M00_AXIS]
-  connect_bd_intf_net -intf_net latcherfloat_0_out_V [get_bd_intf_pins latcherfloat_0/out_V] [get_bd_intf_pins source_xbar/S01_AXIS]
-  connect_bd_intf_net -intf_net latcherfloat_1_out_V [get_bd_intf_pins latcherfloat_1/out_V] [get_bd_intf_pins source_xbar/S00_AXIS]
-  connect_bd_intf_net -intf_net latcherfloat_2_out_V [get_bd_intf_pins latcherfloat_2/out_V] [get_bd_intf_pins xbar_s1/S01_AXIS]
-  connect_bd_intf_net -intf_net mixer_0_out_V [get_bd_intf_pins latcherfloat_0/in_V] [get_bd_intf_pins mixer_0/out_V]
-  connect_bd_intf_net -intf_net saw_1_out_V [get_bd_intf_pins mixer_0/in1_V] [get_bd_intf_pins saw_1/out_V]
-  connect_bd_intf_net -intf_net saw_2_out_V [get_bd_intf_pins mixer_0/in2_V] [get_bd_intf_pins saw_2/out_V]
-  connect_bd_intf_net -intf_net saw_3_out_V [get_bd_intf_pins mixer_0/in3_V] [get_bd_intf_pins saw_3/out_V]
-  connect_bd_intf_net -intf_net saw_4_out_V [get_bd_intf_pins mixer_0/in0_V] [get_bd_intf_pins saw_4/out_V]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins Generators/s_axi_CTRL_BUS5] [get_bd_intf_pins axi_interconnect_0/M00_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins Generators/s_axi_CTRL_BUS2] [get_bd_intf_pins axi_interconnect_0/M01_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins Generators/s_axi_CTRL_BUS3] [get_bd_intf_pins axi_interconnect_0/M02_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M03_AXI [get_bd_intf_pins Generators/s_axi_CTRL_BUS4] [get_bd_intf_pins axi_interconnect_0/M03_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M04_AXI [get_bd_intf_pins Generators/s_axi_CTRL_BUS6] [get_bd_intf_pins axi_interconnect_0/M04_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M05_AXI [get_bd_intf_pins Generators/s_axi_CTRL_BUS] [get_bd_intf_pins axi_interconnect_0/M05_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M06_AXI [get_bd_intf_pins axi_interconnect_0/M06_AXI] [get_bd_intf_pins generators_xbar/S_AXI_CTRL]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M07_AXI [get_bd_intf_pins axi_interconnect_0/M07_AXI] [get_bd_intf_pins fx1/s_axi_CTRL_BUS1]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M08_AXI [get_bd_intf_pins axi_interconnect_0/M08_AXI] [get_bd_intf_pins fx1_xbar/S_AXI_CTRL]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M09_AXI [get_bd_intf_pins axi_interconnect_0/M09_AXI] [get_bd_intf_pins fx1/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M10_AXI [get_bd_intf_pins axi_interconnect_0/M10_AXI] [get_bd_intf_pins fx1/s_axi_CTRL_BUS2]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M11_AXI [get_bd_intf_pins Generators/s_axi_CTRL_BUS1] [get_bd_intf_pins axi_interconnect_0/M11_AXI]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M12_AXI [get_bd_intf_pins axi_interconnect_0/M12_AXI] [get_bd_intf_pins fx2/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M13_AXI [get_bd_intf_pins axi_interconnect_0/M13_AXI] [get_bd_intf_pins fx2/s_axi_CTRL_BUS1]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M14_AXI [get_bd_intf_pins axi_interconnect_0/M14_AXI] [get_bd_intf_pins fx2_xbar/S_AXI_CTRL]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M15_AXI [get_bd_intf_pins axi_interconnect_0/M15_AXI] [get_bd_intf_pins envelope_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M16_AXI [get_bd_intf_pins axi_interconnect_0/M16_AXI] [get_bd_intf_pins output_xbar/S_AXI_CTRL]
+  connect_bd_intf_net -intf_net axis_switch_0_M00_AXIS [get_bd_intf_pins fx1_xbar/S00_AXIS] [get_bd_intf_pins generators_xbar/M00_AXIS]
+  connect_bd_intf_net -intf_net axis_switch_0_M00_AXIS1 [get_bd_intf_pins fx2_xbar/M00_AXIS] [get_bd_intf_pins output_xbar/S00_AXIS]
+  connect_bd_intf_net -intf_net axis_switch_0_M01_AXIS [get_bd_intf_pins fx1/value_in_V] [get_bd_intf_pins generators_xbar/M01_AXIS]
+  connect_bd_intf_net -intf_net axis_switch_0_M01_AXIS1 [get_bd_intf_pins envelope_0/wave_in_V] [get_bd_intf_pins fx2_xbar/M01_AXIS]
+  connect_bd_intf_net -intf_net axis_switch_1_M00_AXIS [get_bd_intf_pins out_V_V] [get_bd_intf_pins output_xbar/M00_AXIS]
+  connect_bd_intf_net -intf_net envelope_0_wave_out_V [get_bd_intf_pins envelope_0/wave_out_V] [get_bd_intf_pins latcherfloat_0/in_V]
+  connect_bd_intf_net -intf_net latcherfloat_0_out_V [get_bd_intf_pins Generators/out_V] [get_bd_intf_pins generators_xbar/S01_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_0_out_V1 [get_bd_intf_pins latcherfloat_0/out_V] [get_bd_intf_pins output_xbar/S01_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_1_out_V [get_bd_intf_pins Generators/out_V1] [get_bd_intf_pins generators_xbar/S00_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_2_out_V [get_bd_intf_pins fx1/out_V] [get_bd_intf_pins fx1_xbar/S01_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_3_out_V [get_bd_intf_pins Generators/out_V2] [get_bd_intf_pins generators_xbar/S02_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_4_out_V [get_bd_intf_pins fx1/out_V1] [get_bd_intf_pins fx1_xbar/S02_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_5_out_V [get_bd_intf_pins fx1/out_V2] [get_bd_intf_pins fx1_xbar/S03_AXIS]
+  connect_bd_intf_net -intf_net latcherfloat_6_out_V [get_bd_intf_pins Generators/out_V3] [get_bd_intf_pins generators_xbar/S03_AXIS]
+  connect_bd_intf_net -intf_net mixer_1_out_V [get_bd_intf_pins fx2/out_V] [get_bd_intf_pins fx2_xbar/S00_AXIS]
+  connect_bd_intf_net -intf_net source_xbar_M02_AXIS [get_bd_intf_pins fx1/in_V] [get_bd_intf_pins generators_xbar/M02_AXIS]
+  connect_bd_intf_net -intf_net source_xbar_M03_AXIS [get_bd_intf_pins fx1/in0_V] [get_bd_intf_pins generators_xbar/M03_AXIS]
+  connect_bd_intf_net -intf_net source_xbar_M04_AXIS [get_bd_intf_pins fx1/in1_V] [get_bd_intf_pins generators_xbar/M04_AXIS]
+  connect_bd_intf_net -intf_net xbar_s1_M00_AXIS [get_bd_intf_pins fx1_xbar/M00_AXIS] [get_bd_intf_pins fx2/in_V]
+  connect_bd_intf_net -intf_net xbar_s1_M01_AXIS [get_bd_intf_pins fx1_xbar/M01_AXIS] [get_bd_intf_pins fx2/in_V1]
+  connect_bd_intf_net -intf_net xbar_s1_M02_AXIS [get_bd_intf_pins fx1_xbar/M02_AXIS] [get_bd_intf_pins fx2/in2_V]
+  connect_bd_intf_net -intf_net xbar_s1_M03_AXIS [get_bd_intf_pins fx1_xbar/M03_AXIS] [get_bd_intf_pins fx2/in3_V]
 
   # Create port connections
-  connect_bd_net -net ARESETN_1 [get_bd_pins ARESETN] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN]
-  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins Echo_0/ap_clk] [get_bd_pins FM_Synth_0/ap_clk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins latcherfloat_1/ap_clk] [get_bd_pins latcherfloat_2/ap_clk] [get_bd_pins mixer_0/ap_clk] [get_bd_pins saw_1/ap_clk] [get_bd_pins saw_2/ap_clk] [get_bd_pins saw_3/ap_clk] [get_bd_pins saw_4/ap_clk] [get_bd_pins source_xbar/aclk] [get_bd_pins source_xbar/s_axi_ctrl_aclk] [get_bd_pins xbar_s1/aclk] [get_bd_pins xbar_s1/s_axi_ctrl_aclk]
-  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Echo_0/ap_rst_n] [get_bd_pins FM_Synth_0/ap_rst_n] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins latcherfloat_1/ap_rst_n] [get_bd_pins latcherfloat_2/ap_rst_n] [get_bd_pins mixer_0/ap_rst_n] [get_bd_pins saw_1/ap_rst_n] [get_bd_pins saw_2/ap_rst_n] [get_bd_pins saw_3/ap_rst_n] [get_bd_pins saw_4/ap_rst_n] [get_bd_pins source_xbar/aresetn] [get_bd_pins source_xbar/s_axi_ctrl_aresetn] [get_bd_pins xbar_s1/aresetn] [get_bd_pins xbar_s1/s_axi_ctrl_aresetn]
-  connect_bd_net -net latch_V_1 [get_bd_pins latch_V] [get_bd_pins latcherfloat_0/latch_V] [get_bd_pins latcherfloat_1/latch_V] [get_bd_pins latcherfloat_2/latch_V]
+  connect_bd_net -net ARESETN_1 [get_bd_pins ARESETN] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/M09_ARESETN] [get_bd_pins axi_interconnect_0/M10_ARESETN] [get_bd_pins axi_interconnect_0/M11_ARESETN] [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins axi_interconnect_0/M13_ARESETN] [get_bd_pins axi_interconnect_0/M14_ARESETN] [get_bd_pins axi_interconnect_0/M15_ARESETN] [get_bd_pins axi_interconnect_0/M16_ARESETN] [get_bd_pins axi_interconnect_0/M17_ARESETN] [get_bd_pins axi_interconnect_0/M18_ARESETN] [get_bd_pins axi_interconnect_0/M19_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN]
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins Generators/ap_clk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/M16_ACLK] [get_bd_pins axi_interconnect_0/M17_ACLK] [get_bd_pins axi_interconnect_0/M18_ACLK] [get_bd_pins axi_interconnect_0/M19_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins envelope_0/ap_clk] [get_bd_pins fx1/ap_clk] [get_bd_pins fx1_xbar/aclk] [get_bd_pins fx1_xbar/s_axi_ctrl_aclk] [get_bd_pins fx2/ap_clk] [get_bd_pins fx2_xbar/aclk] [get_bd_pins fx2_xbar/s_axi_ctrl_aclk] [get_bd_pins generators_xbar/aclk] [get_bd_pins generators_xbar/s_axi_ctrl_aclk] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins output_xbar/aclk] [get_bd_pins output_xbar/s_axi_ctrl_aclk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Generators/ap_rst_n] [get_bd_pins envelope_0/ap_rst_n] [get_bd_pins fx1/ap_rst_n] [get_bd_pins fx1_xbar/aresetn] [get_bd_pins fx1_xbar/s_axi_ctrl_aresetn] [get_bd_pins fx2/ap_rst_n] [get_bd_pins fx2_xbar/aresetn] [get_bd_pins fx2_xbar/s_axi_ctrl_aresetn] [get_bd_pins generators_xbar/aresetn] [get_bd_pins generators_xbar/s_axi_ctrl_aresetn] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins output_xbar/aresetn] [get_bd_pins output_xbar/s_axi_ctrl_aresetn]
+  connect_bd_net -net latch_V_1 [get_bd_pins latch_V] [get_bd_pins Generators/gen_latch_V] [get_bd_pins fx1/fx1_latch_V] [get_bd_pins fx2/fx2_latch_V] [get_bd_pins latcherfloat_0/latch_V]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -874,18 +1254,26 @@ CONFIG.NUM_SI {2} \
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins audio_pll/resetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins converter_0/ap_rst_n] [get_bd_pins i2s_block/core_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M03_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn] [get_bd_pins synth_mods/ap_rst_n]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x8000B000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Echo_0/s_axi_CTRL_BUS/Reg] SEG_Echo_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80008000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/FM_Synth_0/s_axi_CTRL_BUS/Reg] SEG_FM_Synth_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x8000F000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x8000E000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] SEG_axi_gpio_1_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80007000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/source_xbar/S_AXI_CTRL/Reg] SEG_axis_switch_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x8000A000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/xbar_s1/S_AXI_CTRL/Reg] SEG_axis_switch_1_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000B000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx1/Echo_0/s_axi_CTRL_BUS/Reg] SEG_Echo_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80008000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/FM_Synth_0/s_axi_CTRL_BUS/Reg] SEG_FM_Synth_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/FM_Synth_1/s_axi_CTRL_BUS/Reg] SEG_FM_Synth_1_Reg2
+  create_bd_addr_seg -range 0x00001000 -offset 0x80012000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80013000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] SEG_axi_gpio_1_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80009000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx1/biquad_0/s_axi_CTRL_BUS/Reg] SEG_biquad_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80010000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx2/compressor_0/s_axi_CTRL_BUS/Reg] SEG_compressor_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000C000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/envelope_0/s_axi_CTRL_BUS/Reg] SEG_envelope_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000A000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx1_xbar/S_AXI_CTRL/Reg] SEG_fx1_xbar_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000D000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx2_xbar/S_AXI_CTRL/Reg] SEG_fx2_xbar_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80007000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/generators_xbar/S_AXI_CTRL/Reg] SEG_generators_xbar_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80002000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs i2s_block/i2s_tx/mms_axi/reg0] SEG_i2s_tx_reg0
-  create_bd_addr_seg -range 0x00001000 -offset 0x80003000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/mixer_0/s_axi_CTRL_BUS/Reg] SEG_mixer_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80004000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/saw_1/s_axi_CTRL_BUS/Reg] SEG_saw_1_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80005000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/saw_2/s_axi_CTRL_BUS/Reg] SEG_saw_2_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80006000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/saw_3/s_axi_CTRL_BUS/Reg] SEG_saw_3_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x80001000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/saw_4/s_axi_CTRL_BUS/Reg] SEG_saw_4_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80003000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/mixer_0/s_axi_CTRL_BUS/Reg] SEG_mixer_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000E000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx1/mixer_0/s_axi_CTRL_BUS/Reg] SEG_mixer_0_Reg1
+  create_bd_addr_seg -range 0x00001000 -offset 0x8000F000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx2/mixer_1/s_axi_CTRL_BUS/Reg] SEG_mixer_1_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80011000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/output_xbar/S_AXI_CTRL/Reg] SEG_output_xbar_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80004000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/saw_1/s_axi_CTRL_BUS/Reg] SEG_saw_1_Reg2
+  create_bd_addr_seg -range 0x00001000 -offset 0x80005000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/saw_2/s_axi_CTRL_BUS/Reg] SEG_saw_2_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80006000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/saw_3/s_axi_CTRL_BUS/Reg] SEG_saw_3_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80001000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/saw_4/s_axi_CTRL_BUS/Reg] SEG_saw_4_Reg
 
 
   # Restore current instance

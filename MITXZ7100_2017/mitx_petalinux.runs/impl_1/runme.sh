@@ -7,20 +7,20 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/bin/lin64:/opt/Xilinx_2017_2/Vivado/2017.2/bin
+  PATH=/opt/Xilinx/SDK/2017.2/bin:/opt/Xilinx/Vivado/2017.2/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2017.2/bin
 else
-  PATH=/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/bin/lin64:/opt/Xilinx_2017_2/Vivado/2017.2/bin:$PATH
+  PATH=/opt/Xilinx/SDK/2017.2/bin:/opt/Xilinx/Vivado/2017.2/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2017.2/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2017.2/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=/opt/Xilinx_2017_2/Vivado/2017.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2017.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1'
+HD_PWD='/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

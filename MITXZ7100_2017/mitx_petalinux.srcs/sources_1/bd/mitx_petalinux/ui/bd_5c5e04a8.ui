@@ -1,0 +1,47 @@
+{
+   guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port s_axi_CTRL_BUS -pg 1 -y 180 -defaultsOSRD
+preplace port out_V -pg 1 -y 530 -defaultsOSRD
+preplace port ap_clk -pg 1 -y 540 -defaultsOSRD
+preplace port out_V1 -pg 1 -y 230 -defaultsOSRD
+preplace port out_V2 -pg 1 -y 370 -defaultsOSRD
+preplace port out_V3 -pg 1 -y 90 -defaultsOSRD
+preplace port s_axi_CTRL_BUS1 -pg 1 -y 40 -defaultsOSRD
+preplace port ap_rst_n -pg 1 -y 560 -defaultsOSRD
+preplace port s_axi_CTRL_BUS2 -pg 1 -y 440 -defaultsOSRD
+preplace port s_axi_CTRL_BUS3 -pg 1 -y 460 -defaultsOSRD
+preplace port s_axi_CTRL_BUS4 -pg 1 -y 480 -defaultsOSRD
+preplace port s_axi_CTRL_BUS5 -pg 1 -y 500 -defaultsOSRD
+preplace port s_axi_CTRL_BUS6 -pg 1 -y 520 -defaultsOSRD
+preplace portBus gen_latch_V -pg 1 -y 130 -defaultsOSRD
+preplace inst noisy_0 -pg 1 -lvl 1 -y 330 -defaultsOSRD
+preplace inst FM_Synth_0 -pg 1 -lvl 1 -y 190 -defaultsOSRD
+preplace inst latcherfloat_0 -pg 1 -lvl 2 -y 140 -defaultsOSRD
+preplace inst FM_Synth_1 -pg 1 -lvl 1 -y 50 -defaultsOSRD
+preplace inst latcherfloat_1 -pg 1 -lvl 2 -y 320 -defaultsOSRD -resize 240 120
+preplace inst latcherfloat_2 -pg 1 -lvl 2 -y -10 -defaultsOSRD
+preplace inst latcherfloat_3 -pg 1 -lvl 2 -y 480 -defaultsOSRD -resize 240 120
+preplace inst saw_tree -pg 1 -lvl 1 -y 500 -defaultsOSRD
+preplace netloc saw_tree_out_V 1 1 1 410
+preplace netloc latcherfloat_0_out_V 1 2 1 690
+preplace netloc ap_rst_n_1 1 0 2 -10 -20 370
+preplace netloc latcherfloat_3_out_V 1 2 1 690
+preplace netloc axi_interconnect_0_M02_AXI 1 0 1 NJ
+preplace netloc latcherfloat_2_out_V 1 2 1 690
+preplace netloc FM_Synth_1_result_V 1 1 1 360
+preplace netloc latch_V_1 1 0 2 0J 120 390
+preplace netloc latcherfloat_1_out_V 1 2 1 690
+preplace netloc axi_interconnect_0_M04_AXI 1 0 1 NJ
+preplace netloc ap_clk_1 1 0 2 10 260 400
+preplace netloc FM_Synth_0_result_V 1 1 1 380
+preplace netloc axi_interconnect_0_M00_AXI 1 0 1 NJ
+preplace netloc axi_interconnect_0_M05_AXI 1 0 1 20J
+preplace netloc noisy_0_out_V 1 1 1 380
+preplace netloc axi_interconnect_0_M01_AXI 1 0 1 NJ
+preplace netloc axi_interconnect_0_M03_AXI 1 0 1 NJ
+preplace netloc axi_interconnect_0_M11_AXI 1 0 1 -20J
+levelinfo -pg 1 -40 190 550 980 -top -90 -bot 750
+",
+}
+0

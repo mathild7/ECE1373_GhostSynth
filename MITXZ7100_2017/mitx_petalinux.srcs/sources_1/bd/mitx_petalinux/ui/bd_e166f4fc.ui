@@ -1,0 +1,32 @@
+{
+   guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port out_V -pg 1 -y 310 -defaultsOSRD
+preplace port s_axi_CTRL_BUS -pg 1 -y 40 -defaultsOSRD
+preplace port ap_clk -pg 1 -y 60 -defaultsOSRD
+preplace port s_axi_CTRL_BUS1 -pg 1 -y 320 -defaultsOSRD
+preplace port ap_rst_n -pg 1 -y 340 -defaultsOSRD
+preplace port s_axi_CTRL_BUS2 -pg 1 -y 440 -defaultsOSRD
+preplace port s_axi_CTRL_BUS3 -pg 1 -y 160 -defaultsOSRD
+preplace port s_axi_CTRL_BUS4 -pg 1 -y 250 -defaultsOSRD
+preplace inst saw_4 -pg 1 -lvl 1 -y 170 -defaultsOSRD
+preplace inst mixer_0 -pg 1 -lvl 2 -y 310 -defaultsOSRD
+preplace inst saw_1 -pg 1 -lvl 1 -y 40 -defaultsOSRD
+preplace inst saw_2 -pg 1 -lvl 1 -y 330 -defaultsOSRD
+preplace inst saw_3 -pg 1 -lvl 1 -y 460 -defaultsOSRD
+preplace netloc mixer_0_out_V 1 2 1 N
+preplace netloc saw_1_out_V 1 1 1 380
+preplace netloc ap_rst_n_1 1 0 2 20 260 350
+preplace netloc axi_interconnect_0_M02_AXI 1 0 1 30J
+preplace netloc saw_3_out_V 1 1 1 380
+preplace netloc saw_4_out_V 1 1 1 370
+preplace netloc axi_interconnect_0_M04_AXI 1 0 2 NJ 250 NJ
+preplace netloc ap_clk_1 1 0 2 10 240 360
+preplace netloc saw_2_out_V 1 1 1 370
+preplace netloc axi_interconnect_0_M00_AXI 1 0 1 0J
+preplace netloc axi_interconnect_0_M01_AXI 1 0 1 0J
+preplace netloc axi_interconnect_0_M03_AXI 1 0 1 N
+levelinfo -pg 1 -20 190 550 730 -top -30 -bot 530
+",
+}
+

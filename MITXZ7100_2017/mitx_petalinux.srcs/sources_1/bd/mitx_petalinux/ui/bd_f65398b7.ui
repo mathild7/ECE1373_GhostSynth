@@ -1,0 +1,42 @@
+{
+   guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port in1_V -pg 1 -y 220 -defaultsOSRD
+preplace port in0_V -pg 1 -y 200 -defaultsOSRD
+preplace port out_V -pg 1 -y 460 -defaultsOSRD
+preplace port s_axi_CTRL_BUS -pg 1 -y 40 -defaultsOSRD
+preplace port ap_clk -pg 1 -y 240 -defaultsOSRD
+preplace port out_V1 -pg 1 -y 90 -defaultsOSRD
+preplace port out_V2 -pg 1 -y 270 -defaultsOSRD
+preplace port value_in_V -pg 1 -y 420 -defaultsOSRD
+preplace port s_axi_CTRL_BUS1 -pg 1 -y 400 -defaultsOSRD
+preplace port in_V -pg 1 -y 60 -defaultsOSRD
+preplace port ap_rst_n -pg 1 -y 260 -defaultsOSRD
+preplace port s_axi_CTRL_BUS2 -pg 1 -y 180 -defaultsOSRD
+preplace portBus fx1_latch_V -pg 1 -y 350 -defaultsOSRD
+preplace inst mixer_0 -pg 1 -lvl 1 -y 240 -defaultsOSRD
+preplace inst latcherfloat_0 -pg 1 -lvl 2 -y 50 -defaultsOSRD
+preplace inst latcherfloat_1 -pg 1 -lvl 2 -y 260 -defaultsOSRD -resize 240 120
+preplace inst latcherfloat_2 -pg 1 -lvl 2 -y 460 -defaultsOSRD -resize 240 120
+preplace inst Echo_0 -pg 1 -lvl 1 -y 430 -defaultsOSRD
+preplace inst biquad_0 -pg 1 -lvl 1 -y 60 -defaultsOSRD
+preplace netloc axis_switch_0_M01_AXIS 1 0 1 NJ
+preplace netloc axi_interconnect_0_M09_AXI 1 0 1 -10J
+preplace netloc mixer_0_out_V 1 1 1 410
+preplace netloc latcherfloat_0_out_V 1 2 1 700
+preplace netloc source_xbar_M04_AXIS 1 0 1 NJ
+preplace netloc ap_rst_n_1 1 0 2 10 -20 380
+preplace netloc Echo_0_value_out_V 1 1 1 N
+preplace netloc biquad_0_out_V 1 1 1 390
+preplace netloc axi_interconnect_0_M10_AXI 1 0 1 NJ
+preplace netloc latcherfloat_2_out_V 1 2 1 N
+preplace netloc source_xbar_M03_AXIS 1 0 1 NJ
+preplace netloc axi_interconnect_0_M07_AXI 1 0 1 NJ
+preplace netloc latcherfloat_1_out_V 1 2 1 700
+preplace netloc ap_clk_1 1 0 2 0 -30 400
+preplace netloc source_xbar_M02_AXIS 1 0 1 20J
+preplace netloc fx1_latch_V_1 1 0 2 NJ 350 420
+levelinfo -pg 1 -30 200 560 720 -top -40 -bot 540
+",
+}
+0

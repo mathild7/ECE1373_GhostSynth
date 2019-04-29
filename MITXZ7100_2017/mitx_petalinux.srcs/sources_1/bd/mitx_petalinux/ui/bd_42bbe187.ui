@@ -1,53 +1,87 @@
 {
    guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port S00_AXI -pg 1 -y 150 -defaultsOSRD
-preplace port ARESETN -pg 1 -y 190 -defaultsOSRD
-preplace port ap_clk -pg 1 -y 170 -defaultsOSRD
-preplace port out_V_V -pg 1 -y 260 -defaultsOSRD
-preplace port ap_rst_n -pg 1 -y 660 -defaultsOSRD
-preplace portBus latch_V -pg 1 -y 680 -defaultsOSRD
-preplace inst saw_4 -pg 1 -lvl 2 -y 450 -defaultsOSRD
-preplace inst mixer_0 -pg 1 -lvl 3 -y 280 -defaultsOSRD
-preplace inst source_xbar -pg 1 -lvl 5 -y 480 -defaultsOSRD
-preplace inst xbar_s1 -pg 1 -lvl 8 -y 260 -defaultsOSRD
-preplace inst FM_Synth_0 -pg 1 -lvl 3 -y 680 -defaultsOSRD
-preplace inst latcherfloat_0 -pg 1 -lvl 4 -y 310 -defaultsOSRD
-preplace inst latcherfloat_1 -pg 1 -lvl 4 -y 700 -defaultsOSRD
-preplace inst latcherfloat_2 -pg 1 -lvl 7 -y 310 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 1 -y 370 -defaultsOSRD
-preplace inst saw_1 -pg 1 -lvl 2 -y 40 -defaultsOSRD
-preplace inst Echo_0 -pg 1 -lvl 6 -y 240 -defaultsOSRD
-preplace inst saw_2 -pg 1 -lvl 2 -y 170 -defaultsOSRD
-preplace inst saw_3 -pg 1 -lvl 2 -y 300 -defaultsOSRD
+preplace port S00_AXI -pg 1 -y 90 -defaultsOSRD
+preplace port ARESETN -pg 1 -y 130 -defaultsOSRD
+preplace port ap_clk -pg 1 -y 110 -defaultsOSRD
+preplace port out_V_V -pg 1 -y 730 -defaultsOSRD
+preplace port ap_rst_n -pg 1 -y 20 -defaultsOSRD
+preplace portBus latch_V -pg 1 -y 40 -defaultsOSRD
+preplace inst fx2|trem_0 -pg 1 -lvl 1 -y 658 -defaultsOSRD
+preplace inst envelope_0 -pg 1 -lvl 8 -y 560 -defaultsOSRD
+preplace inst fx2_xbar -pg 1 -lvl 7 -y 540 -defaultsOSRD
+preplace inst fx1 -pg 1 -lvl 4 -y 420 -defaultsOSRD
+preplace inst fx2 -pg 1 -lvl 6 -y 478 -defaultsOSRD
+preplace inst Generators -pg 1 -lvl 2 -y 310 -defaultsOSRD
+preplace inst latcherfloat_0 -pg 1 -lvl 9 -y 580 -defaultsOSRD
+preplace inst fx1_xbar -pg 1 -lvl 5 -y 440 -defaultsOSRD
+preplace inst fx2|latcherfloat_7 -pg 1 -lvl 2 -y 648 -defaultsOSRD
+preplace inst fx2|mixer_1 -pg 1 -lvl 3 -y 688 -defaultsOSRD
+preplace inst fx2|latcherfloat_8 -pg 1 -lvl 2 -y 478 -defaultsOSRD
+preplace inst generators_xbar -pg 1 -lvl 3 -y 350 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 1 -y 530 -defaultsOSRD
+preplace inst fx2|compressor_0 -pg 1 -lvl 1 -y 448 -defaultsOSRD
+preplace inst output_xbar -pg 1 -lvl 10 -y 730 -defaultsOSRD
+preplace netloc fx2|axi_interconnect_0_M13_AXI 1 0 3 NJ 558 NJ 558 3190
+preplace netloc axi_interconnect_0_M09_AXI 1 1 3 N 520 NJ 520 1420J
 preplace netloc Conn1 1 0 1 NJ
-preplace netloc axis_switch_0_M00_AXIS 1 5 3 1580J 350 2610 200 N
-preplace netloc axis_switch_0_M01_AXIS 1 5 1 1570
-preplace netloc saw_1_out_V 1 2 1 590
-preplace netloc mixer_0_out_V 1 3 1 N
-preplace netloc latcherfloat_0_out_V 1 4 1 1240
-preplace netloc ap_rst_n_1 1 0 8 NJ 660 160 550 540 130 940 200 1260 270 1560 340 2630 210 2950
-preplace netloc Echo_0_value_out_V 1 6 1 2620
-preplace netloc axi_interconnect_0_M02_AXI 1 1 1 140
-preplace netloc ARESETN_1 1 0 1 -180
-preplace netloc latcherfloat_2_out_V 1 7 1 2960
-preplace netloc saw_3_out_V 1 2 1 N
-preplace netloc latch_V_1 1 0 7 NJ 680 NJ 680 520J 750 950 210 NJ 210 1550J 330 2620
-preplace netloc axis_switch_1_M00_AXIS 1 8 1 N
-preplace netloc axi_interconnect_0_M07_AXI 1 1 5 190 380 520J 160 NJ 160 NJ 160 1570J
-preplace netloc saw_4_out_V 1 2 1 570
-preplace netloc axi_interconnect_0_M08_AXI 1 1 7 130 530 560J 170 NJ 170 NJ 170 1580J 160 NJ 160 2970
-preplace netloc latcherfloat_1_out_V 1 4 1 1270
-preplace netloc axi_interconnect_0_M04_AXI 1 1 2 NJ 370 530
-preplace netloc ap_clk_1 1 0 8 -170 90 180 540 580 150 930 230 1250 250 1580 320 2640 230 2940
-preplace netloc saw_2_out_V 1 2 1 550
-preplace netloc axi_interconnect_0_M05_AXI 1 1 2 140J 560 520
-preplace netloc FM_Synth_0_result_V 1 3 1 960
-preplace netloc axi_interconnect_0_M00_AXI 1 1 1 200
-preplace netloc axi_interconnect_0_M01_AXI 1 1 1 130
-preplace netloc axi_interconnect_0_M06_AXI 1 1 4 150 520 590J 460 NJ 460 NJ
-preplace netloc axi_interconnect_0_M03_AXI 1 1 1 170
-levelinfo -pg 1 -200 -20 360 760 1100 1410 2430 2800 3160 3320 -top -30 -bot 780
+preplace netloc axis_switch_0_M00_AXIS 1 3 2 1370J 270 1890
+preplace netloc axis_switch_0_M01_AXIS 1 3 1 1390
+preplace netloc envelope_0_wave_out_V 1 8 1 4370
+preplace netloc fx2|xbar_s1_M01_AXIS 1 0 1 N
+preplace netloc fx2|latcherfloat_8_out_V 1 2 1 3200
+preplace netloc axi_interconnect_0_M13_AXI 1 1 5 380J 130 NJ 130 NJ 130 NJ 130 2350
+preplace netloc axi_interconnect_0_M12_AXI 1 1 5 330J 110 NJ 110 NJ 110 1910J 290 2340
+preplace netloc source_xbar_M04_AXIS 1 3 1 1370
+preplace netloc latcherfloat_0_out_V 1 2 1 920
+preplace netloc ap_rst_n_1 1 0 10 NJ 20 370 470 920 490 1410 260 1880 310 2290 330 3640 650 3990 650 4390 670 4670
+preplace netloc latcherfloat_6_out_V 1 2 1 900
+preplace netloc latcherfloat_3_out_V 1 2 1 920
+preplace netloc fx2|xbar_s1_M03_AXIS 1 0 3 NJ 758 NJ 758 3200
+preplace netloc axi_interconnect_0_M10_AXI 1 1 3 N 540 NJ 540 1430J
+preplace netloc axi_interconnect_0_M02_AXI 1 1 1 340
+preplace netloc ARESETN_1 1 0 1 20
+preplace netloc fx2|latcherfloat_7_out_V 1 2 1 N
+preplace netloc axis_switch_0_M00_AXIS1 1 7 3 3980 480 NJ 480 4700J
+preplace netloc xbar_s1_M03_AXIS 1 5 1 2280
+preplace netloc source_xbar_M03_AXIS 1 3 1 1360
+preplace netloc latcherfloat_2_out_V 1 4 1 1870
+preplace netloc latch_V_1 1 0 9 20J 30 410 120 NJ 120 1400 230 NJ 230 2310 860 3660J 660 NJ 660 4370
+preplace netloc axis_switch_1_M00_AXIS 1 10 1 N
+preplace netloc axi_interconnect_0_M07_AXI 1 1 3 N 480 NJ 480 1380J
+preplace netloc fx2|axi_interconnect_0_M12_AXI 1 0 1 N
+preplace netloc xbar_s1_M01_AXIS 1 5 1 2330
+preplace netloc xbar_s1_M00_AXIS 1 5 1 2330
+preplace netloc axi_interconnect_0_M08_AXI 1 1 4 NJ 500 900J 510 1360J 560 1920
+preplace netloc latcherfloat_1_out_V 1 2 1 900
+preplace netloc axi_interconnect_0_M04_AXI 1 1 1 460
+preplace netloc ap_clk_1 1 0 10 30 10 420 450 910 500 1350 250 1900 300 2320 320 3660 640 3980 640 4380 660 4680
+preplace netloc axi_interconnect_0_M15_AXI 1 1 7 450J 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 3990
+preplace netloc latcherfloat_5_out_V 1 4 1 1910
+preplace netloc latcherfloat_4_out_V 1 4 1 1890
+preplace netloc axi_interconnect_0_M05_AXI 1 1 1 390
+preplace netloc axi_interconnect_0_M00_AXI 1 1 1 400
+preplace netloc fx2|mixer_1_out_V 1 3 1 N
+preplace netloc fx2|ap_rst_n_1 1 0 3 2550 538 2910 748 N
+preplace netloc fx2|ap_clk_1 1 0 3 2530 528 2900 728 N
+preplace netloc fx2|latch_V_1 1 0 2 NJ 778 2880
+preplace netloc axi_interconnect_0_M16_AXI 1 1 9 NJ 660 NJ 660 NJ 660 NJ 660 2270J 850 3670J 710 NJ 710 NJ 710 N
+preplace netloc mixer_1_out_V 1 6 1 3650
+preplace netloc xbar_s1_M02_AXIS 1 5 1 2300
+preplace netloc axi_interconnect_0_M01_AXI 1 1 1 360
+preplace netloc fx2|xbar_s1_M02_AXIS 1 0 3 NJ 738 NJ 738 3190
+preplace netloc fx2|xbar_s1_M00_AXIS 1 0 1 2540
+preplace netloc fx2|trem_0_out_V 1 1 1 2890
+preplace netloc latcherfloat_0_out_V1 1 9 1 4690
+preplace netloc axi_interconnect_0_M14_AXI 1 1 6 430J 150 NJ 150 NJ 150 NJ 150 NJ 150 3670
+preplace netloc axi_interconnect_0_M06_AXI 1 1 2 N 460 900J
+preplace netloc fx2|compressor_0_out_V 1 1 1 N
+preplace netloc axis_switch_0_M01_AXIS1 1 7 1 N
+preplace netloc axi_interconnect_0_M11_AXI 1 1 1 440
+preplace netloc source_xbar_M02_AXIS 1 3 1 N
+preplace netloc axi_interconnect_0_M03_AXI 1 1 1 350
+levelinfo -pg 1 0 180 760 1206 1730 2126 2610 3840 4190 4530 4840 5000 -top 0 -bot 1130
+levelinfo -hier fx2 * 2720 3050 3380 *
 ",
 }
 0
