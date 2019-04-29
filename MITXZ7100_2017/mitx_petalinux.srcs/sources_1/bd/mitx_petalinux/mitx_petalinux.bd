@@ -2853,13 +2853,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>envelope_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="envelope" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_envelope_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>Generators</spirit:instanceName>
         <spirit:componentRef spirit:library="BlockDiagram/mitx_petalinux_imp/synth_mods_imp" spirit:name="Generators" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
       </spirit:componentInstance>
@@ -2899,6 +2892,13 @@
         <spirit:componentRef spirit:library="hls" spirit:name="compressor" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_compressor_0_1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>envelope_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="envelope" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_envelope_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -3119,15 +3119,15 @@
         <spirit:internalPortReference spirit:componentRef="fx1_xbar" spirit:portRef="s_axi_ctrl_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="aresetn"/>
         <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="s_axi_ctrl_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="aresetn"/>
         <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="s_axi_ctrl_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>ap_clk_1</spirit:name>
@@ -3138,11 +3138,11 @@
         <spirit:internalPortReference spirit:componentRef="fx1_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
         <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="fx2_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="output_xbar" spirit:portRef="s_axi_ctrl_aclk"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="ap_clk"/>
@@ -3168,7 +3168,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M17_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M18_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M19_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>ARESETN_1</spirit:name>

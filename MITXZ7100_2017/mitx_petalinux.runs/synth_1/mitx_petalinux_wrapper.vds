@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Apr 29 05:25:57 2019
-# Process ID: 54182
+# Start of session at: Mon Apr 29 15:58:48 2019
+# Process ID: 54971
 # Current directory: /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/synth_1
 # Command line: vivado -log mitx_petalinux_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mitx_petalinux_wrapper.tcl
 # Log file: /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/synth_1/mitx_petalinux_wrapper.vds
@@ -13,13 +13,13 @@ source mitx_petalinux_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/hildeb47/proj/ECE1373_GhostSynth/modules'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx_2017_2/Vivado/2017.2/data/ip'.
-add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1167.281 ; gain = 78.477 ; free physical = 6186 ; free virtual = 7747
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1166.609 ; gain = 77.805 ; free physical = 4589 ; free virtual = 7416
 Command: synth_design -top mitx_petalinux_wrapper -part xc7z100ffg900-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z100-ffg900'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z100-ffg900'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 54203 
+INFO: Helper process launched with PID 54991 
 WARNING: [Synth 8-2507] parameter declaration becomes local in i2s_codec with formal parameter declaration list [/home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v:147]
 WARNING: [Synth 8-2507] parameter declaration becomes local in i2s_codec with formal parameter declaration list [/home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v:148]
 WARNING: [Synth 8-2507] parameter declaration becomes local in i2s_codec with formal parameter declaration list [/home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v:149]
@@ -28,7 +28,7 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in i2s_codec with fo
 WARNING: [Synth 8-2507] parameter declaration becomes local in i2s_codec with formal parameter declaration list [/home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v:152]
 WARNING: [Synth 8-2507] parameter declaration becomes local in i2s_codec with formal parameter declaration list [/home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v:153]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1321.922 ; gain = 100.223 ; free physical = 6047 ; free virtual = 7634
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1322.250 ; gain = 100.223 ; free physical = 4475 ; free virtual = 7302
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_wrapper' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v:12]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:7025]
@@ -954,44 +954,50 @@ WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logica
 INFO: [Synth 8-256] done synthesizing module 'compressor' (271#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/36b7/hdl/verilog/compressor.v:12]
 INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_compressor_0_1' (272#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_1/synth/mitx_petalinux_compressor_0_1.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_envelope_0_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_envelope_0_0/synth/mitx_petalinux_envelope_0_0.v:57]
-INFO: [Synth 8-638] synthesizing module 'envelope' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:12]
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:209]
-INFO: [Synth 8-638] synthesizing module 'envelope_CTRL_BUS_s_axi' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_CTRL_BUS_s_axi.v:9]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_CTRL_BUS_s_axi.v:193]
-INFO: [Synth 8-256] done synthesizing module 'envelope_CTRL_BUS_s_axi' (273#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_CTRL_BUS_s_axi.v:9]
-INFO: [Synth 8-638] synthesizing module 'envelope_fadd_32nbkb' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fadd_32nbkb.v:11]
-INFO: [Synth 8-638] synthesizing module 'envelope_ap_fadd_3_full_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd:72]
-INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'envelope_ap_fadd_3_full_dsp_32' (274#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'envelope_fadd_32nbkb' (275#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fadd_32nbkb.v:11]
-INFO: [Synth 8-638] synthesizing module 'envelope_fmul_32ncud' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fmul_32ncud.v:11]
-INFO: [Synth 8-638] synthesizing module 'envelope_ap_fmul_2_max_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd:72]
-INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'envelope_ap_fmul_2_max_dsp_32' (276#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'envelope_fmul_32ncud' (277#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fmul_32ncud.v:11]
-INFO: [Synth 8-638] synthesizing module 'envelope_fdiv_32ndEe' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fdiv_32ndEe.v:11]
-INFO: [Synth 8-638] synthesizing module 'envelope_ap_fdiv_14_no_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd:72]
-INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'envelope_ap_fdiv_14_no_dsp_32' (278#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'envelope_fdiv_32ndEe' (279#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fdiv_32ndEe.v:11]
-INFO: [Synth 8-638] synthesizing module 'envelope_sitofp_3eOg' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_sitofp_3eOg.v:11]
-INFO: [Synth 8-638] synthesizing module 'envelope_ap_sitofp_4_no_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd:70]
-INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd:193]
-INFO: [Synth 8-256] done synthesizing module 'envelope_ap_sitofp_4_no_dsp_32' (280#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd:70]
-INFO: [Synth 8-256] done synthesizing module 'envelope_sitofp_3eOg' (281#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_sitofp_3eOg.v:11]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1272]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1274]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1276]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1278]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1280]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1282]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1284]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1286]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1308]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1310]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:1312]
-INFO: [Synth 8-256] done synthesizing module 'envelope' (282#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v:12]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_envelope_0_0' (283#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_envelope_0_0/synth/mitx_petalinux_envelope_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'envelope' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:12]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:210]
+INFO: [Synth 8-638] synthesizing module 'envelope_CTRL_BUS_s_axi' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_CTRL_BUS_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_CTRL_BUS_s_axi.v:193]
+INFO: [Synth 8-256] done synthesizing module 'envelope_CTRL_BUS_s_axi' (273#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_CTRL_BUS_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'envelope_fadd_32nbkb' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fadd_32nbkb.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_ap_fadd_3_full_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd:72]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'envelope_ap_fadd_3_full_dsp_32' (274#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'envelope_fadd_32nbkb' (275#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fadd_32nbkb.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_fmul_32ncud' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fmul_32ncud.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_ap_fmul_2_max_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd:72]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'envelope_ap_fmul_2_max_dsp_32' (276#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'envelope_fmul_32ncud' (277#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fmul_32ncud.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_fdiv_32ndEe' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fdiv_32ndEe.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_ap_fdiv_14_no_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd:72]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'envelope_ap_fdiv_14_no_dsp_32' (278#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'envelope_fdiv_32ndEe' (279#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fdiv_32ndEe.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_sitofp_3eOg' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_sitofp_3eOg.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_ap_sitofp_4_no_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd:70]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd:193]
+INFO: [Synth 8-256] done synthesizing module 'envelope_ap_sitofp_4_no_dsp_32' (280#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'envelope_sitofp_3eOg' (281#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_sitofp_3eOg.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_fcmp_32nfYi' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fcmp_32nfYi.v:11]
+INFO: [Synth 8-638] synthesizing module 'envelope_ap_fcmp_0_no_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fcmp_0_no_dsp_32.vhd:72]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fcmp_0_no_dsp_32.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'envelope_ap_fcmp_0_no_dsp_32' (282#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fcmp_0_no_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'envelope_fcmp_32nfYi' (283#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fcmp_32nfYi.v:11]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1314]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1316]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1318]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1320]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1322]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1324]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1326]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1328]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1348]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1354]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1356]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:1358]
+INFO: [Synth 8-256] done synthesizing module 'envelope' (284#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v:12]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_envelope_0_0' (285#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_envelope_0_0/synth/mitx_petalinux_envelope_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'fx1_imp_9YE6W4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:748]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_Echo_0_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/synth/mitx_petalinux_Echo_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'Echo' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo.v:12]
@@ -1000,219 +1006,219 @@ INFO: [Synth 8-638] synthesizing module 'Echo_buffer_r' [/home/hildeb47/proj/ECE
 INFO: [Synth 8-638] synthesizing module 'Echo_buffer_r_ram' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_buffer_r.v:9]
 INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_buffer_r.v:22]
 INFO: [Synth 8-3876] $readmem data file './Echo_buffer_r_ram.dat' is read successfully [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_buffer_r.v:25]
-INFO: [Synth 8-256] done synthesizing module 'Echo_buffer_r_ram' (284#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_buffer_r.v:9]
-INFO: [Synth 8-256] done synthesizing module 'Echo_buffer_r' (285#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_buffer_r.v:49]
+INFO: [Synth 8-256] done synthesizing module 'Echo_buffer_r_ram' (286#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_buffer_r.v:9]
+INFO: [Synth 8-256] done synthesizing module 'Echo_buffer_r' (287#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_buffer_r.v:49]
 INFO: [Synth 8-638] synthesizing module 'Echo_CTRL_BUS_s_axi' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_CTRL_BUS_s_axi.v:9]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_CTRL_BUS_s_axi.v:172]
-INFO: [Synth 8-256] done synthesizing module 'Echo_CTRL_BUS_s_axi' (286#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_CTRL_BUS_s_axi.v:9]
+INFO: [Synth 8-256] done synthesizing module 'Echo_CTRL_BUS_s_axi' (288#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_CTRL_BUS_s_axi.v:9]
 INFO: [Synth 8-638] synthesizing module 'Echo_fadd_32ns_32bkb' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_fadd_32ns_32bkb.v:11]
 INFO: [Synth 8-638] synthesizing module 'Echo_ap_fadd_3_full_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fadd_3_full_dsp_32.vhd:72]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fadd_3_full_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'Echo_ap_fadd_3_full_dsp_32' (287#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fadd_3_full_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'Echo_fadd_32ns_32bkb' (288#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_fadd_32ns_32bkb.v:11]
+INFO: [Synth 8-256] done synthesizing module 'Echo_ap_fadd_3_full_dsp_32' (289#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fadd_3_full_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'Echo_fadd_32ns_32bkb' (290#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_fadd_32ns_32bkb.v:11]
 INFO: [Synth 8-638] synthesizing module 'Echo_fmul_32ns_32cud' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_fmul_32ns_32cud.v:11]
 INFO: [Synth 8-638] synthesizing module 'Echo_ap_fmul_2_max_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fmul_2_max_dsp_32.vhd:72]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fmul_2_max_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'Echo_ap_fmul_2_max_dsp_32' (289#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fmul_2_max_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'Echo_fmul_32ns_32cud' (290#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_fmul_32ns_32cud.v:11]
+INFO: [Synth 8-256] done synthesizing module 'Echo_ap_fmul_2_max_dsp_32' (291#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/ip/Echo_ap_fmul_2_max_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'Echo_fmul_32ns_32cud' (292#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_fmul_32ns_32cud.v:11]
 INFO: [Synth 8-638] synthesizing module 'Echo_srem_32ns_14dEe' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:182]
 INFO: [Synth 8-638] synthesizing module 'Echo_srem_32ns_14dEe_div' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:90]
 INFO: [Synth 8-638] synthesizing module 'Echo_srem_32ns_14dEe_div_u' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:10]
-INFO: [Synth 8-256] done synthesizing module 'Echo_srem_32ns_14dEe_div_u' (291#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:10]
-INFO: [Synth 8-256] done synthesizing module 'Echo_srem_32ns_14dEe_div' (292#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:90]
-INFO: [Synth 8-256] done synthesizing module 'Echo_srem_32ns_14dEe' (293#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:182]
+INFO: [Synth 8-256] done synthesizing module 'Echo_srem_32ns_14dEe_div_u' (293#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:10]
+INFO: [Synth 8-256] done synthesizing module 'Echo_srem_32ns_14dEe_div' (294#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:90]
+INFO: [Synth 8-256] done synthesizing module 'Echo_srem_32ns_14dEe' (295#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo_srem_32ns_14dEe.v:182]
 WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo.v:752]
 WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo.v:754]
-INFO: [Synth 8-256] done synthesizing module 'Echo' (294#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo.v:12]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_Echo_0_0' (295#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/synth/mitx_petalinux_Echo_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'Echo' (296#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b4bf/hdl/verilog/Echo.v:12]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_Echo_0_0' (297#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/synth/mitx_petalinux_Echo_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_biquad_0_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_0/synth/mitx_petalinux_biquad_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'biquad' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad.v:12]
 INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad.v:139]
 INFO: [Synth 8-638] synthesizing module 'biquad_CTRL_BUS_s_axi' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_CTRL_BUS_s_axi.v:9]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_CTRL_BUS_s_axi.v:201]
-INFO: [Synth 8-256] done synthesizing module 'biquad_CTRL_BUS_s_axi' (296#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_CTRL_BUS_s_axi.v:9]
+INFO: [Synth 8-256] done synthesizing module 'biquad_CTRL_BUS_s_axi' (298#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_CTRL_BUS_s_axi.v:9]
 INFO: [Synth 8-638] synthesizing module 'biquad_faddfsub_3bkb' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_faddfsub_3bkb.v:11]
 INFO: [Synth 8-638] synthesizing module 'biquad_ap_faddfsub_3_full_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_faddfsub_3_full_dsp_32.vhd:74]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_faddfsub_3_full_dsp_32.vhd:201]
-INFO: [Synth 8-256] done synthesizing module 'biquad_ap_faddfsub_3_full_dsp_32' (297#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_faddfsub_3_full_dsp_32.vhd:74]
-INFO: [Synth 8-256] done synthesizing module 'biquad_faddfsub_3bkb' (298#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_faddfsub_3bkb.v:11]
+INFO: [Synth 8-256] done synthesizing module 'biquad_ap_faddfsub_3_full_dsp_32' (299#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_faddfsub_3_full_dsp_32.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'biquad_faddfsub_3bkb' (300#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_faddfsub_3bkb.v:11]
 INFO: [Synth 8-638] synthesizing module 'biquad_fmul_32ns_cud' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_fmul_32ns_cud.v:11]
 INFO: [Synth 8-638] synthesizing module 'biquad_ap_fmul_2_max_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_fmul_2_max_dsp_32.vhd:72]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_fmul_2_max_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'biquad_ap_fmul_2_max_dsp_32' (299#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_fmul_2_max_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'biquad_fmul_32ns_cud' (300#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_fmul_32ns_cud.v:11]
-INFO: [Synth 8-256] done synthesizing module 'biquad' (301#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad.v:12]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_biquad_0_0' (302#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_0/synth/mitx_petalinux_biquad_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'biquad_ap_fmul_2_max_dsp_32' (301#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/ip/biquad_ap_fmul_2_max_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'biquad_fmul_32ns_cud' (302#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad_fmul_32ns_cud.v:11]
+INFO: [Synth 8-256] done synthesizing module 'biquad' (303#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/b412/hdl/verilog/biquad.v:12]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_biquad_0_0' (304#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_0/synth/mitx_petalinux_biquad_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_latcherfloat_0_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_4/synth/mitx_petalinux_latcherfloat_0_4.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_4' (303#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_4/synth/mitx_petalinux_latcherfloat_0_4.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_4' (305#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_4/synth/mitx_petalinux_latcherfloat_0_4.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_latcherfloat_0_5' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_5/synth/mitx_petalinux_latcherfloat_0_5.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_5' (304#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_5/synth/mitx_petalinux_latcherfloat_0_5.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_5' (306#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_5/synth/mitx_petalinux_latcherfloat_0_5.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_latcherfloat_1_2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_2/synth/mitx_petalinux_latcherfloat_1_2.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_1_2' (305#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_2/synth/mitx_petalinux_latcherfloat_1_2.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_1_2' (307#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_2/synth/mitx_petalinux_latcherfloat_1_2.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_mixer_0_1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_0_1/synth/mitx_petalinux_mixer_0_1.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_mixer_0_1' (306#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_0_1/synth/mitx_petalinux_mixer_0_1.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_mixer_0_1' (308#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_0_1/synth/mitx_petalinux_mixer_0_1.v:57]
 WARNING: [Synth 8-350] instance 'mixer_0' of module 'mitx_petalinux_mixer_0_1' requires 34 connections, but only 32 given [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:1142]
-INFO: [Synth 8-256] done synthesizing module 'fx1_imp_9YE6W4' (307#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:748]
+INFO: [Synth 8-256] done synthesizing module 'fx1_imp_9YE6W4' (309#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:748]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_axis_switch_1_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_0/synth/mitx_petalinux_axis_switch_1_0.v:58]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axis_switch' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
 INFO: [Synth 8-638] synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
-INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' (307#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
+INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_util_axis2vector__parameterized0' (309#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:810]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axisc_decoder' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
 INFO: [Synth 8-638] synthesizing module 'axis_register_slice_v1_1_13_axisc_register_slice' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/341f/hdl/axis_register_slice_v1_1_vl_rfs.v:62]
 INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/341f/hdl/axis_register_slice_v1_1_vl_rfs.v:151]
-INFO: [Synth 8-256] done synthesizing module 'axis_register_slice_v1_1_13_axisc_register_slice' (308#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/341f/hdl/axis_register_slice_v1_1_vl_rfs.v:62]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder' (309#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
+INFO: [Synth 8-256] done synthesizing module 'axis_register_slice_v1_1_13_axisc_register_slice' (310#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/341f/hdl/axis_register_slice_v1_1_vl_rfs.v:62]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder' (311#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
 INFO: [Synth 8-638] synthesizing module 'axis_register_slice_v1_1_13_axisc_register_slice__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/341f/hdl/axis_register_slice_v1_1_vl_rfs.v:62]
-INFO: [Synth 8-256] done synthesizing module 'axis_register_slice_v1_1_13_axisc_register_slice__parameterized0' (309#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/341f/hdl/axis_register_slice_v1_1_vl_rfs.v:62]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux' (310#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
+INFO: [Synth 8-256] done synthesizing module 'axis_register_slice_v1_1_13_axisc_register_slice__parameterized0' (311#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/341f/hdl/axis_register_slice_v1_1_vl_rfs.v:62]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux' (312#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
 INFO: [Synth 8-638] synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
-INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' (310#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
+INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_util_vector2axis__parameterized0' (312#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:992]
 INFO: [Synth 8-638] synthesizing module 'axis_infrastructure_v1_1_0_clock_synchronizer' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1173]
 INFO: [Synth 8-638] synthesizing module 'xpm_cdc_single' [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:145]
-INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_single' (311#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
-INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_clock_synchronizer' (312#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1173]
+INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_single' (313#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
+INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_clock_synchronizer' (314#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1173]
 INFO: [Synth 8-638] synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
 INFO: [Synth 8-638] synthesizing module 'xpm_cdc_handshake' [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
 INFO: [Synth 8-5534] Detected attribute (* DIRECT_ENABLE = "yes" *) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:427]
 INFO: [Synth 8-638] synthesizing module 'xpm_cdc_single__parameterized0' [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
-INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_single__parameterized0' (312#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
-INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_handshake' (313#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
-INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake' (314#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
+INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_single__parameterized0' (314#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:99]
+INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_handshake' (315#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
+INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake' (316#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axi_ctrl_read' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:1742]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_read' (315#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:1742]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_read' (317#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:1742]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axi_ctrl_write' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:1917]
 INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:1967]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_write' (316#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:1917]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_write' (318#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:1917]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32' (317#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32' (319#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized0' (317#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top' (318#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized0' (319#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top' (320#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config_dp' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp' (319#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config' (320#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router' (321#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch' (322#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_1_0' (323#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_0/synth/mitx_petalinux_axis_switch_1_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp' (321#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config' (322#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router' (323#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch' (324#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_1_0' (325#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_0/synth/mitx_petalinux_axis_switch_1_0.v:58]
 INFO: [Synth 8-638] synthesizing module 'fx2_imp_E1J21P' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:1177]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_compressor_0_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/synth/mitx_petalinux_compressor_0_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_compressor_0_0' (324#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/synth/mitx_petalinux_compressor_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_compressor_0_0' (326#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/synth/mitx_petalinux_compressor_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_latcherfloat_7_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/synth/mitx_petalinux_latcherfloat_7_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_7_0' (325#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/synth/mitx_petalinux_latcherfloat_7_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_7_0' (327#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/synth/mitx_petalinux_latcherfloat_7_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_latcherfloat_8_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/synth/mitx_petalinux_latcherfloat_8_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_8_0' (326#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/synth/mitx_petalinux_latcherfloat_8_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_8_0' (328#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/synth/mitx_petalinux_latcherfloat_8_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_mixer_1_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_1_0/synth/mitx_petalinux_mixer_1_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_mixer_1_0' (327#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_1_0/synth/mitx_petalinux_mixer_1_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_mixer_1_0' (329#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_1_0/synth/mitx_petalinux_mixer_1_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_trem_0_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/synth/mitx_petalinux_trem_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'trem' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem.v:12]
 INFO: [Synth 8-638] synthesizing module 'Block_proc' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc.v:10]
 INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc.v:44]
-INFO: [Synth 8-256] done synthesizing module 'Block_proc' (328#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc.v:10]
+INFO: [Synth 8-256] done synthesizing module 'Block_proc' (330#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc.v:10]
 INFO: [Synth 8-638] synthesizing module 'tremolo_calculation' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/tremolo_calculation.v:10]
 INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/tremolo_calculation.v:73]
 INFO: [Synth 8-638] synthesizing module 'trem_fadd_32ns_32bkb' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fadd_32ns_32bkb.v:11]
 INFO: [Synth 8-638] synthesizing module 'trem_ap_fadd_3_full_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fadd_3_full_dsp_32.vhd:72]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fadd_3_full_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'trem_ap_fadd_3_full_dsp_32' (329#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fadd_3_full_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'trem_fadd_32ns_32bkb' (330#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fadd_32ns_32bkb.v:11]
+INFO: [Synth 8-256] done synthesizing module 'trem_ap_fadd_3_full_dsp_32' (331#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fadd_3_full_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'trem_fadd_32ns_32bkb' (332#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fadd_32ns_32bkb.v:11]
 INFO: [Synth 8-638] synthesizing module 'trem_fmul_32ns_32cud' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fmul_32ns_32cud.v:11]
 INFO: [Synth 8-638] synthesizing module 'trem_ap_fmul_2_max_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fmul_2_max_dsp_32.vhd:72]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fmul_2_max_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'trem_ap_fmul_2_max_dsp_32' (331#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fmul_2_max_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'trem_fmul_32ns_32cud' (332#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fmul_32ns_32cud.v:11]
+INFO: [Synth 8-256] done synthesizing module 'trem_ap_fmul_2_max_dsp_32' (333#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fmul_2_max_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'trem_fmul_32ns_32cud' (334#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fmul_32ns_32cud.v:11]
 INFO: [Synth 8-638] synthesizing module 'trem_fdiv_32ns_32dEe' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fdiv_32ns_32dEe.v:11]
 INFO: [Synth 8-638] synthesizing module 'trem_ap_fdiv_14_no_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fdiv_14_no_dsp_32.vhd:72]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fdiv_14_no_dsp_32.vhd:197]
-INFO: [Synth 8-256] done synthesizing module 'trem_ap_fdiv_14_no_dsp_32' (333#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fdiv_14_no_dsp_32.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'trem_fdiv_32ns_32dEe' (334#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fdiv_32ns_32dEe.v:11]
+INFO: [Synth 8-256] done synthesizing module 'trem_ap_fdiv_14_no_dsp_32' (335#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_fdiv_14_no_dsp_32.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'trem_fdiv_32ns_32dEe' (336#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_fdiv_32ns_32dEe.v:11]
 INFO: [Synth 8-638] synthesizing module 'trem_sitofp_32s_3eOg' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_sitofp_32s_3eOg.v:11]
 INFO: [Synth 8-638] synthesizing module 'trem_ap_sitofp_4_no_dsp_32' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_sitofp_4_no_dsp_32.vhd:70]
 INFO: [Synth 8-3491] module 'floating_point_v7_1_4' declared at '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/4a02/hdl/floating_point_v7_1_vh_rfs.vhd:91604' bound to instance 'U0' of component 'floating_point_v7_1_4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_sitofp_4_no_dsp_32.vhd:193]
-INFO: [Synth 8-256] done synthesizing module 'trem_ap_sitofp_4_no_dsp_32' (335#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_sitofp_4_no_dsp_32.vhd:70]
-INFO: [Synth 8-256] done synthesizing module 'trem_sitofp_32s_3eOg' (336#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_sitofp_32s_3eOg.v:11]
-INFO: [Synth 8-256] done synthesizing module 'tremolo_calculation' (337#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/tremolo_calculation.v:10]
+INFO: [Synth 8-256] done synthesizing module 'trem_ap_sitofp_4_no_dsp_32' (337#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/ip/trem_ap_sitofp_4_no_dsp_32.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'trem_sitofp_32s_3eOg' (338#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem_sitofp_32s_3eOg.v:11]
+INFO: [Synth 8-256] done synthesizing module 'tremolo_calculation' (339#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/tremolo_calculation.v:10]
 INFO: [Synth 8-638] synthesizing module 'Block_proc4' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc4.v:10]
 INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc4.v:44]
-INFO: [Synth 8-256] done synthesizing module 'Block_proc4' (338#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc4.v:10]
+INFO: [Synth 8-256] done synthesizing module 'Block_proc4' (340#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/Block_proc4.v:10]
 INFO: [Synth 8-638] synthesizing module 'fifo_w32_d2_A' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/fifo_w32_d2_A.v:45]
 INFO: [Synth 8-638] synthesizing module 'fifo_w32_d2_A_shiftReg' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/fifo_w32_d2_A.v:11]
-INFO: [Synth 8-256] done synthesizing module 'fifo_w32_d2_A_shiftReg' (339#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/fifo_w32_d2_A.v:11]
-INFO: [Synth 8-256] done synthesizing module 'fifo_w32_d2_A' (340#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/fifo_w32_d2_A.v:45]
-INFO: [Synth 8-256] done synthesizing module 'trem' (341#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem.v:12]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_trem_0_0' (342#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/synth/mitx_petalinux_trem_0_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'fx2_imp_E1J21P' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:1177]
+INFO: [Synth 8-256] done synthesizing module 'fifo_w32_d2_A_shiftReg' (341#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/fifo_w32_d2_A.v:11]
+INFO: [Synth 8-256] done synthesizing module 'fifo_w32_d2_A' (342#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/fifo_w32_d2_A.v:45]
+INFO: [Synth 8-256] done synthesizing module 'trem' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/99d3/hdl/verilog/trem.v:12]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_trem_0_0' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/synth/mitx_petalinux_trem_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'fx2_imp_E1J21P' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:1177]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_axis_switch_0_1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_1/synth/mitx_petalinux_axis_switch_0_1.v:58]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
 INFO: [Synth 8-638] synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
 INFO: [Synth 8-638] synthesizing module 'xpm_cdc_handshake__parameterized0' [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
-INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_handshake__parameterized0' (343#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
-INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
+INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_handshake__parameterized0' (345#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
+INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized1' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized1' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized0' (343#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_0_1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_1/synth/mitx_petalinux_axis_switch_0_1.v:58]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_0_1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_1/synth/mitx_petalinux_axis_switch_0_1.v:58]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_axis_switch_0_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/synth/mitx_petalinux_axis_switch_0_0.v:58]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
 INFO: [Synth 8-638] synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
 INFO: [Synth 8-638] synthesizing module 'xpm_cdc_handshake__parameterized1' [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
-INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_handshake__parameterized1' (344#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
-INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake__parameterized1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
+INFO: [Synth 8-256] done synthesizing module 'xpm_cdc_handshake__parameterized1' (346#1) [/opt/Xilinx_2017_2/Vivado/2017.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:352]
+INFO: [Synth 8-256] done synthesizing module 'axis_infrastructure_v1_1_0_cdc_handshake__parameterized1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/acf8/hdl/axis_infrastructure_v1_1_vl_rfs.v:1265]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized2' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized2' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router__parameterized1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized1' (344#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_0_0' (345#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/synth/mitx_petalinux_axis_switch_0_0.v:58]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router__parameterized1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized1' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_0_0' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/synth/mitx_petalinux_axis_switch_0_0.v:58]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_latcherfloat_0_0' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_0/synth/mitx_petalinux_latcherfloat_0_0.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_0' (346#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_0/synth/mitx_petalinux_latcherfloat_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_0' (348#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_0/synth/mitx_petalinux_latcherfloat_0_0.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_latcherfloat_0_1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_1/synth/mitx_petalinux_latcherfloat_0_1.v:57]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_1' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_1/synth/mitx_petalinux_latcherfloat_0_1.v:57]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_latcherfloat_0_1' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_1/synth/mitx_petalinux_latcherfloat_0_1.v:57]
 INFO: [Synth 8-638] synthesizing module 'mitx_petalinux_axis_switch_1_1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_1/synth/mitx_petalinux_axis_switch_1_1.v:58]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized2' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_decoder__parameterized2' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:479]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux__parameterized1' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux__parameterized1' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axisc_transfer_mux__parameterized1' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:817]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router__parameterized2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized3' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized3' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized2' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_reg_bank_16x32__parameterized3' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2968]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axi_ctrl_top__parameterized2' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2074]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
 INFO: [Synth 8-638] synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized2' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized2' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized2' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router__parameterized2' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
-INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized2' (347#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_1_1' (348#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_1/synth/mitx_petalinux_axis_switch_1_1.v:58]
-INFO: [Synth 8-256] done synthesizing module 'synth_mods_imp_1QCW0MN' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:14605]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux' (350#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:7025]
-INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_wrapper' (351#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v:12]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config_dp__parameterized2' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2343]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router_config__parameterized2' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2575]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_static_router__parameterized2' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2783]
+INFO: [Synth 8-256] done synthesizing module 'axis_switch_v1_1_13_axis_switch__parameterized2' (349#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:3087]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_axis_switch_1_1' (350#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_1/synth/mitx_petalinux_axis_switch_1_1.v:58]
+INFO: [Synth 8-256] done synthesizing module 'synth_mods_imp_1QCW0MN' (351#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:14605]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux' (352#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux.v:7025]
+INFO: [Synth 8-256] done synthesizing module 'mitx_petalinux_wrapper' (353#1) [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v:12]
 WARNING: [Synth 8-3331] design axis_register_slice_v1_1_13_axisc_register_slice__parameterized0 has unconnected port ACLK
 WARNING: [Synth 8-3331] design axis_register_slice_v1_1_13_axisc_register_slice__parameterized0 has unconnected port ARESET
 WARNING: [Synth 8-3331] design axis_register_slice_v1_1_13_axisc_register_slice__parameterized0 has unconnected port ACLKEN
@@ -1315,7 +1321,7 @@ WARNING: [Synth 8-3331] design axis_switch_v1_1_13_static_router_config_dp__para
 WARNING: [Synth 8-3331] design axis_switch_v1_1_13_static_router_config_dp__parameterized2 has unconnected port reg_mi_mux[437]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:44 ; elapsed = 00:02:48 . Memory (MB): peak = 1755.383 ; gain = 533.684 ; free physical = 5787 ; free virtual = 7384
+Finished RTL Elaboration : Time (s): cpu = 00:02:45 ; elapsed = 00:02:48 . Memory (MB): peak = 1755.711 ; gain = 533.684 ; free physical = 4208 ; free virtual = 7044
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1325,9 +1331,9 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:49 ; elapsed = 00:02:53 . Memory (MB): peak = 1755.383 ; gain = 533.684 ; free physical = 5843 ; free virtual = 7440
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:50 ; elapsed = 00:02:52 . Memory (MB): peak = 1755.711 ; gain = 533.684 ; free physical = 4289 ; free virtual = 7125
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 13578 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 13620 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7z100ffg900-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -1465,9 +1471,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDR => FDRE: 102 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.58 . Memory (MB): peak = 2519.020 ; gain = 0.000 ; free physical = 4860 ; free virtual = 6503
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.64 . Memory (MB): peak = 2519.816 ; gain = 0.000 ; free physical = 3339 ; free virtual = 6175
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:04:11 ; elapsed = 00:04:20 . Memory (MB): peak = 2519.020 ; gain = 1297.320 ; free physical = 5454 ; free virtual = 7096
+Finished Constraint Validation : Time (s): cpu = 00:04:12 ; elapsed = 00:04:18 . Memory (MB): peak = 2519.816 ; gain = 1297.789 ; free physical = 3932 ; free virtual = 6767
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
 ---------------------------------------------------------------------------------
@@ -1475,7 +1481,7 @@ Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z100ffg900-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:04:11 ; elapsed = 00:04:20 . Memory (MB): peak = 2522.938 ; gain = 1301.238 ; free physical = 5453 ; free virtual = 7096
+Finished Loading Part and Timing Information : Time (s): cpu = 00:04:12 ; elapsed = 00:04:18 . Memory (MB): peak = 2523.734 ; gain = 1301.707 ; free physical = 3931 ; free virtual = 6767
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1561,7 +1567,7 @@ Applied set_property DONT_TOUCH = true for mitx_petalinux_i/synth_mods/output_xb
 Applied set_property DONT_TOUCH = true for mitx_petalinux_i/synth_mods/output_xbar/inst/\gen_static_router.gen_synch.inst_cdc_handshake /inst_xpm_cdc_handshake/xpm_cdc_single_src2dest_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mitx_petalinux_i/synth_mods/output_xbar/inst/\gen_static_router.gen_synch.inst_rst_synch /inst_xpm_cdc_single. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:12 ; elapsed = 00:04:21 . Memory (MB): peak = 2522.938 ; gain = 1301.238 ; free physical = 5441 ; free virtual = 7084
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:04:13 ; elapsed = 00:04:19 . Memory (MB): peak = 2523.734 ; gain = 1301.707 ; free physical = 3919 ; free virtual = 6755
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "s_axi_rresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "s_axi_rresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
@@ -1881,10 +1887,12 @@ INFO: [Synth 8-5546] ROM "notrhs7_fu_178_p2" won't be mapped to RAM because it i
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'envelope_CTRL_BUS_s_axi'
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "op_tdata" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
-INFO: [Synth 8-5545] ROM "tmp_3_fu_310_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "tmp_3_fu_310_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5544] ROM "grp_fu_169_p1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "tmp_5_fu_372_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "notrhs_fu_319_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_5_fu_372_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "notrhs_fu_319_p2" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -1895,6 +1903,7 @@ INFO: [Synth 8-5544] ROM "wave_in_V_0_state" won't be mapped to Block RAM becaus
 INFO: [Synth 8-5544] ROM "wave_in_V_0_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wave_out_V_1_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wave_out_V_1_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "grp_fu_179_p1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'Echo_CTRL_BUS_s_axi'
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -2142,7 +2151,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axis_switch_v1_1_13_static_router_config__parameterized2'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:43 ; elapsed = 00:05:42 . Memory (MB): peak = 2527.023 ; gain = 1305.324 ; free physical = 3579 ; free virtual = 5223
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:44 ; elapsed = 00:05:39 . Memory (MB): peak = 2527.820 ; gain = 1305.793 ; free physical = 2057 ; free virtual = 4893
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_4:/i_synth/DELAY_DIVIDE_BY_ZERO' (floating_point_v7_1_4_delay__parameterized1) to 'floating_point_v7_1_4:/i_synth/DELAY_ACCUM_OVERFLOW'
 INFO: [Synth 8-223] decloning instance 'floating_point_v7_1_4:/i_synth/DELAY_DIVIDE_BY_ZERO' (floating_point_v7_1_4_delay__parameterized1) to 'floating_point_v7_1_4:/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
@@ -2200,7 +2209,7 @@ Report RTL Partitions:
 |9     |synth_mods_imp_1QCW0MN__GCB0            |           1|     33814|
 |10    |fx1_imp_9YE6W4                          |           1|     16778|
 |11    |synth_mods_imp_1QCW0MN__GCB2            |           1|     27444|
-|12    |synth_mods_imp_1QCW0MN__GCB3            |           1|     18882|
+|12    |synth_mods_imp_1QCW0MN__GCB3            |           1|     19331|
 |13    |mitx_petalinux__GC0                     |           1|     28448|
 +------+----------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -2320,8 +2329,7 @@ INFO: [Synth 8-5546] ROM "MULT.OP/EXP/COND_DET_A/exp_all_zero_ip" won't be mappe
 INFO: [Synth 8-5546] ROM "MULT.OP/EXP/COND_DET_B/exp_all_one_ip" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "MULT.OP/EXP/COND_DET_B/exp_all_zero_ip" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "MULT.OP/EXP/exp_just_over_sig" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "MULT.OP/EXP/flow_sig" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "MULT.OP/EXP/flow_sig" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (FM_Synth_srem_32nhbi:/\FM_Synth_srem_32nhbi_div_U/FM_Synth_srem_32nhbi_div_u_0/remd_tmp_reg[0][0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (FM_Synth_srem_32nhbi:/\FM_Synth_srem_32nhbi_div_U/FM_Synth_srem_32nhbi_div_u_0/remd_tmp_reg[0][1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (FM_Synth_srem_32nhbi:/\FM_Synth_srem_32nhbi_div_U/FM_Synth_srem_32nhbi_div_u_0/remd_tmp_reg[0][2] )
@@ -2625,8 +2633,6 @@ INFO: [Synth 8-3886] merging instance 'mitx_petalinux_i/Generatorsi_2_0/noisy_0/
 INFO: [Synth 8-3886] merging instance 'mitx_petalinux_i/Generatorsi_2_0/noisy_0/inst/noisy_fadd_32ns_3bkb_U1/noisy_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]' (FDE) to 'mitx_petalinux_i/Generatorsi_2_0/noisy_0/inst/noisy_fadd_32ns_3bkb_U1/noisy_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[13]'
 INFO: [Synth 8-3886] merging instance 'mitx_petalinux_i/Generatorsi_2_0/noisy_0/inst/noisy_fadd_32ns_3bkb_U1/noisy_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[13]' (FDE) to 'mitx_petalinux_i/Generatorsi_2_0/noisy_0/inst/noisy_fadd_32ns_3bkb_U1/noisy_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[12]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-5546] ROM "MULT.OP/EXP/COND_DET_A/exp_all_one_ip" won't be mapped to RAM because it is too sparse
-INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5545] ROM "tmp_s_fu_370_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "tmp_4_i_fu_570_p2" won't be mapped to RAM because address size (52) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "tmp_4_i7_fu_1127_p2" won't be mapped to RAM because address size (52) is larger than maximum supported(25)
@@ -2683,7 +2689,7 @@ INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-5545] ROM "tmp_3_fu_310_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_5_fu_372_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-4471] merging register 'inst/gen_static_router.inst_static_router/inst_start_router_config/inst_start_router_config_dp/mi_cntr_reg[3:0]' into 'inst/gen_static_router.inst_static_router/inst_start_router_config/inst_start_router_config_dp/mi_cntr_reg[3:0]' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2441]
 INFO: [Synth 8-4471] merging register 'inst/gen_static_router.inst_static_router/inst_start_router_config/inst_start_router_config_dp/mi_cntr_reg[3:0]' into 'inst/gen_static_router.inst_static_router/inst_start_router_config/inst_start_router_config_dp/mi_cntr_reg[3:0]' [/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/f6f0/hdl/axis_switch_v1_1_vl_rfs.v:2441]
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
@@ -2700,7 +2706,7 @@ INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:10 ; elapsed = 00:08:44 . Memory (MB): peak = 2538.949 ; gain = 1317.250 ; free physical = 2990 ; free virtual = 4644
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:16 ; elapsed = 00:08:54 . Memory (MB): peak = 2539.746 ; gain = 1317.719 ; free physical = 1473 ; free virtual = 4317
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2718,7 +2724,7 @@ Report RTL Partitions:
 |9     |synth_mods_imp_1QCW0MN__GCB0            |           1|     20618|
 |10    |fx1_imp_9YE6W4                          |           1|     13985|
 |11    |synth_mods_imp_1QCW0MN__GCB2            |           1|     18642|
-|12    |synth_mods_imp_1QCW0MN__GCB3            |           1|     14916|
+|12    |synth_mods_imp_1QCW0MN__GCB3            |           1|     15467|
 |13    |mitx_petalinux__GC0                     |           1|     16897|
 +------+----------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -2727,13 +2733,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'i2s_block/i2s_tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/s_aresetn' to pin 'i2s_block/i2s_tx_fifo/inst/gen_async_clock_and_reset.s_and_m_aresetn_r_reg/Q'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:27 ; elapsed = 00:09:01 . Memory (MB): peak = 2538.949 ; gain = 1317.250 ; free physical = 2635 ; free virtual = 4296
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:32 ; elapsed = 00:09:11 . Memory (MB): peak = 2539.746 ; gain = 1317.719 ; free physical = 1124 ; free virtual = 3969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:06:49 ; elapsed = 00:09:24 . Memory (MB): peak = 2600.051 ; gain = 1378.352 ; free physical = 2573 ; free virtual = 4234
+Finished Timing Optimization : Time (s): cpu = 00:06:55 ; elapsed = 00:09:35 . Memory (MB): peak = 2600.848 ; gain = 1378.820 ; free physical = 1063 ; free virtual = 3908
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2751,7 +2757,7 @@ Report RTL Partitions:
 |9     |synth_mods_imp_1QCW0MN__GCB0            |           1|     20618|
 |10    |fx1_imp_9YE6W4                          |           1|     13985|
 |11    |synth_mods_imp_1QCW0MN__GCB2            |           1|     18642|
-|12    |synth_mods_imp_1QCW0MN__GCB3            |           1|     14916|
+|12    |synth_mods_imp_1QCW0MN__GCB3            |           1|     15467|
 |13    |mitx_petalinux__GC0                     |           1|     16897|
 +------+----------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -2766,7 +2772,7 @@ INFO: [Synth 8-4480] The timing for the instance mitx_petalinux_i/synth_mods/Gen
 INFO: [Synth 8-4480] The timing for the instance mitx_petalinux_i/synth_mods/Generators/FM_Synth_1/insti_1/inst/notes_U/FM_Synth_notes_rom_U/q1_reg_6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance mitx_petalinux_i/synth_mods/Generators/FM_Synth_1/insti_1/inst/notes_U/FM_Synth_notes_rom_U/q1_reg_7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:07:31 ; elapsed = 00:11:12 . Memory (MB): peak = 2627.992 ; gain = 1406.293 ; free physical = 1531 ; free virtual = 3206
+Finished Technology Mapping : Time (s): cpu = 00:07:39 ; elapsed = 00:11:27 . Memory (MB): peak = 2628.789 ; gain = 1406.762 ; free physical = 143 ; free virtual = 2877
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2778,7 +2784,7 @@ Report RTL Partitions:
 |3     |synth_mods_imp_1QCW0MN__GCB0 |           1|     11409|
 |4     |fx1_imp_9YE6W4               |           1|      8549|
 |5     |synth_mods_imp_1QCW0MN__GCB2 |           1|     11845|
-|6     |synth_mods_imp_1QCW0MN__GCB3 |           1|      9181|
+|6     |synth_mods_imp_1QCW0MN__GCB3 |           1|      9295|
 |7     |mitx_petalinux__GC0          |           1|      9275|
 +------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -2923,7 +2929,7 @@ INFO: [Common 17-14] Message 'Synth 8-4618' appears 100 times and further instan
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:07:57 ; elapsed = 00:11:41 . Memory (MB): peak = 2639.031 ; gain = 1417.332 ; free physical = 1708 ; free virtual = 3383
+Finished IO Insertion : Time (s): cpu = 00:08:07 ; elapsed = 00:11:59 . Memory (MB): peak = 2648.883 ; gain = 1426.855 ; free physical = 333 ; free virtual = 3054
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2936,7 +2942,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:07:58 ; elapsed = 00:11:42 . Memory (MB): peak = 2639.031 ; gain = 1417.332 ; free physical = 1710 ; free virtual = 3385
+Finished Renaming Generated Instances : Time (s): cpu = 00:08:08 ; elapsed = 00:12:00 . Memory (MB): peak = 2648.883 ; gain = 1426.855 ; free physical = 333 ; free virtual = 3055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2948,25 +2954,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:08:52 ; elapsed = 00:12:40 . Memory (MB): peak = 2639.031 ; gain = 1417.332 ; free physical = 1654 ; free virtual = 3329
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:09:04 ; elapsed = 00:12:59 . Memory (MB): peak = 2648.883 ; gain = 1426.855 ; free physical = 277 ; free virtual = 2999
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:08:54 ; elapsed = 00:12:42 . Memory (MB): peak = 2639.031 ; gain = 1417.332 ; free physical = 1654 ; free virtual = 3329
+Finished Renaming Generated Ports : Time (s): cpu = 00:09:05 ; elapsed = 00:13:01 . Memory (MB): peak = 2648.883 ; gain = 1426.855 ; free physical = 277 ; free virtual = 2999
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:08:59 ; elapsed = 00:12:47 . Memory (MB): peak = 2639.031 ; gain = 1417.332 ; free physical = 1654 ; free virtual = 3329
+Finished Handling Custom Attributes : Time (s): cpu = 00:09:10 ; elapsed = 00:13:06 . Memory (MB): peak = 2648.883 ; gain = 1426.855 ; free physical = 277 ; free virtual = 2998
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:09:00 ; elapsed = 00:12:48 . Memory (MB): peak = 2639.031 ; gain = 1417.332 ; free physical = 1654 ; free virtual = 3329
+Finished Renaming Generated Nets : Time (s): cpu = 00:09:11 ; elapsed = 00:13:07 . Memory (MB): peak = 2648.883 ; gain = 1426.855 ; free physical = 277 ; free virtual = 2998
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -2994,13 +3000,13 @@ Report Cell Usage:
 |10    |DSP48E1_7   |     4|
 |11    |DSP48E1_8   |     8|
 |12    |LUT1        |  7047|
-|13    |LUT2        |  5464|
-|14    |LUT3        | 20972|
-|15    |LUT4        |  4702|
-|16    |LUT5        |  5299|
-|17    |LUT6        |  8617|
+|13    |LUT2        |  5512|
+|14    |LUT3        | 20974|
+|15    |LUT4        |  4677|
+|16    |LUT5        |  5173|
+|17    |LUT6        |  8768|
 |18    |MMCME2_ADV  |     1|
-|19    |MUXCY       |  7354|
+|19    |MUXCY       |  7385|
 |20    |MUXF7       |   297|
 |21    |MUXF8       |     1|
 |22    |PS7         |     1|
@@ -3024,34 +3030,34 @@ Report Cell Usage:
 |40    |FDE         |   277|
 |41    |FDPE        |    21|
 |42    |FDR         |    40|
-|43    |FDRE        | 46277|
-|44    |FDSE        |   509|
+|43    |FDRE        | 46297|
+|44    |FDSE        |   523|
 |45    |IBUF        |     9|
 |46    |IBUFDS      |     1|
 |47    |OBUF        |    12|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:09:00 ; elapsed = 00:12:48 . Memory (MB): peak = 2639.031 ; gain = 1417.332 ; free physical = 1654 ; free virtual = 3329
+Finished Writing Synthesis Report : Time (s): cpu = 00:09:11 ; elapsed = 00:13:07 . Memory (MB): peak = 2648.883 ; gain = 1426.855 ; free physical = 277 ; free virtual = 2998
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 3547 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:07:47 ; elapsed = 00:11:34 . Memory (MB): peak = 2642.941 ; gain = 657.605 ; free physical = 4938 ; free virtual = 6613
-Synthesis Optimization Complete : Time (s): cpu = 00:09:00 ; elapsed = 00:12:53 . Memory (MB): peak = 2642.941 ; gain = 1421.242 ; free physical = 4959 ; free virtual = 6613
+Synthesis Optimization Runtime : Time (s): cpu = 00:07:57 ; elapsed = 00:11:52 . Memory (MB): peak = 2652.793 ; gain = 666.660 ; free physical = 3560 ; free virtual = 6282
+Synthesis Optimization Complete : Time (s): cpu = 00:09:11 ; elapsed = 00:13:10 . Memory (MB): peak = 2652.793 ; gain = 1430.766 ; free physical = 3581 ; free virtual = 6283
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 16311 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 16342 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2375 instances were transformed.
-  (MUXCY,XORCY) => CARRY4: 2057 instances
+  A total of 2384 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 2066 instances
   FDE => FDRE: 277 instances
   FDR => FDRE: 40 instances
   SRL16 => SRL16E: 1 instances
 
-1874 Infos, 493 Warnings, 0 Critical Warnings and 0 Errors encountered.
+1879 Infos, 494 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:09:59 ; elapsed = 00:13:52 . Memory (MB): peak = 2646.703 ; gain = 1479.422 ; free physical = 5101 ; free virtual = 6756
+synth_design: Time (s): cpu = 00:10:11 ; elapsed = 00:14:09 . Memory (MB): peak = 2654.883 ; gain = 1488.273 ; free physical = 3726 ; free virtual = 6429
 INFO: [Common 17-1381] The checkpoint '/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/synth_1/mitx_petalinux_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 2670.715 ; gain = 24.012 ; free physical = 5080 ; free virtual = 6757
-report_utilization: Time (s): cpu = 00:00:00.85 ; elapsed = 00:00:00.96 . Memory (MB): peak = 2670.715 ; gain = 0.000 ; free physical = 5079 ; free virtual = 6756
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 05:40:32 2019...
+write_checkpoint: Time (s): cpu = 00:00:32 ; elapsed = 00:00:19 . Memory (MB): peak = 2678.895 ; gain = 24.012 ; free physical = 3705 ; free virtual = 6429
+report_utilization: Time (s): cpu = 00:00:00.86 ; elapsed = 00:00:01 . Memory (MB): peak = 2678.895 ; gain = 0.000 ; free physical = 3704 ; free virtual = 6428
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 16:13:40 2019...
