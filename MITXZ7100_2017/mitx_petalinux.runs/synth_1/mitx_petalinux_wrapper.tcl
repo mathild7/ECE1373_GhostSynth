@@ -8,89 +8,91 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.cache/wt [current_project]
-set_property parent.project_path /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr [current_project]
+set_property webtalk.parent_dir /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.cache/wt [current_project]
+set_property parent.project_path /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths /home/hildeb47/proj/ECE1373_GhostSynth/modules [current_project]
+set_property ip_repo_paths /root/repo/new/ECE1373_GhostSynth/modules [current_project]
 set_property ip_cache_permissions disable [current_project]
 read_verilog -library xil_defaultlib -sv {
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/common_libs/bits_sync.v
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_core_regmap_regs_pkg.sv
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_core_regmap_regs.sv
+  /root/repo/new/ECE1373_GhostSynth/modules/common_libs/bits_sync.v
+  /root/repo/new/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_core_regmap_regs_pkg.sv
+  /root/repo/new/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_core_regmap_regs.sv
 }
 read_verilog -library xil_defaultlib {
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_topm.v
-  /home/hildeb47/proj/ECE1373_GhostSynth/modules/i2s_core/rtl/atg_module.v
-  /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v
+  /root/repo/new/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_codec.v
+  /root/repo/new/ECE1373_GhostSynth/modules/i2s_core/rtl/i2s_topm.v
+  /root/repo/new/ECE1373_GhostSynth/modules/i2s_core/rtl/atg_module.v
+  /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/hdl/mitx_petalinux_wrapper.v
 }
-add_files /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_board.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_converter_0_0/constraints/converter_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_1_0/constraints/saw_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_2_0/constraints/saw_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_3_0/constraints/saw_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_0_0/constraints/mixer_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_4_0/constraints/saw_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_FM_Synth_0_0/constraints/FM_Synth_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/mitx_petalinux_axis_switch_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/constraints/Echo_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_0/mitx_petalinux_axis_switch_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_noisy_0_0/constraints/noisy_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_0/constraints/biquad_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_0_1/constraints/mixer_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_FM_Synth_1_0/constraints/FM_Synth_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_1/mitx_petalinux_axis_switch_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_1/mitx_petalinux_axis_switch_1_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_envelope_0_0/constraints/envelope_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_0/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/constraints/compressor_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_1_0/constraints/mixer_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_2_1/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_2/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_3/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_1/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_4/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_5/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_2/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_1/constraints/compressor_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_1/constraints/latcherfloatlatcherfloat_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_xbar_1/mitx_petalinux_xbar_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/constraints/trem_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_6/mitx_petalinux_auto_pc_6_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_5/mitx_petalinux_auto_pc_5_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_4/mitx_petalinux_auto_pc_4_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_8/mitx_petalinux_auto_pc_8_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/mitx_petalinux_auto_pc_7_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_0_0/mitx_petalinux_tier2_xbar_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_1_0/mitx_petalinux_tier2_xbar_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_2_0/mitx_petalinux_tier2_xbar_2_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/mitx_petalinux_auto_pc_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/mitx_petalinux_auto_pc_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_1/mitx_petalinux_auto_pc_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_0/mitx_petalinux_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux_ooc.xdc]
-set_property is_locked true [get_files /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+add_files /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_board.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_converter_0_0/constraints/converter_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_1_0/constraints/saw_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_2_0/constraints/saw_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_3_0/constraints/saw_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_0_0/constraints/mixer_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_saw_4_0/constraints/saw_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_FM_Synth_0_0/constraints/FM_Synth_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_0/mitx_petalinux_axis_switch_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_Echo_0_0/constraints/Echo_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_0/mitx_petalinux_axis_switch_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_noisy_0_0/constraints/noisy_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_0/constraints/biquad_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_0_1/constraints/mixer_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_FM_Synth_1_0/constraints/FM_Synth_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_1/mitx_petalinux_axis_switch_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_1/mitx_petalinux_axis_switch_1_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_envelope_0_0/constraints/envelope_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_0/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/constraints/compressor_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_mixer_1_0/constraints/mixer_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_2_1/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_2/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_3/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_1/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_4/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_5/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_1_2/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_1/constraints/compressor_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_0_1/constraints/latcherfloatlatcherfloat_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_xbar_0/mitx_petalinux_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_xbar_1/mitx_petalinux_xbar_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/constraints/trem_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_1/constraints/biquad_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/mitx_petalinux_auto_pc_7_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_6/mitx_petalinux_auto_pc_6_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_5/mitx_petalinux_auto_pc_5_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_9/mitx_petalinux_auto_pc_9_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_8/mitx_petalinux_auto_pc_8_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_0_0/mitx_petalinux_tier2_xbar_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_1_0/mitx_petalinux_tier2_xbar_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_tier2_xbar_2_0/mitx_petalinux_tier2_xbar_2_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_4/mitx_petalinux_auto_pc_4_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_3/mitx_petalinux_auto_pc_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_2/mitx_petalinux_auto_pc_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_1/mitx_petalinux_auto_pc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_0/mitx_petalinux_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux_ooc.xdc]
+set_property is_locked true [get_files /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -100,8 +102,8 @@ set_property is_locked true [get_files /home/hildeb47/proj/ECE1373_GhostSynth/MI
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc
-set_property used_in_implementation false [get_files /home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc]
+read_xdc /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc
+set_property used_in_implementation false [get_files /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

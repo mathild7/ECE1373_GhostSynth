@@ -932,11 +932,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Apr 28 22:22:09 UTC 2019</spirit:value>
+            <spirit:value>Mon Apr 29 21:58:10 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:b9dfbe07</spirit:value>
+            <spirit:value>7:a28e63ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -951,11 +951,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Apr 28 22:22:09 UTC 2019</spirit:value>
+            <spirit:value>Mon Apr 29 21:58:10 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:b9dfbe07</spirit:value>
+            <spirit:value>7:a28e63ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -997,11 +997,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Apr 28 22:22:09 UTC 2019</spirit:value>
+            <spirit:value>Mon Apr 29 21:58:10 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:af11d7e3</spirit:value>
+            <spirit:value>7:f6639879</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1016,11 +1016,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Apr 28 22:22:09 UTC 2019</spirit:value>
+            <spirit:value>Mon Apr 29 21:58:10 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:af11d7e3</spirit:value>
+            <spirit:value>7:f6639879</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1538,19 +1538,23 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fcmp_0_no_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1559,27 +1563,31 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_CTRL_BUS_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_CTRL_BUS_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_fmul_32ncud.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fadd_32nbkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fcmp_32nfYi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_fadd_32nbkb.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fdiv_32ndEe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_sitofp_3eOg.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fmul_32ncud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_fdiv_32ndEe.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_sitofp_3eOg.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1738,52 +1746,62 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_CTRL_BUS_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_CTRL_BUS_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_fmul_32ncud.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fadd_32nbkb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fcmp_32nfYi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_fadd_32nbkb.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fdiv_32ndEe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_sitofp_3eOg.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_fmul_32ncud.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/verilog/envelope_fdiv_32ndEe.v</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope_sitofp_3eOg.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/verilog/envelope.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a1eb/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd</spirit:name>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b547/hdl/ip/envelope_ap_fcmp_0_no_dsp_32.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -1838,7 +1856,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">26</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">45</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -1862,7 +1880,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>Envelope</xilinx:displayName>
-      <xilinx:coreRevision>1904281052</xilinx:coreRevision>
+      <xilinx:coreRevision>1904292143</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.CLK_DOMAIN" xilinx:valueSource="default_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AP_CLK.FREQ_HZ" xilinx:valueSource="user_prop"/>

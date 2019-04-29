@@ -12,41 +12,104 @@ preplace port i2s_tx_data_ext -pg 1 -y 470 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 70 -defaultsOSRD
 preplace port pl -pg 1 -y 620 -defaultsOSRD
 preplace port led_8bits -pg 1 -y 140 -defaultsOSRD
-preplace inst synth_mods -pg 1 -lvl 3 -y 390 -defaultsOSRD
+preplace inst synth_mods|envelope_0 -pg 1 -lvl 8 -y 962 -defaultsOSRD
+preplace inst synth_mods|latcherfloat_0 -pg 1 -lvl 9 -y 982 -defaultsOSRD
+preplace inst synth_mods|latcherfloat_1 -pg 1 -lvl 12 -y 1192 -defaultsOSRD
+preplace inst synth_mods|fx2_xbar -pg 1 -lvl 7 -y 892 -defaultsOSRD
+preplace inst synth_mods -pg 1 -lvl 3 -y 392 -defaultsOSRD
 preplace inst axi_gpio_0 -pg 1 -lvl 5 -y 270 -defaultsOSRD
+preplace inst synth_mods|compressor_0 -pg 1 -lvl 11 -y 1162 -defaultsOSRD
 preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 720 -defaultsOSRD
 preplace inst axi_gpio_1 -pg 1 -lvl 5 -y 140 -defaultsOSRD
+preplace inst synth_mods|fx1 -pg 1 -lvl 4 -y 742 -defaultsOSRD
 preplace inst converter_0 -pg 1 -lvl 4 -y 410 -defaultsOSRD
 preplace inst audio_pll -pg 1 -lvl 4 -y 630 -defaultsOSRD
+preplace inst synth_mods|biquad_0 -pg 1 -lvl 12 -y 392 -defaultsOSRD
+preplace inst synth_mods|fx2 -pg 1 -lvl 6 -y 822 -defaultsOSRD
+preplace inst synth_mods|output_xbar -pg 1 -lvl 10 -y 1022 -defaultsOSRD
+preplace inst synth_mods|generators_xbar -pg 1 -lvl 3 -y 702 -defaultsOSRD
+preplace inst synth_mods|Generators -pg 1 -lvl 2 -y 652 -defaultsOSRD
 preplace inst i2s_block -pg 1 -lvl 5 -y 460 -defaultsOSRD
+preplace inst synth_mods|axi_interconnect_0 -pg 1 -lvl 1 -y 852 -defaultsOSRD
+preplace inst synth_mods|fx1_xbar -pg 1 -lvl 5 -y 782 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 280 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 150 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 1 5 460J 40 NJ 40 NJ 40 NJ 40 1660J
-preplace netloc i2s_block_i2s_tx_data_o 1 5 1 NJ
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 3 N 250 NJ 250 NJ
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 2 480 490 790
-preplace netloc converter_0_out_V 1 4 1 1320
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N
-preplace netloc processing_system7_0_M_AXI_GP1 1 1 1 N
-preplace netloc aud_rstn_1 1 4 2 1360 580 NJ
-preplace netloc i2s_rx_data_i_1 1 4 2 1360 340 NJ
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 310 450
-preplace netloc latch_V_1 1 2 4 800 570 NJ 570 NJ 570 1660
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 4 470 30 800 280 1050 300 1350
-preplace netloc CLK_IN1_D_1 1 0 4 NJ 620 NJ 620 NJ 620 NJ
-preplace netloc i2s_block_i2s_mclk_o 1 5 1 NJ
-preplace netloc mms_axi_1 1 2 3 N 290 NJ 290 1340J
-preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 70 NJ 70 NJ 70 NJ 70 NJ
-preplace netloc S00_AXI_1 1 2 1 780
-preplace netloc axi_gpio_0_GPIO 1 5 1 NJ
-preplace netloc saw_gen_out_V_V 1 3 1 N
+preplace netloc synth_mods|axi_interconnect_0_M05_AXI 1 1 1 1380
+preplace netloc synth_mods|source_xbar_M02_AXIS 1 3 1 2120
+preplace netloc synth_mods|ap_rst_n_1 1 0 12 980J 322 1430 502 1750 532 2090 582 2420 922 2760 972 3080 1012 3400 1072 3770 1082 4080 902 4400 902 4760
+preplace netloc synth_mods|xbar_s1_M02_AXIS 1 5 1 2740
+preplace netloc saw_gen_out_V_V 1 3 1 5220
 preplace netloc i2s_block_i2s_ws_o 1 5 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 300 460 60 790 260 1060 260 1330
-preplace netloc axi_gpio_1_GPIO 1 5 1 NJ
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 3 780 120 NJ 120 NJ
-preplace netloc audio_pll_clk_out1 1 4 1 1370
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 70 NJ 70 NJ 70 NJ 70 NJ
+preplace netloc synth_mods|Conn1 1 0 1 N
+preplace netloc audio_pll_clk_out1 1 4 1 5560
+preplace netloc synth_mods|latcherfloat_3_out_V 1 2 1 N
+preplace netloc synth_mods|axis_switch_0_M00_AXIS1 1 7 3 NJ 882 NJ 882 4070
+preplace netloc synth_mods|xbar_s1_M01_AXIS 1 5 1 2740
+preplace netloc synth_mods|latcherfloat_1_out_V1 1 12 1 N
+preplace netloc aud_rstn_1 1 4 2 5550 580 NJ
 preplace netloc i2s_block_i2s_sck_o 1 5 1 NJ
-levelinfo -pg 1 0 240 630 930 1190 1520 1690 -top 0 -bot 810
+preplace netloc synth_mods|latcherfloat_4_out_V 1 4 1 N
+preplace netloc synth_mods|latcherfloat_0_out_V1 1 9 1 N
+preplace netloc synth_mods|source_xbar_M04_AXIS 1 3 1 2060
+preplace netloc axi_gpio_0_GPIO 1 5 1 NJ
+preplace netloc synth_mods|axis_switch_0_M00_AXIS 1 3 2 2120J 592 2430
+preplace netloc synth_mods|axi_interconnect_0_M02_AXI 1 1 1 1320
+preplace netloc synth_mods|axi_interconnect_0_M15_AXI 1 1 7 N 962 NJ 962 NJ 962 NJ 962 2730J 992 NJ 992 3380J
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 50 820J 60 NJ 60 NJ 60 5850J
+preplace netloc synth_mods|axi_interconnect_0_M04_AXI 1 1 1 1350
+preplace netloc synth_mods|axi_interconnect_0_M03_AXI 1 1 1 1410
+preplace netloc synth_mods|latcherfloat_0_out_V 1 2 1 1730
+preplace netloc synth_mods|axi_interconnect_0_M14_AXI 1 1 6 N 942 NJ 942 NJ 942 NJ 942 2730J 952 3060J
+preplace netloc synth_mods|latcherfloat_1_out_V 1 2 1 1740
+preplace netloc synth_mods|biquad_0_out_V 1 10 3 4410 1272 NJ 1272 5080
+preplace netloc converter_0_out_V 1 4 1 5510
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 2 490 490 820
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 320 450
+preplace netloc synth_mods|xbar_s1_M03_AXIS 1 5 1 2730
+preplace netloc synth_mods|source_xbar_M03_AXIS 1 3 1 2070
+preplace netloc synth_mods|axi_interconnect_0_M18_AXI 1 1 11 1390 362 NJ 362 NJ 362 NJ 362 NJ 362 NJ 362 NJ 362 NJ 362 NJ 362 NJ 362 NJ
+preplace netloc synth_mods|axi_interconnect_0_M12_AXI 1 1 5 1420 472 NJ 472 NJ 472 NJ 472 2760J
+preplace netloc synth_mods|axi_interconnect_0_M07_AXI 1 1 3 N 802 1770J 572 2070J
+preplace netloc CLK_IN1_D_1 1 0 4 10J 300 460J 10 NJ 10 5200J
+preplace netloc latch_V_1 1 2 4 840 50 NJ 50 NJ 50 5840
+preplace netloc mms_axi_1 1 2 3 820 280 NJ 280 5530J
+preplace netloc synth_mods|axi_interconnect_0_M08_AXI 1 1 4 1310 442 NJ 442 NJ 442 2450J
+preplace netloc synth_mods|mixer_1_out_V 1 6 1 3060
+preplace netloc synth_mods|latcherfloat_5_out_V 1 4 1 N
+preplace netloc synth_mods|axi_interconnect_0_M00_AXI 1 1 1 N
+preplace netloc i2s_block_i2s_tx_data_o 1 5 1 NJ
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 3 790 120 NJ 120 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 310 470 30 830 260 5230 260 5540
+preplace netloc synth_mods|latcherfloat_2_out_V 1 4 1 N
+preplace netloc synth_mods|axis_switch_0_M01_AXIS1 1 7 1 3400
+preplace netloc synth_mods|ARESETN_1 1 0 1 980
+preplace netloc synth_mods|ap_clk_1 1 0 12 990 352 1360 812 1760 552 2080 572 2440 912 2750 962 3070 1022 3390 1052 3780 1072 4100 912 4390 912 4750
+preplace netloc synth_mods|envelope_0_wave_out_V 1 8 1 3780
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 3 800 240 NJ 240 5550J
+preplace netloc synth_mods|output_xbar_M00_AXIS 1 10 2 4410 382 NJ
+preplace netloc synth_mods|axi_interconnect_0_M01_AXI 1 1 1 1340
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 4 480 60 810 270 5210 270 5520
+preplace netloc synth_mods|xbar_s1_M00_AXIS 1 5 1 2740
+preplace netloc synth_mods|axi_interconnect_0_M17_AXI 1 1 10 N 1002 NJ 1002 NJ 1002 NJ 1002 NJ 1002 NJ 1002 3370J 872 NJ 872 NJ 872 4380J
+preplace netloc i2s_rx_data_i_1 1 4 2 5550 340 NJ
+preplace netloc synth_mods|latcherfloat_6_out_V 1 2 1 N
+preplace netloc i2s_block_i2s_mclk_o 1 5 1 NJ
+preplace netloc synth_mods|axi_interconnect_0_M16_AXI 1 1 9 N 982 NJ 982 NJ 982 NJ 982 NJ 982 3060J 1062 NJ 1062 NJ 1062 4090J
+preplace netloc synth_mods|axi_interconnect_0_M06_AXI 1 1 2 1340 792 1780J
+preplace netloc axi_gpio_1_GPIO 1 5 1 NJ
+preplace netloc synth_mods|axis_switch_0_M01_AXIS 1 3 1 2110
+preplace netloc synth_mods|latch_V_1 1 0 12 1000J 332 1400 492 NJ 492 2100 932 NJ 932 2740 1042 NJ 1042 NJ 1042 3760 892 NJ 892 NJ 892 4740
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N
+preplace netloc synth_mods|axi_interconnect_0_M13_AXI 1 1 5 1440 482 NJ 482 NJ 482 NJ 482 2750J
+preplace netloc processing_system7_0_M_AXI_GP1 1 1 1 N
+preplace netloc synth_mods|axi_interconnect_0_M10_AXI 1 1 3 1370 462 NJ 462 2130J
+preplace netloc synth_mods|axi_interconnect_0_M11_AXI 1 1 1 1450
+preplace netloc synth_mods|compressor_0_out_V 1 11 1 N
+preplace netloc synth_mods|axi_interconnect_0_M09_AXI 1 1 3 1330 452 NJ 452 2140J
+preplace netloc S00_AXI_1 1 2 1 790
+levelinfo -pg 1 -10 240 640 1040 5380 5700 5870 -top 0 -bot 1540
+levelinfo -hier synth_mods * 1160 1590 1920 2280 2590 2920 3230 3580 3930 4240 4580 4920 *
 ",
 }
 0

@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="mitx_petalinux" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1556511465"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1556511465"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1556511465"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1556575270"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1556575270"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1556575270"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -365,32 +365,8 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/mitx_petalinux_auto_pc_6/mitx_petalinux_auto_pc_6.xci" Type="IP">
-        <Instance HierarchyPath="processing_system7_0_axi_periph/m02_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/mitx_petalinux_auto_pc_5/mitx_petalinux_auto_pc_5.xci" Type="IP">
-        <Instance HierarchyPath="processing_system7_0_axi_periph/m01_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/mitx_petalinux_auto_pc_4/mitx_petalinux_auto_pc_4.xci" Type="IP">
-        <Instance HierarchyPath="processing_system7_0_axi_periph/m00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/mitx_petalinux_auto_pc_8/mitx_petalinux_auto_pc_8.xci" Type="IP">
-        <Instance HierarchyPath="processing_system7_0_axi_periph/s01_couplers/auto_pc"/>
+      <File Name="ip/mitx_petalinux_biquad_0_1/mitx_petalinux_biquad_0_1.xci" Type="IP">
+        <Instance HierarchyPath="synth_mods/biquad_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -398,6 +374,38 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/mitx_petalinux_auto_pc_7/mitx_petalinux_auto_pc_7.xci" Type="IP">
+        <Instance HierarchyPath="processing_system7_0_axi_periph/m02_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/mitx_petalinux_auto_pc_6/mitx_petalinux_auto_pc_6.xci" Type="IP">
+        <Instance HierarchyPath="processing_system7_0_axi_periph/m01_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/mitx_petalinux_auto_pc_5/mitx_petalinux_auto_pc_5.xci" Type="IP">
+        <Instance HierarchyPath="processing_system7_0_axi_periph/m00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/mitx_petalinux_auto_pc_9/mitx_petalinux_auto_pc_9.xci" Type="IP">
+        <Instance HierarchyPath="processing_system7_0_axi_periph/s01_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/mitx_petalinux_auto_pc_8/mitx_petalinux_auto_pc_8.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0_axi_periph/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -423,6 +431,14 @@
       </File>
       <File Name="ip/mitx_petalinux_tier2_xbar_2_0/mitx_petalinux_tier2_xbar_2_0.xci" Type="IP">
         <Instance HierarchyPath="synth_mods/axi_interconnect_0/tier2_xbar_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/mitx_petalinux_auto_pc_4/mitx_petalinux_auto_pc_4.xci" Type="IP">
+        <Instance HierarchyPath="synth_mods/axi_interconnect_0/m18_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

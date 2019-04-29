@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:mixer:1.0
-// IP Revision: 1904232353
+// IP Revision: 1904292145
 
 (* X_CORE_INFO = "mixer,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_mixer_0_1,mixer,{}" *)
-(* CORE_GENERATION_INFO = "mitx_petalinux_mixer_0_1,mixer,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=mixer,x_ipVersion=1.0,x_ipCoreRevision=1904232353,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_BUS_ADDR_WIDTH=6,C_S_AXI_CTRL_BUS_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "mitx_petalinux_mixer_0_1,mixer,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=mixer,x_ipVersion=1.0,x_ipCoreRevision=1904292145,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CTRL_BUS_ADDR_WIDTH=6,C_S_AXI_CTRL_BUS_DATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_mixer_0_1 (
   s_axi_CTRL_BUS_AWADDR,

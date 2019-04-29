@@ -541,6 +541,9 @@ proc create_hier_cell_synth_mods { parentCell nameHier } {
 CONFIG.NUM_MI {20} \
  ] $axi_interconnect_0
 
+  # Create instance: biquad_0, and set properties
+  set biquad_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquad:1.0 biquad_0 ]
+
   # Create instance: compressor_0, and set properties
   set compressor_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:compressor:1.0 compressor_0 ]
 
@@ -612,10 +615,12 @@ CONFIG.ROUTING_MODE {1} \
   connect_bd_intf_net -intf_net axi_interconnect_0_M15_AXI [get_bd_intf_pins axi_interconnect_0/M15_AXI] [get_bd_intf_pins envelope_0/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axi_interconnect_0_M16_AXI [get_bd_intf_pins axi_interconnect_0/M16_AXI] [get_bd_intf_pins output_xbar/S_AXI_CTRL]
   connect_bd_intf_net -intf_net axi_interconnect_0_M17_AXI [get_bd_intf_pins axi_interconnect_0/M17_AXI] [get_bd_intf_pins compressor_0/s_axi_CTRL_BUS]
+  connect_bd_intf_net -intf_net axi_interconnect_0_M18_AXI [get_bd_intf_pins axi_interconnect_0/M18_AXI] [get_bd_intf_pins biquad_0/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axis_switch_0_M00_AXIS [get_bd_intf_pins fx1_xbar/S00_AXIS] [get_bd_intf_pins generators_xbar/M00_AXIS]
   connect_bd_intf_net -intf_net axis_switch_0_M00_AXIS1 [get_bd_intf_pins fx2_xbar/M00_AXIS] [get_bd_intf_pins output_xbar/S00_AXIS]
   connect_bd_intf_net -intf_net axis_switch_0_M01_AXIS [get_bd_intf_pins fx1/value_in_V] [get_bd_intf_pins generators_xbar/M01_AXIS]
   connect_bd_intf_net -intf_net axis_switch_0_M01_AXIS1 [get_bd_intf_pins envelope_0/wave_in_V] [get_bd_intf_pins fx2_xbar/M01_AXIS]
+  connect_bd_intf_net -intf_net biquad_0_out_V [get_bd_intf_pins biquad_0/out_V] [get_bd_intf_pins compressor_0/in_V]
   connect_bd_intf_net -intf_net compressor_0_out_V [get_bd_intf_pins compressor_0/out_V] [get_bd_intf_pins latcherfloat_1/in_V]
   connect_bd_intf_net -intf_net envelope_0_wave_out_V [get_bd_intf_pins envelope_0/wave_out_V] [get_bd_intf_pins latcherfloat_0/in_V]
   connect_bd_intf_net -intf_net latcherfloat_0_out_V [get_bd_intf_pins Generators/out_V] [get_bd_intf_pins generators_xbar/S01_AXIS]
@@ -628,7 +633,7 @@ CONFIG.ROUTING_MODE {1} \
   connect_bd_intf_net -intf_net latcherfloat_5_out_V [get_bd_intf_pins fx1/out_V2] [get_bd_intf_pins fx1_xbar/S03_AXIS]
   connect_bd_intf_net -intf_net latcherfloat_6_out_V [get_bd_intf_pins Generators/out_V3] [get_bd_intf_pins generators_xbar/S03_AXIS]
   connect_bd_intf_net -intf_net mixer_1_out_V [get_bd_intf_pins fx2/out_V] [get_bd_intf_pins fx2_xbar/S00_AXIS]
-  connect_bd_intf_net -intf_net output_xbar_M00_AXIS [get_bd_intf_pins compressor_0/in_V] [get_bd_intf_pins output_xbar/M00_AXIS]
+  connect_bd_intf_net -intf_net output_xbar_M00_AXIS [get_bd_intf_pins biquad_0/in_V] [get_bd_intf_pins output_xbar/M00_AXIS]
   connect_bd_intf_net -intf_net source_xbar_M02_AXIS [get_bd_intf_pins fx1/in_V] [get_bd_intf_pins generators_xbar/M02_AXIS]
   connect_bd_intf_net -intf_net source_xbar_M03_AXIS [get_bd_intf_pins fx1/in0_V] [get_bd_intf_pins generators_xbar/M03_AXIS]
   connect_bd_intf_net -intf_net source_xbar_M04_AXIS [get_bd_intf_pins fx1/in1_V] [get_bd_intf_pins generators_xbar/M04_AXIS]
@@ -639,8 +644,8 @@ CONFIG.ROUTING_MODE {1} \
 
   # Create port connections
   connect_bd_net -net ARESETN_1 [get_bd_pins ARESETN] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/M03_ARESETN] [get_bd_pins axi_interconnect_0/M04_ARESETN] [get_bd_pins axi_interconnect_0/M05_ARESETN] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins axi_interconnect_0/M07_ARESETN] [get_bd_pins axi_interconnect_0/M08_ARESETN] [get_bd_pins axi_interconnect_0/M09_ARESETN] [get_bd_pins axi_interconnect_0/M10_ARESETN] [get_bd_pins axi_interconnect_0/M11_ARESETN] [get_bd_pins axi_interconnect_0/M12_ARESETN] [get_bd_pins axi_interconnect_0/M13_ARESETN] [get_bd_pins axi_interconnect_0/M14_ARESETN] [get_bd_pins axi_interconnect_0/M15_ARESETN] [get_bd_pins axi_interconnect_0/M16_ARESETN] [get_bd_pins axi_interconnect_0/M17_ARESETN] [get_bd_pins axi_interconnect_0/M18_ARESETN] [get_bd_pins axi_interconnect_0/M19_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN]
-  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins Generators/ap_clk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/M16_ACLK] [get_bd_pins axi_interconnect_0/M17_ACLK] [get_bd_pins axi_interconnect_0/M18_ACLK] [get_bd_pins axi_interconnect_0/M19_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins compressor_0/ap_clk] [get_bd_pins envelope_0/ap_clk] [get_bd_pins fx1/ap_clk] [get_bd_pins fx1_xbar/aclk] [get_bd_pins fx1_xbar/s_axi_ctrl_aclk] [get_bd_pins fx2/ap_clk] [get_bd_pins fx2_xbar/aclk] [get_bd_pins fx2_xbar/s_axi_ctrl_aclk] [get_bd_pins generators_xbar/aclk] [get_bd_pins generators_xbar/s_axi_ctrl_aclk] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins latcherfloat_1/ap_clk] [get_bd_pins output_xbar/aclk] [get_bd_pins output_xbar/s_axi_ctrl_aclk]
-  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Generators/ap_rst_n] [get_bd_pins compressor_0/ap_rst_n] [get_bd_pins envelope_0/ap_rst_n] [get_bd_pins fx1/ap_rst_n] [get_bd_pins fx1_xbar/aresetn] [get_bd_pins fx1_xbar/s_axi_ctrl_aresetn] [get_bd_pins fx2/ap_rst_n] [get_bd_pins fx2_xbar/aresetn] [get_bd_pins fx2_xbar/s_axi_ctrl_aresetn] [get_bd_pins generators_xbar/aresetn] [get_bd_pins generators_xbar/s_axi_ctrl_aresetn] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins latcherfloat_1/ap_rst_n] [get_bd_pins output_xbar/aresetn] [get_bd_pins output_xbar/s_axi_ctrl_aresetn]
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins Generators/ap_clk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/M03_ACLK] [get_bd_pins axi_interconnect_0/M04_ACLK] [get_bd_pins axi_interconnect_0/M05_ACLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins axi_interconnect_0/M07_ACLK] [get_bd_pins axi_interconnect_0/M08_ACLK] [get_bd_pins axi_interconnect_0/M09_ACLK] [get_bd_pins axi_interconnect_0/M10_ACLK] [get_bd_pins axi_interconnect_0/M11_ACLK] [get_bd_pins axi_interconnect_0/M12_ACLK] [get_bd_pins axi_interconnect_0/M13_ACLK] [get_bd_pins axi_interconnect_0/M14_ACLK] [get_bd_pins axi_interconnect_0/M15_ACLK] [get_bd_pins axi_interconnect_0/M16_ACLK] [get_bd_pins axi_interconnect_0/M17_ACLK] [get_bd_pins axi_interconnect_0/M18_ACLK] [get_bd_pins axi_interconnect_0/M19_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins biquad_0/ap_clk] [get_bd_pins compressor_0/ap_clk] [get_bd_pins envelope_0/ap_clk] [get_bd_pins fx1/ap_clk] [get_bd_pins fx1_xbar/aclk] [get_bd_pins fx1_xbar/s_axi_ctrl_aclk] [get_bd_pins fx2/ap_clk] [get_bd_pins fx2_xbar/aclk] [get_bd_pins fx2_xbar/s_axi_ctrl_aclk] [get_bd_pins generators_xbar/aclk] [get_bd_pins generators_xbar/s_axi_ctrl_aclk] [get_bd_pins latcherfloat_0/ap_clk] [get_bd_pins latcherfloat_1/ap_clk] [get_bd_pins output_xbar/aclk] [get_bd_pins output_xbar/s_axi_ctrl_aclk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Generators/ap_rst_n] [get_bd_pins biquad_0/ap_rst_n] [get_bd_pins compressor_0/ap_rst_n] [get_bd_pins envelope_0/ap_rst_n] [get_bd_pins fx1/ap_rst_n] [get_bd_pins fx1_xbar/aresetn] [get_bd_pins fx1_xbar/s_axi_ctrl_aresetn] [get_bd_pins fx2/ap_rst_n] [get_bd_pins fx2_xbar/aresetn] [get_bd_pins fx2_xbar/s_axi_ctrl_aresetn] [get_bd_pins generators_xbar/aresetn] [get_bd_pins generators_xbar/s_axi_ctrl_aresetn] [get_bd_pins latcherfloat_0/ap_rst_n] [get_bd_pins latcherfloat_1/ap_rst_n] [get_bd_pins output_xbar/aresetn] [get_bd_pins output_xbar/s_axi_ctrl_aresetn]
   connect_bd_net -net latch_V_1 [get_bd_pins latch_V] [get_bd_pins Generators/gen_latch_V] [get_bd_pins fx1/fx1_latch_V] [get_bd_pins fx2/fx2_latch_V] [get_bd_pins latcherfloat_0/latch_V] [get_bd_pins latcherfloat_1/latch_V]
 
   # Restore current instance
@@ -1269,6 +1274,7 @@ CONFIG.NUM_SI {2} \
   create_bd_addr_seg -range 0x00001000 -offset 0x80012000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80013000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] SEG_axi_gpio_1_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80009000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx1/biquad_0/s_axi_CTRL_BUS/Reg] SEG_biquad_0_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80021000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/biquad_0/s_axi_CTRL_BUS/Reg] SEG_biquad_0_Reg1
   create_bd_addr_seg -range 0x00001000 -offset 0x80010000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx2/compressor_0/s_axi_CTRL_BUS/Reg] SEG_compressor_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80020000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/compressor_0/s_axi_CTRL_BUS/Reg] SEG_compressor_0_Reg1
   create_bd_addr_seg -range 0x00001000 -offset 0x8000C000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/envelope_0/s_axi_CTRL_BUS/Reg] SEG_envelope_0_Reg
