@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Mon Apr 29 22:01:06 2019
+//Date        : Mon Apr 29 23:37:09 2019
 //Host        : 0027fb2bf205 running 64-bit unknown
 //Command     : generate_target mitx_petalinux.bd
 //Design      : mitx_petalinux
@@ -8477,22 +8477,22 @@ module mitx_petalinux_axi_interconnect_0_1
   input M15_ACLK;
   input M15_ARESETN;
   output [31:0]M15_AXI_araddr;
-  input [0:0]M15_AXI_arready;
-  output [0:0]M15_AXI_arvalid;
+  input M15_AXI_arready;
+  output M15_AXI_arvalid;
   output [31:0]M15_AXI_awaddr;
-  input [0:0]M15_AXI_awready;
-  output [0:0]M15_AXI_awvalid;
-  output [0:0]M15_AXI_bready;
+  input M15_AXI_awready;
+  output M15_AXI_awvalid;
+  output M15_AXI_bready;
   input [1:0]M15_AXI_bresp;
-  input [0:0]M15_AXI_bvalid;
+  input M15_AXI_bvalid;
   input [31:0]M15_AXI_rdata;
-  output [0:0]M15_AXI_rready;
+  output M15_AXI_rready;
   input [1:0]M15_AXI_rresp;
-  input [0:0]M15_AXI_rvalid;
+  input M15_AXI_rvalid;
   output [31:0]M15_AXI_wdata;
-  input [0:0]M15_AXI_wready;
+  input M15_AXI_wready;
   output [3:0]M15_AXI_wstrb;
-  output [0:0]M15_AXI_wvalid;
+  output M15_AXI_wvalid;
   input M16_ACLK;
   input M16_ARESETN;
   output [31:0]M16_AXI_araddr;
@@ -8997,20 +8997,20 @@ module mitx_petalinux_axi_interconnect_0_1
   wire [0:0]m14_couplers_to_axi_interconnect_0_WREADY;
   wire [0:0]m14_couplers_to_axi_interconnect_0_WVALID;
   wire [31:0]m15_couplers_to_axi_interconnect_0_ARADDR;
-  wire [0:0]m15_couplers_to_axi_interconnect_0_ARREADY;
+  wire m15_couplers_to_axi_interconnect_0_ARREADY;
   wire m15_couplers_to_axi_interconnect_0_ARVALID;
   wire [31:0]m15_couplers_to_axi_interconnect_0_AWADDR;
-  wire [0:0]m15_couplers_to_axi_interconnect_0_AWREADY;
+  wire m15_couplers_to_axi_interconnect_0_AWREADY;
   wire m15_couplers_to_axi_interconnect_0_AWVALID;
   wire m15_couplers_to_axi_interconnect_0_BREADY;
   wire [1:0]m15_couplers_to_axi_interconnect_0_BRESP;
-  wire [0:0]m15_couplers_to_axi_interconnect_0_BVALID;
+  wire m15_couplers_to_axi_interconnect_0_BVALID;
   wire [31:0]m15_couplers_to_axi_interconnect_0_RDATA;
   wire m15_couplers_to_axi_interconnect_0_RREADY;
   wire [1:0]m15_couplers_to_axi_interconnect_0_RRESP;
-  wire [0:0]m15_couplers_to_axi_interconnect_0_RVALID;
+  wire m15_couplers_to_axi_interconnect_0_RVALID;
   wire [31:0]m15_couplers_to_axi_interconnect_0_WDATA;
-  wire [0:0]m15_couplers_to_axi_interconnect_0_WREADY;
+  wire m15_couplers_to_axi_interconnect_0_WREADY;
   wire [3:0]m15_couplers_to_axi_interconnect_0_WSTRB;
   wire m15_couplers_to_axi_interconnect_0_WVALID;
   wire [31:0]m16_couplers_to_axi_interconnect_0_ARADDR;
@@ -9815,14 +9815,14 @@ module mitx_petalinux_axi_interconnect_0_1
   assign M14_AXI_wdata[31:0] = m14_couplers_to_axi_interconnect_0_WDATA;
   assign M14_AXI_wvalid[0] = m14_couplers_to_axi_interconnect_0_WVALID;
   assign M15_AXI_araddr[31:0] = m15_couplers_to_axi_interconnect_0_ARADDR;
-  assign M15_AXI_arvalid[0] = m15_couplers_to_axi_interconnect_0_ARVALID;
+  assign M15_AXI_arvalid = m15_couplers_to_axi_interconnect_0_ARVALID;
   assign M15_AXI_awaddr[31:0] = m15_couplers_to_axi_interconnect_0_AWADDR;
-  assign M15_AXI_awvalid[0] = m15_couplers_to_axi_interconnect_0_AWVALID;
-  assign M15_AXI_bready[0] = m15_couplers_to_axi_interconnect_0_BREADY;
-  assign M15_AXI_rready[0] = m15_couplers_to_axi_interconnect_0_RREADY;
+  assign M15_AXI_awvalid = m15_couplers_to_axi_interconnect_0_AWVALID;
+  assign M15_AXI_bready = m15_couplers_to_axi_interconnect_0_BREADY;
+  assign M15_AXI_rready = m15_couplers_to_axi_interconnect_0_RREADY;
   assign M15_AXI_wdata[31:0] = m15_couplers_to_axi_interconnect_0_WDATA;
   assign M15_AXI_wstrb[3:0] = m15_couplers_to_axi_interconnect_0_WSTRB;
-  assign M15_AXI_wvalid[0] = m15_couplers_to_axi_interconnect_0_WVALID;
+  assign M15_AXI_wvalid = m15_couplers_to_axi_interconnect_0_WVALID;
   assign M16_AXI_araddr[31:0] = m16_couplers_to_axi_interconnect_0_ARADDR;
   assign M16_AXI_arvalid = m16_couplers_to_axi_interconnect_0_ARVALID;
   assign M16_AXI_awaddr[31:0] = m16_couplers_to_axi_interconnect_0_AWADDR;
@@ -10036,14 +10036,14 @@ module mitx_petalinux_axi_interconnect_0_1
   assign m14_couplers_to_axi_interconnect_0_RRESP = M14_AXI_rresp[1:0];
   assign m14_couplers_to_axi_interconnect_0_RVALID = M14_AXI_rvalid[0];
   assign m14_couplers_to_axi_interconnect_0_WREADY = M14_AXI_wready[0];
-  assign m15_couplers_to_axi_interconnect_0_ARREADY = M15_AXI_arready[0];
-  assign m15_couplers_to_axi_interconnect_0_AWREADY = M15_AXI_awready[0];
+  assign m15_couplers_to_axi_interconnect_0_ARREADY = M15_AXI_arready;
+  assign m15_couplers_to_axi_interconnect_0_AWREADY = M15_AXI_awready;
   assign m15_couplers_to_axi_interconnect_0_BRESP = M15_AXI_bresp[1:0];
-  assign m15_couplers_to_axi_interconnect_0_BVALID = M15_AXI_bvalid[0];
+  assign m15_couplers_to_axi_interconnect_0_BVALID = M15_AXI_bvalid;
   assign m15_couplers_to_axi_interconnect_0_RDATA = M15_AXI_rdata[31:0];
   assign m15_couplers_to_axi_interconnect_0_RRESP = M15_AXI_rresp[1:0];
-  assign m15_couplers_to_axi_interconnect_0_RVALID = M15_AXI_rvalid[0];
-  assign m15_couplers_to_axi_interconnect_0_WREADY = M15_AXI_wready[0];
+  assign m15_couplers_to_axi_interconnect_0_RVALID = M15_AXI_rvalid;
+  assign m15_couplers_to_axi_interconnect_0_WREADY = M15_AXI_wready;
   assign m16_couplers_to_axi_interconnect_0_ARREADY = M16_AXI_arready;
   assign m16_couplers_to_axi_interconnect_0_AWREADY = M16_AXI_awready;
   assign m16_couplers_to_axi_interconnect_0_BRESP = M16_AXI_bresp[1:0];
@@ -14890,21 +14890,21 @@ module synth_mods_imp_1QCW0MN
   wire [0:0]axi_interconnect_0_M14_AXI_WVALID;
   wire [31:0]axi_interconnect_0_M15_AXI_ARADDR;
   wire axi_interconnect_0_M15_AXI_ARREADY;
-  wire [0:0]axi_interconnect_0_M15_AXI_ARVALID;
+  wire axi_interconnect_0_M15_AXI_ARVALID;
   wire [31:0]axi_interconnect_0_M15_AXI_AWADDR;
   wire axi_interconnect_0_M15_AXI_AWREADY;
-  wire [0:0]axi_interconnect_0_M15_AXI_AWVALID;
-  wire [0:0]axi_interconnect_0_M15_AXI_BREADY;
+  wire axi_interconnect_0_M15_AXI_AWVALID;
+  wire axi_interconnect_0_M15_AXI_BREADY;
   wire [1:0]axi_interconnect_0_M15_AXI_BRESP;
   wire axi_interconnect_0_M15_AXI_BVALID;
   wire [31:0]axi_interconnect_0_M15_AXI_RDATA;
-  wire [0:0]axi_interconnect_0_M15_AXI_RREADY;
+  wire axi_interconnect_0_M15_AXI_RREADY;
   wire [1:0]axi_interconnect_0_M15_AXI_RRESP;
   wire axi_interconnect_0_M15_AXI_RVALID;
   wire [31:0]axi_interconnect_0_M15_AXI_WDATA;
   wire axi_interconnect_0_M15_AXI_WREADY;
   wire [3:0]axi_interconnect_0_M15_AXI_WSTRB;
-  wire [0:0]axi_interconnect_0_M15_AXI_WVALID;
+  wire axi_interconnect_0_M15_AXI_WVALID;
   wire [31:0]axi_interconnect_0_M16_AXI_ARADDR;
   wire axi_interconnect_0_M16_AXI_ARREADY;
   wire axi_interconnect_0_M16_AXI_ARVALID;

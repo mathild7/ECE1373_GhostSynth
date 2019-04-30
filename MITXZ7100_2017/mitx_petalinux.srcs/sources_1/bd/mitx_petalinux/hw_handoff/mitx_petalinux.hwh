@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 29 22:01:09 2019" VIVADOVERSION="2017.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 29 23:37:12 2019" VIVADOVERSION="2017.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z100" NAME="mitx_petalinux" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
@@ -3359,6 +3359,7 @@
             <CONNECTION INSTANCE="synth_mods_latcherfloat_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_latcherfloat_1" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_compressor_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_1" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_Generators_noisy_0" PORT="ap_clk"/>
@@ -3380,8 +3381,8 @@
             <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_7" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M00_ACLK"/>
@@ -3404,7 +3405,6 @@
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M17_ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M18_ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M19_ACLK"/>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
@@ -3645,28 +3645,28 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
       <MEMORYMAP>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80000FFF" INSTANCE="synth_mods_Generators_FM_Synth_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80001000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80001FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_4" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x80002000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80002FFF" INSTANCE="i2s_block_i2s_tx" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="mms_axi"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80003000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80003FFF" INSTANCE="synth_mods_Generators_saw_tree_mixer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80004000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80004FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80005000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80005FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_2" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80006000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80006FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_3" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80007000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80007FFF" INSTANCE="synth_mods_generators_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80008000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80008FFF" INSTANCE="synth_mods_Generators_FM_Synth_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80009000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80009FFF" INSTANCE="synth_mods_fx1_biquad_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x8000A000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x8000AFFF" INSTANCE="synth_mods_fx1_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000B000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000BFFF" INSTANCE="synth_mods_fx1_Echo_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000C000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000CFFF" INSTANCE="synth_mods_envelope_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x8000D000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x8000DFFF" INSTANCE="synth_mods_fx2_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000E000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000EFFF" INSTANCE="synth_mods_fx1_mixer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000F000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000FFFF" INSTANCE="synth_mods_fx2_mixer_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80010000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80010FFF" INSTANCE="synth_mods_fx2_compressor_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80011000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80011FFF" INSTANCE="synth_mods_output_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80012000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80012FFF" INSTANCE="axi_gpio_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80013000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80013FFF" INSTANCE="axi_gpio_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80020000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80020FFF" INSTANCE="synth_mods_compressor_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80021000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80021FFF" INSTANCE="synth_mods_biquad_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP1" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80000FFF" INSTANCE="synth_mods_Generators_FM_Synth_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80001000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80001FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_4" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="reg0" BASENAME="C_BASEADDR" BASEVALUE="0x80002000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80002FFF" INSTANCE="i2s_block_i2s_tx" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="mms_axi"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80003000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80003FFF" INSTANCE="synth_mods_Generators_saw_tree_mixer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80004000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80004FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80005000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80005FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_2" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80006000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80006FFF" INSTANCE="synth_mods_Generators_saw_tree_saw_3" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80007000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80007FFF" INSTANCE="synth_mods_generators_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80008000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80008FFF" INSTANCE="synth_mods_Generators_FM_Synth_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80009000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80009FFF" INSTANCE="synth_mods_fx1_biquad_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x8000A000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x8000AFFF" INSTANCE="synth_mods_fx1_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000B000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000BFFF" INSTANCE="synth_mods_fx1_Echo_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000C000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000CFFF" INSTANCE="synth_mods_envelope_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x8000D000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x8000DFFF" INSTANCE="synth_mods_fx2_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000E000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000EFFF" INSTANCE="synth_mods_fx1_mixer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000F000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000FFFF" INSTANCE="synth_mods_fx2_mixer_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80010000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80010FFF" INSTANCE="synth_mods_fx2_compressor_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80011000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80011FFF" INSTANCE="synth_mods_output_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80012000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80012FFF" INSTANCE="axi_gpio_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80013000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80013FFF" INSTANCE="axi_gpio_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80020000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80020FFF" INSTANCE="synth_mods_compressor_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80021000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80021FFF" INSTANCE="synth_mods_biquad_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="synth_mods_Generators_FM_Synth_1"/>
@@ -5205,6 +5205,7 @@
             <CONNECTION INSTANCE="synth_mods_latcherfloat_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_latcherfloat_1" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_compressor_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_1" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_Generators_noisy_0" PORT="ap_rst_n"/>
@@ -5226,9 +5227,8 @@
             <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_7" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S01_ARESETN"/>
@@ -8730,12 +8730,12 @@
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_awvalid">
+        <PORT DIR="O" NAME="M15_AXI_awvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_awready">
+        <PORT DIR="I" NAME="M15_AXI_awready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_AWREADY"/>
           </CONNECTIONS>
@@ -8750,12 +8750,12 @@
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_wvalid">
+        <PORT DIR="O" NAME="M15_AXI_wvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_WVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_wready">
+        <PORT DIR="I" NAME="M15_AXI_wready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_WREADY"/>
           </CONNECTIONS>
@@ -8765,12 +8765,12 @@
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_bvalid">
+        <PORT DIR="I" NAME="M15_AXI_bvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_bready">
+        <PORT DIR="O" NAME="M15_AXI_bready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_BREADY"/>
           </CONNECTIONS>
@@ -8780,12 +8780,12 @@
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_arvalid">
+        <PORT DIR="O" NAME="M15_AXI_arvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_arready">
+        <PORT DIR="I" NAME="M15_AXI_arready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_ARREADY"/>
           </CONNECTIONS>
@@ -8800,12 +8800,12 @@
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M15_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_rvalid">
+        <PORT DIR="I" NAME="M15_AXI_rvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M15_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_rready">
+        <PORT DIR="O" NAME="M15_AXI_rready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M15_AXI_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="s_axi_CTRL_BUS_RREADY"/>
           </CONNECTIONS>
@@ -8973,6 +8973,91 @@
         <PORT DIR="O" NAME="M17_AXI_rready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M17_AXI_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_compressor_0" PORT="s_axi_CTRL_BUS_RREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M18_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_AWADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M18_AXI_awvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_AWVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M18_AXI_awready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_AWREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M18_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M18_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WSTRB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M18_AXI_wvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M18_AXI_wready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M18_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_BRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M18_AXI_bvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_BVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M18_AXI_bready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_BREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M18_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_ARADDR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M18_AXI_arvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_ARVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M18_AXI_arready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_ARREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M18_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RDATA"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M18_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RRESP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M18_AXI_rvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M18_AXI_rready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="12" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_axi_periph_M03_AXI_awid">
@@ -9209,113 +9294,6 @@
         <PORT DIR="I" NAME="M19_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M19_AXI_rvalid" SIGIS="undef"/>
         <PORT DIR="O" NAME="M19_AXI_rready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awid" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="M18_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_AWADDR"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M18_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_awvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_AWVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M18_AXI_awready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_AWREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M18_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M18_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WSTRB"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M18_AXI_wlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_wvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M18_AXI_wready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_WREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M18_AXI_bid" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="1" NAME="M18_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_BRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M18_AXI_bvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_BVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M18_AXI_bready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_BREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M18_AXI_arid" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="M18_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_ARADDR"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M18_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M18_AXI_arvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_ARVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M18_AXI_arready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_ARREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M18_AXI_rid" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="M18_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RDATA"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M18_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RRESP"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M18_AXI_rlast" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M18_AXI_rvalid" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M18_AXI_rready" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M18_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="s_axi_CTRL_BUS_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M13_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M13_AXI_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="s_axi_CTRL_BUS_AWADDR"/>
@@ -10805,43 +10783,21 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="synth_mods_axi_interconnect_0_M18_AXI" DATAWIDTH="32" NAME="M18_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
-            <PORTMAP LOGICAL="AWID" PHYSICAL="M18_AXI_awid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M18_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M18_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M18_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M18_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M18_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M18_AXI_awcache"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M18_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M18_AXI_awregion"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M18_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M18_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M18_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M18_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M18_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M18_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M18_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M18_AXI_wready"/>
-            <PORTMAP LOGICAL="BID" PHYSICAL="M18_AXI_bid"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M18_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M18_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M18_AXI_bready"/>
-            <PORTMAP LOGICAL="ARID" PHYSICAL="M18_AXI_arid"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M18_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M18_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M18_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M18_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M18_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M18_AXI_arcache"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M18_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M18_AXI_arregion"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M18_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M18_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M18_AXI_arready"/>
-            <PORTMAP LOGICAL="RID" PHYSICAL="M18_AXI_rid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M18_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M18_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="M18_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M18_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M18_AXI_rready"/>
           </PORTMAPS>
@@ -11662,7 +11618,7 @@
         <PARAMETER NAME="clk_period" VALUE="10.000000"/>
         <PARAMETER NAME="machine" VALUE="64"/>
         <PARAMETER NAME="combinational" VALUE="0"/>
-        <PARAMETER NAME="latency" VALUE="45"/>
+        <PARAMETER NAME="latency" VALUE="46"/>
         <PARAMETER NAME="II" VALUE="x"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S_AXI_CTRL_BUS_BASEADDR" VALUE="0x8000C000"/>

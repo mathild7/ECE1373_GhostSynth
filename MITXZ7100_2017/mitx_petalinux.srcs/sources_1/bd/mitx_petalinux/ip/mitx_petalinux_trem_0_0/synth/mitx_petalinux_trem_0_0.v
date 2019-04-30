@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:trem:1.0
-// IP Revision: 1904291410
+// IP Revision: 1904292335
 
 (* X_CORE_INFO = "trem,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "mitx_petalinux_trem_0_0,trem,{}" *)
-(* CORE_GENERATION_INFO = "mitx_petalinux_trem_0_0,trem,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=trem,x_ipVersion=1.0,x_ipCoreRevision=1904291410,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "mitx_petalinux_trem_0_0,trem,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=trem,x_ipVersion=1.0,x_ipCoreRevision=1904292335,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mitx_petalinux_trem_0_0 (
   in_V_TVALID,

@@ -3141,10 +3141,10 @@
         <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -3161,6 +3161,7 @@
         <spirit:internalPortReference spirit:componentRef="latcherfloat_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_1" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="Generators" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="fx1" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="fx2" spirit:portRef="ap_clk"/>
@@ -3186,7 +3187,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M17_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M18_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_0" spirit:portRef="M19_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="biquad_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="envelope_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -9985,17 +9985,17 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>trem_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="trem" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_trem_0_0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>mixer_1</spirit:instanceName>
         <spirit:componentRef spirit:library="hls" spirit:name="mixer" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_mixer_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>trem_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="trem" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">mitx_petalinux_trem_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -10034,8 +10034,8 @@
         <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="ap_clk"/>
-        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_clk"/>
         <spirit:internalPortReference spirit:componentRef="mixer_1" spirit:portRef="ap_clk"/>
+        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>ap_rst_n_1</spirit:name>
@@ -10043,8 +10043,8 @@
         <spirit:internalPortReference spirit:componentRef="compressor_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_7" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="latcherfloat_8" spirit:portRef="ap_rst_n"/>
-        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_rst_n"/>
         <spirit:internalPortReference spirit:componentRef="mixer_1" spirit:portRef="ap_rst_n"/>
+        <spirit:internalPortReference spirit:componentRef="trem_0" spirit:portRef="ap_rst_n"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
