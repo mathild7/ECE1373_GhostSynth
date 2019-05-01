@@ -214,20 +214,18 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_0_1/sim/mitx_petalinux_axis_switch_0_1.v" \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_axis_switch_1_1/sim/mitx_petalinux_axis_switch_1_1.v" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_CTRL_BUS_s_axi.v" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fmul_32ncud.v" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope.v" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fadd_32nbkb.v" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fcmp_32nfYi.v" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_sitofp_3eOg.v" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/verilog/envelope_fdiv_32ndEe.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_CTRL_BUS_s_axi.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fmul_32ncud.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fadd_32nbkb.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_sitofp_3eOg.v" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/verilog/envelope_fdiv_32ndEe.v" \
 -endlib
 -makelib ies/xil_defaultlib \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fcmp_0_no_dsp_32.vhd" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd" \
-  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/6305/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fadd_3_full_dsp_32.vhd" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_sitofp_4_no_dsp_32.vhd" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fmul_2_max_dsp_32.vhd" \
+  "../../../../mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ipshared/a1eb/hdl/ip/envelope_ap_fdiv_14_no_dsp_32.vhd" \
   "../../../bd/mitx_petalinux/ip/mitx_petalinux_envelope_0_0/sim/mitx_petalinux_envelope_0_0.vhd" \
 -endlib
 -makelib ies/xil_defaultlib \
