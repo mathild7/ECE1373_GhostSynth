@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:mixer:1.0
--- IP Revision: 1904232353
+-- IP Revision: 1904292145
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

@@ -31,14 +31,14 @@ preplace netloc axi_interconnect_0_M02_AXI 1 0 1 NJ
 preplace netloc latcherfloat_2_out_V 1 2 1 690
 preplace netloc FM_Synth_1_result_V 1 1 1 360
 preplace netloc latch_V_1 1 0 2 0J 120 390
-preplace netloc latcherfloat_1_out_V 1 2 1 690
 preplace netloc axi_interconnect_0_M04_AXI 1 0 1 NJ
+preplace netloc latcherfloat_1_out_V 1 2 1 690
 preplace netloc ap_clk_1 1 0 2 10 260 400
-preplace netloc FM_Synth_0_result_V 1 1 1 380
 preplace netloc axi_interconnect_0_M00_AXI 1 0 1 NJ
 preplace netloc axi_interconnect_0_M05_AXI 1 0 1 20J
-preplace netloc noisy_0_out_V 1 1 1 380
+preplace netloc FM_Synth_0_result_V 1 1 1 380
 preplace netloc axi_interconnect_0_M01_AXI 1 0 1 NJ
+preplace netloc noisy_0_out_V 1 1 1 380
 preplace netloc axi_interconnect_0_M03_AXI 1 0 1 NJ
 preplace netloc axi_interconnect_0_M11_AXI 1 0 1 -20J
 levelinfo -pg 1 -40 190 550 980 -top -90 -bot 750

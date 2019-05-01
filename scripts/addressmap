@@ -1,0 +1,63 @@
+i2s_block/i2s_tx			0x8000_2000
+synth_mods/Generators/saw_tree/mixer_0	0x8000_3000
+synth_mods/Generators/saw_tree/saw_4	0x8000_1000
+synth_mods/Generators/saw_tree/saw_1	0x8000_4000
+synth_mods/Generators/saw_tree/saw_2	0x8000_5000
+synth_mods/Generators/saw_tree/saw_3	0x8000_6000
+synth_mods/generators_xbar		0x8000_7000
+synth_mods/Generators/FM_Synth_0	0x8000_8000
+synth_mods/Generators/FM_Synth_1	0x8000_0000
+synth_mods/fx1/biquad_0			0x8000_9000
+synth_mods/fx2_xbar			0x8000_D000
+synth_mods/fx1/Echo_0			0x8000_B000
+synth_mods/envelope_0			0x8000_C000
+synth_mods/fx1_xbar			0x8000_A000
+synth_mods/fx1/mixer_0			0x8000_E000
+synth_mods/fx2/mixer_1			0x8000_F000
+synth_mods/fx2/compressor_0		0x8001_0000
+synth_mods/output_xbar			0x8001_1000
+Final compressor			0x8002_0000
+Final filter				0x8002_1000
+
+Generators xbar:
+in0 -> fm_synth0
+in1 -> saw tree
+in2 -> noise
+in3 -> fm_synth1
+
+out0 -> fx1_xbar_in0
+out1 -> echo0
+out2 -> biquad
+out3 -> mixer0_in0
+out4 -> mixer0_in1
+
+
+
+FX1 xbar:
+in0 -> gens_xbar_out0
+in1 -> echo0
+in2 -> biquad
+in3 -> mixer0
+
+out0 -> trem -> mixer1_in0
+out1 -> compressor -> mixer1_in1
+out2 -> mixer1_in2
+out3 -> mixer1_in3
+
+
+
+FX2 xbar:
+
+in0 -> mixer1
+
+out0 -> output_xbar in0
+out1 -> envelope
+
+
+
+Output xbar:
+
+in0 -> fx2_xbar_out0
+in1 -> envelope
+
+out -> Final compressor -> Converter

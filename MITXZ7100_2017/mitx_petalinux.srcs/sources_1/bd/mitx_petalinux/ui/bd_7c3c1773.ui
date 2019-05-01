@@ -21,32 +21,32 @@ preplace inst audio_pll -pg 1 -lvl 4 -y 630 -defaultsOSRD
 preplace inst i2s_block -pg 1 -lvl 5 -y 460 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 280 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 150 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 1 5 460J 40 NJ 40 NJ 40 NJ 40 1660J
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 50 NJ 50 NJ 50 NJ 50 NJ
 preplace netloc i2s_block_i2s_tx_data_o 1 5 1 NJ
 preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 3 N 250 NJ 250 NJ
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 2 480 490 790
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 2 460 630 790
 preplace netloc converter_0_out_V 1 4 1 1320
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N
 preplace netloc processing_system7_0_M_AXI_GP1 1 1 1 N
 preplace netloc aud_rstn_1 1 4 2 1360 580 NJ
 preplace netloc i2s_rx_data_i_1 1 4 2 1360 340 NJ
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 310 450
-preplace netloc latch_V_1 1 2 4 800 570 NJ 570 NJ 570 1660
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 4 470 30 800 280 1050 300 1350
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 630 450
+preplace netloc latch_V_1 1 2 4 810 570 NJ 570 NJ 570 1650
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 4 480 640 800 630 1060 480 1350
 preplace netloc CLK_IN1_D_1 1 0 4 NJ 620 NJ 620 NJ 620 NJ
 preplace netloc i2s_block_i2s_mclk_o 1 5 1 NJ
-preplace netloc mms_axi_1 1 2 3 N 290 NJ 290 1340J
+preplace netloc mms_axi_1 1 2 3 N 290 NJ 290 1330J
 preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 70 NJ 70 NJ 70 NJ 70 NJ
 preplace netloc S00_AXI_1 1 2 1 780
 preplace netloc axi_gpio_0_GPIO 1 5 1 NJ
 preplace netloc saw_gen_out_V_V 1 3 1 N
 preplace netloc i2s_block_i2s_ws_o 1 5 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 300 460 60 790 260 1060 260 1330
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 300 470 490 780 480 1050 340 1340
 preplace netloc axi_gpio_1_GPIO 1 5 1 NJ
 preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 3 780 120 NJ 120 NJ
 preplace netloc audio_pll_clk_out1 1 4 1 1370
 preplace netloc i2s_block_i2s_sck_o 1 5 1 NJ
-levelinfo -pg 1 0 240 630 930 1190 1520 1690 -top 0 -bot 810
+levelinfo -pg 1 0 240 630 930 1190 1510 1670 -top 0 -bot 810
 ",
 }
 0

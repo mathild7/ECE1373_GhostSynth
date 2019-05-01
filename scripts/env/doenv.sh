@@ -1,0 +1,6 @@
+devmem 0x8000C010 32 0x0 # Press = 0
+devmem 0x8000C018 32 2000
+devmem 0x8000C020 32 2800
+devmem 0x8000C028 32 0x3f800000 # 1.0
+devmem 0x8000C030 32 6000
+

@@ -13,8 +13,8 @@ preplace port in3_V -pg 1 -y 380 -defaultsOSRD
 preplace portBus fx2_latch_V -pg 1 -y 20 -defaultsOSRD
 preplace inst latcherfloat_7 -pg 1 -lvl 2 -y 120 -defaultsOSRD
 preplace inst trem_0 -pg 1 -lvl 1 -y 120 -defaultsOSRD
-preplace inst latcherfloat_8 -pg 1 -lvl 2 -y 280 -defaultsOSRD
 preplace inst mixer_1 -pg 1 -lvl 3 -y 360 -defaultsOSRD
+preplace inst latcherfloat_8 -pg 1 -lvl 2 -y 280 -defaultsOSRD
 preplace inst compressor_0 -pg 1 -lvl 1 -y 260 -defaultsOSRD
 preplace netloc latcherfloat_7_out_V 1 2 1 690
 preplace netloc axi_interconnect_0_M13_AXI 1 0 3 NJ 400 NJ 400 680J
