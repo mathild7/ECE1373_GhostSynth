@@ -1,0 +1,2 @@
+devmem 0x8000C010 32 0x0 # press = 0
+

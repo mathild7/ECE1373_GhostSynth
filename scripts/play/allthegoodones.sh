@@ -1,7 +1,8 @@
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd $SCRIPTPATH
-../start.sh
+
 ../play/off.sh
+../start.sh
 #echo "WARNING: THIS WILL BE EXTREMELY LOUD; DO NOT PUT EARPHONES IN YOUR EARS"
 #echo 5
 #sleep 1

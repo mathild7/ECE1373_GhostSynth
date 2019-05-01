@@ -1,4 +1,4 @@
-devmem 0x80009038 32 0x1 # disable while params change
+devmem 0x80021038 32 0x1 # disable while params change
 
 #LPF with -3 dB
 devmem 0x80009010 32 0xbfea4e55
@@ -6,7 +6,6 @@ devmem 0x80009018 32 0x3f58030e
 devmem 0x80009020 32 0x3f38268b
 devmem 0x80009028 32 0xbfa5a0b0
 devmem 0x80009030 32 0x3f16813a
-
 
 # Bad LPF with too high gain
 #devmem 0x80009010 32 0xbfe9078a
@@ -16,4 +15,4 @@ devmem 0x80009030 32 0x3f16813a
 #devmem 0x80009030 32 0x3f54b8c5
 
 
-devmem 0x80009038 32 0x0 # re-enable
+devmem 0x80021038 32 0x0 # re-enable
