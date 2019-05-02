@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'writePos' is power-on initialization." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:46:05.790+0000" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'phaseStep' is power-on initialization." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:46:05.755+0000" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'Initialized' is power-on initialization." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:46:05.751+0000" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'vibrato/buffer' to 'vibrato/buffer_r' to avoid the conflict with HDL keywords or other object names." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:46:02.472+0000" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::scaled_fixed2ieee&lt;63, 1>' (/wrk/2017.2/nightly/2017_06_15_1909853/src/products/hls/hls_lib/src/hls/utils/x_hls_float_utils.h:106:37) into scaled_fixed2ieee." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:46:02.454+0000" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] /wrk/2017.2/nightly/2017_06_15_1909853/src/products/hls/hls_lib/src/hls/utils/x_hls_float_utils.h:424: variable-indexed range selection may cause suboptimal QoR." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:45:44.642+0000" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_fptrunc_0_no_dsp_64' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:32.382+0000" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_fpext_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:30.952+0000" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_fmul_2_max_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:29.607+0000" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_faddfsub_3_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:27.949+0000" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_dmul_4_max_dsp_64' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:26.725+0000" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_dadd_3_full_dsp_64' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:24.423+0000" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_fcmp_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:22.874+0000" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'vibrato_ap_sitofp_4_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="vibrato" solutionName="solution1" date="2019-05-02T14:51:21.261+0000" type="Warning"/>
+      </packageLog>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

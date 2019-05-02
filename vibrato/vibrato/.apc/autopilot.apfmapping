@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="vibrato.cpp" path="/root/workspace/vibrato/vibrato.cpp"/>
+    <originFiles name="vibrato.h" path="/root/workspace/vibrato/vibrato.h"/>
+  </source>
+  <testbench>
+    <originFiles name="vibrato_test.cpp" path="/root/workspace/vibrato/vibrato_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

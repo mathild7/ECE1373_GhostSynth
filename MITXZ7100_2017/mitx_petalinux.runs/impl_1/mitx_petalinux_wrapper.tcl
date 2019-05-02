@@ -50,18 +50,21 @@ set rc [catch {
   create_project -in_memory -part xc7z100ffg900-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.cache/wt [current_project]
-  set_property parent.project_path /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr [current_project]
-  set_property ip_repo_paths /root/repo/new/ECE1373_GhostSynth/modules [current_project]
+  set_property webtalk.parent_dir /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.cache/wt [current_project]
+  set_property parent.project_path /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr [current_project]
+  set_property ip_repo_paths {
+  /root/repo/shs/ECE1373_GhostSynth/modules
+  /root/repo/shs/ECE1373_GhostSynth/vibrato
+} [current_project]
   set_property ip_cache_permissions disable [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/synth_1/mitx_petalinux_wrapper.dcp
+  add_files -quiet /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/synth_1/mitx_petalinux_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -suppress
   set_param project.isImplRun true
-  add_files /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd
-  set_property is_locked true [get_files /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
+  add_files /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd
+  set_property is_locked true [get_files /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/mitx_petalinux.bd]
   set_param project.isImplRun false
-  read_xdc /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc
+  read_xdc /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc
   set_param project.isImplRun true
   link_design -top mitx_petalinux_wrapper -part xc7z100ffg900-1
   set_param project.isImplRun false

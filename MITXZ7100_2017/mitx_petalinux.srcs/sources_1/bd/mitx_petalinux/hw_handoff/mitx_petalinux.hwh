@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 29 23:37:12 2019" VIVADOVERSION="2017.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May  2 15:17:18 2019" VIVADOVERSION="2017.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z100" NAME="mitx_petalinux" PACKAGE="ffg900" SPEEDGRADE="-1"/>
 
@@ -3360,6 +3360,7 @@
             <CONNECTION INSTANCE="synth_mods_latcherfloat_1" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_compressor_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_1" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_Generators_noisy_0" PORT="ap_clk"/>
@@ -3378,11 +3379,11 @@
             <CONNECTION INSTANCE="synth_mods_fx1_latcherfloat_2" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx1_Echo_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx1_mixer_0" PORT="ap_clk"/>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_7" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M00_ACLK"/>
@@ -3405,7 +3406,6 @@
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M17_ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M18_ACLK"/>
             <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M19_ACLK"/>
-            <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S01_ACLK"/>
@@ -3661,7 +3661,7 @@
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x8000D000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x8000DFFF" INSTANCE="synth_mods_fx2_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000E000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000EFFF" INSTANCE="synth_mods_fx1_mixer_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x8000F000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x8000FFFF" INSTANCE="synth_mods_fx2_mixer_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80010000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80010FFF" INSTANCE="synth_mods_fx2_compressor_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CTRL_BUS_BASEADDR" BASEVALUE="0x80010000" HIGHNAME="C_S_AXI_CTRL_BUS_HIGHADDR" HIGHVALUE="0x80010FFF" INSTANCE="synth_mods_fx2_vibrato_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_CTRL_BUS"/>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80011000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80011FFF" INSTANCE="synth_mods_output_xbar" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_CTRL"/>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80012000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80012FFF" INSTANCE="axi_gpio_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x80013000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x80013FFF" INSTANCE="axi_gpio_1" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI"/>
@@ -3685,7 +3685,7 @@
         <PERIPHERAL INSTANCE="synth_mods_fx2_xbar"/>
         <PERIPHERAL INSTANCE="synth_mods_fx1_mixer_0"/>
         <PERIPHERAL INSTANCE="synth_mods_fx2_mixer_1"/>
-        <PERIPHERAL INSTANCE="synth_mods_fx2_compressor_0"/>
+        <PERIPHERAL INSTANCE="synth_mods_fx2_vibrato_0"/>
         <PERIPHERAL INSTANCE="synth_mods_output_xbar"/>
         <PERIPHERAL INSTANCE="axi_gpio_0"/>
         <PERIPHERAL INSTANCE="axi_gpio_1"/>
@@ -5206,6 +5206,7 @@
             <CONNECTION INSTANCE="synth_mods_latcherfloat_1" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_compressor_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_biquad_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_Generators_FM_Synth_1" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_Generators_noisy_0" PORT="ap_rst_n"/>
@@ -5224,12 +5225,11 @@
             <CONNECTION INSTANCE="synth_mods_fx1_latcherfloat_2" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx1_Echo_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx1_mixer_0" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_7" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="ap_rst_n"/>
-            <CONNECTION INSTANCE="synth_mods_envelope_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S01_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ARESETN"/>
@@ -9383,89 +9383,89 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M12_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_AWADDR"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_AWADDR"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M12_AXI_awprot" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="M12_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_AWVALID"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_AWVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="M12_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_AWREADY"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_AWREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M12_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_WDATA"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_WDATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="M12_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_WSTRB"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_WSTRB"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="M12_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_WVALID"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_WVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="M12_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_WREADY"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_WREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="M12_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_BRESP"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_BRESP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="M12_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_BVALID"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_BVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="M12_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_BREADY"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_BREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M12_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_ARADDR"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_ARADDR"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M12_AXI_arprot" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="M12_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_ARVALID"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_ARVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="M12_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_ARREADY"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_ARREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="M12_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_RDATA"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_RDATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="M12_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_RRESP"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_RRESP"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="M12_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_RVALID"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_RVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="M12_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="s_axi_CTRL_BUS_RREADY"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="s_axi_CTRL_BUS_RREADY"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M11_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_Generators_FM_Synth_1_s_axi_CTRL_BUS_AWADDR">
@@ -13610,7 +13610,7 @@
             <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="in_V_TVALID"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="in_V_TVALID"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="in_V_TVALID"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="in2_V_TVALID"/>
@@ -13624,7 +13624,7 @@
             <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="in_V_TREADY"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="in_V_TREADY"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="in_V_TREADY"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="in2_V_TREADY"/>
@@ -13638,7 +13638,7 @@
             <CONNECTION INSTANCE="synth_mods_fx2_trem_0" PORT="in_V_TDATA"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="in_V_TDATA"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="in_V_TDATA"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="synth_mods_fx2_mixer_1" PORT="in2_V_TDATA"/>
@@ -13943,289 +13943,6 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/synth_mods/fx2/compressor_0" HWVERSION="1.0" INSTANCE="synth_mods_fx2_compressor_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="compressor" VLNV="xilinx.com:hls:compressor:1.0">
-      <DOCUMENTS/>
-      <ADDRESSBLOCKS>
-        <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL_BUS" NAME="Reg" RANGE="65536" USAGE="register">
-          <REGISTERS>
-            <REGISTER NAME="thresh">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of thresh"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="thresh">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of thresh"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="slope">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of slope"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="24"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="slope">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of slope"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-          </REGISTERS>
-        </ADDRESSBLOCK>
-      </ADDRESSBLOCKS>
-      <PARAMETERS>
-        <PARAMETER NAME="C_S_AXI_CTRL_BUS_ADDR_WIDTH" VALUE="5"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BUS_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="mitx_petalinux_compressor_0_0"/>
-        <PARAMETER NAME="clk_period" VALUE="10.000000"/>
-        <PARAMETER NAME="machine" VALUE="64"/>
-        <PARAMETER NAME="combinational" VALUE="0"/>
-        <PARAMETER NAME="latency" VALUE="19"/>
-        <PARAMETER NAME="II" VALUE="x"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BUS_BASEADDR" VALUE="0x80010000"/>
-        <PARAMETER NAME="C_S_AXI_CTRL_BUS_HIGHADDR" VALUE="0x80010FFF"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_BUS_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BUS_AWVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BUS_AWREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_BUS_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_BUS_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BUS_WVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BUS_WREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BUS_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BUS_BVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BUS_BREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_BUS_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BUS_ARVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BUS_ARREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_BUS_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BUS_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_axi_CTRL_BUS_RVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axi_CTRL_BUS_RREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="ap_rst_n" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="in_V_TVALID" SIGIS="undef" SIGNAME="synth_mods_fx1_xbar_m_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx1_xbar" PORT="m_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="in_V_TREADY" SIGIS="undef" SIGNAME="synth_mods_fx1_xbar_m_axis_tready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx1_xbar" PORT="m_axis_tready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="in_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_fx1_xbar_m_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx1_xbar" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="out_V_TVALID" SIGIS="undef" SIGNAME="synth_mods_fx2_compressor_0_out_V_TVALID">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="in_V_TVALID"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="out_V_TREADY" SIGIS="undef" SIGNAME="synth_mods_fx2_compressor_0_out_V_TREADY">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="in_V_TREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="out_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_fx2_compressor_0_out_V_TDATA">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="in_V_TDATA"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="synth_mods_axi_interconnect_0_M12_AXI" DATAWIDTH="32" NAME="s_axi_CTRL_BUS" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="ADDR_WIDTH" VALUE="5"/>
-          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
-          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
-          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
-          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
-          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
-          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
-          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
-          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
-          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
-          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
-          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
-          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
-          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="2"/>
-          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
-          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
-          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
-          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
-          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
-          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_CTRL_BUS_AWADDR"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_CTRL_BUS_AWVALID"/>
-            <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_CTRL_BUS_AWREADY"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_CTRL_BUS_WDATA"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_CTRL_BUS_WSTRB"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_CTRL_BUS_WVALID"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_CTRL_BUS_WREADY"/>
-            <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_CTRL_BUS_BRESP"/>
-            <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_CTRL_BUS_BVALID"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_CTRL_BUS_BREADY"/>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_CTRL_BUS_ARADDR"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_CTRL_BUS_ARVALID"/>
-            <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_CTRL_BUS_ARREADY"/>
-            <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_CTRL_BUS_RDATA"/>
-            <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_CTRL_BUS_RRESP"/>
-            <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_CTRL_BUS_RVALID"/>
-            <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_CTRL_BUS_RREADY"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="synth_mods_fx1_xbar_M01_AXIS" NAME="in_V" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="in_V_TVALID"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="in_V_TREADY"/>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="in_V_TDATA"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="synth_mods_fx2_compressor_0_out_V" NAME="out_V" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}} TDATA_WIDTH 32}"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="out_V_TVALID"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="out_V_TREADY"/>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="out_V_TDATA"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
     <MODULE FULLNAME="/synth_mods/fx2/latcherfloat_7" HWVERSION="1.0" INSTANCE="synth_mods_fx2_latcherfloat_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="latcherfloat" VLNV="xilinx.com:hls:latcherfloat:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -14339,19 +14056,19 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="in_V_TVALID" SIGIS="undef" SIGNAME="synth_mods_fx2_compressor_0_out_V_TVALID">
+        <PORT DIR="I" NAME="in_V_TVALID" SIGIS="undef" SIGNAME="synth_mods_fx2_latcherfloat_8_in_V_TVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="out_V_TVALID"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="out_V_TVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="in_V_TREADY" SIGIS="undef" SIGNAME="synth_mods_fx2_compressor_0_out_V_TREADY">
+        <PORT DIR="O" NAME="in_V_TREADY" SIGIS="undef" SIGNAME="synth_mods_fx2_latcherfloat_8_in_V_TREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="out_V_TREADY"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="out_V_TREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="in_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_fx2_compressor_0_out_V_TDATA">
+        <PORT DIR="I" LEFT="31" NAME="in_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_fx2_latcherfloat_8_in_V_TDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="synth_mods_fx2_compressor_0" PORT="out_V_TDATA"/>
+            <CONNECTION INSTANCE="synth_mods_fx2_vibrato_0" PORT="out_V_TDATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="out_V_TVALID" SIGIS="undef" SIGNAME="synth_mods_fx2_latcherfloat_8_out_V_TVALID">
@@ -14386,7 +14103,7 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="synth_mods_fx2_compressor_0_out_V" NAME="in_V" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="synth_mods_fx2_vibrato_0_out_V" NAME="in_V" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
@@ -14931,6 +14648,289 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="synth_mods_fx2_trem_0_out_V" NAME="out_V" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}} TDATA_WIDTH 32}"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="out_V_TVALID"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="out_V_TREADY"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="out_V_TDATA"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/synth_mods/fx2/vibrato_0" HWVERSION="1.0" INSTANCE="synth_mods_fx2_vibrato_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="vibrato" VLNV="xilinx.com:hls:vibrato:1.0">
+      <DOCUMENTS/>
+      <ADDRESSBLOCKS>
+        <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL_BUS" NAME="Reg" RANGE="65536" USAGE="register">
+          <REGISTERS>
+            <REGISTER NAME="delay">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of delay"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="delay">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of delay"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="depth">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of depth"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="24"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="depth">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of depth"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+          </REGISTERS>
+        </ADDRESSBLOCK>
+      </ADDRESSBLOCKS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_S_AXI_CTRL_BUS_ADDR_WIDTH" VALUE="5"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BUS_DATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="Component_Name" VALUE="mitx_petalinux_vibrato_0_0"/>
+        <PARAMETER NAME="clk_period" VALUE="10.000000"/>
+        <PARAMETER NAME="machine" VALUE="64"/>
+        <PARAMETER NAME="combinational" VALUE="0"/>
+        <PARAMETER NAME="latency" VALUE="115"/>
+        <PARAMETER NAME="II" VALUE="x"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BUS_BASEADDR" VALUE="0x80010000"/>
+        <PARAMETER NAME="C_S_AXI_CTRL_BUS_HIGHADDR" VALUE="0x80010FFF"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_BUS_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_CTRL_BUS_AWVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_CTRL_BUS_AWREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="s_axi_CTRL_BUS_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="s_axi_CTRL_BUS_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_CTRL_BUS_WVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_CTRL_BUS_WREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BUS_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_CTRL_BUS_BVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_CTRL_BUS_BREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="s_axi_CTRL_BUS_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_CTRL_BUS_ARVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_CTRL_BUS_ARREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="s_axi_CTRL_BUS_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="s_axi_CTRL_BUS_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_CTRL_BUS_RVALID" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_CTRL_BUS_RREADY" SIGIS="undef" SIGNAME="synth_mods_axi_interconnect_0_M12_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_axi_interconnect_0" PORT="M12_AXI_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ap_rst_n" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="in_V_TVALID" SIGIS="undef" SIGNAME="synth_mods_fx1_xbar_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_fx1_xbar" PORT="m_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="in_V_TREADY" SIGIS="undef" SIGNAME="synth_mods_fx1_xbar_m_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_fx1_xbar" PORT="m_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="in_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_fx1_xbar_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_fx1_xbar" PORT="m_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="out_V_TVALID" SIGIS="undef" SIGNAME="synth_mods_fx2_latcherfloat_8_in_V_TVALID">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="in_V_TVALID"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="out_V_TREADY" SIGIS="undef" SIGNAME="synth_mods_fx2_latcherfloat_8_in_V_TREADY">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="in_V_TREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="out_V_TDATA" RIGHT="0" SIGIS="undef" SIGNAME="synth_mods_fx2_latcherfloat_8_in_V_TDATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="synth_mods_fx2_latcherfloat_8" PORT="in_V_TDATA"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="synth_mods_axi_interconnect_0_M12_AXI" DATAWIDTH="32" NAME="s_axi_CTRL_BUS" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="5"/>
+          <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
+          <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
+          <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="ID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="RUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_BURST" VALUE="0"/>
+          <PARAMETER NAME="HAS_LOCK" VALUE="0"/>
+          <PARAMETER NAME="HAS_PROT" VALUE="0"/>
+          <PARAMETER NAME="HAS_CACHE" VALUE="0"/>
+          <PARAMETER NAME="HAS_QOS" VALUE="0"/>
+          <PARAMETER NAME="HAS_REGION" VALUE="0"/>
+          <PARAMETER NAME="HAS_WSTRB" VALUE="1"/>
+          <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
+          <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
+          <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="2"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
+          <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_CTRL_BUS_AWADDR"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_CTRL_BUS_AWVALID"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_CTRL_BUS_AWREADY"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_CTRL_BUS_WDATA"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_CTRL_BUS_WSTRB"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_CTRL_BUS_WVALID"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_CTRL_BUS_WREADY"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_CTRL_BUS_BRESP"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_CTRL_BUS_BVALID"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_CTRL_BUS_BREADY"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_CTRL_BUS_ARADDR"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_CTRL_BUS_ARVALID"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_CTRL_BUS_ARREADY"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_CTRL_BUS_RDATA"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_CTRL_BUS_RRESP"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_CTRL_BUS_RVALID"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_CTRL_BUS_RREADY"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="synth_mods_fx1_xbar_M01_AXIS" NAME="in_V" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="0"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
+          <PARAMETER NAME="PHASE" VALUE="0.000"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mitx_petalinux_processing_system7_0_0_FCLK_CLK0"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="in_V_TVALID"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="in_V_TREADY"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="in_V_TDATA"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="synth_mods_fx2_vibrato_0_out_V" NAME="out_V" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="SIGNAL_SET" VALUE="00000011"/>
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>

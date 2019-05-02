@@ -256,9 +256,6 @@ proc create_hier_cell_fx2 { parentCell nameHier } {
   create_bd_pin -dir I -type rst ap_rst_n
   create_bd_pin -dir I -from 0 -to 0 -type data fx2_latch_V
 
-  # Create instance: compressor_0, and set properties
-  set compressor_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:compressor:1.0 compressor_0 ]
-
   # Create instance: latcherfloat_7, and set properties
   set latcherfloat_7 [ create_bd_cell -type ip -vlnv xilinx.com:hls:latcherfloat:1.0 latcherfloat_7 ]
 
@@ -271,22 +268,25 @@ proc create_hier_cell_fx2 { parentCell nameHier } {
   # Create instance: trem_0, and set properties
   set trem_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:trem:1.0 trem_0 ]
 
+  # Create instance: vibrato_0, and set properties
+  set vibrato_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:vibrato:1.0 vibrato_0 ]
+
   # Create interface connections
-  connect_bd_intf_net -intf_net axi_interconnect_0_M12_AXI [get_bd_intf_pins s_axi_CTRL_BUS] [get_bd_intf_pins compressor_0/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net axi_interconnect_0_M13_AXI [get_bd_intf_pins s_axi_CTRL_BUS1] [get_bd_intf_pins mixer_1/s_axi_CTRL_BUS]
-  connect_bd_intf_net -intf_net compressor_0_out_V [get_bd_intf_pins compressor_0/out_V] [get_bd_intf_pins latcherfloat_8/in_V]
+  connect_bd_intf_net -intf_net in_V1_1 [get_bd_intf_pins in_V1] [get_bd_intf_pins vibrato_0/in_V]
   connect_bd_intf_net -intf_net in_V_1 [get_bd_intf_pins in_V] [get_bd_intf_pins trem_0/in_V]
   connect_bd_intf_net -intf_net latcherfloat_7_out_V [get_bd_intf_pins latcherfloat_7/out_V] [get_bd_intf_pins mixer_1/in0_V]
   connect_bd_intf_net -intf_net latcherfloat_8_out_V [get_bd_intf_pins latcherfloat_8/out_V] [get_bd_intf_pins mixer_1/in1_V]
   connect_bd_intf_net -intf_net mixer_1_out_V [get_bd_intf_pins out_V] [get_bd_intf_pins mixer_1/out_V]
+  connect_bd_intf_net -intf_net s_axi_CTRL_BUS_1 [get_bd_intf_pins s_axi_CTRL_BUS] [get_bd_intf_pins vibrato_0/s_axi_CTRL_BUS]
   connect_bd_intf_net -intf_net trem_0_out_V [get_bd_intf_pins latcherfloat_7/in_V] [get_bd_intf_pins trem_0/out_V]
-  connect_bd_intf_net -intf_net xbar_s1_M01_AXIS [get_bd_intf_pins in_V1] [get_bd_intf_pins compressor_0/in_V]
+  connect_bd_intf_net -intf_net vibrato_0_out_V [get_bd_intf_pins latcherfloat_8/in_V] [get_bd_intf_pins vibrato_0/out_V]
   connect_bd_intf_net -intf_net xbar_s1_M02_AXIS [get_bd_intf_pins in2_V] [get_bd_intf_pins mixer_1/in2_V]
   connect_bd_intf_net -intf_net xbar_s1_M03_AXIS [get_bd_intf_pins in3_V] [get_bd_intf_pins mixer_1/in3_V]
 
   # Create port connections
-  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins compressor_0/ap_clk] [get_bd_pins latcherfloat_7/ap_clk] [get_bd_pins latcherfloat_8/ap_clk] [get_bd_pins mixer_1/ap_clk] [get_bd_pins trem_0/ap_clk]
-  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins compressor_0/ap_rst_n] [get_bd_pins latcherfloat_7/ap_rst_n] [get_bd_pins latcherfloat_8/ap_rst_n] [get_bd_pins mixer_1/ap_rst_n] [get_bd_pins trem_0/ap_rst_n]
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins latcherfloat_7/ap_clk] [get_bd_pins latcherfloat_8/ap_clk] [get_bd_pins mixer_1/ap_clk] [get_bd_pins trem_0/ap_clk] [get_bd_pins vibrato_0/ap_clk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins latcherfloat_7/ap_rst_n] [get_bd_pins latcherfloat_8/ap_rst_n] [get_bd_pins mixer_1/ap_rst_n] [get_bd_pins trem_0/ap_rst_n] [get_bd_pins vibrato_0/ap_rst_n]
   connect_bd_net -net latch_V_1 [get_bd_pins fx2_latch_V] [get_bd_pins latcherfloat_7/latch_V] [get_bd_pins latcherfloat_8/latch_V]
 
   # Restore current instance
@@ -1275,7 +1275,6 @@ CONFIG.NUM_SI {2} \
   create_bd_addr_seg -range 0x00001000 -offset 0x80013000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_1/S_AXI/Reg] SEG_axi_gpio_1_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80009000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx1/biquad_0/s_axi_CTRL_BUS/Reg] SEG_biquad_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80021000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/biquad_0/s_axi_CTRL_BUS/Reg] SEG_biquad_0_Reg1
-  create_bd_addr_seg -range 0x00001000 -offset 0x80010000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx2/compressor_0/s_axi_CTRL_BUS/Reg] SEG_compressor_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80020000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/compressor_0/s_axi_CTRL_BUS/Reg] SEG_compressor_0_Reg1
   create_bd_addr_seg -range 0x00001000 -offset 0x8000C000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/envelope_0/s_axi_CTRL_BUS/Reg] SEG_envelope_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x8000A000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx1_xbar/S_AXI_CTRL/Reg] SEG_fx1_xbar_Reg
@@ -1290,6 +1289,7 @@ CONFIG.NUM_SI {2} \
   create_bd_addr_seg -range 0x00001000 -offset 0x80005000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/saw_2/s_axi_CTRL_BUS/Reg] SEG_saw_2_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80006000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/saw_3/s_axi_CTRL_BUS/Reg] SEG_saw_3_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x80001000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/Generators/saw_tree/saw_4/s_axi_CTRL_BUS/Reg] SEG_saw_4_Reg
+  create_bd_addr_seg -range 0x00001000 -offset 0x80010000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs synth_mods/fx2/vibrato_0/s_axi_CTRL_BUS/Reg] SEG_vibrato_0_Reg
 
 
   # Restore current instance

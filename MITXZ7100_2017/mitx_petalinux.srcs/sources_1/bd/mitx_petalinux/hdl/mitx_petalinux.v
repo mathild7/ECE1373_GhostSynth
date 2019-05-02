@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-//Date        : Mon Apr 29 23:37:09 2019
+//Date        : Thu May  2 15:17:16 2019
 //Host        : 0027fb2bf205 running 64-bit unknown
 //Command     : generate_target mitx_petalinux.bd
 //Design      : mitx_petalinux
@@ -1282,23 +1282,6 @@ module fx2_imp_E1J21P
 
   wire ap_clk_1;
   wire ap_rst_n_1;
-  wire [31:0]axi_interconnect_0_M12_AXI_ARADDR;
-  wire axi_interconnect_0_M12_AXI_ARREADY;
-  wire [0:0]axi_interconnect_0_M12_AXI_ARVALID;
-  wire [31:0]axi_interconnect_0_M12_AXI_AWADDR;
-  wire axi_interconnect_0_M12_AXI_AWREADY;
-  wire [0:0]axi_interconnect_0_M12_AXI_AWVALID;
-  wire [0:0]axi_interconnect_0_M12_AXI_BREADY;
-  wire [1:0]axi_interconnect_0_M12_AXI_BRESP;
-  wire axi_interconnect_0_M12_AXI_BVALID;
-  wire [31:0]axi_interconnect_0_M12_AXI_RDATA;
-  wire [0:0]axi_interconnect_0_M12_AXI_RREADY;
-  wire [1:0]axi_interconnect_0_M12_AXI_RRESP;
-  wire axi_interconnect_0_M12_AXI_RVALID;
-  wire [31:0]axi_interconnect_0_M12_AXI_WDATA;
-  wire axi_interconnect_0_M12_AXI_WREADY;
-  wire [3:0]axi_interconnect_0_M12_AXI_WSTRB;
-  wire [0:0]axi_interconnect_0_M12_AXI_WVALID;
   wire [31:0]axi_interconnect_0_M13_AXI_ARADDR;
   wire axi_interconnect_0_M13_AXI_ARREADY;
   wire [0:0]axi_interconnect_0_M13_AXI_ARVALID;
@@ -1316,9 +1299,9 @@ module fx2_imp_E1J21P
   wire axi_interconnect_0_M13_AXI_WREADY;
   wire [3:0]axi_interconnect_0_M13_AXI_WSTRB;
   wire [0:0]axi_interconnect_0_M13_AXI_WVALID;
-  wire [31:0]compressor_0_out_V_TDATA;
-  wire compressor_0_out_V_TREADY;
-  wire compressor_0_out_V_TVALID;
+  wire [31:0]in_V1_1_TDATA;
+  wire in_V1_1_TREADY;
+  wire in_V1_1_TVALID;
   wire [31:0]in_V_1_TDATA;
   wire in_V_1_TREADY;
   wire in_V_1_TVALID;
@@ -1332,12 +1315,29 @@ module fx2_imp_E1J21P
   wire [31:0]mixer_1_out_V_TDATA;
   wire mixer_1_out_V_TREADY;
   wire mixer_1_out_V_TVALID;
+  wire [31:0]s_axi_CTRL_BUS_1_ARADDR;
+  wire s_axi_CTRL_BUS_1_ARREADY;
+  wire [0:0]s_axi_CTRL_BUS_1_ARVALID;
+  wire [31:0]s_axi_CTRL_BUS_1_AWADDR;
+  wire s_axi_CTRL_BUS_1_AWREADY;
+  wire [0:0]s_axi_CTRL_BUS_1_AWVALID;
+  wire [0:0]s_axi_CTRL_BUS_1_BREADY;
+  wire [1:0]s_axi_CTRL_BUS_1_BRESP;
+  wire s_axi_CTRL_BUS_1_BVALID;
+  wire [31:0]s_axi_CTRL_BUS_1_RDATA;
+  wire [0:0]s_axi_CTRL_BUS_1_RREADY;
+  wire [1:0]s_axi_CTRL_BUS_1_RRESP;
+  wire s_axi_CTRL_BUS_1_RVALID;
+  wire [31:0]s_axi_CTRL_BUS_1_WDATA;
+  wire s_axi_CTRL_BUS_1_WREADY;
+  wire [3:0]s_axi_CTRL_BUS_1_WSTRB;
+  wire [0:0]s_axi_CTRL_BUS_1_WVALID;
   wire [31:0]trem_0_out_V_TDATA;
   wire trem_0_out_V_TREADY;
   wire trem_0_out_V_TVALID;
-  wire [31:0]xbar_s1_M01_AXIS_TDATA;
-  wire xbar_s1_M01_AXIS_TREADY;
-  wire xbar_s1_M01_AXIS_TVALID;
+  wire [31:0]vibrato_0_out_V_TDATA;
+  wire vibrato_0_out_V_TREADY;
+  wire vibrato_0_out_V_TVALID;
   wire [31:0]xbar_s1_M02_AXIS_TDATA;
   wire xbar_s1_M02_AXIS_TREADY;
   wire xbar_s1_M02_AXIS_TVALID;
@@ -1347,15 +1347,6 @@ module fx2_imp_E1J21P
 
   assign ap_clk_1 = ap_clk;
   assign ap_rst_n_1 = ap_rst_n;
-  assign axi_interconnect_0_M12_AXI_ARADDR = s_axi_CTRL_BUS_araddr[31:0];
-  assign axi_interconnect_0_M12_AXI_ARVALID = s_axi_CTRL_BUS_arvalid[0];
-  assign axi_interconnect_0_M12_AXI_AWADDR = s_axi_CTRL_BUS_awaddr[31:0];
-  assign axi_interconnect_0_M12_AXI_AWVALID = s_axi_CTRL_BUS_awvalid[0];
-  assign axi_interconnect_0_M12_AXI_BREADY = s_axi_CTRL_BUS_bready[0];
-  assign axi_interconnect_0_M12_AXI_RREADY = s_axi_CTRL_BUS_rready[0];
-  assign axi_interconnect_0_M12_AXI_WDATA = s_axi_CTRL_BUS_wdata[31:0];
-  assign axi_interconnect_0_M12_AXI_WSTRB = s_axi_CTRL_BUS_wstrb[3:0];
-  assign axi_interconnect_0_M12_AXI_WVALID = s_axi_CTRL_BUS_wvalid[0];
   assign axi_interconnect_0_M13_AXI_ARADDR = s_axi_CTRL_BUS1_araddr[31:0];
   assign axi_interconnect_0_M13_AXI_ARVALID = s_axi_CTRL_BUS1_arvalid[0];
   assign axi_interconnect_0_M13_AXI_AWADDR = s_axi_CTRL_BUS1_awaddr[31:0];
@@ -1367,7 +1358,9 @@ module fx2_imp_E1J21P
   assign axi_interconnect_0_M13_AXI_WVALID = s_axi_CTRL_BUS1_wvalid[0];
   assign in2_V_tready = xbar_s1_M02_AXIS_TREADY;
   assign in3_V_tready = xbar_s1_M03_AXIS_TREADY;
-  assign in_V1_tready = xbar_s1_M01_AXIS_TREADY;
+  assign in_V1_1_TDATA = in_V1_tdata[31:0];
+  assign in_V1_1_TVALID = in_V1_tvalid;
+  assign in_V1_tready = in_V1_1_TREADY;
   assign in_V_1_TDATA = in_V_tdata[31:0];
   assign in_V_1_TVALID = in_V_tvalid;
   assign in_V_tready = in_V_1_TREADY;
@@ -1383,46 +1376,27 @@ module fx2_imp_E1J21P
   assign s_axi_CTRL_BUS1_rresp[1:0] = axi_interconnect_0_M13_AXI_RRESP;
   assign s_axi_CTRL_BUS1_rvalid[0] = axi_interconnect_0_M13_AXI_RVALID;
   assign s_axi_CTRL_BUS1_wready[0] = axi_interconnect_0_M13_AXI_WREADY;
-  assign s_axi_CTRL_BUS_arready[0] = axi_interconnect_0_M12_AXI_ARREADY;
-  assign s_axi_CTRL_BUS_awready[0] = axi_interconnect_0_M12_AXI_AWREADY;
-  assign s_axi_CTRL_BUS_bresp[1:0] = axi_interconnect_0_M12_AXI_BRESP;
-  assign s_axi_CTRL_BUS_bvalid[0] = axi_interconnect_0_M12_AXI_BVALID;
-  assign s_axi_CTRL_BUS_rdata[31:0] = axi_interconnect_0_M12_AXI_RDATA;
-  assign s_axi_CTRL_BUS_rresp[1:0] = axi_interconnect_0_M12_AXI_RRESP;
-  assign s_axi_CTRL_BUS_rvalid[0] = axi_interconnect_0_M12_AXI_RVALID;
-  assign s_axi_CTRL_BUS_wready[0] = axi_interconnect_0_M12_AXI_WREADY;
-  assign xbar_s1_M01_AXIS_TDATA = in_V1_tdata[31:0];
-  assign xbar_s1_M01_AXIS_TVALID = in_V1_tvalid;
+  assign s_axi_CTRL_BUS_1_ARADDR = s_axi_CTRL_BUS_araddr[31:0];
+  assign s_axi_CTRL_BUS_1_ARVALID = s_axi_CTRL_BUS_arvalid[0];
+  assign s_axi_CTRL_BUS_1_AWADDR = s_axi_CTRL_BUS_awaddr[31:0];
+  assign s_axi_CTRL_BUS_1_AWVALID = s_axi_CTRL_BUS_awvalid[0];
+  assign s_axi_CTRL_BUS_1_BREADY = s_axi_CTRL_BUS_bready[0];
+  assign s_axi_CTRL_BUS_1_RREADY = s_axi_CTRL_BUS_rready[0];
+  assign s_axi_CTRL_BUS_1_WDATA = s_axi_CTRL_BUS_wdata[31:0];
+  assign s_axi_CTRL_BUS_1_WSTRB = s_axi_CTRL_BUS_wstrb[3:0];
+  assign s_axi_CTRL_BUS_1_WVALID = s_axi_CTRL_BUS_wvalid[0];
+  assign s_axi_CTRL_BUS_arready[0] = s_axi_CTRL_BUS_1_ARREADY;
+  assign s_axi_CTRL_BUS_awready[0] = s_axi_CTRL_BUS_1_AWREADY;
+  assign s_axi_CTRL_BUS_bresp[1:0] = s_axi_CTRL_BUS_1_BRESP;
+  assign s_axi_CTRL_BUS_bvalid[0] = s_axi_CTRL_BUS_1_BVALID;
+  assign s_axi_CTRL_BUS_rdata[31:0] = s_axi_CTRL_BUS_1_RDATA;
+  assign s_axi_CTRL_BUS_rresp[1:0] = s_axi_CTRL_BUS_1_RRESP;
+  assign s_axi_CTRL_BUS_rvalid[0] = s_axi_CTRL_BUS_1_RVALID;
+  assign s_axi_CTRL_BUS_wready[0] = s_axi_CTRL_BUS_1_WREADY;
   assign xbar_s1_M02_AXIS_TDATA = in2_V_tdata[31:0];
   assign xbar_s1_M02_AXIS_TVALID = in2_V_tvalid;
   assign xbar_s1_M03_AXIS_TDATA = in3_V_tdata[31:0];
   assign xbar_s1_M03_AXIS_TVALID = in3_V_tvalid;
-  mitx_petalinux_compressor_0_0 compressor_0
-       (.ap_clk(ap_clk_1),
-        .ap_rst_n(ap_rst_n_1),
-        .in_V_TDATA(xbar_s1_M01_AXIS_TDATA),
-        .in_V_TREADY(xbar_s1_M01_AXIS_TREADY),
-        .in_V_TVALID(xbar_s1_M01_AXIS_TVALID),
-        .out_V_TDATA(compressor_0_out_V_TDATA),
-        .out_V_TREADY(compressor_0_out_V_TREADY),
-        .out_V_TVALID(compressor_0_out_V_TVALID),
-        .s_axi_CTRL_BUS_ARADDR(axi_interconnect_0_M12_AXI_ARADDR[4:0]),
-        .s_axi_CTRL_BUS_ARREADY(axi_interconnect_0_M12_AXI_ARREADY),
-        .s_axi_CTRL_BUS_ARVALID(axi_interconnect_0_M12_AXI_ARVALID),
-        .s_axi_CTRL_BUS_AWADDR(axi_interconnect_0_M12_AXI_AWADDR[4:0]),
-        .s_axi_CTRL_BUS_AWREADY(axi_interconnect_0_M12_AXI_AWREADY),
-        .s_axi_CTRL_BUS_AWVALID(axi_interconnect_0_M12_AXI_AWVALID),
-        .s_axi_CTRL_BUS_BREADY(axi_interconnect_0_M12_AXI_BREADY),
-        .s_axi_CTRL_BUS_BRESP(axi_interconnect_0_M12_AXI_BRESP),
-        .s_axi_CTRL_BUS_BVALID(axi_interconnect_0_M12_AXI_BVALID),
-        .s_axi_CTRL_BUS_RDATA(axi_interconnect_0_M12_AXI_RDATA),
-        .s_axi_CTRL_BUS_RREADY(axi_interconnect_0_M12_AXI_RREADY),
-        .s_axi_CTRL_BUS_RRESP(axi_interconnect_0_M12_AXI_RRESP),
-        .s_axi_CTRL_BUS_RVALID(axi_interconnect_0_M12_AXI_RVALID),
-        .s_axi_CTRL_BUS_WDATA(axi_interconnect_0_M12_AXI_WDATA),
-        .s_axi_CTRL_BUS_WREADY(axi_interconnect_0_M12_AXI_WREADY),
-        .s_axi_CTRL_BUS_WSTRB(axi_interconnect_0_M12_AXI_WSTRB),
-        .s_axi_CTRL_BUS_WVALID(axi_interconnect_0_M12_AXI_WVALID));
   mitx_petalinux_latcherfloat_7_0 latcherfloat_7
        (.ap_clk(ap_clk_1),
         .ap_rst_n(ap_rst_n_1),
@@ -1436,9 +1410,9 @@ module fx2_imp_E1J21P
   mitx_petalinux_latcherfloat_8_0 latcherfloat_8
        (.ap_clk(ap_clk_1),
         .ap_rst_n(ap_rst_n_1),
-        .in_V_TDATA(compressor_0_out_V_TDATA),
-        .in_V_TREADY(compressor_0_out_V_TREADY),
-        .in_V_TVALID(compressor_0_out_V_TVALID),
+        .in_V_TDATA(vibrato_0_out_V_TDATA),
+        .in_V_TREADY(vibrato_0_out_V_TREADY),
+        .in_V_TVALID(vibrato_0_out_V_TVALID),
         .latch_V(latch_V_1),
         .out_V_TDATA(latcherfloat_8_out_V_TDATA),
         .out_V_TREADY(latcherfloat_8_out_V_TREADY),
@@ -1487,6 +1461,32 @@ module fx2_imp_E1J21P
         .out_V_TDATA(trem_0_out_V_TDATA),
         .out_V_TREADY(trem_0_out_V_TREADY),
         .out_V_TVALID(trem_0_out_V_TVALID));
+  mitx_petalinux_vibrato_0_0 vibrato_0
+       (.ap_clk(ap_clk_1),
+        .ap_rst_n(ap_rst_n_1),
+        .in_V_TDATA(in_V1_1_TDATA),
+        .in_V_TREADY(in_V1_1_TREADY),
+        .in_V_TVALID(in_V1_1_TVALID),
+        .out_V_TDATA(vibrato_0_out_V_TDATA),
+        .out_V_TREADY(vibrato_0_out_V_TREADY),
+        .out_V_TVALID(vibrato_0_out_V_TVALID),
+        .s_axi_CTRL_BUS_ARADDR(s_axi_CTRL_BUS_1_ARADDR[4:0]),
+        .s_axi_CTRL_BUS_ARREADY(s_axi_CTRL_BUS_1_ARREADY),
+        .s_axi_CTRL_BUS_ARVALID(s_axi_CTRL_BUS_1_ARVALID),
+        .s_axi_CTRL_BUS_AWADDR(s_axi_CTRL_BUS_1_AWADDR[4:0]),
+        .s_axi_CTRL_BUS_AWREADY(s_axi_CTRL_BUS_1_AWREADY),
+        .s_axi_CTRL_BUS_AWVALID(s_axi_CTRL_BUS_1_AWVALID),
+        .s_axi_CTRL_BUS_BREADY(s_axi_CTRL_BUS_1_BREADY),
+        .s_axi_CTRL_BUS_BRESP(s_axi_CTRL_BUS_1_BRESP),
+        .s_axi_CTRL_BUS_BVALID(s_axi_CTRL_BUS_1_BVALID),
+        .s_axi_CTRL_BUS_RDATA(s_axi_CTRL_BUS_1_RDATA),
+        .s_axi_CTRL_BUS_RREADY(s_axi_CTRL_BUS_1_RREADY),
+        .s_axi_CTRL_BUS_RRESP(s_axi_CTRL_BUS_1_RRESP),
+        .s_axi_CTRL_BUS_RVALID(s_axi_CTRL_BUS_1_RVALID),
+        .s_axi_CTRL_BUS_WDATA(s_axi_CTRL_BUS_1_WDATA),
+        .s_axi_CTRL_BUS_WREADY(s_axi_CTRL_BUS_1_WREADY),
+        .s_axi_CTRL_BUS_WSTRB(s_axi_CTRL_BUS_1_WSTRB),
+        .s_axi_CTRL_BUS_WVALID(s_axi_CTRL_BUS_1_WVALID));
 endmodule
 
 module i00_couplers_imp_1498PUZ

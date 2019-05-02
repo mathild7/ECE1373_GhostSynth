@@ -11,4 +11,4 @@ petalinux_bsp/mitx_7100_2016_2/images
 petalinux_bsp/mitx_7100_2016_2/build
 *.backup.*
 **/*.backup.*
-
+**autopilot**

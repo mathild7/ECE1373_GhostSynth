@@ -2,52 +2,53 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Apr 29 23:46:26 2019
-# Process ID: 16949
-# Current directory: /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1
+# Start of session at: Thu May  2 15:27:11 2019
+# Process ID: 31957
+# Current directory: /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1
 # Command line: vivado -log mitx_petalinux_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source mitx_petalinux_wrapper.tcl -notrace
-# Log file: /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper.vdi
-# Journal file: /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/vivado.jou
+# Log file: /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper.vdi
+# Journal file: /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/vivado.jou
 #-----------------------------------------------------------
 source mitx_petalinux_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/root/repo/new/ECE1373_GhostSynth/modules'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/root/repo/shs/ECE1373_GhostSynth/modules'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/root/repo/shs/ECE1373_GhostSynth/vibrato'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2017.2/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1167.012 ; gain = 69.789 ; free physical = 4936 ; free virtual = 27772
+add_files: Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1167.805 ; gain = 70.578 ; free physical = 5143 ; free virtual = 27106
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
-INFO: [Netlist 29-17] Analyzing 5437 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 6064 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2017.2
 INFO: [Device 21-403] Loading part xc7z100ffg900-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xdc] for cell 'mitx_petalinux_i/processing_system7_0/inst'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xdc] for cell 'mitx_petalinux_i/processing_system7_0/inst'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_board.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_board.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_board.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_board.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc:57]
-INFO: [Timing 38-2] Deriving generated clocks [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc:57]
-get_clocks: Time (s): cpu = 00:00:22 ; elapsed = 00:00:16 . Memory (MB): peak = 2496.699 ; gain = 670.562 ; free physical = 3672 ; free virtual = 26543
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc]
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc]
-Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_clocks.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
-Finished Parsing XDC File [/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_clocks.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xdc] for cell 'mitx_petalinux_i/processing_system7_0/inst'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_processing_system7_0_0/mitx_petalinux_processing_system7_0_0.xdc] for cell 'mitx_petalinux_i/processing_system7_0/inst'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_board.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0_board.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_rst_processing_system7_0_50M_0/mitx_petalinux_rst_processing_system7_0_50M_0.xdc] for cell 'mitx_petalinux_i/rst_processing_system7_0_50M/U0'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_1_1/mitx_petalinux_axi_gpio_1_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_1/U0'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1_board.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_axi_gpio_0_1/mitx_petalinux_axi_gpio_0_1.xdc] for cell 'mitx_petalinux_i/axi_gpio_0/U0'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_board.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1_board.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc:57]
+get_clocks: Time (s): cpu = 00:00:25 ; elapsed = 00:00:17 . Memory (MB): peak = 2581.922 ; gain = 723.586 ; free physical = 3781 ; free virtual = 25802
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_clk_wiz_0_1/mitx_petalinux_clk_wiz_0_1.xdc] for cell 'mitx_petalinux_i/audio_pll/inst'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc]
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/constrs_1/new/master.xdc]
+Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_clocks.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
+Finished Parsing XDC File [/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.srcs/sources_1/bd/mitx_petalinux/ip/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0/mitx_petalinux_i2s_tx_fifo_0_clocks.xdc] for cell 'mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst'
 Sourcing Tcl File [/opt/Xilinx/Vivado/2017.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl] for cell 'mitx_petalinux_i/synth_mods/output_xbar/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake'
 WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same.  This will add unnecessary latency to the design. Please check the design for the following: 
  1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
@@ -134,7 +135,7 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-link_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:44 . Memory (MB): peak = 2499.727 ; gain = 1332.715 ; free physical = 3895 ; free virtual = 26732
+link_design: Time (s): cpu = 00:00:59 ; elapsed = 00:00:49 . Memory (MB): peak = 2594.949 ; gain = 1427.145 ; free physical = 4058 ; free virtual = 26040
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z100-ffg900'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z100-ffg900'
@@ -147,52 +148,52 @@ report_drc (run_mandatory_drcs) completed successfully
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2539.719 ; gain = 32.016 ; free physical = 3889 ; free virtual = 26726
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2634.941 ; gain = 32.016 ; free physical = 4049 ; free virtual = 26033
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
-INFO: [Opt 31-138] Pushed 26 inverter(s) to 410 load pin(s).
+INFO: [Opt 31-138] Pushed 27 inverter(s) to 412 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 15db516f3
+Phase 1 Retarget | Checksum: 1aab19711
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2539.719 ; gain = 0.000 ; free physical = 3886 ; free virtual = 26723
-INFO: [Opt 31-389] Phase Retarget created 336 cells and removed 1419 cells
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2634.941 ; gain = 0.000 ; free physical = 4046 ; free virtual = 26031
+INFO: [Opt 31-389] Phase Retarget created 336 cells and removed 1567 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 20 inverter(s) to 20 load pin(s).
-Phase 2 Constant propagation | Checksum: 144d1e246
+Phase 2 Constant propagation | Checksum: 12534293d
 
-Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 2539.719 ; gain = 0.000 ; free physical = 3871 ; free virtual = 26709
-INFO: [Opt 31-389] Phase Constant propagation created 978 cells and removed 2327 cells
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 2634.941 ; gain = 0.000 ; free physical = 4040 ; free virtual = 26025
+INFO: [Opt 31-389] Phase Constant propagation created 1044 cells and removed 2402 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 16888f1f2
+Phase 3 Sweep | Checksum: 170846ba6
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 2539.719 ; gain = 0.000 ; free physical = 3868 ; free virtual = 26706
-INFO: [Opt 31-389] Phase Sweep created 7 cells and removed 2411 cells
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 2634.941 ; gain = 0.000 ; free physical = 4038 ; free virtual = 26024
+INFO: [Opt 31-389] Phase Sweep created 7 cells and removed 2434 cells
 
 Phase 4 BUFG optimization
 INFO: [Opt 31-194] Inserted BUFG mitx_petalinux_i/i2s_block/atg_module_0/inst/clock_3_072_BUFG_inst to drive 162 load(s) on clock net i2s_sck_ext_OBUF
 INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
-Phase 4 BUFG optimization | Checksum: 1ac9c9d32
+Phase 4 BUFG optimization | Checksum: 1723c1fd5
 
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:26 . Memory (MB): peak = 2539.719 ; gain = 0.000 ; free physical = 3858 ; free virtual = 26696
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:31 . Memory (MB): peak = 2634.941 ; gain = 0.000 ; free physical = 4036 ; free virtual = 26022
 INFO: [Opt 31-389] Phase BUFG optimization created 1 cells and removed 0 cells
 
 Phase 5 Shift Register Optimization
-Phase 5 Shift Register Optimization | Checksum: 1ac9c9d32
+Phase 5 Shift Register Optimization | Checksum: 1723c1fd5
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:27 . Memory (MB): peak = 2539.719 ; gain = 0.000 ; free physical = 3857 ; free virtual = 26696
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 2634.941 ; gain = 0.000 ; free physical = 4036 ; free virtual = 26023
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.30 ; elapsed = 00:00:00.30 . Memory (MB): peak = 2539.719 ; gain = 0.000 ; free physical = 3857 ; free virtual = 26696
-Ending Logic Optimization Task | Checksum: 1ac9c9d32
+Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.34 . Memory (MB): peak = 2634.941 ; gain = 0.000 ; free physical = 4037 ; free virtual = 26022
+Ending Logic Optimization Task | Checksum: 1723c1fd5
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 2539.719 ; gain = 0.000 ; free physical = 3857 ; free virtual = 26695
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:32 . Memory (MB): peak = 2634.941 ; gain = 0.000 ; free physical = 4037 ; free virtual = 26023
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -205,32 +206,32 @@ Finished Running Vector-less Activity Propagation
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 33 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 65 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 8 WE to EN ports
-Number of BRAM Ports augmented: 40 newly gated: 8 Total Ports: 66
+Number of BRAM Ports augmented: 40 newly gated: 8 Total Ports: 130
 Number of Flops added for Enable Generation: 16
 
-Ending PowerOpt Patch Enables Task | Checksum: 1943854af
+Ending PowerOpt Patch Enables Task | Checksum: 1bc9acdaf
 
-Time (s): cpu = 00:00:00.30 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3721 ; free virtual = 26560
-Ending Power Optimization Task | Checksum: 1943854af
+Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.38 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3900 ; free virtual = 25870
+Ending Power Optimization Task | Checksum: 1bc9acdaf
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:16 . Memory (MB): peak = 3034.164 ; gain = 494.445 ; free physical = 3796 ; free virtual = 26635
-33 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:22 . Memory (MB): peak = 3134.340 ; gain = 499.398 ; free physical = 3995 ; free virtual = 25966
+34 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3034.164 ; gain = 534.438 ; free physical = 3796 ; free virtual = 26635
+opt_design: Time (s): cpu = 00:01:38 ; elapsed = 00:01:06 . Memory (MB): peak = 3134.340 ; gain = 539.391 ; free physical = 3996 ; free virtual = 25966
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3796 ; free virtual = 26638
-INFO: [Common 17-1381] The checkpoint '/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_opt.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:23 ; elapsed = 00:00:14 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3768 ; free virtual = 26629
+Write XDEF Complete: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3996 ; free virtual = 25970
+INFO: [Common 17-1381] The checkpoint '/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:25 ; elapsed = 00:00:15 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3966 ; free virtual = 25964
 Command: report_drc -file mitx_petalinux_wrapper_drc_opted.rpt
 INFO: [DRC 23-27] Running DRC with 4 threads
-INFO: [Coretcl 2-168] The results of DRC are in file /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_drc_opted.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_drc_opted.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3766 ; free virtual = 26627
+report_drc: Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3954 ; free virtual = 25948
 INFO: [Chipscope 16-241] No debug cores found in the current design.
 Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
 or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
@@ -265,10 +266,10 @@ INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/E
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/biquad_0/inst/biquad_faddfsub_3bkb_U1/biquad_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U1/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U2/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
-INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/compressor_0/inst/compressor_faddfsbkb_U1/compressor_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U1/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U2/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/trem_0/inst/tremolo_calculation_U0/trem_fadd_32ns_32bkb_U2/trem_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_faddfsub_hbi_U5/vibrato_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 report_drc (run_mandatory_drcs) completed successfully
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 24 Advisories
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
@@ -279,82 +280,82 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3766 ; free virtual = 26628
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: da9e1bc6
+Netlist sorting complete. Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3942 ; free virtual = 25952
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: f6b767ea
 
-Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.23 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3766 ; free virtual = 26628
+Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.25 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3942 ; free virtual = 25952
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3790 ; free virtual = 26652
+Netlist sorting complete. Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.20 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3962 ; free virtual = 25972
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 13b40289b
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1727e689f
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:22 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3634 ; free virtual = 26497
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:27 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3788 ; free virtual = 25793
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 18922c8c0
+Phase 1.3 Build Placer Netlist Model | Checksum: 22be0f60c
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:42 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3484 ; free virtual = 26348
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:58 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3182 ; free virtual = 25262
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 18922c8c0
+Phase 1.4 Constrain Clocks/Macros | Checksum: 22be0f60c
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:42 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3483 ; free virtual = 26347
-Phase 1 Placer Initialization | Checksum: 18922c8c0
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:58 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3151 ; free virtual = 25231
+Phase 1 Placer Initialization | Checksum: 22be0f60c
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:00:42 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3482 ; free virtual = 26346
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:59 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 3168 ; free virtual = 25248
 
 Phase 2 Global Placement
-Phase 2 Global Placement | Checksum: e62ccdce
+Phase 2 Global Placement | Checksum: 1777a1023
 
-Time (s): cpu = 00:02:48 ; elapsed = 00:01:36 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3406 ; free virtual = 26273
+Time (s): cpu = 00:03:33 ; elapsed = 00:02:14 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2884 ; free virtual = 24970
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: e62ccdce
+Phase 3.1 Commit Multi Column Macros | Checksum: 1777a1023
 
-Time (s): cpu = 00:02:48 ; elapsed = 00:01:36 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3405 ; free virtual = 26272
+Time (s): cpu = 00:03:33 ; elapsed = 00:02:14 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2883 ; free virtual = 24969
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 181c7aa17
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 22aba92a9
 
-Time (s): cpu = 00:03:15 ; elapsed = 00:01:49 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3387 ; free virtual = 26254
+Time (s): cpu = 00:04:05 ; elapsed = 00:02:30 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2927 ; free virtual = 25014
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: ca10d2bc
+Phase 3.3 Area Swap Optimization | Checksum: 1667e37bc
 
-Time (s): cpu = 00:03:16 ; elapsed = 00:01:50 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3395 ; free virtual = 26262
+Time (s): cpu = 00:04:06 ; elapsed = 00:02:31 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2926 ; free virtual = 25012
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 11f585f1d
+Phase 3.4 Pipeline Register Optimization | Checksum: 1a50f392b
 
-Time (s): cpu = 00:03:16 ; elapsed = 00:01:50 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3395 ; free virtual = 26262
+Time (s): cpu = 00:04:06 ; elapsed = 00:02:32 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2927 ; free virtual = 25012
 
 Phase 3.5 Timing Path Optimizer
-Phase 3.5 Timing Path Optimizer | Checksum: 10db41363
+Phase 3.5 Timing Path Optimizer | Checksum: 186693c35
 
-Time (s): cpu = 00:03:24 ; elapsed = 00:01:54 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3393 ; free virtual = 26260
+Time (s): cpu = 00:04:16 ; elapsed = 00:02:37 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2891 ; free virtual = 25001
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 1be1ac2f8
+Phase 3.6 Small Shape Detail Placement | Checksum: 1a4576d7b
 
-Time (s): cpu = 00:03:43 ; elapsed = 00:02:13 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3321 ; free virtual = 26189
+Time (s): cpu = 00:04:41 ; elapsed = 00:03:03 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2825 ; free virtual = 24908
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: f1a0051d
+Phase 3.7 Re-assign LUT pins | Checksum: 1b60e4024
 
-Time (s): cpu = 00:03:47 ; elapsed = 00:02:17 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3324 ; free virtual = 26192
+Time (s): cpu = 00:04:45 ; elapsed = 00:03:07 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2771 ; free virtual = 24855
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 14adc7243
+Phase 3.8 Pipeline Register Optimization | Checksum: 1c6d0a21a
 
-Time (s): cpu = 00:03:48 ; elapsed = 00:02:17 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3324 ; free virtual = 26192
-Phase 3 Detail Placement | Checksum: 14adc7243
+Time (s): cpu = 00:04:47 ; elapsed = 00:03:08 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2761 ; free virtual = 24856
+Phase 3 Detail Placement | Checksum: 1c6d0a21a
 
-Time (s): cpu = 00:03:48 ; elapsed = 00:02:18 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3324 ; free virtual = 26192
+Time (s): cpu = 00:04:47 ; elapsed = 00:03:09 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2752 ; free virtual = 24855
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -362,57 +363,57 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 1af3f81db
+Post Placement Optimization Initialization | Checksum: 2223c6e1f
 
 Phase 4.1.1.1 BUFG Insertion
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 4 CPUs
 INFO: [Place 46-38] Processed net mitx_petalinux_i/synth_mods/Generators/FM_Synth_1/inst/FM_Synth_srem_32nibs_U20/FM_Synth_srem_32nibs_div_U/FM_Synth_srem_32nibs_div_u_0/loop[0].remd_tmp_reg[1][1]_0, BUFG insertion was skipped due to placement/routing conflicts.
 INFO: [Place 46-38] Processed net mitx_petalinux_i/synth_mods/Generators/FM_Synth_0/inst/FM_Synth_srem_32nibs_U20/FM_Synth_srem_32nibs_div_U/FM_Synth_srem_32nibs_div_u_0/loop[0].remd_tmp_reg[1][1]_0, BUFG insertion was skipped due to placement/routing conflicts.
 INFO: [Place 46-41] BUFG insertion identified 2 candidate nets, 0 success, 2 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
-Phase 4.1.1.1 BUFG Insertion | Checksum: 1af3f81db
+Phase 4.1.1.1 BUFG Insertion | Checksum: 2223c6e1f
 
-Time (s): cpu = 00:04:23 ; elapsed = 00:02:33 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3345 ; free virtual = 26214
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.516. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 173964e58
+Time (s): cpu = 00:05:31 ; elapsed = 00:03:28 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2746 ; free virtual = 24871
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.813. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1e7a9aa97
 
-Time (s): cpu = 00:04:26 ; elapsed = 00:02:35 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3348 ; free virtual = 26217
-Phase 4.1 Post Commit Optimization | Checksum: 173964e58
+Time (s): cpu = 00:05:34 ; elapsed = 00:03:31 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2749 ; free virtual = 24870
+Phase 4.1 Post Commit Optimization | Checksum: 1e7a9aa97
 
-Time (s): cpu = 00:04:26 ; elapsed = 00:02:35 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3348 ; free virtual = 26217
+Time (s): cpu = 00:05:35 ; elapsed = 00:03:32 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2743 ; free virtual = 24864
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 173964e58
+Phase 4.2 Post Placement Cleanup | Checksum: 1e7a9aa97
 
-Time (s): cpu = 00:04:27 ; elapsed = 00:02:36 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3358 ; free virtual = 26228
+Time (s): cpu = 00:05:36 ; elapsed = 00:03:33 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2753 ; free virtual = 24874
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 173964e58
+Phase 4.3 Placer Reporting | Checksum: 1e7a9aa97
 
-Time (s): cpu = 00:04:28 ; elapsed = 00:02:37 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3360 ; free virtual = 26229
+Time (s): cpu = 00:05:37 ; elapsed = 00:03:34 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2758 ; free virtual = 24876
 
 Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: 182457c21
+Phase 4.4 Final Placement Cleanup | Checksum: 1576d4087
 
-Time (s): cpu = 00:04:29 ; elapsed = 00:02:38 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3360 ; free virtual = 26229
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 182457c21
+Time (s): cpu = 00:05:38 ; elapsed = 00:03:35 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2758 ; free virtual = 24875
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1576d4087
 
-Time (s): cpu = 00:04:29 ; elapsed = 00:02:38 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3359 ; free virtual = 26229
-Ending Placer Task | Checksum: 1755dffbe
+Time (s): cpu = 00:05:39 ; elapsed = 00:03:36 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2757 ; free virtual = 24875
+Ending Placer Task | Checksum: 110761e08
 
-Time (s): cpu = 00:04:29 ; elapsed = 00:02:38 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3468 ; free virtual = 26337
-78 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+Time (s): cpu = 00:05:39 ; elapsed = 00:03:36 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2878 ; free virtual = 24996
+79 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:04:39 ; elapsed = 00:02:47 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3468 ; free virtual = 26337
+place_design: Time (s): cpu = 00:05:50 ; elapsed = 00:03:46 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2877 ; free virtual = 24995
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3300 ; free virtual = 26300
-INFO: [Common 17-1381] The checkpoint '/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_placed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:30 ; elapsed = 00:00:16 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3418 ; free virtual = 26317
-report_io: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3399 ; free virtual = 26299
-report_utilization: Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:00.81 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3417 ; free virtual = 26317
-report_control_sets: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.26 . Memory (MB): peak = 3034.164 ; gain = 0.000 ; free physical = 3417 ; free virtual = 26317
+Write XDEF Complete: Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2714 ; free virtual = 24978
+INFO: [Common 17-1381] The checkpoint '/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2870 ; free virtual = 25020
+report_io: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2850 ; free virtual = 25001
+report_utilization: Time (s): cpu = 00:00:00.94 ; elapsed = 00:00:00.96 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2871 ; free virtual = 25022
+report_control_sets: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.28 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2870 ; free virtual = 25021
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z100-ffg900'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z100-ffg900'
@@ -426,125 +427,134 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 4 CPUs
-Checksum: PlaceDB: 8975112d ConstDB: 0 ShapeSum: ebe8ee91 RouteDB: 0
+Checksum: PlaceDB: a834af85 ConstDB: 0 ShapeSum: 68416e83 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 1436ffb48
+Phase 1 Build RT Design | Checksum: 143891f10
 
-Time (s): cpu = 00:01:52 ; elapsed = 00:01:23 . Memory (MB): peak = 3034.906 ; gain = 0.742 ; free physical = 3109 ; free virtual = 26013
+Time (s): cpu = 00:01:59 ; elapsed = 00:01:27 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2568 ; free virtual = 24719
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 1436ffb48
+Phase 2.1 Create Timer | Checksum: 143891f10
 
-Time (s): cpu = 00:01:54 ; elapsed = 00:01:25 . Memory (MB): peak = 3034.906 ; gain = 0.742 ; free physical = 3095 ; free virtual = 26000
+Time (s): cpu = 00:02:01 ; elapsed = 00:01:30 . Memory (MB): peak = 3134.340 ; gain = 0.000 ; free physical = 2543 ; free virtual = 24698
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 1436ffb48
+Phase 2.2 Fix Topology Constraints | Checksum: 143891f10
 
-Time (s): cpu = 00:01:55 ; elapsed = 00:01:26 . Memory (MB): peak = 3064.906 ; gain = 30.742 ; free physical = 3066 ; free virtual = 25971
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:31 . Memory (MB): peak = 3157.137 ; gain = 22.797 ; free physical = 2514 ; free virtual = 24670
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 1436ffb48
+Phase 2.3 Pre Route Cleanup | Checksum: 143891f10
 
-Time (s): cpu = 00:01:55 ; elapsed = 00:01:26 . Memory (MB): peak = 3064.906 ; gain = 30.742 ; free physical = 3066 ; free virtual = 25971
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:31 . Memory (MB): peak = 3157.137 ; gain = 22.797 ; free physical = 2514 ; free virtual = 24670
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: b9a1cb8b
+Phase 2.4 Update Timing | Checksum: 125f7c8e1
 
-Time (s): cpu = 00:02:40 ; elapsed = 00:01:46 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 3011 ; free virtual = 25916
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.743  | TNS=0.000  | WHS=-0.364 | THS=-1285.307|
+Time (s): cpu = 00:02:57 ; elapsed = 00:01:56 . Memory (MB): peak = 3282.832 ; gain = 148.492 ; free physical = 2474 ; free virtual = 24634
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.986  | TNS=0.000  | WHS=-0.330 | THS=-1222.125|
 
 
 Phase 2.5 Update Timing for Bus Skew
 
 Phase 2.5.1 Update Timing
-Phase 2.5.1 Update Timing | Checksum: b1ee1ded
+Phase 2.5.1 Update Timing | Checksum: ffa90574
 
-Time (s): cpu = 00:03:01 ; elapsed = 00:01:54 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2992 ; free virtual = 25897
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.743  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:03:23 ; elapsed = 00:02:08 . Memory (MB): peak = 3282.832 ; gain = 148.492 ; free physical = 2443 ; free virtual = 24611
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.986  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 2.5 Update Timing for Bus Skew | Checksum: 110194288
+Phase 2.5 Update Timing for Bus Skew | Checksum: 13a24f7b3
 
-Time (s): cpu = 00:03:01 ; elapsed = 00:01:54 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2988 ; free virtual = 25893
-Phase 2 Router Initialization | Checksum: 175934a21
+Time (s): cpu = 00:03:23 ; elapsed = 00:02:08 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2439 ; free virtual = 24607
+Phase 2 Router Initialization | Checksum: 1096839a8
 
-Time (s): cpu = 00:03:01 ; elapsed = 00:01:55 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2988 ; free virtual = 25893
+Time (s): cpu = 00:03:23 ; elapsed = 00:02:08 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2439 ; free virtual = 24607
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 14f9fae3d
+Phase 3 Initial Routing | Checksum: 1168d58d9
 
-Time (s): cpu = 00:03:16 ; elapsed = 00:02:00 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2979 ; free virtual = 25884
+Time (s): cpu = 00:03:43 ; elapsed = 00:02:16 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2418 ; free virtual = 24591
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 6240
- Number of Nodes with overlaps = 451
- Number of Nodes with overlaps = 76
- Number of Nodes with overlaps = 17
- Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 7128
+ Number of Nodes with overlaps = 440
+ Number of Nodes with overlaps = 62
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 3
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.151  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.346  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 142792feb
+Phase 4.1 Global Iteration 0 | Checksum: 1c481078d
 
-Time (s): cpu = 00:04:10 ; elapsed = 00:02:22 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2956 ; free virtual = 25862
+Time (s): cpu = 00:04:51 ; elapsed = 00:02:44 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2397 ; free virtual = 24570
 
 Phase 4.2 Global Iteration 1
  Number of Nodes with overlaps = 2
- Number of Nodes with overlaps = 33
- Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 4
  Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.102  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.346  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 157163d74
+Phase 4.2 Global Iteration 1 | Checksum: 14cedf60c
 
-Time (s): cpu = 00:04:21 ; elapsed = 00:02:32 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2952 ; free virtual = 25859
-Phase 4 Rip-up And Reroute | Checksum: 157163d74
+Time (s): cpu = 00:05:04 ; elapsed = 00:02:55 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2409 ; free virtual = 24569
+Phase 4 Rip-up And Reroute | Checksum: 14cedf60c
 
-Time (s): cpu = 00:04:21 ; elapsed = 00:02:32 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2952 ; free virtual = 25859
+Time (s): cpu = 00:05:04 ; elapsed = 00:02:56 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2409 ; free virtual = 24569
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 157163d74
 
-Time (s): cpu = 00:04:21 ; elapsed = 00:02:32 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2953 ; free virtual = 25859
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1c18e42bb
+
+Time (s): cpu = 00:05:12 ; elapsed = 00:02:59 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2410 ; free virtual = 24571
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.428  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 135db87b8
+
+Time (s): cpu = 00:05:12 ; elapsed = 00:02:59 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2409 ; free virtual = 24570
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 157163d74
+Phase 5.2 Clock Skew Optimization | Checksum: 135db87b8
 
-Time (s): cpu = 00:04:21 ; elapsed = 00:02:32 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2953 ; free virtual = 25859
-Phase 5 Delay and Skew Optimization | Checksum: 157163d74
+Time (s): cpu = 00:05:12 ; elapsed = 00:02:59 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2409 ; free virtual = 24571
+Phase 5 Delay and Skew Optimization | Checksum: 135db87b8
 
-Time (s): cpu = 00:04:22 ; elapsed = 00:02:32 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2953 ; free virtual = 25859
+Time (s): cpu = 00:05:13 ; elapsed = 00:03:00 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2409 ; free virtual = 24570
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 10362704f
+Phase 6.1.1 Update Timing | Checksum: 1997ebec7
 
-Time (s): cpu = 00:04:29 ; elapsed = 00:02:36 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2954 ; free virtual = 25861
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.209  | TNS=0.000  | WHS=0.032  | THS=0.000  |
+Time (s): cpu = 00:05:21 ; elapsed = 00:03:04 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2386 ; free virtual = 24565
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.428  | TNS=0.000  | WHS=0.037  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 154d5d280
+Phase 6.1 Hold Fix Iter | Checksum: 135d09533
 
-Time (s): cpu = 00:04:29 ; elapsed = 00:02:36 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2954 ; free virtual = 25861
-Phase 6 Post Hold Fix | Checksum: 154d5d280
+Time (s): cpu = 00:05:22 ; elapsed = 00:03:05 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2387 ; free virtual = 24565
+Phase 6 Post Hold Fix | Checksum: 135d09533
 
-Time (s): cpu = 00:04:29 ; elapsed = 00:02:36 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2954 ; free virtual = 25861
+Time (s): cpu = 00:05:22 ; elapsed = 00:03:05 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2387 ; free virtual = 24566
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 2.73076 %
-  Global Horizontal Routing Utilization  = 3.63887 %
+  Global Vertical Routing Utilization    = 3.32064 %
+  Global Horizontal Routing Utilization  = 4.52528 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -553,64 +563,64 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 1697a3832
+Phase 7 Route finalize | Checksum: 185a61460
 
-Time (s): cpu = 00:04:30 ; elapsed = 00:02:36 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2953 ; free virtual = 25859
+Time (s): cpu = 00:05:23 ; elapsed = 00:03:05 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2385 ; free virtual = 24564
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1697a3832
+Phase 8 Verifying routed nets | Checksum: 185a61460
 
-Time (s): cpu = 00:04:30 ; elapsed = 00:02:37 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2951 ; free virtual = 25858
+Time (s): cpu = 00:05:23 ; elapsed = 00:03:06 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2387 ; free virtual = 24562
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 241e2262e
+Phase 9 Depositing Routes | Checksum: 10b9ea006
 
-Time (s): cpu = 00:04:36 ; elapsed = 00:02:42 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2941 ; free virtual = 25848
+Time (s): cpu = 00:05:31 ; elapsed = 00:03:13 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2379 ; free virtual = 24553
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=1.209  | TNS=0.000  | WHS=0.032  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.428  | TNS=0.000  | WHS=0.037  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 241e2262e
+Phase 10 Post Router Timing | Checksum: 10b9ea006
 
-Time (s): cpu = 00:04:36 ; elapsed = 00:02:43 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 2944 ; free virtual = 25851
+Time (s): cpu = 00:05:31 ; elapsed = 00:03:13 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2385 ; free virtual = 24562
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:04:37 ; elapsed = 00:02:43 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 3026 ; free virtual = 25934
+Time (s): cpu = 00:05:31 ; elapsed = 00:03:14 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2460 ; free virtual = 24638
 
 Routing Is Done.
-92 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+94 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:04:48 ; elapsed = 00:02:51 . Memory (MB): peak = 3171.852 ; gain = 137.688 ; free physical = 3026 ; free virtual = 25934
+route_design: Time (s): cpu = 00:05:45 ; elapsed = 00:03:23 . Memory (MB): peak = 3286.824 ; gain = 152.484 ; free physical = 2460 ; free virtual = 24638
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 3171.852 ; gain = 0.000 ; free physical = 2829 ; free virtual = 25899
-INFO: [Common 17-1381] The checkpoint '/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_routed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:32 ; elapsed = 00:00:16 . Memory (MB): peak = 3171.852 ; gain = 0.000 ; free physical = 2950 ; free virtual = 25899
+Write XDEF Complete: Time (s): cpu = 00:00:23 ; elapsed = 00:00:08 . Memory (MB): peak = 3294.828 ; gain = 0.000 ; free physical = 2242 ; free virtual = 24602
+INFO: [Common 17-1381] The checkpoint '/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:36 ; elapsed = 00:00:19 . Memory (MB): peak = 3294.828 ; gain = 8.004 ; free physical = 2419 ; free virtual = 24638
 Command: report_drc -file mitx_petalinux_wrapper_drc_routed.rpt -pb mitx_petalinux_wrapper_drc_routed.pb -rpx mitx_petalinux_wrapper_drc_routed.rpx
 INFO: [DRC 23-27] Running DRC with 4 threads
-INFO: [Coretcl 2-168] The results of DRC are in file /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_drc_routed.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_drc_routed.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:24 ; elapsed = 00:00:08 . Memory (MB): peak = 3342.957 ; gain = 171.105 ; free physical = 2902 ; free virtual = 25853
+report_drc: Time (s): cpu = 00:00:29 ; elapsed = 00:00:11 . Memory (MB): peak = 3470.797 ; gain = 175.969 ; free physical = 2330 ; free virtual = 24555
 Command: report_methodology -file mitx_petalinux_wrapper_methodology_drc_routed.rpt -rpx mitx_petalinux_wrapper_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 4 threads
-INFO: [Coretcl 2-1520] The results of Report Methodology are in file /root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_methodology_drc_routed.rpt.
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/mitx_petalinux_wrapper_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:01:24 ; elapsed = 00:00:27 . Memory (MB): peak = 3434.820 ; gain = 91.863 ; free physical = 2596 ; free virtual = 25548
+report_methodology: Time (s): cpu = 00:01:42 ; elapsed = 00:00:37 . Memory (MB): peak = 3581.395 ; gain = 110.598 ; free physical = 1962 ; free virtual = 24190
 Command: report_power -file mitx_petalinux_wrapper_power_routed.rpt -pb mitx_petalinux_wrapper_power_summary_routed.pb -rpx mitx_petalinux_wrapper_power_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-99 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+101 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:33 ; elapsed = 00:00:17 . Memory (MB): peak = 3568.957 ; gain = 134.137 ; free physical = 2501 ; free virtual = 25469
-report_clock_utilization: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 3568.957 ; gain = 0.000 ; free physical = 2495 ; free virtual = 25464
+report_power: Time (s): cpu = 00:00:41 ; elapsed = 00:00:23 . Memory (MB): peak = 3736.953 ; gain = 155.559 ; free physical = 1952 ; free virtual = 24181
+report_clock_utilization: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3736.953 ; gain = 0.000 ; free physical = 1984 ; free virtual = 24227
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
 WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
@@ -897,8 +907,6 @@ WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U4/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U4/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U5/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U5/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U6/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U6/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/compressor_0/inst/compressor_faddfsbkb_U1/compressor_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/compressor_0/inst/compressor_faddfsbkb_U1/compressor_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/compressor_0/inst/compressor_fmul_3cud_U2/compressor_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/compressor_0/inst/compressor_fmul_3cud_U2/compressor_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U1/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U1/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U2/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U2/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U3/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U3/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
@@ -907,6 +915,24 @@ WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U6/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U6/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/trem_0/inst/tremolo_calculation_U0/trem_fadd_32ns_32bkb_U2/trem_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/trem_0/inst/tremolo_calculation_U0/trem_fadd_32ns_32bkb_U2/trem_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/trem_0/inst/tremolo_calculation_U0/trem_fmul_32ns_32cud_U3/trem_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/trem_0/inst/tremolo_calculation_U0/trem_fmul_32ns_32cud_U3/trem_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP0/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP0/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP5/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP5/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP7/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP7/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP8/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/DSP8/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/FULL_MAX_USAGE.DSP9/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_DBL_VARIANT.FIX_MULT/FULL_MAX_USAGE.DSP9/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_faddfsub_hbi_U5/vibrato_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_faddfsub_hbi_U5/vibrato_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_fmul_32nsibs_U6/vibrato_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_fmul_32nsibs_U6/vibrato_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP/PATTERNDETECT is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/p_reg__0 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/p_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/p_reg__2 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/p_reg__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/tmp_product multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/tmp_product__0 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_25ns_udo_U21/vibrato_mul_25ns_udo_MulnS_5_U/tmp_product__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/p_reg__0 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/p_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/p_reg__2 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/p_reg__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/p_reg__4 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/p_reg__4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/tmp_product multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/tmp_product/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/tmp_product__0 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/tmp_product__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/tmp_product__1 multiplier stage mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_mul_33ns_tde_U20/vibrato_mul_33ns_tde_MulnS_4_U/tmp_product__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+INFO: [Common 17-14] Message 'DRC DPOP-2' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [DRC RTSTAT-10] No routable loads: 6 net(s) have no routable loads. The problem bus(es) and/or net(s) are mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/rd_rst_reg[1], and mitx_petalinux_i/i2s_block/i2s_tx_fifo/inst/gen_fifo_generator.fifo_generator_inst/inst_fifo_gen/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/wr_rst_reg[2:0].
 INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/converter_0/inst/converter_fmul_32bkb_U1/converter_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/converter_0/inst/converter_fmul_32bkb_U1/converter_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
@@ -1044,12 +1070,16 @@ INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_G
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U4/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U5/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U6/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/compressor_0/inst/compressor_fmul_3cud_U2/compressor_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U3/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U4/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U5/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fmul_32ns_3cud_U6/mixer_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/trem_0/inst/tremolo_calculation_U0/trem_fmul_32ns_32cud_U3/trem_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dadd_64nsncg_U11/vibrato_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_ADD.DSP48E1_ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dadd_64nsncg_U11/vibrato_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/ALIGN_BLK/FRAC_ADDSUB/DSP_ADD.FRAC_ADDSUB/DSP48E1_GEN.DSP48E1_DEL/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dadd_64nsncg_U11/vibrato_ap_dadd_3_full_dsp_64_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.LOGIC.OP/NORM/ROUND/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_dmul_64nsocq_U12/vibrato_ap_dmul_4_max_dsp_64_u/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/DSP48_E1.DSP48E1_ADD.DSP48E1_ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-5] enum_USE_MULT_NONE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_fmul_32nsibs_U6/vibrato_ap_fmul_2_max_dsp_32_u/U0/i_synth/MULT.OP/R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/DSP: DSP48E1 is not using the Multiplier (USE_MULT = NONE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/Generators/FM_Synth_0/inst/FM_Synth_fadd_32ncud_U1/FM_Synth_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/Generators/FM_Synth_0/inst/FM_Synth_fadd_32ncud_U2/FM_Synth_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/Generators/FM_Synth_0/inst/FM_Synth_fadd_32ncud_U3/FM_Synth_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
@@ -1070,12 +1100,12 @@ INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/E
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/biquad_0/inst/biquad_faddfsub_3bkb_U1/biquad_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U1/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx1/mixer_0/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U2/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
-INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/compressor_0/inst/compressor_faddfsbkb_U1/compressor_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U1/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/mixer_1/inst/Block_codeRepl1_proc_U0/mixer_fadd_32ns_3bkb_U2/mixer_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/trem_0/inst/tremolo_calculation_U0/trem_fadd_32ns_32bkb_U2/trem_ap_fadd_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: mitx_petalinux_i/synth_mods/fx2/vibrato_0/inst/vibrato_faddfsub_hbi_U5/vibrato_ap_faddfsub_3_full_dsp_32_u/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
 report_drc (run_mandatory_drcs) completed successfully
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 556 Warnings, 212 Advisories
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 730 Warnings, 230 Advisories
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
 INFO: [Designutils 20-2272] Running write_bitstream with 4 threads.
@@ -1088,8 +1118,8 @@ Creating bitstream...
 Writing bitstream ./mitx_petalinux_wrapper.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
-INFO: [Common 17-186] '/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Mon Apr 29 23:56:47 2019. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
-278 Infos, 299 Warnings, 0 Critical Warnings and 0 Errors encountered.
+INFO: [Common 17-186] '/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Thu May  2 15:40:03 2019. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2017.2/doc/webtalk_introduction.html.
+285 Infos, 314 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:01:32 ; elapsed = 00:00:50 . Memory (MB): peak = 4152.758 ; gain = 565.812 ; free physical = 2367 ; free virtual = 25355
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 23:56:49 2019...
+write_bitstream: Time (s): cpu = 00:01:53 ; elapsed = 00:00:58 . Memory (MB): peak = 4326.762 ; gain = 581.820 ; free physical = 1844 ; free virtual = 24106
+INFO: [Common 17-206] Exiting Vivado at Thu May  2 15:40:05 2019...

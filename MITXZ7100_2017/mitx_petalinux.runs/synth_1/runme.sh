@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/root/repo/new/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/synth_1'
+HD_PWD='/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

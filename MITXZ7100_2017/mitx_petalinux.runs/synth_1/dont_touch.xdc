@@ -93,9 +93,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/mitx_petalinux_latcherfloat_8_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_latcherfloat_8_0 || ORIG_REF_NAME==mitx_petalinux_latcherfloat_8_0}]
 
-# IP: bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/mitx_petalinux_compressor_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_compressor_0_0 || ORIG_REF_NAME==mitx_petalinux_compressor_0_0}]
-
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/mitx_petalinux_latcherfloat_7_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_latcherfloat_7_0 || ORIG_REF_NAME==mitx_petalinux_latcherfloat_7_0}]
 
@@ -140,6 +137,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_
 
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_1/mitx_petalinux_biquad_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_biquad_0_1 || ORIG_REF_NAME==mitx_petalinux_biquad_0_1}]
+
+# IP: bd/mitx_petalinux/ip/mitx_petalinux_vibrato_0_0_1/mitx_petalinux_vibrato_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_vibrato_0_0 || ORIG_REF_NAME==mitx_petalinux_vibrato_0_0}]
 
 # IP: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/mitx_petalinux_auto_pc_7.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mitx_petalinux_auto_pc_7 || ORIG_REF_NAME==mitx_petalinux_auto_pc_7}]
@@ -261,8 +261,6 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_8_0/constraints/latcherfloatlatcherfloat_ooc.xdc
 
-# XDC: bd/mitx_petalinux/ip/mitx_petalinux_compressor_0_0/constraints/compressor_ooc.xdc
-
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_latcherfloat_7_0/constraints/latcherfloatlatcherfloat_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_mixer_1_0/constraints/mixer_ooc.xdc
@@ -292,6 +290,8 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_trem_0_0/constraints/trem_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_biquad_0_1/constraints/biquad_ooc.xdc
+
+# XDC: bd/mitx_petalinux/ip/mitx_petalinux_vibrato_0_0_1/constraints/vibrato_ooc.xdc
 
 # XDC: bd/mitx_petalinux/ip/mitx_petalinux_auto_pc_7/mitx_petalinux_auto_pc_7_ooc.xdc
 

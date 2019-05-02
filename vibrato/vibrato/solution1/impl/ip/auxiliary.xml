@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="vibrato" xd:componentRef="vibrato" xd:initiationInterval="124" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:arg xd:name="in" xd:originalName="in" xd:direction="in" xd:interfaceRef="in_V" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="out" xd:originalName="out" xd:direction="out" xd:interfaceRef="out_V" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="delay" xd:originalName="delay" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="depth" xd:originalName="depth" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="115" xd:worst-case="123" xd:average-case="119"/>
+  <xd:resourceEstimates xd:LUT="13477" xd:FF="14138" xd:BRAM="72" xd:DSP="105"/>
+</xd:acceleratorMap>

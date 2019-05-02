@@ -70,6 +70,11 @@
        {{000 00001} {001 00010} {010 00100} {011 01000} {100 10000} }
 
  add_fsm_encoding \
+       {vibrato_CTRL_BUS_s_axi.wstate} \
+       { }  \
+       {{00 0010} {01 0100} {10 1000} {11 0001} }
+
+ add_fsm_encoding \
        {axis_switch_v1_1_13_static_router_config__parameterized0.state} \
        { }  \
        {{000 00001} {001 00010} {010 00100} {011 01000} {100 10000} }
