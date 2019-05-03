@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="/root/repo/shs/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr">
+<Project Version="7" Minor="20" Path="/home/hildeb47/proj/ECE1373_GhostSynth/MITXZ7100_2017/mitx_petalinux.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2c33bc56a1584e2e8b3081c657036587"/>
@@ -20,7 +20,6 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../modules"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../vibrato"/>
     <Option Name="IPCachePermission" Val="disable"/>
     <Option Name="EnableCoreContainer" Val="TRUE"/>
     <Option Name="XPMLibraries" Val="XPM_CDC"/>
@@ -37,13 +36,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="101"/>
-    <Option Name="WTModelSimExportSim" Val="101"/>
-    <Option Name="WTQuestaExportSim" Val="101"/>
-    <Option Name="WTIesExportSim" Val="101"/>
-    <Option Name="WTVcsExportSim" Val="101"/>
-    <Option Name="WTRivieraExportSim" Val="101"/>
-    <Option Name="WTActivehdlExportSim" Val="101"/>
+    <Option Name="WTXSimExportSim" Val="102"/>
+    <Option Name="WTModelSimExportSim" Val="102"/>
+    <Option Name="WTQuestaExportSim" Val="102"/>
+    <Option Name="WTIesExportSim" Val="102"/>
+    <Option Name="WTVcsExportSim" Val="102"/>
+    <Option Name="WTRivieraExportSim" Val="102"/>
+    <Option Name="WTActivehdlExportSim" Val="102"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>

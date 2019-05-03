@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Thu May  2 15:38:59 2019
-| Host         : 0027fb2bf205 running 64-bit unknown
+| Date         : Fri May  3 17:32:00 2019
+| Host         : 500235e510a4 running 64-bit Ubuntu 16.04.6 LTS
 | Command      : report_clock_utilization -file mitx_petalinux_wrapper_clock_utilization_routed.rpt
 | Design       : mitx_petalinux_wrapper
 | Device       : 7z100-ffg900
