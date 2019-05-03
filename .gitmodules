@@ -37,3 +37,6 @@
 [submodule "modules/compressor"]
 	path = modules/compressor
 	url = https://github.com/esophagus-now/compressor
+[submodule "modules/vibrato"]
+	path = modules/vibrato
+	url = https://github.com/mathild7/vibrato.git

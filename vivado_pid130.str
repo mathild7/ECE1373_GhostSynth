@@ -1,0 +1,48 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+Process ID: 130
+
+Current time: 	5/2/19 10:42:43 PM UTC
+Time zone: 	Coordinated Universal Time (Etc/UTC)
+
+OS: DISTRIB_ID=Ubuntu
+Version: 4.9.125-linuxkit
+Architecture: amd64
+Available processors (cores): 2
+
+DISPLAY: 192.168.0.11:0
+Screen size: 3840x1200
+Screen resolution (DPI): 96
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/opt/Xilinx/Vivado/2016.2/tps/lnx64/jre
+
+User name: 	hildeb47
+User home directory: /home/hildeb47
+User working directory: /home/hildeb47/proj/ECE1373_GhostSynth
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: /opt/Xilinx/Vivado
+RDI Data directory: /opt/Xilinx/Vivado/2016.2/data
+RDI Bin directory: /opt/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: /home/hildeb47/.Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: /home/hildeb47/.Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	205 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 789 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 31 MB (+30134kb) [00:00:08]
+// [Engine Memory]: 788 MB (+674937kb) [00:00:08]
+// HMemoryUtils.trashcanNow. Engine heap size: 789 MB. GUI used memory: 21 MB. Current time: 5/2/19 10:42:45 PM UTC
